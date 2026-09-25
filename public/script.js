@@ -194,17 +194,17 @@ document.addEventListener('DOMContentLoaded', () => {
         '#047857'  // 28: Verde Esmeralda Oscuro
     ];
 
-    // Parroquias oficiales en estudio (Encuesta Provincial Morona Santiago 2026 - 59 parroquias)
+    // Parroquias oficiales con levantamiento de muestra (45 parroquias activas)
     const PARROQUIAS_POR_CANTON = {
-        'GUALAQUIZA': ['AMAZONAS', 'BERMEJOS', 'BOMBOIZA', 'CHIGUINDA', 'EL IDEAL', 'GUALAQUIZA', 'MERCEDES MOLINA', 'NUEVA TARQUI', 'ROSARIO', 'SAN MIGUEL DE CUYES'],
+        'GUALAQUIZA': ['BOMBOIZA', 'CHIGUINDA', 'EL IDEAL', 'GUALAQUIZA', 'MERCEDES MOLINA'],
         'HUAMBOYA': ['CHIGUAZA', 'HUAMBOYA'],
-        'LIMON INDANZA': ['GRAL. LEONIDAS PLAZA', 'INDANZA', 'SAN ANTONIO', 'SAN MIGUEL DE CONCHAY', 'SANTA SUSANA DE CHIVIAZA', 'YUNGANZA 7 EL ROSARIO'],
+        'LIMON INDANZA': ['GRAL. LEONIDAS PLAZA', 'INDANZA', 'SAN ANTONIO', 'SANTA SUSANA DE CHIVIAZA', 'YUNGANZA 7 EL ROSARIO'],
         'LOGROÑO': ['LOGROÑO', 'SHIMPIS', 'YAUPI'],
-        'MORONA': ['ALSHI / 9 DE OCTUBRE', 'CUCHAENTZA', 'GRAL. PROAÑO', 'MACAS', 'RIO BLANCO', 'SAN ISIDRO', 'SEVILLA DON BOSCO', 'SINAI', 'ZUNAC'],
+        'MORONA': ['CUCHAENTZA', 'GRAL. PROAÑO', 'MACAS', 'RIO BLANCO', 'SAN ISIDRO', 'SEVILLA DON BOSCO', 'SINAI'],
         'PABLO SEXTO': ['PABLO SEXTO'],
-        'PALORA': ['16 DE AGOSTO', 'ARAPICOS', 'CUMANDA', 'PALORA', 'SANGAY'],
-        'SAN JUAN BOSCO': ['PAN DE AZUCAR', 'SAN CARLOS DE LIMON', 'SAN JACINTO DE WAKAMBEIS', 'SAN JUAN BOSCO', 'SANTIAGO DE PANANZA'],
-        'SANTIAGO': ['CHUPIANZA', 'COPAL', 'MENDEZ', 'PATUCA', 'SAN FCO. DE CHINIMBIMI', 'SAN LUIS DEL ACHO', 'TAYUZA'],
+        'PALORA': ['16 DE AGOSTO', 'PALORA', 'SANGAY'],
+        'SAN JUAN BOSCO': ['SAN CARLOS DE LIMON', 'SAN JUAN BOSCO', 'SANTIAGO DE PANANZA'],
+        'SANTIAGO': ['MENDEZ', 'PATUCA', 'SAN FCO. DE CHINIMBIMI', 'SAN LUIS DEL ACHO', 'TAYUZA'],
         'SUCUA': ['ASUNCION', 'HUAMBI', 'SANTA MARIANITA DE JESUS', 'SUCUA'],
         'TAISHA': ['HUASAGA /WAMPUIK', 'MACUMA', 'PUMPUENTSA', 'TAISHA', 'TUTINENTZA'],
         'TIWINTZA': ['SAN JOSE DE MORONA', 'SANTIAGO']
@@ -1826,7 +1826,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let sectoresData = { type: 'FeatureCollection', features: [] };
 
         try {
-            const cacheBuster = '?v=43.0.0';
+            const cacheBuster = '?v=44.0.0';
             const [resPar, resSec] = await Promise.all([
                 fetch('assets/parroquias.geojson' + cacheBuster),
                 fetch('assets/sectores_censales.geojson' + cacheBuster)
@@ -2599,7 +2599,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (AppState.parroquiasGeojson && AppState.parroquiasGeojson.features && AppState.parroquiasGeojson.features.length > 0) {
                 return; // Ya cargado en inicializarMapa
             }
-            const res = await fetch('assets/parroquias.geojson?v=43.0.0');
+            const res = await fetch('assets/parroquias.geojson?v=44.0.0');
             if (!res.ok) return;
             const geojsonData = await res.json();
 
@@ -2856,7 +2856,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const targetCanton = AppState.cantonSeleccionado;
                 const parsPermitidas = (PARROQUIAS_POR_CANTON[targetCanton] || []).map(p => p.toUpperCase().trim());
                 const filterParCanton = [
-                    'any',
+                    'all',
                     ['==', ['upcase', ['coalesce', ['get', 'canton'], ['get', 'CANTON'], '']], targetCanton.toUpperCase()],
                     ['in', ['upcase', ['coalesce', ['get', 'nombre'], ['get', 'parroquia'], ['get', 'PARROQUIA'], '']], ['literal', parsPermitidas]]
                 ];
@@ -2941,7 +2941,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const targetCan = AppState.cantonSeleccionado;
                 const parsPermitidas = (PARROQUIAS_POR_CANTON[targetCan] || []).map(p => p.toUpperCase().trim());
                 baseTerritorialFilter = [
-                    'any',
+                    'all',
                     ['==', ['upcase', ['coalesce', ['get', 'canton'], ['get', 'CANTON'], '']], targetCan.toUpperCase()],
                     ['in', ['upcase', ['coalesce', ['get', 'parroquia'], ['get', 'PARROQUIA'], '']], ['literal', parsPermitidas]]
                 ];
