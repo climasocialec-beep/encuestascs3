@@ -1539,6 +1539,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const opt = document.createElement('option');
                 opt.value = p;
                 const count = parroquias.get(p) || 0;
+                const pMeta = AppState.parroquiasMap ? AppState.parroquiasMap.get(p) : null;
                 const cP = pMeta && pMeta.props ? normCanton(pMeta.props.canton || pMeta.props.CANTON) : '';
                 const cInfo = COLORES_CANTON[cP];
                 const cBadge = cInfo ? `${cInfo.badge} ` : '';
@@ -1799,7 +1800,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let sectoresData = { type: 'FeatureCollection', features: [] };
 
         try {
-            const cacheBuster = '?v=34.0.0';
+            const cacheBuster = '?v=37.0.0';
             const [resPar, resSec] = await Promise.all([
                 fetch('assets/parroquias.geojson' + cacheBuster),
                 fetch('assets/sectores_censales.geojson' + cacheBuster)
@@ -2598,7 +2599,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (AppState.parroquiasGeojson && AppState.parroquiasGeojson.features && AppState.parroquiasGeojson.features.length > 0) {
                 return; // Ya cargado en inicializarMapa
             }
-            const res = await fetch('assets/parroquias.geojson?v=34.0.0');
+            const res = await fetch('assets/parroquias.geojson?v=37.0.0');
             if (!res.ok) return;
             const geojsonData = await res.json();
 
@@ -2687,7 +2688,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
         poblarFiltros();
-        renderizarVista(true, true);
+        renderizarVista(false, true);
     }
 
     function obtenerBboxParroquia(nombreParroquia) {
@@ -2753,10 +2754,18 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function obtenerBboxCanton(nombreCanton) {
-        if (!nombreCanton || nombreCanton === 'Todos') return AppState.cantonBbox || [[-78.68, -0.42], [-78.25, 0.08]];
+        if (!nombreCanton || nombreCanton === 'Todos') return AppState.cantonBbox || [[-78.9539, -3.5878], [-76.6921, -1.4484]];
         const norm = (s) => String(s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase().trim();
         const target = norm(nombreCanton);
-        const parsPermitidas = (PARROQUIAS_POR_CANTON[nombreCanton] || []).map(norm);
+        
+        let parsPermitidas = [];
+        for (const [canKey, pList] of Object.entries(PARROQUIAS_POR_CANTON)) {
+            const nCan = norm(canKey);
+            if (nCan === target || target.includes(nCan) || nCan.includes(target)) {
+                parsPermitidas = pList.map(norm);
+                break;
+            }
+        }
 
         let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
         let encontrados = 0;
@@ -2786,10 +2795,30 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
+        // Fallback: calcular envolvente con los puntos del cantón si no se obtuvieron parroquias
+        if (encontrados === 0 && AppState.sectoresGeojson && AppState.sectoresGeojson.features) {
+            AppState.sectoresGeojson.features.forEach(f => {
+                const p = f.properties || {};
+                const c = norm(p.canton || p.CANTON || '');
+                if (c && (c === target || c.includes(target) || target.includes(c))) {
+                    const coords = f.geometry ? f.geometry.coordinates : null;
+                    if (coords && Array.isArray(coords)) {
+                        const [lng, lat] = coords;
+                        if (lng < minX) minX = lng;
+                        if (lat < minY) minY = lat;
+                        if (lng > maxX) maxX = lng;
+                        if (lat > maxY) maxY = lat;
+                        encontrados++;
+                    }
+                }
+            });
+        }
+
         if (encontrados > 0 && minX !== Infinity) {
             return [[minX, minY], [maxX, maxY]];
         }
-        return AppState.cantonBbox || [[-78.75, -0.45], [-78.20, 0.15]];
+
+        return AppState.cantonBbox || [[-78.9539, -3.5878], [-76.6921, -1.4484]];
     }
 
     function actualizarPoligonosMapa(ajustarCamara = false) {
@@ -3003,19 +3032,32 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         // 2. ZOOM AUTOMÁTICO INTELIGENTE EN CASCADA SEGÚN FILTROS ACTIVOS
         // =====================================================================
-        if (ajustarCamara) {
+        if (ajustarCamara && map) {
             if (AppState.sectorSeleccionado !== 'Todos') {
-                // Nivel 1: Zoom al Sector Censal seleccionado
+                // Nivel 1: Zoom al Punto de Muestra / Sector seleccionado
                 const targetSC = String(AppState.sectorSeleccionado).trim();
-                const targetCanton = AppState.cantonSeleccionado !== 'Todos' ? AppState.cantonSeleccionado : null;
                 const sectorMeta = AppState.sectoresMap.get(targetSC);
-                const bbox = sectorMeta ? (sectorMeta.bbox || (sectorMeta.feature && sectorMeta.feature.properties && sectorMeta.feature.properties.bbox)) : null;
-                if (bbox) {
-                    map.fitBounds(bbox, {
-                        padding: { top: 60, bottom: 50, left: 50, right: 50 },
-                        maxZoom: 18.2,
+                let coords = sectorMeta ? sectorMeta.centroid : null;
+                if (!coords && sectorMeta && sectorMeta.feature && sectorMeta.feature.geometry) {
+                    if (sectorMeta.feature.geometry.type === 'Point') {
+                        coords = sectorMeta.feature.geometry.coordinates;
+                    }
+                }
+                if (coords && Array.isArray(coords)) {
+                    map.flyTo({
+                        center: coords,
+                        zoom: 16.5,
                         duration: 850
                     });
+                } else {
+                    const bbox = sectorMeta ? (sectorMeta.bbox || (sectorMeta.feature && sectorMeta.feature.properties && sectorMeta.feature.properties.bbox)) : null;
+                    if (bbox) {
+                        map.fitBounds(bbox, {
+                            padding: { top: 60, bottom: 50, left: 50, right: 50 },
+                            maxZoom: 17.5,
+                            duration: 850
+                        });
+                    }
                 }
             } else if (AppState.parroquiaSeleccionada && AppState.parroquiaSeleccionada !== 'Todas') {
                 // Nivel 2: Zoom a la Parroquia seleccionada
@@ -3023,7 +3065,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (bboxPar) {
                     map.fitBounds(bboxPar, {
                         padding: { top: 60, bottom: 50, left: 50, right: 50 },
-                        maxZoom: 15.0,
+                        maxZoom: 14.5,
                         duration: 850
                     });
                 }
@@ -3033,7 +3075,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (bboxCan) {
                     map.fitBounds(bboxCan, {
                         padding: { top: 45, bottom: 45, left: 45, right: 45 },
-                        maxZoom: 13.0,
+                        maxZoom: 12.5,
                         duration: 850
                     });
                 }
@@ -3042,7 +3084,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const globalBbox = AppState.cantonBbox || [[-78.9539, -3.5878], [-76.6921, -1.4484]];
                 map.fitBounds(globalBbox, {
                     padding: { top: 40, bottom: 40, left: 40, right: 40 },
-                    maxZoom: 12.0,
+                    maxZoom: 11.5,
                     duration: 850
                 });
             }
@@ -4149,33 +4191,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 AppState.cantonSeleccionado = e.target.value;
                 AppState.parroquiaSeleccionada = 'Todas';
                 AppState.sectorSeleccionado = 'Todos';
+                if (UI.parroquiaFilter) UI.parroquiaFilter.value = 'Todas';
+                if (UI.sectorFilter) UI.sectorFilter.value = 'Todos';
                 poblarFiltros();
-
-                // Si seleccionó un cantón específico, ajustar mapa al bounding box del cantón
-                if (AppState.cantonSeleccionado !== 'Todos' && AppState.parroquiasGeojson && map) {
-                    const parsCanton = (PARROQUIAS_POR_CANTON[AppState.cantonSeleccionado] || []).map(p => normTexto(p));
-                    let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
-                    AppState.parroquiasGeojson.features.forEach(f => {
-                        const nom = normTexto(f.properties.nombre || f.properties.parroquia || '');
-                        const can = normTexto(f.properties.canton || '');
-                        if (can === normTexto(AppState.cantonSeleccionado) || parsCanton.includes(nom)) {
-                            const b = f.properties.bbox || (f.geometry ? calcularBBOX(f.geometry) : null);
-                            if (b) {
-                                if (b[0][0] < minX) minX = b[0][0];
-                                if (b[0][1] < minY) minY = b[0][1];
-                                if (b[1][0] > maxX) maxX = b[1][0];
-                                if (b[1][1] > maxY) maxY = b[1][1];
-                            }
-                        }
-                    });
-                    if (minX !== Infinity && maxX !== -Infinity) {
-                        map.fitBounds([[minX, minY], [maxX, maxY]], { padding: 40, maxZoom: 13, duration: 800 });
-                    }
-                } else if (AppState.cantonSeleccionado === 'Todos' && AppState.cantonBbox && map) {
-                    map.fitBounds(AppState.cantonBbox, { padding: 35, duration: 800 });
-                }
-
-                renderizarVista(true, true);
+                renderizarVista(false, true);
             });
         }
 
@@ -4223,7 +4242,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 
                 poblarFiltros();
-                renderizarVista(true, true);
+                renderizarVista(false, true);
             });
         }
 
