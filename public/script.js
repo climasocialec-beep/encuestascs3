@@ -256,37 +256,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Paleta cromática oficial por Cantón (Encuesta Provincial Morona Santiago 2026)
     const COLORES_CANTON = {
-        'MORONA': { nombre: 'Morona (Macas)', hex: '#059669', linea: '#059669', fill: 'rgba(5, 150, 105, 0.12)', fillSector: 'rgba(5, 150, 105, 0.25)', lineaSector: '#047857', label: '#065f46', badge: '🟢' },
-        'GUALAQUIZA': { nombre: 'Gualaquiza', hex: '#d97706', linea: '#d97706', fill: 'rgba(217, 119, 6, 0.12)', fillSector: 'rgba(217, 119, 6, 0.25)', lineaSector: '#b45309', label: '#92400e', badge: '🟡' },
-        'SUCUA': { nombre: 'Sucúa', hex: '#4f46e5', linea: '#4f46e5', fill: 'rgba(79, 70, 229, 0.12)', fillSector: 'rgba(79, 70, 229, 0.25)', lineaSector: '#4338ca', label: '#3730a3', badge: '🟣' },
-        'PALORA': { nombre: 'Palora', hex: '#0284c7', linea: '#0284c7', fill: 'rgba(2, 132, 199, 0.12)', fillSector: 'rgba(2, 132, 199, 0.25)', lineaSector: '#0369a1', label: '#075985', badge: '🔵' },
-        'SANTIAGO': { nombre: 'Santiago (Méndez)', hex: '#e11d48', linea: '#e11d48', fill: 'rgba(225, 29, 72, 0.12)', fillSector: 'rgba(225, 29, 72, 0.25)', lineaSector: '#be123c', label: '#9f1239', badge: '🔴' },
-        'LIMON INDANZA': { nombre: 'Limón Indanza', hex: '#7c3aed', linea: '#7c3aed', fill: 'rgba(124, 58, 237, 0.12)', fillSector: 'rgba(124, 58, 237, 0.25)', lineaSector: '#6d28d9', label: '#5b21b6', badge: '🟣' },
-        'TAISHA': { nombre: 'Taisha', hex: '#10b981', linea: '#10b981', fill: 'rgba(16, 185, 129, 0.12)', fillSector: 'rgba(16, 185, 129, 0.25)', lineaSector: '#059669', label: '#047857', badge: '🟢' },
-        'SAN JUAN BOSCO': { nombre: 'San Juan Bosco', hex: '#ea580c', linea: '#ea580c', fill: 'rgba(234, 88, 12, 0.12)', fillSector: 'rgba(234, 88, 12, 0.25)', lineaSector: '#c2410c', label: '#9a3412', badge: '🟠' },
-        'HUAMBOYA': { nombre: 'Huamboya', hex: '#0891b2', linea: '#0891b2', fill: 'rgba(8, 145, 178, 0.12)', fillSector: 'rgba(8, 145, 178, 0.25)', lineaSector: '#0e7490', label: '#155e75', badge: '🔷' },
-        'LOGROÑO': { nombre: 'Logroño', hex: '#c026d3', linea: '#c026d3', fill: 'rgba(192, 38, 211, 0.12)', fillSector: 'rgba(192, 38, 211, 0.25)', lineaSector: '#a21caf', label: '#86198f', badge: '🟤' },
-        'TIWINTZA': { nombre: 'Tiwintza', hex: '#65a30d', linea: '#65a30d', fill: 'rgba(101, 163, 13, 0.12)', fillSector: 'rgba(101, 163, 13, 0.25)', lineaSector: '#4d7c0f', label: '#3f6212', badge: '🟢' },
-        'PABLO SEXTO': { nombre: 'Pablo Sexto', hex: '#92400e', linea: '#92400e', fill: 'rgba(146, 64, 14, 0.12)', fillSector: 'rgba(146, 64, 14, 0.25)', lineaSector: '#78350f', label: '#451a03', badge: '🟤' }
+        'MORONA': { nombre: 'Morona (Macas)', hex: '#059669', linea: '#059669', fill: 'rgba(5, 150, 105, 0.22)', fillSector: 'rgba(5, 150, 105, 0.35)', lineaSector: '#047857', label: '#065f46', badge: '🟢' },
+        'GUALAQUIZA': { nombre: 'Gualaquiza', hex: '#d97706', linea: '#d97706', fill: 'rgba(217, 119, 6, 0.22)', fillSector: 'rgba(217, 119, 6, 0.35)', lineaSector: '#b45309', label: '#92400e', badge: '🟡' },
+        'SUCUA': { nombre: 'Sucúa', hex: '#2563eb', linea: '#2563eb', fill: 'rgba(37, 99, 235, 0.20)', fillSector: 'rgba(37, 99, 235, 0.35)', lineaSector: '#1d4ed8', label: '#1e40af', badge: '🔵' },
+        'PALORA': { nombre: 'Palora', hex: '#0284c7', linea: '#0284c7', fill: 'rgba(2, 132, 199, 0.22)', fillSector: 'rgba(2, 132, 199, 0.35)', lineaSector: '#0369a1', label: '#075985', badge: '🔷' },
+        'SANTIAGO': { nombre: 'Santiago (Méndez)', hex: '#e11d48', linea: '#e11d48', fill: 'rgba(225, 29, 72, 0.22)', fillSector: 'rgba(225, 29, 72, 0.35)', lineaSector: '#be123c', label: '#9f1239', badge: '🔴' },
+        'LIMON INDANZA': { nombre: 'Limón Indanza', hex: '#7c3aed', linea: '#7c3aed', fill: 'rgba(124, 58, 237, 0.22)', fillSector: 'rgba(124, 58, 237, 0.35)', lineaSector: '#6d28d9', label: '#5b21b6', badge: '🟣' },
+        'TAISHA': { nombre: 'Taisha', hex: '#16a34a', linea: '#16a34a', fill: 'rgba(22, 163, 74, 0.20)', fillSector: 'rgba(22, 163, 74, 0.35)', lineaSector: '#15803d', label: '#166534', badge: '🟢' },
+        'SAN JUAN BOSCO': { nombre: 'San Juan Bosco', hex: '#ea580c', linea: '#ea580c', fill: 'rgba(234, 88, 12, 0.22)', fillSector: 'rgba(234, 88, 12, 0.35)', lineaSector: '#c2410c', label: '#9a3412', badge: '🟠' },
+        'HUAMBOYA': { nombre: 'Huamboya', hex: '#0891b2', linea: '#0891b2', fill: 'rgba(8, 145, 178, 0.22)', fillSector: 'rgba(8, 145, 178, 0.35)', lineaSector: '#0e7490', label: '#155e75', badge: '🔷' },
+        'LOGROÑO': { nombre: 'Logroño', hex: '#c026d3', linea: '#c026d3', fill: 'rgba(192, 38, 211, 0.22)', fillSector: 'rgba(192, 38, 211, 0.35)', lineaSector: '#a21caf', label: '#86198f', badge: '🟤' },
+        'TIWINTZA': { nombre: 'Tiwintza', hex: '#65a30d', linea: '#65a30d', fill: 'rgba(101, 163, 13, 0.22)', fillSector: 'rgba(101, 163, 13, 0.35)', lineaSector: '#4d7c0f', label: '#3f6212', badge: '🟢' },
+        'PABLO SEXTO': { nombre: 'Pablo Sexto', hex: '#92400e', linea: '#92400e', fill: 'rgba(146, 64, 14, 0.22)', fillSector: 'rgba(146, 64, 14, 0.35)', lineaSector: '#78350f', label: '#451a03', badge: '🟤' }
     };
 
     // Expresiones MapLibre GL por Cantón
     const EXPR_PARROQUIAS_FILL = [
         'match',
         ['upcase', ['coalesce', ['get', 'canton'], ['get', 'CANTON'], '']],
-        'MORONA', 'rgba(5, 150, 105, 0.12)',
-        'GUALAQUIZA', 'rgba(217, 119, 6, 0.12)',
-        'SUCUA', 'rgba(79, 70, 229, 0.12)',
-        'PALORA', 'rgba(2, 132, 199, 0.12)',
-        'SANTIAGO', 'rgba(225, 29, 72, 0.12)',
-        'LIMON INDANZA', 'rgba(124, 58, 237, 0.12)',
-        'TAISHA', 'rgba(16, 185, 129, 0.12)',
-        'SAN JUAN BOSCO', 'rgba(234, 88, 12, 0.12)',
-        'HUAMBOYA', 'rgba(8, 145, 178, 0.12)',
-        'LOGROÑO', 'rgba(192, 38, 211, 0.12)',
-        'TIWINTZA', 'rgba(101, 163, 13, 0.12)',
-        'PABLO SEXTO', 'rgba(146, 64, 14, 0.12)',
-        'rgba(5, 150, 105, 0.10)'
+        'MORONA', 'rgba(5, 150, 105, 0.22)',
+        'GUALAQUIZA', 'rgba(217, 119, 6, 0.22)',
+        'SUCUA', 'rgba(37, 99, 235, 0.20)',
+        'PALORA', 'rgba(2, 132, 199, 0.22)',
+        'SANTIAGO', 'rgba(225, 29, 72, 0.22)',
+        'LIMON INDANZA', 'rgba(124, 58, 237, 0.22)',
+        'TAISHA', 'rgba(22, 163, 74, 0.20)',
+        'SAN JUAN BOSCO', 'rgba(234, 88, 12, 0.22)',
+        'HUAMBOYA', 'rgba(8, 145, 178, 0.22)',
+        'LOGROÑO', 'rgba(192, 38, 211, 0.22)',
+        'TIWINTZA', 'rgba(101, 163, 13, 0.22)',
+        'PABLO SEXTO', 'rgba(146, 64, 14, 0.22)',
+        'rgba(5, 150, 105, 0.18)'
     ];
 
     const EXPR_PARROQUIAS_LINE = [
@@ -1861,7 +1861,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let sectoresData = { type: 'FeatureCollection', features: [] };
 
         try {
-            const cacheBuster = '?v=40.0.0';
+            const cacheBuster = '?v=41.0.0';
             const [resPar, resSec] = await Promise.all([
                 fetch('assets/parroquias.geojson' + cacheBuster),
                 fetch('assets/sectores_censales.geojson' + cacheBuster)
@@ -2101,14 +2101,14 @@ document.addEventListener('DOMContentLoaded', () => {
                         minzoom: 0,
                         maxzoom: 22
                     },
-                    // 1. Límites y Relleno Parroquial por Circunscripción (CNE Quito)
+                    // 1. Límites y Relleno Parroquial por Cantón (Morona Santiago 2026)
                     {
                         id: 'parroquias-fill',
                         type: 'fill',
                         source: 'parroquias-source',
                         paint: {
                             'fill-color': EXPR_PARROQUIAS_FILL,
-                            'fill-opacity': 0.12
+                            'fill-opacity': 0.22
                         }
                     },
                     {
@@ -2119,28 +2119,29 @@ document.addEventListener('DOMContentLoaded', () => {
                             'line-color': EXPR_PARROQUIAS_LINE,
                             'line-width': [
                                 'interpolate', ['linear'], ['zoom'],
-                                9, 1.2,
-                                12, 1.8,
-                                15, 2.5
+                                8, 2.0,
+                                10, 2.6,
+                                12, 3.4,
+                                15, 4.5
                             ],
-                            'line-dasharray': [4, 2],
-                            'line-opacity': 0.85
+                            'line-opacity': 1.0
                         }
                     },
                     {
                         id: 'parroquias-label',
                         type: 'symbol',
                         source: 'parroquias-centroides-source',
-                        minzoom: 10.0,
-                        maxzoom: 14.5,
+                        minzoom: 8.8,
+                        maxzoom: 15.0,
                         layout: {
                             'text-field': ['coalesce', ['get', 'nombre'], ['get', 'parroquia'], ['get', 'PARROQUIA'], ''],
                             'text-font': ['Open Sans Bold'],
                             'text-size': [
                                 'interpolate', ['linear'], ['zoom'],
-                                10, 10.5,
-                                12, 12,
-                                14, 14
+                                9, 10.0,
+                                11, 11.5,
+                                13, 13.5,
+                                15, 15.0
                             ],
                             'text-anchor': 'center',
                             'text-max-width': 8
@@ -2148,7 +2149,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         paint: {
                             'text-color': EXPR_PARROQUIAS_LABEL,
                             'text-halo-color': '#ffffff',
-                            'text-halo-width': 3.0
+                            'text-halo-width': 3.2
                         }
                     },
                     // 2. Sectores Censales Sorteados (200 polígonos de Quito PM 2026)
@@ -2897,37 +2898,39 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (map.getLayer('parroquias-fill')) {
                     map.setFilter('parroquias-fill', filterParCanton);
                     map.setPaintProperty('parroquias-fill', 'fill-color', EXPR_PARROQUIAS_FILL);
-                    map.setPaintProperty('parroquias-fill', 'fill-opacity', 0.12);
+                    map.setPaintProperty('parroquias-fill', 'fill-opacity', 0.22);
                 }
                 map.setFilter('parroquias-line', filterParCanton);
                 if (map.getLayer('parroquias-label')) map.setFilter('parroquias-label', filterParCanton);
 
                 map.setPaintProperty('parroquias-line', 'line-width', [
                     'interpolate', ['linear'], ['zoom'],
-                    9, 1.4,
-                    12, 2.2,
-                    15, 3.0
+                    8, 2.2,
+                    10, 2.8,
+                    12, 3.6,
+                    15, 4.8
                 ]);
                 map.setPaintProperty('parroquias-line', 'line-color', EXPR_PARROQUIAS_LINE);
-                map.setPaintProperty('parroquias-line', 'line-opacity', 0.90);
+                map.setPaintProperty('parroquias-line', 'line-opacity', 1.0);
             } else {
-                // Vista global: todas las parroquias con color por circunscripción
+                // Vista global: todas las parroquias con color por cantón
                 if (map.getLayer('parroquias-fill')) {
                     map.setFilter('parroquias-fill', null);
                     map.setPaintProperty('parroquias-fill', 'fill-color', EXPR_PARROQUIAS_FILL);
-                    map.setPaintProperty('parroquias-fill', 'fill-opacity', 0.12);
+                    map.setPaintProperty('parroquias-fill', 'fill-opacity', 0.22);
                 }
                 map.setFilter('parroquias-line', null);
                 if (map.getLayer('parroquias-label')) map.setFilter('parroquias-label', null);
 
                 map.setPaintProperty('parroquias-line', 'line-width', [
                     'interpolate', ['linear'], ['zoom'],
-                    9, 1.2,
-                    12, 1.8,
-                    15, 2.5
+                    8, 2.0,
+                    10, 2.6,
+                    12, 3.4,
+                    15, 4.5
                 ]);
                 map.setPaintProperty('parroquias-line', 'line-color', EXPR_PARROQUIAS_LINE);
-                map.setPaintProperty('parroquias-line', 'line-opacity', 0.85);
+                map.setPaintProperty('parroquias-line', 'line-opacity', 1.0);
             }
             if (map.getLayer('parroquias-label')) {
                 map.setPaintProperty('parroquias-label', 'text-color', EXPR_PARROQUIAS_LABEL);
