@@ -1,0 +1,26 @@
+services:
+  - type: web
+    name: herramienta-de-campo
+    env: node
+    plan: free
+    branch: main
+    autoDeploy: true
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 20.11.0
+      - key: ASSET_ID_PICHINCHA
+        sync: false
+      - key: API_TOKEN
+        sync: false
+      - key: NOMBRE_PROYECTO
+        value: Encuesta Quito PM - Septiembre - 2026
+      - key: CAMPO_ENCUESTADOR
+        value: encuestador
+      - key: CAMPO_SUPERVISOR
+        value: supervisor
+      - key: META_ENCUESTAS
+        value: 2000
+      - key: CACHE_TTL_SEGUNDOS
+        value: 90
