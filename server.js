@@ -208,20 +208,19 @@ const PARROQUIAS_FORMULARIO = {
     "48": "YARUQUI"
 };
 
-const CIRCUNSCRIPCIONES_FORMULARIO = {
-    "1": "CIRCUNSCRIPCION URBANA 1",
-    "2": "CIRCUNSCRIPCION URBANA 2",
-    "3": "CIRCUNSCRIPCION URBANA 3",
-    "4": "CIRCUNSCRIPCION RURAL",
-    "1q": "CIRCUNSCRIPCION URBANA 1",
-    "2q": "CIRCUNSCRIPCION URBANA 2",
-    "3q": "CIRCUNSCRIPCION URBANA 3",
-    "4q": "CIRCUNSCRIPCION RURAL"
-};
-
 const CANTONES_FORMULARIO = {
-    "1": "Quito",
-    "60": "Quito"
+    "1401": "Morona",
+    "1402": "Gualaquiza",
+    "1403": "Limón Indanza",
+    "1404": "Palora",
+    "1405": "Santiago",
+    "1406": "Sucúa",
+    "1407": "Huamboya",
+    "1408": "San Juan Bosco",
+    "1409": "Taisha",
+    "1410": "Logroño",
+    "1411": "Pablo Sexto",
+    "1412": "Tiwintza"
 };
 
 const TIPOLOGIAS_FORMULARIO = {
@@ -288,12 +287,12 @@ function normalizarEncuesta(raw) {
     const rawParroquia = extraerValor(raw, ["parroquia", "PARROQUIA", "nom_parroquia", "parr"]) || "";
     const parroquia = PARROQUIAS_FORMULARIO[rawParroquia] || String(rawParroquia).trim().toUpperCase();
 
-    // Cantón: Encuesta cantonal Quito
-    const canton = "Quito";
+    // Cantón: Extraer dinámicamente o decodificar
+    const rawCanton = extraerValor(raw, ["canton", "CANTON", "canton_nombre", "nom_can", "nom_canton"]) || "";
+    const canton = CANTONES_FORMULARIO[rawCanton] || String(rawCanton).trim() || "Morona";
 
-    // Circunscripción
-    const rawCircuns = extraerValor(raw, ["circuns", "circunscripcion", "CIRCUNSCRIPCION"]) || "";
-    const circunscripcion = CIRCUNSCRIPCIONES_FORMULARIO[rawCircuns] || String(rawCircuns).trim();
+    // Circunscripción (No aplica en Morona Santiago)
+    const circunscripcion = "";
 
     // Extracción tolerante de Género (p1: 1=Masculino, 2=Femenino, 3=LGBTIQ+, 0=Otro; p1_1: 1=Hombre, 2=Mujer)
     const rawGen = extraerValor(raw, [

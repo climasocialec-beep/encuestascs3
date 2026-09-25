@@ -186,15 +186,15 @@
           </div>
 
 
-          <!-- Circunscripción (Específico para Quito y Rumiñahui) -->
-          <div class="cs-ribbon-field" id="wrapCircunscripcionFilter">
-            <label for="circunscripcionFilter" class="cs-field-label">
-              <svg class="cs-icon cs-icon--xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
-              <span>Circunscripción</span>
+          <!-- Cantón (12 Cantones de Morona Santiago) -->
+          <div class="cs-ribbon-field" id="wrapCantonFilter">
+            <label for="cantonFilter" class="cs-field-label">
+              <svg class="cs-icon cs-icon--xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Cantón</span>
             </label>
             <div class="cs-select-wrap">
-              <select id="circunscripcionFilter" class="cs-select">
-                <option value="Todas">Todas las circunscripciones</option>
+              <select id="cantonFilter" class="cs-select">
+                <option value="Todos">Todos los cantones (12)</option>
               </select>
             </div>
           </div>
@@ -212,15 +212,15 @@
             </div>
           </div>
 
-          <!-- Sector Censal (1 al 70) -->
+          <!-- Punto de Muestra (1 al 266) -->
           <div class="cs-ribbon-field">
             <label for="sectorFilter" class="cs-field-label">
               <svg class="cs-icon cs-icon--xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="3"/></svg>
-              <span>Sector Censal</span>
+              <span>Punto de Muestra</span>
             </label>
             <div class="cs-select-wrap">
               <select id="sectorFilter" class="cs-select">
-                <option value="Todos">Todos los sectores (120)</option>
+                <option value="Todos">Todos los puntos (266)</option>
               </select>
             </div>
           </div>
@@ -298,18 +298,15 @@
                 </button>
               </div>
             </div>
-
-            <!-- Barra Rápida de Circunscripciones (Aparece al seleccionar Quito o Rumiñahui en flujo vertical) -->
-            <div class="cs-circ-legend-bar" id="circLegendBar" style="display:none;" aria-label="Circunscripciones del Cantón"></div>
           </div>
 
           <div id="map"></div>
 
-          <!-- Barra flotante de navegación para Sector Censal activo -->
+          <!-- Barra flotante de navegación para Punto de Muestra activo -->
           <div class="cs-sector-active-bar" id="barraSectorActivo" style="display:none;">
             <div class="cs-sector-active-info">
               <span class="cs-sector-active-icon">🎯</span>
-              <span class="cs-sector-active-title" id="sectorActivoTitulo">Sector Censal</span>
+              <span class="cs-sector-active-title" id="sectorActivoTitulo">Punto de Muestra</span>
             </div>
             <a id="btnRutaGoogleMaps" class="cs-btn-gmaps" href="#" target="_blank" rel="noopener noreferrer">
               <svg class="cs-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
