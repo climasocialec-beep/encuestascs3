@@ -30,9 +30,8 @@ function limpiarVar(val) {
 
 const PORT = Number(process.env.PORT) || 3001;
 
-// El identificador y el token se reciben solo por variables de entorno de Render.
-// Se ignoran ASSET_ID genéricos heredados de otros proyectos para evitar consultas cruzadas.
-const ASSET_ID = limpiarVar(process.env.ASSET_ID_PICHINCHA);
+// El identificador y el token se reciben por variables de entorno de Render.
+const ASSET_ID = limpiarVar(process.env.ASSET_ID || process.env.ASSET_ID_MORONA || process.env.ASSET_ID_PICHINCHA);
 const API_TOKEN = limpiarVar(
     process.env.API_TOKEN ||
     process.env.KOBO_API_TOKEN ||
@@ -458,20 +457,11 @@ app.get("/api/config", (req, res) => {
         "Pragma": "no-cache",
         "Expires": "0"
     });
-    const TITULO_OFICIAL = "Encuesta DMQ - Septiembre - 2026";
+    const TITULO_OFICIAL = "Encuesta Provincial Morona Santiago 2026";
     let nombre = process.env.NOMBRE_PROYECTO || TITULO_OFICIAL;
-    // Blindaje riguroso contra variables de entorno heredadas de otros cantones (ej. Cuenca, Machala, etc.)
-    if (!nombre || nombre.toLowerCase().includes("cuenca") || (!nombre.toLowerCase().includes("quito") && !nombre.toLowerCase().includes("dmq"))) {
-        nombre = TITULO_OFICIAL;
-    }
 
-    let centroLng = process.env.MAPA_CENTRO_LNG ? Number(process.env.MAPA_CENTRO_LNG) : -78.4678;
-    let centroLat = process.env.MAPA_CENTRO_LAT ? Number(process.env.MAPA_CENTRO_LAT) : -0.1807;
-    // Si coordenadas heredadas apuntan fuera de Pichincha/Quito (ej. Cuenca -79, -2.9), forzar Quito
-    if (centroLat < -1.0 || centroLng < -79.2) {
-        centroLng = -78.4678;
-        centroLat = -0.1807;
-    }
+    let centroLng = process.env.MAPA_CENTRO_LNG ? Number(process.env.MAPA_CENTRO_LNG) : -78.1174;
+    let centroLat = process.env.MAPA_CENTRO_LAT ? Number(process.env.MAPA_CENTRO_LAT) : -2.3087;
 
     res.json({
         nombreProyecto: nombre,
@@ -491,7 +481,7 @@ app.get("/api/encuestas", async (req, res) => {
                 total: 0,
                 resultados: [],
                 obtenidoEn: Date.now(),
-                mensaje: "Esperando configuración de formulario para Encuesta DMQ - Septiembre - 2026"
+                mensaje: "Esperando configuración de formulario para " + (process.env.NOMBRE_PROYECTO || TITULO_OFICIAL)
             });
         }
         res.set({
@@ -521,7 +511,7 @@ app.get("/api/encuestas", async (req, res) => {
 app.post("/api/sync", async (req, res) => {
     try {
         if (!ASSET_ID || !API_TOKEN) {
-            return res.json({ estado: "ok", total: 0, obtenidoEn: Date.now(), mensaje: "Esperando ASSET_ID_PICHINCHA" });
+            return res.json({ estado: "ok", total: 0, obtenidoEn: Date.now(), mensaje: "Esperando ASSET_ID" });
         }
         cache.datos = null;
         cache.timestamp = 0;

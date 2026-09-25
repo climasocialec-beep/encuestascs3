@@ -1,6 +1,6 @@
 services:
   - type: web
-    name: herramienta-de-campo
+    name: encuestascs3
     env: node
     plan: free
     branch: main
@@ -10,12 +10,12 @@ services:
     envVars:
       - key: NODE_VERSION
         value: 20.11.0
-      - key: ASSET_ID_PICHINCHA
+      - key: ASSET_ID
         sync: false
       - key: API_TOKEN
         sync: false
       - key: NOMBRE_PROYECTO
-        value: Encuesta Quito PM - Septiembre - 2026
+        value: Encuesta Provincial Morona Santiago 2026
       - key: CAMPO_ENCUESTADOR
         value: encuestador
       - key: CAMPO_SUPERVISOR

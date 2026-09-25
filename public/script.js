@@ -2114,9 +2114,9 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        const BBOX_QUITO = [[-78.68, -0.42], [-78.25, 0.08]];
-        let mapCenter = [-78.4850, -0.1800]; // Coordenadas centrales de Quito
-        let initialBounds = BBOX_QUITO;
+        const BBOX_PROVINCIA = [[-78.7, -3.7], [-76.9, -1.6]];
+        let mapCenter = [-78.1174, -2.3087]; // Morona Santiago (Macas)
+        let initialBounds = BBOX_PROVINCIA;
 
         if (globalMinX !== Infinity && globalMaxX !== -Infinity) {
             mapCenter = [(globalMinX + globalMaxX) / 2, (globalMinY + globalMaxY) / 2];
