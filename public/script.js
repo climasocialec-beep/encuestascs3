@@ -1594,20 +1594,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
-            // Filtrar por sector seleccionado si está activo (Cascada Sector ➔ Parroquia)
-            if (AppState.sectorSeleccionado !== 'Todos') {
-                const targetSC = String(AppState.sectorSeleccionado).trim();
-                const secMeta = AppState.sectoresMap.get(targetSC);
-                const parSector = secMeta ? String(secMeta.parroquia || secMeta.parroquia_especifica || secMeta.nom_par || secMeta.PARROQUIA || '').trim() : '';
-                if (parSector) {
-                    const normParSec = normStr(parSector);
-                    const parEncontrada = parList.find(p => normStr(p).includes(normParSec) || normParSec.includes(normStr(p)));
-                    if (parEncontrada) {
-                        parList = [parEncontrada];
-                    }
-                }
-            }
-
             parList.sort((a, b) => a.localeCompare(b, 'es'));
             const frag = document.createDocumentFragment();
             parList.forEach(p => {
@@ -1875,7 +1861,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let sectoresData = { type: 'FeatureCollection', features: [] };
 
         try {
-            const cacheBuster = '?v=38.0.0';
+            const cacheBuster = '?v=39.0.0';
             const [resPar, resSec] = await Promise.all([
                 fetch('assets/parroquias.geojson' + cacheBuster),
                 fetch('assets/sectores_censales.geojson' + cacheBuster)
@@ -1896,14 +1882,15 @@ document.addEventListener('DOMContentLoaded', () => {
         AppState.sectoresMap = new Map();
         AppState.sectoresCandidatos = new Map();
 
-        // Indexar Sectores Censales (200 polígonos sorteados de Quito PM 2026)
+        // Indexar Sectores Censales (266 puntos de muestra de Morona Santiago)
         if (sectoresData.features) {
             sectoresData.features.forEach(f => {
                 const p = f.properties || {};
                 const cod = String(p.sc || p.codigo_muestra || p.num_muestra || '').trim();
                 const tip = String(p.tipologia || '').trim().toUpperCase();
                 const can = String(p.canton || p.CANTON || '').trim();
-                const par = String(p.parroquia || p.PARROQUIA || '').trim().toUpperCase();
+                let par = String(p.parroquia || p.PARROQUIA || '').trim().toUpperCase();
+                if (par.includes('YUNGANZA')) par = 'YUNGANZA 7 EL ROSARIO';
                 const secAnm = String(p.sec_anm || '').trim();
                 const etiq = p.etiquetaSC || (cod && tip ? `${cod} | ${tip}` : (cod || tip));
                 p.sc = cod;
@@ -2561,10 +2548,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             if (scKey && UI.sectorFilter) {
                 AppState.sectorSeleccionado = scKey;
-                const cantonNormalizado = normalizarCanton(can);
-                if (cantonNormalizado) AppState.cantonSeleccionado = cantonNormalizado;
-                if (p.parroquia) AppState.parroquiaSeleccionada = String(p.parroquia).toUpperCase().trim();
-                poblarFiltros();
+                UI.sectorFilter.value = scKey;
                 renderizarVista(false, false);
             }
 
@@ -2729,14 +2713,16 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        // Si el punto de muestreo seleccionado no pertenece a esta nueva parroquia, resetear a 'Todos'
-        if (AppState.sectorSeleccionado !== 'Todos') {
-            const secMeta = AppState.sectoresMap.get(AppState.sectorSeleccionado);
-            const parSec = secMeta ? String(secMeta.parroquia || '').trim().toUpperCase() : '';
-            if (nombre !== 'Todas' && parSec && !parSec.includes(nombre) && !nombre.includes(parSec)) {
-                AppState.sectorSeleccionado = 'Todos';
-            }
+        // Al cambiar de parroquia, resetear el punto específico seleccionado
+        AppState.sectorSeleccionado = 'Todos';
+        if (UI.sectorFilter) UI.sectorFilter.value = 'Todos';
+        if (popupSectorActivo) {
+            popupSectorActivo.remove();
+            popupSectorActivo = null;
         }
+        const barra = document.getElementById('barraSectorActivo');
+        if (barra) barra.style.display = 'none';
+
         poblarFiltros();
         renderizarVista(false, true);
     }
@@ -2879,9 +2865,14 @@ document.addEventListener('DOMContentLoaded', () => {
             // Si hay una parroquia específica seleccionada: AISLAR SOLO ESA PARROQUIA
             if (AppState.parroquiaSeleccionada && AppState.parroquiaSeleccionada !== 'Todas') {
                 const targetPar = String(AppState.parroquiaSeleccionada).trim().toUpperCase();
+                const variantesPar = [targetPar];
+                if (targetPar.includes('YUNGANZA')) {
+                    variantesPar.push('YUNGANZA 7 EL ROSARIO', 'YUNGANZA / EL ROSARIO', 'YUNGANZA /EL ROSARIO');
+                }
                 const filterSoloParroquia = [
-                    'any',
-                    ['==', ['upcase', ['coalesce', ['get', 'nombre'], ['get', 'parroquia'], ['get', 'PARROQUIA'], '']], targetPar]
+                    'in',
+                    ['upcase', ['coalesce', ['get', 'nombre'], ['get', 'parroquia'], ['get', 'PARROQUIA'], '']],
+                    ['literal', variantesPar]
                 ];
                 if (map.getLayer('parroquias-fill')) {
                     map.setFilter('parroquias-fill', filterSoloParroquia);
@@ -2969,9 +2960,14 @@ document.addEventListener('DOMContentLoaded', () => {
             let baseTerritorialFilter = null;
             if (AppState.parroquiaSeleccionada && AppState.parroquiaSeleccionada !== 'Todas') {
                 const targetPar = String(AppState.parroquiaSeleccionada).trim().toUpperCase();
+                const variantesPar = [targetPar];
+                if (targetPar.includes('YUNGANZA')) {
+                    variantesPar.push('YUNGANZA 7 EL ROSARIO', 'YUNGANZA / EL ROSARIO', 'YUNGANZA /EL ROSARIO');
+                }
                 baseTerritorialFilter = [
-                    'any',
-                    ['==', ['upcase', ['coalesce', ['get', 'parroquia'], ['get', 'PARROQUIA'], '']], targetPar]
+                    'in',
+                    ['upcase', ['coalesce', ['get', 'parroquia'], ['get', 'PARROQUIA'], '']],
+                    ['literal', variantesPar]
                 ];
             } else if (AppState.cantonSeleccionado && AppState.cantonSeleccionado !== 'Todos') {
                 const targetCan = AppState.cantonSeleccionado;
@@ -4287,19 +4283,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 AppState.sectorSeleccionado = secVal;
                 
                 if (secVal !== 'Todos') {
-                    const opt = e.target.selectedOptions && e.target.selectedOptions[0];
-                    const optCanton = opt ? opt.dataset.canton : null;
-                    const optParroquia = opt ? opt.dataset.parroquia : null;
-
-                    if (optCanton && AppState.cantonSeleccionado === 'Todos') {
-                        AppState.cantonSeleccionado = optCanton;
-                        if (UI.cantonFilter) UI.cantonFilter.value = optCanton;
-                    }
-                    if (optParroquia && AppState.parroquiaSeleccionada === 'Todas') {
-                        AppState.parroquiaSeleccionada = optParroquia.toUpperCase();
-                        if (UI.parroquiaFilter) UI.parroquiaFilter.value = optParroquia.toUpperCase();
-                    }
-
                     let secMeta = AppState.sectoresMap.get(secVal);
                     if (!secMeta) {
                         for (let meta of AppState.sectoresMap.values()) {
@@ -4311,19 +4294,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         }
                     }
 
-                    if (secMeta) {
-                        if (secMeta.canton && AppState.cantonSeleccionado === 'Todos') {
-                            AppState.cantonSeleccionado = secMeta.canton;
-                            if (UI.cantonFilter) UI.cantonFilter.value = secMeta.canton;
-                        }
-                        const parSector = String(secMeta.parroquia || secMeta.parroquia_especifica || secMeta.nom_par || secMeta.PARROQUIA || '').trim();
-                        if (parSector && AppState.parroquiaSeleccionada === 'Todas') {
-                            AppState.parroquiaSeleccionada = parSector.toUpperCase();
-                            if (UI.parroquiaFilter) UI.parroquiaFilter.value = parSector.toUpperCase();
-                        }
-                    }
-
-                    poblarFiltros();
                     renderizarVista(false, true);
 
                     if (secMeta && typeof abrirPopupPuntoMuestra === 'function') {
@@ -4334,7 +4304,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         abrirPopupPuntoMuestra(secMeta, coords);
                     }
                 } else {
-                    poblarFiltros();
                     renderizarVista(false, true);
                     if (popupSectorActivo) {
                         popupSectorActivo.remove();
