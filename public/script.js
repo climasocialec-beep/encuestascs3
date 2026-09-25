@@ -42,7 +42,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Purga proactiva inmediata de cachés heredadas de otros cantones o versiones en el navegador (Brave/Chrome)
     if ('caches' in window) {
-        const CACHE_VALIDA = 'clima-social-quito-pm-2026-v25';
+        const CACHE_VALIDA = 'clima-social-morona-santiago-2026-v42';
         caches.keys().then(keys => {
             keys.forEach(k => {
                 if (k !== CACHE_VALIDA) {
@@ -112,57 +112,16 @@ document.addEventListener('DOMContentLoaded', () => {
         'default': '#f26419'
     };
 
-    // Directorio oficial del Equipo de Campo (Encuesta DMQ - Septiembre - 2026)
-    const EQUIPO_CAMPO = {
-        '7': { nombre: 'Cinthya Peralta', primerNombre: 'Cinthya' },
-        '8': { nombre: 'Erika Hernández', primerNombre: 'Erika' },
-        '9': { nombre: 'Gabriela Cabascango', primerNombre: 'Gabriela' },
-        '10': { nombre: 'Stalin Paredes', primerNombre: 'Stalin' },
-        '11': { nombre: 'Sebastián Herrera', primerNombre: 'Sebastián' },
-        '12': { nombre: 'Jeymi Hernández', primerNombre: 'Jeymi' },
-        '13': { nombre: 'María Arias', primerNombre: 'María' },
-        '14': { nombre: 'Antony Unurraga', primerNombre: 'Antony' },
-        '15': { nombre: 'Tatiana Pasquel', primerNombre: 'Tatiana' },
-        '16': { nombre: 'Nicolas Téran', primerNombre: 'Nicolas' },
-        '17': { nombre: 'Benjamín González', primerNombre: 'Benjamín' },
-        '18': { nombre: 'Pablo Salazar', primerNombre: 'Pablo' },
-        '19': { nombre: 'Ligia Silva', primerNombre: 'Ligia' },
-        '20': { nombre: 'Sebastián Escobar', primerNombre: 'Sebastián' },
-        '21': { nombre: 'Ana Terán', primerNombre: 'Ana' },
-        '22': { nombre: 'Elian Simancas', primerNombre: 'Elian' },
-        '23': { nombre: 'Estefania Pineda', primerNombre: 'Estefania' },
-        '24': { nombre: 'Fabiana López', primerNombre: 'Fabiana' },
-        '25': { nombre: 'David Schwarz', primerNombre: 'David' },
-        '26': { nombre: 'José Alejandro Mera', primerNombre: 'José Alejandro' }
-    };
+    // Directorio oficial del Equipo de Campo (Encuesta Provincial Morona Santiago 2026)
+    // Se inicializa vacío hasta cargar la nómina oficial definitiva
+    const EQUIPO_CAMPO = {};
 
-    const SUPERVISORES_CAMPO = {
-        '1': { nombre: 'Melina Toaquiza', primerNombre: 'Melina' },
-        '2': { nombre: 'David Vega', primerNombre: 'David' },
-        '3': { nombre: 'Nervo Flores', primerNombre: 'Nervo' },
-        '4': { nombre: 'Joselyn Carvajal', primerNombre: 'Joselyn' },
-        '5': { nombre: 'Diana Molina', primerNombre: 'Diana' },
-        '6': { nombre: 'Darwin Olivo', primerNombre: 'Darwin' }
-    };
+    const SUPERVISORES_CAMPO = {};
 
-    // Asignación de encuestadores por supervisor (DMQ 2026)
-    const SUPERVISOR_ENCUESTADORES = {
-        '1': ['7', '8', '9'],
-        '2': ['10', '11', '12'],
-        '3': ['13', '14', '15', '16'],
-        '4': ['17', '18', '19'],
-        '5': ['20', '21', '22', '23'],
-        '6': ['24', '25', '26']
-    };
+    // Asignación de encuestadores por supervisor (Morona Santiago 2026)
+    const SUPERVISOR_ENCUESTADORES = {};
 
-    const ENCUESTADOR_A_SUPERVISOR = {
-        '7': '1', '8': '1', '9': '1',
-        '10': '2', '11': '2', '12': '2',
-        '13': '3', '14': '3', '15': '3', '16': '3',
-        '17': '4', '18': '4', '19': '4',
-        '20': '5', '21': '5', '22': '5', '23': '5',
-        '24': '6', '25': '6', '26': '6'
-    };
+    const ENCUESTADOR_A_SUPERVISOR = {};
 
     function obtenerEtiquetaEncuestador(id, formato = 'corto') {
         const raw = String(id || '').trim();
@@ -175,14 +134,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (formato === 'nombre') return miembro.nombre;
             if (formato === 'primerNombre') return miembro.primerNombre;
             if (formato === 'busqueda') return `Enc. ${sid} ${miembro.primerNombre} ${miembro.nombre}`;
-            // Formato ultracorto por defecto: Enc. 5 · Karina
             return `Enc. ${sid} · ${miembro.primerNombre}`;
         }
-        // Si no está registrado en el equipo oficial, conservar identificador
         if (!isNaN(numOnly)) {
             return `Enc. ${sid}`;
         }
-        return raw;
+        return `Enc. ${raw}`;
     }
 
     function obtenerEtiquetaSupervisor(id, formato = 'corto') {
@@ -197,13 +154,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (formato === 'nombre') return miembro.nombre;
             if (formato === 'primerNombre') return miembro.primerNombre;
             if (formato === 'busqueda') return `Sup. ${sid} ${miembro.primerNombre} ${miembro.nombre}`;
-            // Formato ultracorto por defecto: Sup. 1 · Tatiana
             return `Sup. ${sid} · ${miembro.primerNombre}`;
         }
         if (!isNaN(numOnly)) {
             return `Sup. ${sid}`;
         }
-        return raw;
+        return `Sup. ${raw}`;
     }
 
     // Paleta cromática distintiva de alto contraste para Encuestadores (excluye Teal #0d9488 de Muestreo)
@@ -542,15 +498,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // =========================================================================
     // EXTRACCIÓN Y NORMALIZACIÓN DE PARROQUIA (PICHINCHA)
     // =========================================================================
+    // EXTRACCIÓN Y NORMALIZACIÓN DE PARROQUIA Y CANTÓN (MORONA SANTIAGO)
+    // =========================================================================
     function normalizarCanton(valor) {
+        if (!valor) return '';
         const texto = normTexto(valor);
-        // Códigos del XLSForm vigente; se conservan 1–4 para registros históricos.
         const codigos = {
-            '1': 'Quito', '2': 'Rumiñahui', '3': 'Cayambe', '4': 'Mejía',
-            '60': 'Quito', '80': 'Rumiñahui', '90': 'Cayambe', '100': 'Mejía'
+            '1401': 'MORONA', '1402': 'GUALAQUIZA', '1403': 'LIMON INDANZA',
+            '1404': 'PALORA', '1405': 'SANTIAGO', '1406': 'SUCUA',
+            '1407': 'HUAMBOYA', '1408': 'SAN JUAN BOSCO', '1409': 'TAISHA',
+            '1410': 'LOGROÑO', '1411': 'PABLO SEXTO', '1412': 'TIWINTZA'
         };
-        return codigos[texto] || Object.keys(PARROQUIAS_POR_CANTON).find(c => normTexto(c) === texto)
-            || (texto === 'QUITO (D.M.)' ? 'Quito' : '');
+        if (codigos[texto]) return codigos[texto];
+        const match = Object.keys(PARROQUIAS_POR_CANTON).find(c => normTexto(c) === texto);
+        return match || texto;
     }
 
     function parroquiaDeclarada(encuesta) {
@@ -935,12 +896,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 'cs_encuestas_cuenca_v1',
                 'cs_encuestas_cuenca',
                 'cs_encuestas_pichincha_v1',
-                'cs_encuestas_pichincha_v2',
+                'cs_encuestas_quito_2026',
                 'cs_proyecto_version'
             ].forEach(k => {
                 if (localStorage.getItem(k)) localStorage.removeItem(k);
             });
-            const cached = localStorage.getItem('cs_encuestas_quito_2026');
+            const cached = localStorage.getItem('cs_encuestas_morona_2026');
             if (cached) {
                 const parsed = JSON.parse(cached);
                 if (Array.isArray(parsed) && parsed.length > 0) {
@@ -996,7 +957,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     async function cargarConfiguracion() {
-        const TITULO_OFICIAL = 'Encuesta DMQ - Septiembre - 2026';
+        const TITULO_OFICIAL = 'Encuesta Provincial Morona Santiago 2026';
         try {
             const res = await fetch('/api/config', { 
                 cache: 'no-store',
@@ -1013,9 +974,8 @@ document.addEventListener('DOMContentLoaded', () => {
             console.warn('Usando configuración por defecto');
         }
 
-        // Blindaje estricto: Purgar cualquier residuo heredado de Cuenca, Machala o cantones previos
         let nom = AppState.config.nombreProyecto || TITULO_OFICIAL;
-        if (!nom || nom.toLowerCase().includes('cuenca') || (!nom.toLowerCase().includes('quito') && !nom.toLowerCase().includes('dmq'))) {
+        if (!nom || nom.toLowerCase().includes('cuenca') || nom.toLowerCase().includes('quito') || nom.toLowerCase().includes('dmq')) {
             nom = TITULO_OFICIAL;
             AppState.config.nombreProyecto = TITULO_OFICIAL;
         }
@@ -1026,7 +986,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.title = 'Clima Social · ' + nom;
 
         if (UI.kpiMeta) {
-            UI.kpiMeta.textContent = `Meta: ${(AppState.config.metaEncuestas || 2000).toLocaleString()} (Quito)`;
+            UI.kpiMeta.textContent = `Meta: ${(AppState.config.metaEncuestas || 2660).toLocaleString()} (Morona Santiago)`;
         }
     }
 
@@ -1072,7 +1032,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Guardar último resultado; el mapa base sigue necesitando conexión.
             try {
-                localStorage.setItem('cs_encuestas_quito_2026', JSON.stringify(AppState.encuestas));
+                localStorage.setItem('cs_encuestas_morona_2026', JSON.stringify(AppState.encuestas));
             } catch (e) {
                 console.warn('[Cache] Error al guardar caché:', e);
             }
@@ -1389,11 +1349,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const hayFiltroActivo = (selSup !== 'Todos' || !!selEnc || !!targetPar || selFec !== 'Todas');
 
-        // 1. Selector Supervisores: Estrictamente los supervisores oficiales (1 al 6)
+        // 1. Selector Supervisores: Nómina oficial si está disponible, o supervisores registrados en campo
         if (UI.supervisorFilter) {
             const actualSup = AppState.supervisorSeleccionado || 'Todos';
             UI.supervisorFilter.innerHTML = '<option value="Todos">Todos los supervisores</option>';
-            const supKeys = Object.keys(SUPERVISORES_CAMPO);
+            const supOficialKeys = Object.keys(SUPERVISORES_CAMPO);
+            const supKeys = supOficialKeys.length > 0 
+                ? supOficialKeys 
+                : Array.from(supervisores.keys()).sort((a, b) => (parseInt(a, 10) || 0) - (parseInt(b, 10) || 0) || a.localeCompare(b));
             supKeys.forEach(id => {
                 const totalEnc = supervisores.get(id) || 0;
                 const option = document.createElement('option');
@@ -1736,10 +1699,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // DETERMINAR META ACTIVA SEGÚN FILTRO TERRITORIAL (CANTÓN / PARROQUIA / SECTOR)
     // =========================================================================
     function obtenerMetaActiva() {
-        const METAS_CANTON = {
-            'QUITO': 2000
-        };
-
         // 1. Filtro por Sector Censal Sorteado (cuota: 10 encuestas)
         if (AppState.sectorSeleccionado && AppState.sectorSeleccionado !== 'Todos') {
             return {
@@ -1772,10 +1731,16 @@ document.addEventListener('DOMContentLoaded', () => {
             };
         }
 
-        // 3. Filtro por Cantón (Quito: 2000)
+        // 3. Filtro por Cantón
         if (AppState.cantonSeleccionado && AppState.cantonSeleccionado !== 'Todos') {
-            const cNorm = normTexto(AppState.cantonSeleccionado);
-            let metaCanton = METAS_CANTON[cNorm] || 2000;
+            let numSectoresCanton = 0;
+            if (AppState.sectoresGeojson && Array.isArray(AppState.sectoresGeojson.features)) {
+                numSectoresCanton = AppState.sectoresGeojson.features.filter(f => {
+                    const props = f.properties || {};
+                    return normTexto(props.canton || props.CANTON || '') === normTexto(AppState.cantonSeleccionado);
+                }).length;
+            }
+            const metaCanton = numSectoresCanton > 0 ? numSectoresCanton * 10 : 200;
             return {
                 meta: metaCanton,
                 etiquetaMeta: `Meta: ${metaCanton.toLocaleString()} (${AppState.cantonSeleccionado})`,
@@ -1785,14 +1750,14 @@ document.addEventListener('DOMContentLoaded', () => {
             };
         }
 
-        // 4. Ámbito General (Quito)
-        const metaGeneral = AppState.config.metaEncuestas || 2000;
+        // 4. Ámbito General (Morona Santiago)
+        const metaGeneral = AppState.config.metaEncuestas || 2660;
         return {
             meta: metaGeneral,
-            etiquetaMeta: `Meta: ${metaGeneral.toLocaleString()} (Quito)`,
+            etiquetaMeta: `Meta: ${metaGeneral.toLocaleString()} (Morona Santiago)`,
             subPendientes: `Faltan para la meta total`,
             tituloAvance: `Avance General`,
-            subAvance: `Cumplimiento cantonal (${metaGeneral.toLocaleString()})`
+            subAvance: `Cumplimiento provincial (${metaGeneral.toLocaleString()})`
         };
     }
 
@@ -1861,7 +1826,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let sectoresData = { type: 'FeatureCollection', features: [] };
 
         try {
-            const cacheBuster = '?v=41.0.0';
+            const cacheBuster = '?v=42.0.0';
             const [resPar, resSec] = await Promise.all([
                 fetch('assets/parroquias.geojson' + cacheBuster),
                 fetch('assets/sectores_censales.geojson' + cacheBuster)
@@ -3605,7 +3570,7 @@ document.addEventListener('DOMContentLoaded', () => {
             g.numAlertas = g.encuestas.filter(e => e._tieneAlerta).length;
 
             // Cantón principal asignado según encuestas recolectadas
-            let topCan = 'Quito';
+            let topCan = 'Morona';
             let topCnt = -1;
             for (const [can, cnt] of Object.entries(g.cantonesConteo || {})) {
                 if (cnt > topCnt) {
@@ -3728,32 +3693,48 @@ document.addEventListener('DOMContentLoaded', () => {
         // AGRUPAR POR SUPERVISOR (Panel limpio: estrictamente los 4 supervisores y sus 3 encuestadores)
         // ---------------------------------------------------------------------
         const gruposSupervisor = new Map();
+        const hayNominaOficial = Object.keys(SUPERVISORES_CAMPO).length > 0;
 
-        Object.keys(SUPERVISORES_CAMPO).forEach(supId => {
-            gruposSupervisor.set(supId, {
-                id: supId,
-                encuestadores: [],
-                totalEncuestas: 0
+        if (hayNominaOficial) {
+            Object.keys(SUPERVISORES_CAMPO).forEach(supId => {
+                gruposSupervisor.set(supId, {
+                    id: supId,
+                    encuestadores: [],
+                    totalEncuestas: 0
+                });
             });
-        });
+        }
 
         let totalOficialesActivos = 0;
 
         datos.forEach(encuestador => {
             const supOficial = ENCUESTADOR_A_SUPERVISOR[encuestador.id];
-            // Solo se admiten encuestadores pertenecientes a la nómina oficial
-            if (supOficial && gruposSupervisor.has(supOficial) && EQUIPO_CAMPO[encuestador.id]) {
-                const gSup = gruposSupervisor.get(supOficial);
+            if (hayNominaOficial) {
+                if (supOficial && gruposSupervisor.has(supOficial) && EQUIPO_CAMPO[encuestador.id]) {
+                    const gSup = gruposSupervisor.get(supOficial);
+                    gSup.encuestadores.push(encuestador);
+                    gSup.totalEncuestas += encuestador.encuestas.length;
+                    totalOficialesActivos++;
+                }
+            } else {
+                // Modo dinámico limpio: agrupar por el supervisor reportado en las encuestas
+                const supVal = encuestador.supervisor || 'Sin asignar';
+                if (!gruposSupervisor.has(supVal)) {
+                    gruposSupervisor.set(supVal, {
+                        id: supVal,
+                        encuestadores: [],
+                        totalEncuestas: 0
+                    });
+                }
+                const gSup = gruposSupervisor.get(supVal);
                 gSup.encuestadores.push(encuestador);
                 gSup.totalEncuestas += encuestador.encuestas.length;
                 totalOficialesActivos++;
             }
-            // Los códigos de prueba o números raros quedan EXCLUIDOS de esta tabla
-            // y se muestran exclusivamente en la viñeta de "Errores".
         });
 
         // Determinar qué supervisores mostrar
-        let supKeys = Object.keys(SUPERVISORES_CAMPO);
+        let supKeys = Array.from(gruposSupervisor.keys()).sort((a, b) => (parseInt(a, 10) || 0) - (parseInt(b, 10) || 0) || a.localeCompare(b));
         if (AppState.supervisorSeleccionado !== 'Todos') {
             supKeys = supKeys.filter(id => id === AppState.supervisorSeleccionado);
         } else if (AppState.filtroTabla) {
@@ -3822,16 +3803,16 @@ document.addEventListener('DOMContentLoaded', () => {
         // ---------------------------------------------------------------------
         // SECCIÓN DE ERRORES DE CÓDIGO (Al final de los supervisores)
         // ---------------------------------------------------------------------
-        const encuestadoresNoOficiales = datos.filter(g => !EQUIPO_CAMPO[g.id]);
+        const encuestadoresNoOficiales = hayNominaOficial ? datos.filter(g => !EQUIPO_CAMPO[g.id]) : [];
         ordenarEncuestadoresLista(encuestadoresNoOficiales);
 
         const encuestasBase = AppState.encuestas || [];
-        const encuestasSupMismatch = encuestasBase.filter(e => {
+        const encuestasSupMismatch = hayNominaOficial ? encuestasBase.filter(e => {
             const encCod = String(e.encuestador || e.C_digo_encuestador || campo(e, AppState.config.campoEncuestador) || '').trim();
             const supOrig = String(e._supervisorOriginal || '').trim();
             const supEsp = ENCUESTADOR_A_SUPERVISOR[encCod];
             return Boolean(EQUIPO_CAMPO[encCod] && supOrig && supEsp && supOrig !== supEsp);
-        });
+        }) : [];
 
         let mismatchesFiltrados = encuestasSupMismatch;
         if (AppState.supervisorSeleccionado !== 'Todos') {

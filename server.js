@@ -464,7 +464,7 @@ app.get("/api/config", (req, res) => {
 
     res.json({
         nombreProyecto: nombre,
-        metaEncuestas: Number(process.env.META_ENCUESTAS) || 2000,
+        metaEncuestas: Number(process.env.META_ENCUESTAS) || 2660,
         campoEncuestador: CAMPO_ENCUESTADOR,
         campoSupervisor: CAMPO_SUPERVISOR,
         centroLng: centroLng,

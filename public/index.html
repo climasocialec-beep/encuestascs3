@@ -25,14 +25,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;700;800&family=Inter:wght@400;600&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
 
   <!-- Preload Cartografía Clave (Caché optimizada para móviles) -->
-  <link rel="preload" href="assets/parroquias.geojson?v=41.0.0" as="fetch" crossorigin>
-  <link rel="preload" href="assets/sectores_censales.geojson?v=41.0.0" as="fetch" crossorigin>
+  <link rel="preload" href="assets/parroquias.geojson?v=42.0.0" as="fetch" crossorigin>
+  <link rel="preload" href="assets/sectores_censales.geojson?v=42.0.0" as="fetch" crossorigin>
 
   <!-- MapLibre GL CSS (Aceleración WebGL Nativa en GPU) -->
   <link rel="stylesheet" href="libs/maplibre-gl.css" />
 
   <!-- Estilos del Dashboard -->
-  <link rel="stylesheet" href="style.css?v=41.0.0">
+  <link rel="stylesheet" href="style.css?v=42.0.0">
 </head>
 <body>
 
@@ -105,7 +105,7 @@
         </div>
         <div class="cs-kpi-bottom">
           <span class="cs-kpi-badge">Total Recolectadas</span>
-          <span class="cs-kpi-sub" id="kpiMeta">Meta: 2,000 (Quito)</span>
+          <span class="cs-kpi-sub" id="kpiMeta">Meta: 2,660 (Morona Santiago)</span>
         </div>
         <div class="cs-progress-bar"><div class="cs-progress-bar__fill" id="barraAvance" style="width:0%"></div></div>
       </div>
@@ -151,7 +151,7 @@
         </div>
         <div class="cs-kpi-bottom">
           <span class="cs-kpi-badge" id="kpiTituloAvance">Avance General</span>
-          <span class="cs-kpi-sub" id="kpiSubAvance">Cumplimiento provincial (1,600)</span>
+          <span class="cs-kpi-sub" id="kpiSubAvance">Cumplimiento provincial (2,660)</span>
         </div>
       </div>
 
@@ -470,11 +470,11 @@
 
   <!-- ===== SCRIPTS ===== -->
   <script src="libs/maplibre-gl.js"></script>
-  <script src="script.js?v=41.0.0"></script>
+  <script src="script.js?v=42.0.0"></script>
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/service-worker.js?v=41.0.0').then(reg => {
+        navigator.serviceWorker.register('/service-worker.js?v=42.0.0').then(reg => {
           if (reg && reg.update) reg.update();
         }).catch(error => {
           console.warn('No se pudo preparar el modo sin conexión:', error);
