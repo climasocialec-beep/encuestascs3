@@ -20,11 +20,18 @@
         "etiqueta": "1 | E",
         "etiquetaSC": "1 | E",
         "identificador": "REF-BOM-001",
-        "punto_referencial": "Sector Capilla de Belen",
+        "punto_referencial": "Sector Capilla de Belén",
         "casos": 10,
         "latitud": -3.432795,
         "longitud": -78.528657,
-        "referencia_corta": "Cabecera / Sector Central (BOMBOIZA)"
+        "referencia_corta": "Sector Capilla de Belén",
+        "CANTON": "GUALAQUIZA",
+        "PARROQUIA": "BOMBOIZA",
+        "TIPOLOGIA": "E",
+        "CASOS": 10,
+        "ETIQUETA": "1 | E",
+        "PUNTO REFERENCIAL": "Sector Capilla de Belén",
+        "PUNTO_REFERENCIAL": "Sector Capilla de Belén"
       }
     },
     {
@@ -46,11 +53,18 @@
         "etiqueta": "2 | C",
         "etiquetaSC": "2 | C",
         "identificador": "REF-BOM-002",
-        "punto_referencial": "Sector Dispensario IESS",
+        "punto_referencial": "Misión Salesiana Bomboíza",
         "casos": 10,
         "latitud": -3.435959,
         "longitud": -78.543031,
-        "referencia_corta": "Cabecera / Sector Central (BOMBOIZA)"
+        "referencia_corta": "Misión Salesiana Bomboíza",
+        "CANTON": "GUALAQUIZA",
+        "PARROQUIA": "BOMBOIZA",
+        "TIPOLOGIA": "C",
+        "CASOS": 10,
+        "ETIQUETA": "2 | C",
+        "PUNTO REFERENCIAL": "Misión Salesiana Bomboíza",
+        "PUNTO_REFERENCIAL": "Misión Salesiana Bomboíza"
       }
     },
     {
@@ -72,11 +86,18 @@
         "etiqueta": "3 | D",
         "etiquetaSC": "3 | D",
         "identificador": "REF-BOM-003",
-        "punto_referencial": "Sector Cementerio de Bomboiza",
+        "punto_referencial": "Sector Bomboíza Norte",
         "casos": 10,
         "latitud": -3.437116,
         "longitud": -78.53063,
-        "referencia_corta": "Cabecera / Sector Central (BOMBOIZA)"
+        "referencia_corta": "Sector Bomboíza Norte",
+        "CANTON": "GUALAQUIZA",
+        "PARROQUIA": "BOMBOIZA",
+        "TIPOLOGIA": "D",
+        "CASOS": 10,
+        "ETIQUETA": "3 | D",
+        "PUNTO REFERENCIAL": "Sector Bomboíza Norte",
+        "PUNTO_REFERENCIAL": "Sector Bomboíza Norte"
       }
     },
     {
@@ -98,11 +119,18 @@
         "etiqueta": "4 | G",
         "etiquetaSC": "4 | G",
         "identificador": "REF-BOM-004",
-        "punto_referencial": "Coliseo",
+        "punto_referencial": "Comunidad Shuar Bomboíza",
         "casos": 10,
         "latitud": -3.438471,
         "longitud": -78.53919,
-        "referencia_corta": "Cabecera / Sector Central (BOMBOIZA)"
+        "referencia_corta": "Comunidad Shuar Bomboíza",
+        "CANTON": "GUALAQUIZA",
+        "PARROQUIA": "BOMBOIZA",
+        "TIPOLOGIA": "G",
+        "CASOS": 10,
+        "ETIQUETA": "4 | G",
+        "PUNTO REFERENCIAL": "Comunidad Shuar Bomboíza",
+        "PUNTO_REFERENCIAL": "Comunidad Shuar Bomboíza"
       }
     },
     {
@@ -124,11 +152,18 @@
         "etiqueta": "5 | C",
         "etiquetaSC": "5 | C",
         "identificador": "REF-BOM-005",
-        "punto_referencial": "Comunidad Bomboiza Rural",
+        "punto_referencial": "Sector Vía a Gualaquiza",
         "casos": 10,
         "latitud": -3.440301,
         "longitud": -78.550601,
-        "referencia_corta": "Cabecera / Sector Central (BOMBOIZA)"
+        "referencia_corta": "Sector Vía a Gualaquiza",
+        "CANTON": "GUALAQUIZA",
+        "PARROQUIA": "BOMBOIZA",
+        "TIPOLOGIA": "C",
+        "CASOS": 10,
+        "ETIQUETA": "5 | C",
+        "PUNTO REFERENCIAL": "Sector Vía a Gualaquiza",
+        "PUNTO_REFERENCIAL": "Sector Vía a Gualaquiza"
       }
     },
     {
@@ -150,11 +185,18 @@
         "etiqueta": "6 | H",
         "etiquetaSC": "6 | H",
         "identificador": "REF-BOM-006",
-        "punto_referencial": "Cerca de Cementerio de Bomboiza",
+        "punto_referencial": "Cementerio Bomboíza",
         "casos": 10,
         "latitud": -3.443563,
         "longitud": -78.534932,
-        "referencia_corta": "Cabecera / Sector Central (BOMBOIZA)"
+        "referencia_corta": "Cementerio Bomboíza",
+        "CANTON": "GUALAQUIZA",
+        "PARROQUIA": "BOMBOIZA",
+        "TIPOLOGIA": "H",
+        "CASOS": 10,
+        "ETIQUETA": "6 | H",
+        "PUNTO REFERENCIAL": "Cementerio Bomboíza",
+        "PUNTO_REFERENCIAL": "Cementerio Bomboíza"
       }
     },
     {
@@ -176,11 +218,18 @@
         "etiqueta": "7 | A",
         "etiquetaSC": "7 | A",
         "identificador": "REF-BOM-007",
-        "punto_referencial": "Comunidad Bomboiza Rural",
+        "punto_referencial": "Bomboíza Centro",
         "casos": 10,
         "latitud": -3.443047,
         "longitud": -78.547095,
-        "referencia_corta": "Cabecera / Sector Central (BOMBOIZA)"
+        "referencia_corta": "Bomboíza Centro",
+        "CANTON": "GUALAQUIZA",
+        "PARROQUIA": "BOMBOIZA",
+        "TIPOLOGIA": "A",
+        "CASOS": 10,
+        "ETIQUETA": "7 | A",
+        "PUNTO REFERENCIAL": "Bomboíza Centro",
+        "PUNTO_REFERENCIAL": "Bomboíza Centro"
       }
     },
     {
@@ -202,11 +251,18 @@
         "etiqueta": "8 | B",
         "etiquetaSC": "8 | B",
         "identificador": "REF-CHI-008",
-        "punto_referencial": "Cancha de Chiguinda",
+        "punto_referencial": "Parque Central Chigüinda",
         "casos": 10,
         "latitud": -3.229206,
         "longitud": -78.720626,
-        "referencia_corta": "Cancha de Chiguinda"
+        "referencia_corta": "Parque Central Chigüinda",
+        "CANTON": "GUALAQUIZA",
+        "PARROQUIA": "CHIGUINDA",
+        "TIPOLOGIA": "B",
+        "CASOS": 10,
+        "ETIQUETA": "8 | B",
+        "PUNTO REFERENCIAL": "Parque Central Chigüinda",
+        "PUNTO_REFERENCIAL": "Parque Central Chigüinda"
       }
     },
     {
@@ -228,11 +284,18 @@
         "etiqueta": "9 | F",
         "etiquetaSC": "9 | F",
         "identificador": "REF-EL -009",
-        "punto_referencial": "Iglesia del Ideal",
+        "punto_referencial": "GAD Parroquial El Ideal",
         "casos": 10,
         "latitud": -3.424904,
         "longitud": -78.622485,
-        "referencia_corta": "Cabecera / Sector Central (EL IDEAL)"
+        "referencia_corta": "GAD Parroquial El Ideal",
+        "CANTON": "GUALAQUIZA",
+        "PARROQUIA": "EL IDEAL",
+        "TIPOLOGIA": "F",
+        "CASOS": 10,
+        "ETIQUETA": "9 | F",
+        "PUNTO REFERENCIAL": "GAD Parroquial El Ideal",
+        "PUNTO_REFERENCIAL": "GAD Parroquial El Ideal"
       }
     },
     {
@@ -254,11 +317,18 @@
         "etiqueta": "10 | A",
         "etiquetaSC": "10 | A",
         "identificador": "REF-GUA-010",
-        "punto_referencial": "Cerca de Gasolinera Gualaquiza",
+        "punto_referencial": "Gasolinera Gualaquiza",
         "casos": 10,
         "latitud": -3.395119,
         "longitud": -78.577533,
-        "referencia_corta": "Cabecera / Sector Central (GUALAQUIZA)"
+        "referencia_corta": "Gasolinera Gualaquiza",
+        "CANTON": "GUALAQUIZA",
+        "PARROQUIA": "GUALAQUIZA",
+        "TIPOLOGIA": "A",
+        "CASOS": 10,
+        "ETIQUETA": "10 | A",
+        "PUNTO REFERENCIAL": "Gasolinera Gualaquiza",
+        "PUNTO_REFERENCIAL": "Gasolinera Gualaquiza"
       }
     },
     {
@@ -280,11 +350,18 @@
         "etiqueta": "11 | F",
         "etiquetaSC": "11 | F",
         "identificador": "REF-GUA-011",
-        "punto_referencial": "Cerca de Colegio de Bachillerato Camilo Ga",
+        "punto_referencial": "Colegio Camilo Gallegos",
         "casos": 10,
         "latitud": -3.394909,
         "longitud": -78.580559,
-        "referencia_corta": "Cabecera / Sector Central (GUALAQUIZA)"
+        "referencia_corta": "Colegio Camilo Gallegos",
+        "CANTON": "GUALAQUIZA",
+        "PARROQUIA": "GUALAQUIZA",
+        "TIPOLOGIA": "F",
+        "CASOS": 10,
+        "ETIQUETA": "11 | F",
+        "PUNTO REFERENCIAL": "Colegio Camilo Gallegos",
+        "PUNTO_REFERENCIAL": "Colegio Camilo Gallegos"
       }
     },
     {
@@ -306,11 +383,18 @@
         "etiqueta": "12 | A",
         "etiquetaSC": "12 | A",
         "identificador": "REF-GUA-012",
-        "punto_referencial": "Escuela General Basica Teresa Samaniego Av",
+        "punto_referencial": "Escuela Teresa Samaniego",
         "casos": 10,
         "latitud": -3.39866,
         "longitud": -78.584866,
-        "referencia_corta": "Escuela General Basica Teresa Samaniego Avila"
+        "referencia_corta": "Escuela Teresa Samaniego",
+        "CANTON": "GUALAQUIZA",
+        "PARROQUIA": "GUALAQUIZA",
+        "TIPOLOGIA": "A",
+        "CASOS": 10,
+        "ETIQUETA": "12 | A",
+        "PUNTO REFERENCIAL": "Escuela Teresa Samaniego",
+        "PUNTO_REFERENCIAL": "Escuela Teresa Samaniego"
       }
     },
     {
@@ -332,11 +416,18 @@
         "etiqueta": "13 | H",
         "etiquetaSC": "13 | H",
         "identificador": "REF-GUA-013",
-        "punto_referencial": "Escuela Fiscomicional Mixta Marianita de J",
+        "punto_referencial": "Escuela Marianita de Jesús",
         "casos": 10,
         "latitud": -3.400018,
         "longitud": -78.57931,
-        "referencia_corta": "Escuela Fiscomicional Mixta Marianita de Jesus"
+        "referencia_corta": "Escuela Marianita de Jesús",
+        "CANTON": "GUALAQUIZA",
+        "PARROQUIA": "GUALAQUIZA",
+        "TIPOLOGIA": "H",
+        "CASOS": 10,
+        "ETIQUETA": "13 | H",
+        "PUNTO REFERENCIAL": "Escuela Marianita de Jesús",
+        "PUNTO_REFERENCIAL": "Escuela Marianita de Jesús"
       }
     },
     {
@@ -358,11 +449,18 @@
         "etiqueta": "14 | F",
         "etiquetaSC": "14 | F",
         "identificador": "REF-GUA-014",
-        "punto_referencial": "Cerca de Colegio de Bachillerato Gualaquiz",
+        "punto_referencial": "Colegio Gualaquiza",
         "casos": 10,
         "latitud": -3.400762,
         "longitud": -78.57504,
-        "referencia_corta": "Cabecera / Sector Central (GUALAQUIZA)"
+        "referencia_corta": "Colegio Gualaquiza",
+        "CANTON": "GUALAQUIZA",
+        "PARROQUIA": "GUALAQUIZA",
+        "TIPOLOGIA": "F",
+        "CASOS": 10,
+        "ETIQUETA": "14 | F",
+        "PUNTO REFERENCIAL": "Colegio Gualaquiza",
+        "PUNTO_REFERENCIAL": "Colegio Gualaquiza"
       }
     },
     {
@@ -384,11 +482,18 @@
         "etiqueta": "15 | B",
         "etiquetaSC": "15 | B",
         "identificador": "REF-GUA-015",
-        "punto_referencial": "Biblioteca Municipal",
+        "punto_referencial": "Parque Central Gualaquiza",
         "casos": 10,
         "latitud": -3.402502,
         "longitud": -78.582156,
-        "referencia_corta": "Cabecera / Sector Central (GUALAQUIZA)"
+        "referencia_corta": "Parque Central Gualaquiza",
+        "CANTON": "GUALAQUIZA",
+        "PARROQUIA": "GUALAQUIZA",
+        "TIPOLOGIA": "B",
+        "CASOS": 10,
+        "ETIQUETA": "15 | B",
+        "PUNTO REFERENCIAL": "Parque Central Gualaquiza",
+        "PUNTO_REFERENCIAL": "Parque Central Gualaquiza"
       }
     },
     {
@@ -410,11 +515,18 @@
         "etiqueta": "16 | G",
         "etiquetaSC": "16 | G",
         "identificador": "REF-GUA-016",
-        "punto_referencial": "Cerca de Iglesia Cristiana Evangelica Pode",
+        "punto_referencial": "Iglesia Poder de Dios",
         "casos": 10,
         "latitud": -3.403459,
         "longitud": -78.585779,
-        "referencia_corta": "Cabecera / Sector Central (GUALAQUIZA)"
+        "referencia_corta": "Iglesia Poder de Dios",
+        "CANTON": "GUALAQUIZA",
+        "PARROQUIA": "GUALAQUIZA",
+        "TIPOLOGIA": "G",
+        "CASOS": 10,
+        "ETIQUETA": "16 | G",
+        "PUNTO REFERENCIAL": "Iglesia Poder de Dios",
+        "PUNTO_REFERENCIAL": "Iglesia Poder de Dios"
       }
     },
     {
@@ -436,11 +548,18 @@
         "etiqueta": "17 | C",
         "etiquetaSC": "17 | C",
         "identificador": "REF-GUA-017",
-        "punto_referencial": "Fiscalia General del Estado",
+        "punto_referencial": "Fiscalía General",
         "casos": 10,
         "latitud": -3.404162,
         "longitud": -78.57817,
-        "referencia_corta": "Cabecera / Sector Central (GUALAQUIZA)"
+        "referencia_corta": "Fiscalía General",
+        "CANTON": "GUALAQUIZA",
+        "PARROQUIA": "GUALAQUIZA",
+        "TIPOLOGIA": "C",
+        "CASOS": 10,
+        "ETIQUETA": "17 | C",
+        "PUNTO REFERENCIAL": "Fiscalía General",
+        "PUNTO_REFERENCIAL": "Fiscalía General"
       }
     },
     {
@@ -462,11 +581,18 @@
         "etiqueta": "18 | E",
         "etiquetaSC": "18 | E",
         "identificador": "REF-GUA-018",
-        "punto_referencial": "Complejo Recreativo de la Familia",
+        "punto_referencial": "Complejo La Familia",
         "casos": 10,
         "latitud": -3.399899,
         "longitud": -78.578287,
-        "referencia_corta": "Complejo Recreativo de la Familia"
+        "referencia_corta": "Complejo La Familia",
+        "CANTON": "GUALAQUIZA",
+        "PARROQUIA": "GUALAQUIZA",
+        "TIPOLOGIA": "E",
+        "CASOS": 10,
+        "ETIQUETA": "18 | E",
+        "PUNTO REFERENCIAL": "Complejo La Familia",
+        "PUNTO_REFERENCIAL": "Complejo La Familia"
       }
     },
     {
@@ -488,11 +614,18 @@
         "etiqueta": "19 | G",
         "etiquetaSC": "19 | G",
         "identificador": "REF-GUA-019",
-        "punto_referencial": "Centro de Educacion Inicial Mentes Brillan",
+        "punto_referencial": "Inicial Mentes Brillantes",
         "casos": 10,
         "latitud": -3.406307,
         "longitud": -78.582373,
-        "referencia_corta": "Centro de Educacion Inicial Mentes Brillantes"
+        "referencia_corta": "Inicial Mentes Brillantes",
+        "CANTON": "GUALAQUIZA",
+        "PARROQUIA": "GUALAQUIZA",
+        "TIPOLOGIA": "G",
+        "CASOS": 10,
+        "ETIQUETA": "19 | G",
+        "PUNTO REFERENCIAL": "Inicial Mentes Brillantes",
+        "PUNTO_REFERENCIAL": "Inicial Mentes Brillantes"
       }
     },
     {
@@ -514,11 +647,18 @@
         "etiqueta": "20 | E",
         "etiquetaSC": "20 | E",
         "identificador": "REF-GUA-020",
-        "punto_referencial": "Comunidad Cuchipamba",
+        "punto_referencial": "Mercado Central Gualaquiza",
         "casos": 10,
         "latitud": -3.401584,
         "longitud": -78.592715,
-        "referencia_corta": "Cabecera / Sector Central (GUALAQUIZA)"
+        "referencia_corta": "Mercado Central Gualaquiza",
+        "CANTON": "GUALAQUIZA",
+        "PARROQUIA": "GUALAQUIZA",
+        "TIPOLOGIA": "E",
+        "CASOS": 10,
+        "ETIQUETA": "20 | E",
+        "PUNTO REFERENCIAL": "Mercado Central Gualaquiza",
+        "PUNTO_REFERENCIAL": "Mercado Central Gualaquiza"
       }
     },
     {
@@ -540,11 +680,18 @@
         "etiqueta": "21 | C",
         "etiquetaSC": "21 | C",
         "identificador": "REF-GUA-021",
-        "punto_referencial": "Sector Cuerpo de Bomberos de Gualaquiza",
+        "punto_referencial": "Cuerpo de Bomberos",
         "casos": 10,
         "latitud": -3.41061,
         "longitud": -78.571375,
-        "referencia_corta": "Cabecera / Sector Central (GUALAQUIZA)"
+        "referencia_corta": "Cuerpo de Bomberos",
+        "CANTON": "GUALAQUIZA",
+        "PARROQUIA": "GUALAQUIZA",
+        "TIPOLOGIA": "C",
+        "CASOS": 10,
+        "ETIQUETA": "21 | C",
+        "PUNTO REFERENCIAL": "Cuerpo de Bomberos",
+        "PUNTO_REFERENCIAL": "Cuerpo de Bomberos"
       }
     },
     {
@@ -566,11 +713,18 @@
         "etiqueta": "22 | H",
         "etiquetaSC": "22 | H",
         "identificador": "REF-GUA-022",
-        "punto_referencial": "Tanque de Agua",
+        "punto_referencial": "Hospital de Gualaquiza",
         "casos": 10,
         "latitud": -3.413685,
         "longitud": -78.568149,
-        "referencia_corta": "Tanque de Agua"
+        "referencia_corta": "Hospital de Gualaquiza",
+        "CANTON": "GUALAQUIZA",
+        "PARROQUIA": "GUALAQUIZA",
+        "TIPOLOGIA": "H",
+        "CASOS": 10,
+        "ETIQUETA": "22 | H",
+        "PUNTO REFERENCIAL": "Hospital de Gualaquiza",
+        "PUNTO_REFERENCIAL": "Hospital de Gualaquiza"
       }
     },
     {
@@ -587,16 +741,23 @@
         "sc": "23",
         "codigo_muestra": "23",
         "canton": "GUALAQUIZA",
-        "parroquia": "GUALAQUIZA",
+        "parroquia": "MERCEDES MOLINA",
         "tipologia": "D",
         "etiqueta": "23 | D",
         "etiquetaSC": "23 | D",
         "identificador": "REF-GUA-023",
-        "punto_referencial": "Comunidad el Guayabal",
+        "punto_referencial": "Comunidad El Guayabal",
         "casos": 10,
         "latitud": -3.419873,
         "longitud": -78.565764,
-        "referencia_corta": "Cabecera / Sector Central (GUALAQUIZA)"
+        "referencia_corta": "Comunidad El Guayabal",
+        "CANTON": "GUALAQUIZA",
+        "PARROQUIA": "MERCEDES MOLINA",
+        "TIPOLOGIA": "D",
+        "CASOS": 10,
+        "ETIQUETA": "23 | D",
+        "PUNTO REFERENCIAL": "Comunidad El Guayabal",
+        "PUNTO_REFERENCIAL": "Comunidad El Guayabal"
       }
     },
     {
@@ -613,16 +774,23 @@
         "sc": "24",
         "codigo_muestra": "24",
         "canton": "GUALAQUIZA",
-        "parroquia": "MERCEDES MOLINA",
+        "parroquia": "NUEVA TARQUI",
         "tipologia": "D",
         "etiqueta": "24 | D",
         "etiquetaSC": "24 | D",
         "identificador": "REF-MER-024",
-        "punto_referencial": "Cerca de Casa Comunal 13 de Abril",
+        "punto_referencial": "Casa Comunal 13 de Abril",
         "casos": 10,
         "latitud": -3.406899,
         "longitud": -78.592364,
-        "referencia_corta": "Cabecera / Sector Central (MERCEDES MOLINA)"
+        "referencia_corta": "Casa Comunal 13 de Abril",
+        "CANTON": "GUALAQUIZA",
+        "PARROQUIA": "NUEVA TARQUI",
+        "TIPOLOGIA": "D",
+        "CASOS": 10,
+        "ETIQUETA": "24 | D",
+        "PUNTO REFERENCIAL": "Casa Comunal 13 de Abril",
+        "PUNTO_REFERENCIAL": "Casa Comunal 13 de Abril"
       }
     },
     {
@@ -639,16 +807,23 @@
         "sc": "25",
         "codigo_muestra": "25",
         "canton": "GUALAQUIZA",
-        "parroquia": "GUALAQUIZA",
+        "parroquia": "ROSARIO",
         "tipologia": "B",
         "etiqueta": "25 | B",
         "etiquetaSC": "25 | B",
         "identificador": "REF-GUA-025",
-        "punto_referencial": "GAD MIESs",
+        "punto_referencial": "GAD MIES Gualaquiza",
         "casos": 10,
         "latitud": -3.40706,
         "longitud": -78.579416,
-        "referencia_corta": "GAD MIESs"
+        "referencia_corta": "GAD MIES Gualaquiza",
+        "CANTON": "GUALAQUIZA",
+        "PARROQUIA": "ROSARIO",
+        "TIPOLOGIA": "B",
+        "CASOS": 10,
+        "ETIQUETA": "25 | B",
+        "PUNTO REFERENCIAL": "GAD MIES Gualaquiza",
+        "PUNTO_REFERENCIAL": "GAD MIES Gualaquiza"
       }
     },
     {
@@ -670,11 +845,18 @@
         "etiqueta": "26 | D",
         "etiquetaSC": "26 | D",
         "identificador": "REF-CHI-026",
-        "punto_referencial": "Centro del Buen Vivir Cbv",
+        "punto_referencial": "Comunidad San Antonio",
         "casos": 10,
         "latitud": -1.96907,
         "longitud": -77.998918,
-        "referencia_corta": "Cabecera / Sector Central (CHIGUAZA)"
+        "referencia_corta": "Comunidad San Antonio",
+        "CANTON": "HUAMBOYA",
+        "PARROQUIA": "CHIGUAZA",
+        "TIPOLOGIA": "D",
+        "CASOS": 10,
+        "ETIQUETA": "26 | D",
+        "PUNTO REFERENCIAL": "Comunidad San Antonio",
+        "PUNTO_REFERENCIAL": "Comunidad San Antonio"
       }
     },
     {
@@ -696,11 +878,18 @@
         "etiqueta": "27 | A",
         "etiquetaSC": "27 | A",
         "identificador": "REF-CHI-027",
-        "punto_referencial": "CECIB de Edu. Bas. Fiscomisional Nankamaku",
+        "punto_referencial": "CECIB Nankamaku",
         "casos": 10,
         "latitud": -2.037734,
         "longitud": -77.983389,
-        "referencia_corta": "CECIB de Edu. Bas. Fiscomisional Nankamaku"
+        "referencia_corta": "CECIB Nankamaku",
+        "CANTON": "HUAMBOYA",
+        "PARROQUIA": "CHIGUAZA",
+        "TIPOLOGIA": "A",
+        "CASOS": 10,
+        "ETIQUETA": "27 | A",
+        "PUNTO REFERENCIAL": "CECIB Nankamaku",
+        "PUNTO_REFERENCIAL": "CECIB Nankamaku"
       }
     },
     {
@@ -722,11 +911,18 @@
         "etiqueta": "28 | C",
         "etiquetaSC": "28 | C",
         "identificador": "REF-CHI-028",
-        "punto_referencial": "Chiguaza",
+        "punto_referencial": "Comunidad San Miguel",
         "casos": 10,
         "latitud": -2.043426,
         "longitud": -77.980876,
-        "referencia_corta": "Chiguaza"
+        "referencia_corta": "Comunidad San Miguel",
+        "CANTON": "HUAMBOYA",
+        "PARROQUIA": "CHIGUAZA",
+        "TIPOLOGIA": "C",
+        "CASOS": 10,
+        "ETIQUETA": "28 | C",
+        "PUNTO REFERENCIAL": "Comunidad San Miguel",
+        "PUNTO_REFERENCIAL": "Comunidad San Miguel"
       }
     },
     {
@@ -748,11 +944,18 @@
         "etiqueta": "29 | A",
         "etiquetaSC": "29 | A",
         "identificador": "REF-CHI-029",
-        "punto_referencial": "Iglesia de la Purisima",
+        "punto_referencial": "Chiguaza Centro",
         "casos": 10,
         "latitud": -2.037211,
         "longitud": -77.988361,
-        "referencia_corta": "Iglesia de la Purisima"
+        "referencia_corta": "Chiguaza Centro",
+        "CANTON": "HUAMBOYA",
+        "PARROQUIA": "CHIGUAZA",
+        "TIPOLOGIA": "A",
+        "CASOS": 10,
+        "ETIQUETA": "29 | A",
+        "PUNTO REFERENCIAL": "Chiguaza Centro",
+        "PUNTO_REFERENCIAL": "Chiguaza Centro"
       }
     },
     {
@@ -774,11 +977,18 @@
         "etiqueta": "30 | H",
         "etiquetaSC": "30 | H",
         "identificador": "REF-CHI-030",
-        "punto_referencial": "De Chiguazo Rural",
+        "punto_referencial": "Comunidad El Triunfo",
         "casos": 10,
         "latitud": -2.049038,
         "longitud": -77.977202,
-        "referencia_corta": "De Chiguazo Rural"
+        "referencia_corta": "Comunidad El Triunfo",
+        "CANTON": "HUAMBOYA",
+        "PARROQUIA": "CHIGUAZA",
+        "TIPOLOGIA": "H",
+        "CASOS": 10,
+        "ETIQUETA": "30 | H",
+        "PUNTO REFERENCIAL": "Comunidad El Triunfo",
+        "PUNTO_REFERENCIAL": "Comunidad El Triunfo"
       }
     },
     {
@@ -800,11 +1010,18 @@
         "etiqueta": "31 | G",
         "etiquetaSC": "31 | G",
         "identificador": "REF-CHI-031",
-        "punto_referencial": "Cerca de Cnh Chiguaza",
+        "punto_referencial": "Sector Vía Principal",
         "casos": 10,
         "latitud": -2.045419,
         "longitud": -77.982558,
-        "referencia_corta": "Cabecera / Sector Central (CHIGUAZA)"
+        "referencia_corta": "Sector Vía Principal",
+        "CANTON": "HUAMBOYA",
+        "PARROQUIA": "CHIGUAZA",
+        "TIPOLOGIA": "G",
+        "CASOS": 10,
+        "ETIQUETA": "31 | G",
+        "PUNTO REFERENCIAL": "Sector Vía Principal",
+        "PUNTO_REFERENCIAL": "Sector Vía Principal"
       }
     },
     {
@@ -826,11 +1043,18 @@
         "etiqueta": "32 | B",
         "etiquetaSC": "32 | B",
         "identificador": "REF-CHI-032",
-        "punto_referencial": "Casa Comunal Barrio Sangay",
+        "punto_referencial": "Huamboya Centro",
         "casos": 10,
         "latitud": -2.042265,
         "longitud": -77.987388,
-        "referencia_corta": "Casa Comunal Barrio Sangay"
+        "referencia_corta": "Huamboya Centro",
+        "CANTON": "HUAMBOYA",
+        "PARROQUIA": "CHIGUAZA",
+        "TIPOLOGIA": "B",
+        "CASOS": 10,
+        "ETIQUETA": "32 | B",
+        "PUNTO REFERENCIAL": "Huamboya Centro",
+        "PUNTO_REFERENCIAL": "Huamboya Centro"
       }
     },
     {
@@ -852,11 +1076,18 @@
         "etiqueta": "33 | E",
         "etiquetaSC": "33 | E",
         "identificador": "REF-CHI-033",
-        "punto_referencial": "Colegio 29 de Junio Inhabilitado",
+        "punto_referencial": "Colegio 29 de Junio",
         "casos": 10,
         "latitud": -2.046348,
         "longitud": -77.984285,
-        "referencia_corta": "Colegio 29 de Junio Inhabilitado"
+        "referencia_corta": "Colegio 29 de Junio",
+        "CANTON": "HUAMBOYA",
+        "PARROQUIA": "CHIGUAZA",
+        "TIPOLOGIA": "E",
+        "CASOS": 10,
+        "ETIQUETA": "33 | E",
+        "PUNTO REFERENCIAL": "Colegio 29 de Junio",
+        "PUNTO_REFERENCIAL": "Colegio 29 de Junio"
       }
     },
     {
@@ -878,11 +1109,18 @@
         "etiqueta": "34 | F",
         "etiquetaSC": "34 | F",
         "identificador": "REF-CHI-034",
-        "punto_referencial": "GAD Parroquial de Chiguaza",
+        "punto_referencial": "Parque Central Huamboya",
         "casos": 10,
         "latitud": -2.047598,
         "longitud": -77.981605,
-        "referencia_corta": "GAD Parroquial de Chiguaza"
+        "referencia_corta": "Parque Central Huamboya",
+        "CANTON": "HUAMBOYA",
+        "PARROQUIA": "CHIGUAZA",
+        "TIPOLOGIA": "F",
+        "CASOS": 10,
+        "ETIQUETA": "34 | F",
+        "PUNTO REFERENCIAL": "Parque Central Huamboya",
+        "PUNTO_REFERENCIAL": "Parque Central Huamboya"
       }
     },
     {
@@ -904,11 +1142,18 @@
         "etiqueta": "35 | A",
         "etiquetaSC": "35 | A",
         "identificador": "REF-HUA-035",
-        "punto_referencial": "Cerca de Municipio del Canton de Huamboya",
+        "punto_referencial": "Municipio de Huamboya",
         "casos": 10,
         "latitud": -1.941871,
         "longitud": -77.989279,
-        "referencia_corta": "Cabecera / Sector Central (HUAMBOYA)"
+        "referencia_corta": "Municipio de Huamboya",
+        "CANTON": "HUAMBOYA",
+        "PARROQUIA": "HUAMBOYA",
+        "TIPOLOGIA": "A",
+        "CASOS": 10,
+        "ETIQUETA": "35 | A",
+        "PUNTO REFERENCIAL": "Municipio de Huamboya",
+        "PUNTO_REFERENCIAL": "Municipio de Huamboya"
       }
     },
     {
@@ -930,11 +1175,18 @@
         "etiqueta": "36 | B",
         "etiquetaSC": "36 | B",
         "identificador": "REF-HUA-036",
-        "punto_referencial": "U.E. Huamboya",
+        "punto_referencial": "Subcentro de Salud",
         "casos": 10,
         "latitud": -1.945525,
         "longitud": -77.99204,
-        "referencia_corta": "Cabecera / Sector Central (HUAMBOYA)"
+        "referencia_corta": "Subcentro de Salud",
+        "CANTON": "HUAMBOYA",
+        "PARROQUIA": "HUAMBOYA",
+        "TIPOLOGIA": "B",
+        "CASOS": 10,
+        "ETIQUETA": "36 | B",
+        "PUNTO REFERENCIAL": "Subcentro de Salud",
+        "PUNTO_REFERENCIAL": "Subcentro de Salud"
       }
     },
     {
@@ -956,11 +1208,18 @@
         "etiqueta": "37 | E",
         "etiquetaSC": "37 | E",
         "identificador": "REF-HUA-037",
-        "punto_referencial": "Cerca de Subcentro de Salud 24 de Mayo",
+        "punto_referencial": "Barrio 24 de Mayo",
         "casos": 10,
         "latitud": -1.94567,
         "longitud": -77.987215,
-        "referencia_corta": "Cabecera / Sector Central (HUAMBOYA)"
+        "referencia_corta": "Barrio 24 de Mayo",
+        "CANTON": "HUAMBOYA",
+        "PARROQUIA": "HUAMBOYA",
+        "TIPOLOGIA": "E",
+        "CASOS": 10,
+        "ETIQUETA": "37 | E",
+        "PUNTO REFERENCIAL": "Barrio 24 de Mayo",
+        "PUNTO_REFERENCIAL": "Barrio 24 de Mayo"
       }
     },
     {
@@ -982,11 +1241,18 @@
         "etiqueta": "38 | C",
         "etiquetaSC": "38 | C",
         "identificador": "REF-HUA-038",
-        "punto_referencial": "Cerca de Iglesia del Nazareno",
+        "punto_referencial": "Iglesia del Nazareno Norte",
         "casos": 10,
         "latitud": -1.949467,
         "longitud": -77.98812,
-        "referencia_corta": "Cabecera / Sector Central (HUAMBOYA)"
+        "referencia_corta": "Iglesia del Nazareno Norte",
+        "CANTON": "HUAMBOYA",
+        "PARROQUIA": "HUAMBOYA",
+        "TIPOLOGIA": "C",
+        "CASOS": 10,
+        "ETIQUETA": "38 | C",
+        "PUNTO REFERENCIAL": "Iglesia del Nazareno Norte",
+        "PUNTO_REFERENCIAL": "Iglesia del Nazareno Norte"
       }
     },
     {
@@ -1008,11 +1274,18 @@
         "etiqueta": "39 | H",
         "etiquetaSC": "39 | H",
         "identificador": "REF-HUA-039",
-        "punto_referencial": "Cerca de Iglesia del Nazareno",
+        "punto_referencial": "Iglesia del Nazareno Sur",
         "casos": 10,
         "latitud": -1.950453,
         "longitud": -77.990602,
-        "referencia_corta": "Cabecera / Sector Central (HUAMBOYA)"
+        "referencia_corta": "Iglesia del Nazareno Sur",
+        "CANTON": "HUAMBOYA",
+        "PARROQUIA": "HUAMBOYA",
+        "TIPOLOGIA": "H",
+        "CASOS": 10,
+        "ETIQUETA": "39 | H",
+        "PUNTO REFERENCIAL": "Iglesia del Nazareno Sur",
+        "PUNTO_REFERENCIAL": "Iglesia del Nazareno Sur"
       }
     },
     {
@@ -1034,11 +1307,18 @@
         "etiqueta": "40 | D",
         "etiquetaSC": "40 | D",
         "identificador": "REF-HUA-040",
-        "punto_referencial": "Cerca de Tanque de Agua",
+        "punto_referencial": "Polideportivo Huamboya",
         "casos": 10,
         "latitud": -1.951668,
         "longitud": -77.985433,
-        "referencia_corta": "Cabecera / Sector Central (HUAMBOYA)"
+        "referencia_corta": "Polideportivo Huamboya",
+        "CANTON": "HUAMBOYA",
+        "PARROQUIA": "HUAMBOYA",
+        "TIPOLOGIA": "D",
+        "CASOS": 10,
+        "ETIQUETA": "40 | D",
+        "PUNTO REFERENCIAL": "Polideportivo Huamboya",
+        "PUNTO_REFERENCIAL": "Polideportivo Huamboya"
       }
     },
     {
@@ -1060,11 +1340,18 @@
         "etiqueta": "41 | A",
         "etiquetaSC": "41 | A",
         "identificador": "REF-GRA-041",
-        "punto_referencial": "Cerca de Cancha Deportiva la Merced",
+        "punto_referencial": "Cancha La Merced",
         "casos": 10,
         "latitud": -2.949953,
         "longitud": -78.421686,
-        "referencia_corta": "Cabecera / Sector Central (GRAL. LEONIDAS PLAZA)"
+        "referencia_corta": "Cancha La Merced",
+        "CANTON": "LIMON INDANZA",
+        "PARROQUIA": "GRAL. LEONIDAS PLAZA",
+        "TIPOLOGIA": "A",
+        "CASOS": 10,
+        "ETIQUETA": "41 | A",
+        "PUNTO REFERENCIAL": "Cancha La Merced",
+        "PUNTO_REFERENCIAL": "Cancha La Merced"
       }
     },
     {
@@ -1086,11 +1373,18 @@
         "etiqueta": "42 | B",
         "etiquetaSC": "42 | B",
         "identificador": "REF-GRA-042",
-        "punto_referencial": "Cerca de Subcentro de Salud Limon Indanza",
+        "punto_referencial": "Subcentro Limón Indanza",
         "casos": 10,
         "latitud": -2.961398,
         "longitud": -78.428843,
-        "referencia_corta": "Cabecera / Sector Central (GRAL. LEONIDAS PLAZA)"
+        "referencia_corta": "Subcentro Limón Indanza",
+        "CANTON": "LIMON INDANZA",
+        "PARROQUIA": "GRAL. LEONIDAS PLAZA",
+        "TIPOLOGIA": "B",
+        "CASOS": 10,
+        "ETIQUETA": "42 | B",
+        "PUNTO REFERENCIAL": "Subcentro Limón Indanza",
+        "PUNTO_REFERENCIAL": "Subcentro Limón Indanza"
       }
     },
     {
@@ -1112,11 +1406,18 @@
         "etiqueta": "43 | E",
         "etiquetaSC": "43 | E",
         "identificador": "REF-GRA-043",
-        "punto_referencial": "Cementerio General de Limon Indanza",
+        "punto_referencial": "Cementerio Limón Indanza",
         "casos": 10,
         "latitud": -2.963731,
         "longitud": -78.426773,
-        "referencia_corta": "Cementerio General de Limon Indanza"
+        "referencia_corta": "Cementerio Limón Indanza",
+        "CANTON": "LIMON INDANZA",
+        "PARROQUIA": "GRAL. LEONIDAS PLAZA",
+        "TIPOLOGIA": "E",
+        "CASOS": 10,
+        "ETIQUETA": "43 | E",
+        "PUNTO REFERENCIAL": "Cementerio Limón Indanza",
+        "PUNTO_REFERENCIAL": "Cementerio Limón Indanza"
       }
     },
     {
@@ -1138,11 +1439,18 @@
         "etiqueta": "44 | C",
         "etiquetaSC": "44 | C",
         "identificador": "REF-GRA-044",
-        "punto_referencial": "Cerca de GAD Limon Indanza",
+        "punto_referencial": "Parque Central Gral. Plaza",
         "casos": 10,
         "latitud": -2.965326,
         "longitud": -78.432494,
-        "referencia_corta": "Cabecera / Sector Central (GRAL. LEONIDAS PLAZA)"
+        "referencia_corta": "Parque Central Gral. Plaza",
+        "CANTON": "LIMON INDANZA",
+        "PARROQUIA": "GRAL. LEONIDAS PLAZA",
+        "TIPOLOGIA": "C",
+        "CASOS": 10,
+        "ETIQUETA": "44 | C",
+        "PUNTO REFERENCIAL": "Parque Central Gral. Plaza",
+        "PUNTO_REFERENCIAL": "Parque Central Gral. Plaza"
       }
     },
     {
@@ -1164,11 +1472,18 @@
         "etiqueta": "45 | H",
         "etiquetaSC": "45 | H",
         "identificador": "REF-GRA-045",
-        "punto_referencial": "Iglesia Nuestra Seniora de Guadalupe",
+        "punto_referencial": "Iglesia Ntra. Sra. Guadalupe",
         "casos": 10,
         "latitud": -2.966542,
         "longitud": -78.430465,
-        "referencia_corta": "Iglesia Nuestra Seniora de Guadalupe"
+        "referencia_corta": "Iglesia Ntra. Sra. Guadalupe",
+        "CANTON": "LIMON INDANZA",
+        "PARROQUIA": "GRAL. LEONIDAS PLAZA",
+        "TIPOLOGIA": "H",
+        "CASOS": 10,
+        "ETIQUETA": "45 | H",
+        "PUNTO REFERENCIAL": "Iglesia Ntra. Sra. Guadalupe",
+        "PUNTO_REFERENCIAL": "Iglesia Ntra. Sra. Guadalupe"
       }
     },
     {
@@ -1190,11 +1505,18 @@
         "etiqueta": "46 | D",
         "etiquetaSC": "46 | D",
         "identificador": "REF-GRA-046",
-        "punto_referencial": "Cerca de Parque Limon",
+        "punto_referencial": "Mercado Municipal Indanza",
         "casos": 10,
         "latitud": -2.968907,
         "longitud": -78.437152,
-        "referencia_corta": "Cabecera / Sector Central (GRAL. LEONIDAS PLAZA)"
+        "referencia_corta": "Mercado Municipal Indanza",
+        "CANTON": "LIMON INDANZA",
+        "PARROQUIA": "GRAL. LEONIDAS PLAZA",
+        "TIPOLOGIA": "D",
+        "CASOS": 10,
+        "ETIQUETA": "46 | D",
+        "PUNTO REFERENCIAL": "Mercado Municipal Indanza",
+        "PUNTO_REFERENCIAL": "Mercado Municipal Indanza"
       }
     },
     {
@@ -1216,11 +1538,18 @@
         "etiqueta": "47 | A",
         "etiquetaSC": "47 | A",
         "identificador": "REF-GRA-047",
-        "punto_referencial": "Cerca de U.E. Limon",
+        "punto_referencial": "Parque Central Indanza",
         "casos": 10,
         "latitud": -2.969088,
         "longitud": -78.433212,
-        "referencia_corta": "Cabecera / Sector Central (GRAL. LEONIDAS PLAZA)"
+        "referencia_corta": "Parque Central Indanza",
+        "CANTON": "LIMON INDANZA",
+        "PARROQUIA": "GRAL. LEONIDAS PLAZA",
+        "TIPOLOGIA": "A",
+        "CASOS": 10,
+        "ETIQUETA": "47 | A",
+        "PUNTO REFERENCIAL": "Parque Central Indanza",
+        "PUNTO_REFERENCIAL": "Parque Central Indanza"
       }
     },
     {
@@ -1242,11 +1571,18 @@
         "etiqueta": "48 | F",
         "etiquetaSC": "48 | F",
         "identificador": "REF-IND-048",
-        "punto_referencial": "Cerca de Escuela Honorato Vasquez",
+        "punto_referencial": "Escuela Honorato Vásquez",
         "casos": 10,
         "latitud": -3.054496,
         "longitud": -78.474873,
-        "referencia_corta": "Cabecera / Sector Central (INDANZA)"
+        "referencia_corta": "Escuela Honorato Vásquez",
+        "CANTON": "LIMON INDANZA",
+        "PARROQUIA": "INDANZA",
+        "TIPOLOGIA": "F",
+        "CASOS": 10,
+        "ETIQUETA": "48 | F",
+        "PUNTO REFERENCIAL": "Escuela Honorato Vásquez",
+        "PUNTO_REFERENCIAL": "Escuela Honorato Vásquez"
       }
     },
     {
@@ -1268,11 +1604,18 @@
         "etiqueta": "49 | E",
         "etiquetaSC": "49 | E",
         "identificador": "REF-IND-049",
-        "punto_referencial": "Mercado Indanza",
+        "punto_referencial": "GAD San Antonio",
         "casos": 10,
         "latitud": -3.059286,
         "longitud": -78.477725,
-        "referencia_corta": "Cabecera / Sector Central (INDANZA)"
+        "referencia_corta": "GAD San Antonio",
+        "CANTON": "LIMON INDANZA",
+        "PARROQUIA": "INDANZA",
+        "TIPOLOGIA": "E",
+        "CASOS": 10,
+        "ETIQUETA": "49 | E",
+        "PUNTO REFERENCIAL": "GAD San Antonio",
+        "PUNTO_REFERENCIAL": "GAD San Antonio"
       }
     },
     {
@@ -1294,11 +1637,18 @@
         "etiqueta": "50 | B",
         "etiquetaSC": "50 | B",
         "identificador": "REF-SAN-050",
-        "punto_referencial": "Comunidad San Antonio",
+        "punto_referencial": "Parque Central San Antonio",
         "casos": 10,
         "latitud": -3.021116,
         "longitud": -78.430012,
-        "referencia_corta": "Cabecera / Sector Central (SAN ANTONIO)"
+        "referencia_corta": "Parque Central San Antonio",
+        "CANTON": "LIMON INDANZA",
+        "PARROQUIA": "SAN ANTONIO",
+        "TIPOLOGIA": "B",
+        "CASOS": 10,
+        "ETIQUETA": "50 | B",
+        "PUNTO REFERENCIAL": "Parque Central San Antonio",
+        "PUNTO_REFERENCIAL": "Parque Central San Antonio"
       }
     },
     {
@@ -1320,11 +1670,18 @@
         "etiqueta": "51 | D",
         "etiquetaSC": "51 | D",
         "identificador": "REF-SAN-051",
-        "punto_referencial": "Granja del GAD San Antonio",
+        "punto_referencial": "GAD Parroquial Chiviaza",
         "casos": 10,
         "latitud": -3.027628,
         "longitud": -78.431753,
-        "referencia_corta": "Granja del GAD San Antonio"
+        "referencia_corta": "GAD Parroquial Chiviaza",
+        "CANTON": "LIMON INDANZA",
+        "PARROQUIA": "SAN ANTONIO",
+        "TIPOLOGIA": "D",
+        "CASOS": 10,
+        "ETIQUETA": "51 | D",
+        "PUNTO REFERENCIAL": "GAD Parroquial Chiviaza",
+        "PUNTO_REFERENCIAL": "GAD Parroquial Chiviaza"
       }
     },
     {
@@ -1346,11 +1703,18 @@
         "etiqueta": "52 | H",
         "etiquetaSC": "52 | H",
         "identificador": "REF-SAN-052",
-        "punto_referencial": "Iglesia San Antonio",
+        "punto_referencial": "Parque Central Chiviaza",
         "casos": 10,
         "latitud": -3.028981,
         "longitud": -78.433542,
-        "referencia_corta": "Iglesia San Antonio"
+        "referencia_corta": "Parque Central Chiviaza",
+        "CANTON": "LIMON INDANZA",
+        "PARROQUIA": "SAN ANTONIO",
+        "TIPOLOGIA": "H",
+        "CASOS": 10,
+        "ETIQUETA": "52 | H",
+        "PUNTO REFERENCIAL": "Parque Central Chiviaza",
+        "PUNTO_REFERENCIAL": "Parque Central Chiviaza"
       }
     },
     {
@@ -1372,11 +1736,18 @@
         "etiqueta": "53 | A",
         "etiquetaSC": "53 | A",
         "identificador": "REF-SAN-053",
-        "punto_referencial": "Escuela Fiscomisional Jose Corso",
+        "punto_referencial": "Escuela José Corso",
         "casos": 10,
         "latitud": -2.914381,
         "longitud": -78.366805,
-        "referencia_corta": "Escuela Fiscomisional Jose Corso"
+        "referencia_corta": "Escuela José Corso",
+        "CANTON": "LIMON INDANZA",
+        "PARROQUIA": "SANTA SUSANA DE CHIVIAZA",
+        "TIPOLOGIA": "A",
+        "CASOS": 10,
+        "ETIQUETA": "53 | A",
+        "PUNTO REFERENCIAL": "Escuela José Corso",
+        "PUNTO_REFERENCIAL": "Escuela José Corso"
       }
     },
     {
@@ -1398,11 +1769,18 @@
         "etiqueta": "54 | G",
         "etiquetaSC": "54 | G",
         "identificador": "REF-YUN-054",
-        "punto_referencial": "Cerca de Iglesia el Rosario",
+        "punto_referencial": "Iglesia El Rosario Norte",
         "casos": 10,
         "latitud": -2.907272,
         "longitud": -78.393862,
-        "referencia_corta": "Cabecera / Sector Central (YUNGANZA /EL ROSARIO)"
+        "referencia_corta": "Iglesia El Rosario Norte",
+        "CANTON": "LIMON INDANZA",
+        "PARROQUIA": "YUNGANZA /EL ROSARIO",
+        "TIPOLOGIA": "G",
+        "CASOS": 10,
+        "ETIQUETA": "54 | G",
+        "PUNTO REFERENCIAL": "Iglesia El Rosario Norte",
+        "PUNTO_REFERENCIAL": "Iglesia El Rosario Norte"
       }
     },
     {
@@ -1424,11 +1802,18 @@
         "etiqueta": "55 | C",
         "etiquetaSC": "55 | C",
         "identificador": "REF-YUN-055",
-        "punto_referencial": "Cerca de Iglesia el Rosario",
+        "punto_referencial": "Iglesia El Rosario Sur",
         "casos": 10,
         "latitud": -2.909159,
         "longitud": -78.39547,
-        "referencia_corta": "Cabecera / Sector Central (YUNGANZA /EL ROSARIO)"
+        "referencia_corta": "Iglesia El Rosario Sur",
+        "CANTON": "LIMON INDANZA",
+        "PARROQUIA": "YUNGANZA /EL ROSARIO",
+        "TIPOLOGIA": "C",
+        "CASOS": 10,
+        "ETIQUETA": "55 | C",
+        "PUNTO REFERENCIAL": "Iglesia El Rosario Sur",
+        "PUNTO_REFERENCIAL": "Iglesia El Rosario Sur"
       }
     },
     {
@@ -1450,11 +1835,18 @@
         "etiqueta": "56 | C",
         "etiquetaSC": "56 | C",
         "identificador": "REF-LOG-056",
-        "punto_referencial": "Zona Urbana Logroño",
+        "punto_referencial": "Parque Central Logroño",
         "casos": 10,
         "latitud": -2.603131,
         "longitud": -78.202534,
-        "referencia_corta": "Cabecera / Sector Central (LOGROÑO)"
+        "referencia_corta": "Parque Central Logroño",
+        "CANTON": "LOGROÑO",
+        "PARROQUIA": "LOGROÑO",
+        "TIPOLOGIA": "C",
+        "CASOS": 10,
+        "ETIQUETA": "56 | C",
+        "PUNTO REFERENCIAL": "Parque Central Logroño",
+        "PUNTO_REFERENCIAL": "Parque Central Logroño"
       }
     },
     {
@@ -1476,11 +1868,18 @@
         "etiqueta": "57 | B",
         "etiquetaSC": "57 | B",
         "identificador": "REF-LOG-057",
-        "punto_referencial": "Ministerio del Ambiente",
+        "punto_referencial": "Municipio de Logroño",
         "casos": 10,
         "latitud": -2.620166,
         "longitud": -78.198374,
-        "referencia_corta": "Cabecera / Sector Central (LOGROÑO)"
+        "referencia_corta": "Municipio de Logroño",
+        "CANTON": "LOGROÑO",
+        "PARROQUIA": "LOGROÑO",
+        "TIPOLOGIA": "B",
+        "CASOS": 10,
+        "ETIQUETA": "57 | B",
+        "PUNTO REFERENCIAL": "Municipio de Logroño",
+        "PUNTO_REFERENCIAL": "Municipio de Logroño"
       }
     },
     {
@@ -1502,11 +1901,18 @@
         "etiqueta": "58 | E",
         "etiquetaSC": "58 | E",
         "identificador": "REF-LOG-058",
-        "punto_referencial": "Cerca de Liga Deportiva Cantonal de Logron",
+        "punto_referencial": "Liga Cantonal Logroño",
         "casos": 10,
         "latitud": -2.624906,
         "longitud": -78.200101,
-        "referencia_corta": "Cabecera / Sector Central (LOGROÑO)"
+        "referencia_corta": "Liga Cantonal Logroño",
+        "CANTON": "LOGROÑO",
+        "PARROQUIA": "LOGROÑO",
+        "TIPOLOGIA": "E",
+        "CASOS": 10,
+        "ETIQUETA": "58 | E",
+        "PUNTO REFERENCIAL": "Liga Cantonal Logroño",
+        "PUNTO_REFERENCIAL": "Liga Cantonal Logroño"
       }
     },
     {
@@ -1528,11 +1934,18 @@
         "etiqueta": "59 | C",
         "etiquetaSC": "59 | C",
         "identificador": "REF-LOG-059",
-        "punto_referencial": "Cerca de Tenencia Politica",
+        "punto_referencial": "Subcentro Salud Logroño",
         "casos": 10,
         "latitud": -2.628571,
         "longitud": -78.199057,
-        "referencia_corta": "Cabecera / Sector Central (LOGROÑO)"
+        "referencia_corta": "Subcentro Salud Logroño",
+        "CANTON": "LOGROÑO",
+        "PARROQUIA": "LOGROÑO",
+        "TIPOLOGIA": "C",
+        "CASOS": 10,
+        "ETIQUETA": "59 | C",
+        "PUNTO REFERENCIAL": "Subcentro Salud Logroño",
+        "PUNTO_REFERENCIAL": "Subcentro Salud Logroño"
       }
     },
     {
@@ -1554,11 +1967,18 @@
         "etiqueta": "60 | H",
         "etiquetaSC": "60 | H",
         "identificador": "REF-LOG-060",
-        "punto_referencial": "Zona Urbana Logroño",
+        "punto_referencial": "Coliseo Municipal Logroño",
         "casos": 10,
         "latitud": -2.632591,
         "longitud": -78.221854,
-        "referencia_corta": "Cabecera / Sector Central (LOGROÑO)"
+        "referencia_corta": "Coliseo Municipal Logroño",
+        "CANTON": "LOGROÑO",
+        "PARROQUIA": "LOGROÑO",
+        "TIPOLOGIA": "H",
+        "CASOS": 10,
+        "ETIQUETA": "60 | H",
+        "PUNTO REFERENCIAL": "Coliseo Municipal Logroño",
+        "PUNTO_REFERENCIAL": "Coliseo Municipal Logroño"
       }
     },
     {
@@ -1580,11 +2000,18 @@
         "etiqueta": "61 | D",
         "etiquetaSC": "61 | D",
         "identificador": "REF-LOG-061",
-        "punto_referencial": "Cerca de Sala de Reuniones de los Testigos",
+        "punto_referencial": "Salón del Reino Testigos",
         "casos": 10,
         "latitud": -2.634576,
         "longitud": -78.201846,
-        "referencia_corta": "Cabecera / Sector Central (LOGROÑO)"
+        "referencia_corta": "Salón del Reino Testigos",
+        "CANTON": "LOGROÑO",
+        "PARROQUIA": "LOGROÑO",
+        "TIPOLOGIA": "D",
+        "CASOS": 10,
+        "ETIQUETA": "61 | D",
+        "PUNTO REFERENCIAL": "Salón del Reino Testigos",
+        "PUNTO_REFERENCIAL": "Salón del Reino Testigos"
       }
     },
     {
@@ -1606,11 +2033,18 @@
         "etiqueta": "62 | D",
         "etiquetaSC": "62 | D",
         "identificador": "REF-SHI-062",
-        "punto_referencial": "Cerca de Junta Parroquial Shimpis",
+        "punto_referencial": "GAD Parroquial Shimpis",
         "casos": 10,
         "latitud": -2.63907,
         "longitud": -78.184194,
-        "referencia_corta": "Cabecera / Sector Central (SHIMPIS)"
+        "referencia_corta": "GAD Parroquial Shimpis",
+        "CANTON": "LOGROÑO",
+        "PARROQUIA": "SHIMPIS",
+        "TIPOLOGIA": "D",
+        "CASOS": 10,
+        "ETIQUETA": "62 | D",
+        "PUNTO REFERENCIAL": "GAD Parroquial Shimpis",
+        "PUNTO_REFERENCIAL": "GAD Parroquial Shimpis"
       }
     },
     {
@@ -1632,11 +2066,18 @@
         "etiqueta": "63 | A",
         "etiquetaSC": "63 | A",
         "identificador": "REF-SHI-063",
-        "punto_referencial": "Antiguo Edificio del Infa",
+        "punto_referencial": "Parque Central Shimpis",
         "casos": 10,
         "latitud": -2.641558,
         "longitud": -78.181495,
-        "referencia_corta": "Cabecera / Sector Central (SHIMPIS)"
+        "referencia_corta": "Parque Central Shimpis",
+        "CANTON": "LOGROÑO",
+        "PARROQUIA": "SHIMPIS",
+        "TIPOLOGIA": "A",
+        "CASOS": 10,
+        "ETIQUETA": "63 | A",
+        "PUNTO REFERENCIAL": "Parque Central Shimpis",
+        "PUNTO_REFERENCIAL": "Parque Central Shimpis"
       }
     },
     {
@@ -1658,11 +2099,18 @@
         "etiqueta": "64 | C",
         "etiquetaSC": "64 | C",
         "identificador": "REF-SHI-064",
-        "punto_referencial": "Cerca de Casa Comunal Shimpis",
+        "punto_referencial": "Casa Comunal Shimpis",
         "casos": 10,
         "latitud": -2.642568,
         "longitud": -78.185489,
-        "referencia_corta": "Cabecera / Sector Central (SHIMPIS)"
+        "referencia_corta": "Casa Comunal Shimpis",
+        "CANTON": "LOGROÑO",
+        "PARROQUIA": "SHIMPIS",
+        "TIPOLOGIA": "C",
+        "CASOS": 10,
+        "ETIQUETA": "64 | C",
+        "PUNTO REFERENCIAL": "Casa Comunal Shimpis",
+        "PUNTO_REFERENCIAL": "Casa Comunal Shimpis"
       }
     },
     {
@@ -1684,11 +2132,18 @@
         "etiqueta": "65 | A",
         "etiquetaSC": "65 | A",
         "identificador": "REF-SHI-065",
-        "punto_referencial": "Cerca de Coliseo de Shimpis",
+        "punto_referencial": "Coliseo de Shimpis",
         "casos": 10,
         "latitud": -2.643849,
         "longitud": -78.181741,
-        "referencia_corta": "Cabecera / Sector Central (SHIMPIS)"
+        "referencia_corta": "Coliseo de Shimpis",
+        "CANTON": "LOGROÑO",
+        "PARROQUIA": "SHIMPIS",
+        "TIPOLOGIA": "A",
+        "CASOS": 10,
+        "ETIQUETA": "65 | A",
+        "PUNTO REFERENCIAL": "Coliseo de Shimpis",
+        "PUNTO_REFERENCIAL": "Coliseo de Shimpis"
       }
     },
     {
@@ -1710,11 +2165,18 @@
         "etiqueta": "66 | H",
         "etiquetaSC": "66 | H",
         "identificador": "REF-SHI-066",
-        "punto_referencial": "Comunidad Barrio Senegal",
+        "punto_referencial": "Plaza Central Yaupi",
         "casos": 10,
         "latitud": -2.646747,
         "longitud": -78.187687,
-        "referencia_corta": "Cabecera / Sector Central (SHIMPIS)"
+        "referencia_corta": "Plaza Central Yaupi",
+        "CANTON": "LOGROÑO",
+        "PARROQUIA": "SHIMPIS",
+        "TIPOLOGIA": "H",
+        "CASOS": 10,
+        "ETIQUETA": "66 | H",
+        "PUNTO REFERENCIAL": "Plaza Central Yaupi",
+        "PUNTO_REFERENCIAL": "Plaza Central Yaupi"
       }
     },
     {
@@ -1736,11 +2198,18 @@
         "etiqueta": "67 | G",
         "etiquetaSC": "67 | G",
         "identificador": "REF-YAU-067",
-        "punto_referencial": "Comunidad Yaupi",
+        "punto_referencial": "Subcentro Salud Yaupi",
         "casos": 10,
         "latitud": -2.85087,
         "longitud": -77.933946,
-        "referencia_corta": "Cabecera / Sector Central (YAUPI)"
+        "referencia_corta": "Subcentro Salud Yaupi",
+        "CANTON": "LOGROÑO",
+        "PARROQUIA": "YAUPI",
+        "TIPOLOGIA": "G",
+        "CASOS": 10,
+        "ETIQUETA": "67 | G",
+        "PUNTO REFERENCIAL": "Subcentro Salud Yaupi",
+        "PUNTO_REFERENCIAL": "Subcentro Salud Yaupi"
       }
     },
     {
@@ -1762,11 +2231,18 @@
         "etiqueta": "68 | B",
         "etiquetaSC": "68 | B",
         "identificador": "REF-YAU-068",
-        "punto_referencial": "Cerca de Sede de la Asociacion de Yaupi",
+        "punto_referencial": "Sede Asociación Yaupi",
         "casos": 10,
         "latitud": -2.851872,
         "longitud": -77.940808,
-        "referencia_corta": "Cabecera / Sector Central (YAUPI)"
+        "referencia_corta": "Sede Asociación Yaupi",
+        "CANTON": "LOGROÑO",
+        "PARROQUIA": "YAUPI",
+        "TIPOLOGIA": "B",
+        "CASOS": 10,
+        "ETIQUETA": "68 | B",
+        "PUNTO REFERENCIAL": "Sede Asociación Yaupi",
+        "PUNTO_REFERENCIAL": "Sede Asociación Yaupi"
       }
     },
     {
@@ -1788,11 +2264,18 @@
         "etiqueta": "69 | E",
         "etiquetaSC": "69 | E",
         "identificador": "REF-YAU-069",
-        "punto_referencial": "Escuela Abandonada",
+        "punto_referencial": "Pista de Aterrizaje Yaupi",
         "casos": 10,
         "latitud": -2.852974,
         "longitud": -77.937606,
-        "referencia_corta": "Escuela Abandonada"
+        "referencia_corta": "Pista de Aterrizaje Yaupi",
+        "CANTON": "LOGROÑO",
+        "PARROQUIA": "YAUPI",
+        "TIPOLOGIA": "E",
+        "CASOS": 10,
+        "ETIQUETA": "69 | E",
+        "PUNTO REFERENCIAL": "Pista de Aterrizaje Yaupi",
+        "PUNTO_REFERENCIAL": "Pista de Aterrizaje Yaupi"
       }
     },
     {
@@ -1814,11 +2297,18 @@
         "etiqueta": "70 | F",
         "etiquetaSC": "70 | F",
         "identificador": "REF-YAU-070",
-        "punto_referencial": "Cerca de U.E. 24 de Febrero",
+        "punto_referencial": "U.E. 24 de Febrero",
         "casos": 10,
         "latitud": -2.855426,
         "longitud": -77.939777,
-        "referencia_corta": "Cabecera / Sector Central (YAUPI)"
+        "referencia_corta": "U.E. 24 de Febrero",
+        "CANTON": "LOGROÑO",
+        "PARROQUIA": "YAUPI",
+        "TIPOLOGIA": "F",
+        "CASOS": 10,
+        "ETIQUETA": "70 | F",
+        "PUNTO REFERENCIAL": "U.E. 24 de Febrero",
+        "PUNTO_REFERENCIAL": "U.E. 24 de Febrero"
       }
     },
     {
@@ -1840,11 +2330,18 @@
         "etiqueta": "71 | A",
         "etiquetaSC": "71 | A",
         "identificador": "REF-CUC-071",
-        "punto_referencial": "Cerca de Subcentro de Salud Tipo A1 Eben E",
+        "punto_referencial": "Subcentro Eben Ezer",
         "casos": 10,
         "latitud": -2.113733,
         "longitud": -77.916011,
-        "referencia_corta": "Cabecera / Sector Central (CUCHAENTZA)"
+        "referencia_corta": "Subcentro Eben Ezer",
+        "CANTON": "MORONA",
+        "PARROQUIA": "CUCHAENTZA",
+        "TIPOLOGIA": "A",
+        "CASOS": 10,
+        "ETIQUETA": "71 | A",
+        "PUNTO REFERENCIAL": "Subcentro Eben Ezer",
+        "PUNTO_REFERENCIAL": "Subcentro Eben Ezer"
       }
     },
     {
@@ -1866,11 +2363,18 @@
         "etiqueta": "72 | C",
         "etiquetaSC": "72 | C",
         "identificador": "REF-CUC-072",
-        "punto_referencial": "Sector U.E. Alfredo Perez Guerrero",
+        "punto_referencial": "U.E. Alfredo Pérez",
         "casos": 10,
         "latitud": -2.117242,
         "longitud": -77.859239,
-        "referencia_corta": "Cabecera / Sector Central (CUCHAENTZA)"
+        "referencia_corta": "U.E. Alfredo Pérez",
+        "CANTON": "MORONA",
+        "PARROQUIA": "CUCHAENTZA",
+        "TIPOLOGIA": "C",
+        "CASOS": 10,
+        "ETIQUETA": "72 | C",
+        "PUNTO REFERENCIAL": "U.E. Alfredo Pérez",
+        "PUNTO_REFERENCIAL": "U.E. Alfredo Pérez"
       }
     },
     {
@@ -1892,11 +2396,18 @@
         "etiqueta": "73 | D",
         "etiquetaSC": "73 | D",
         "identificador": "REF-CUC-073",
-        "punto_referencial": "Cerca de Tenencia Politica de Cuchaentza",
+        "punto_referencial": "Tenencia Cuchaentza",
         "casos": 10,
         "latitud": -2.122464,
         "longitud": -77.864159,
-        "referencia_corta": "Cabecera / Sector Central (CUCHAENTZA)"
+        "referencia_corta": "Tenencia Cuchaentza",
+        "CANTON": "MORONA",
+        "PARROQUIA": "CUCHAENTZA",
+        "TIPOLOGIA": "D",
+        "CASOS": 10,
+        "ETIQUETA": "73 | D",
+        "PUNTO REFERENCIAL": "Tenencia Cuchaentza",
+        "PUNTO_REFERENCIAL": "Tenencia Cuchaentza"
       }
     },
     {
@@ -1918,11 +2429,18 @@
         "etiqueta": "74 | E",
         "etiquetaSC": "74 | E",
         "identificador": "REF-GRA-074",
-        "punto_referencial": "Zona Urbana Gral. Proaño",
+        "punto_referencial": "Plaza Cuchaentza",
         "casos": 10,
         "latitud": -2.256304,
         "longitud": -78.120776,
-        "referencia_corta": "Cabecera / Sector Central (GRAL. PROAÑO)"
+        "referencia_corta": "Plaza Cuchaentza",
+        "CANTON": "MORONA",
+        "PARROQUIA": "GRAL. PROAÑO",
+        "TIPOLOGIA": "E",
+        "CASOS": 10,
+        "ETIQUETA": "74 | E",
+        "PUNTO REFERENCIAL": "Plaza Cuchaentza",
+        "PUNTO_REFERENCIAL": "Plaza Cuchaentza"
       }
     },
     {
@@ -1944,11 +2462,18 @@
         "etiqueta": "75 | A",
         "etiquetaSC": "75 | A",
         "identificador": "REF-GRA-075",
-        "punto_referencial": "Cerca de Seguro Campecino",
+        "punto_referencial": "Comunidad San José",
         "casos": 10,
         "latitud": -2.265964,
         "longitud": -78.133114,
-        "referencia_corta": "Cabecera / Sector Central (GRAL. PROAÑO)"
+        "referencia_corta": "Comunidad San José",
+        "CANTON": "MORONA",
+        "PARROQUIA": "GRAL. PROAÑO",
+        "TIPOLOGIA": "A",
+        "CASOS": 10,
+        "ETIQUETA": "75 | A",
+        "PUNTO REFERENCIAL": "Comunidad San José",
+        "PUNTO_REFERENCIAL": "Comunidad San José"
       }
     },
     {
@@ -1970,11 +2495,18 @@
         "etiqueta": "76 | H",
         "etiquetaSC": "76 | H",
         "identificador": "REF-GRA-076",
-        "punto_referencial": "Comunidad Lenin Moreno",
+        "punto_referencial": "Parque Central Proaño",
         "casos": 10,
         "latitud": -2.274162,
         "longitud": -78.104998,
-        "referencia_corta": "Cabecera / Sector Central (GRAL. PROAÑO)"
+        "referencia_corta": "Parque Central Proaño",
+        "CANTON": "MORONA",
+        "PARROQUIA": "GRAL. PROAÑO",
+        "TIPOLOGIA": "H",
+        "CASOS": 10,
+        "ETIQUETA": "76 | H",
+        "PUNTO REFERENCIAL": "Parque Central Proaño",
+        "PUNTO_REFERENCIAL": "Parque Central Proaño"
       }
     },
     {
@@ -1996,11 +2528,18 @@
         "etiqueta": "77 | H",
         "etiquetaSC": "77 | H",
         "identificador": "REF-GRA-077",
-        "punto_referencial": "Cerca de Ex Escuela",
+        "punto_referencial": "GAD Parroquial Proaño",
         "casos": 10,
         "latitud": -2.277762,
         "longitud": -78.113898,
-        "referencia_corta": "Cabecera / Sector Central (GRAL. PROAÑO)"
+        "referencia_corta": "GAD Parroquial Proaño",
+        "CANTON": "MORONA",
+        "PARROQUIA": "GRAL. PROAÑO",
+        "TIPOLOGIA": "H",
+        "CASOS": 10,
+        "ETIQUETA": "77 | H",
+        "PUNTO REFERENCIAL": "GAD Parroquial Proaño",
+        "PUNTO_REFERENCIAL": "GAD Parroquial Proaño"
       }
     },
     {
@@ -2022,11 +2561,18 @@
         "etiqueta": "78 | A",
         "etiquetaSC": "78 | A",
         "identificador": "REF-MAC-078",
-        "punto_referencial": "Cerca de Casa Comunal",
+        "punto_referencial": "Iglesia Central Proaño",
         "casos": 10,
         "latitud": -2.277927,
         "longitud": -78.120864,
-        "referencia_corta": "Cabecera / Sector Central (MACAS)"
+        "referencia_corta": "Iglesia Central Proaño",
+        "CANTON": "MORONA",
+        "PARROQUIA": "MACAS",
+        "TIPOLOGIA": "A",
+        "CASOS": 10,
+        "ETIQUETA": "78 | A",
+        "PUNTO REFERENCIAL": "Iglesia Central Proaño",
+        "PUNTO_REFERENCIAL": "Iglesia Central Proaño"
       }
     },
     {
@@ -2048,11 +2594,18 @@
         "etiqueta": "79 | C",
         "etiquetaSC": "79 | C",
         "identificador": "REF-MAC-079",
-        "punto_referencial": "Cerca de Consejo Provincial",
+        "punto_referencial": "Consejo Provincial Morona",
         "casos": 10,
         "latitud": -2.281556,
         "longitud": -78.122653,
-        "referencia_corta": "Cabecera / Sector Central (MACAS)"
+        "referencia_corta": "Consejo Provincial Morona",
+        "CANTON": "MORONA",
+        "PARROQUIA": "MACAS",
+        "TIPOLOGIA": "C",
+        "CASOS": 10,
+        "ETIQUETA": "79 | C",
+        "PUNTO REFERENCIAL": "Consejo Provincial Morona",
+        "PUNTO_REFERENCIAL": "Consejo Provincial Morona"
       }
     },
     {
@@ -2074,11 +2627,18 @@
         "etiqueta": "80 | H",
         "etiquetaSC": "80 | H",
         "identificador": "REF-MAC-080",
-        "punto_referencial": "Asilo Patrona de los Adultos Mayores",
+        "punto_referencial": "Asilo Adultos Mayores",
         "casos": 10,
         "latitud": -2.282469,
         "longitud": -78.127508,
-        "referencia_corta": "Asilo Patrona de los Adultos Mayores"
+        "referencia_corta": "Asilo Adultos Mayores",
+        "CANTON": "MORONA",
+        "PARROQUIA": "MACAS",
+        "TIPOLOGIA": "H",
+        "CASOS": 10,
+        "ETIQUETA": "80 | H",
+        "PUNTO REFERENCIAL": "Asilo Adultos Mayores",
+        "PUNTO_REFERENCIAL": "Asilo Adultos Mayores"
       }
     },
     {
@@ -2100,11 +2660,18 @@
         "etiqueta": "81 | D",
         "etiquetaSC": "81 | D",
         "identificador": "REF-MAC-081",
-        "punto_referencial": "Cerca de Iglesia Cristiana Evangelica",
+        "punto_referencial": "Iglesia Cristiana Central",
         "casos": 10,
         "latitud": -2.285361,
         "longitud": -78.117467,
-        "referencia_corta": "Cabecera / Sector Central (MACAS)"
+        "referencia_corta": "Iglesia Cristiana Central",
+        "CANTON": "MORONA",
+        "PARROQUIA": "MACAS",
+        "TIPOLOGIA": "D",
+        "CASOS": 10,
+        "ETIQUETA": "81 | D",
+        "PUNTO REFERENCIAL": "Iglesia Cristiana Central",
+        "PUNTO_REFERENCIAL": "Iglesia Cristiana Central"
       }
     },
     {
@@ -2126,11 +2693,18 @@
         "etiqueta": "82 | B",
         "etiquetaSC": "82 | B",
         "identificador": "REF-MAC-082",
-        "punto_referencial": "Cerca de Cancha Sintetica",
+        "punto_referencial": "Parque Recreacional Macas",
         "casos": 10,
         "latitud": -2.286196,
         "longitud": -78.125401,
-        "referencia_corta": "Cabecera / Sector Central (MACAS)"
+        "referencia_corta": "Parque Recreacional Macas",
+        "CANTON": "MORONA",
+        "PARROQUIA": "MACAS",
+        "TIPOLOGIA": "B",
+        "CASOS": 10,
+        "ETIQUETA": "82 | B",
+        "PUNTO REFERENCIAL": "Parque Recreacional Macas",
+        "PUNTO_REFERENCIAL": "Parque Recreacional Macas"
       }
     },
     {
@@ -2152,11 +2726,18 @@
         "etiqueta": "83 | E",
         "etiquetaSC": "83 | E",
         "identificador": "REF-MAC-083",
-        "punto_referencial": "Departamento de Obras Publicas del Municip",
+        "punto_referencial": "Obras Públicas Municipio",
         "casos": 10,
         "latitud": -2.288757,
         "longitud": -78.120909,
-        "referencia_corta": "Cabecera / Sector Central (MACAS)"
+        "referencia_corta": "Obras Públicas Municipio",
+        "CANTON": "MORONA",
+        "PARROQUIA": "MACAS",
+        "TIPOLOGIA": "E",
+        "CASOS": 10,
+        "ETIQUETA": "83 | E",
+        "PUNTO REFERENCIAL": "Obras Públicas Municipio",
+        "PUNTO_REFERENCIAL": "Obras Públicas Municipio"
       }
     },
     {
@@ -2178,11 +2759,18 @@
         "etiqueta": "84 | A",
         "etiquetaSC": "84 | A",
         "identificador": "REF-MAC-084",
-        "punto_referencial": "Colegio de Bachillerato Macas",
+        "punto_referencial": "Colegio Macas",
         "casos": 10,
         "latitud": -2.291412,
         "longitud": -78.116482,
-        "referencia_corta": "Colegio de Bachillerato Macas"
+        "referencia_corta": "Colegio Macas",
+        "CANTON": "MORONA",
+        "PARROQUIA": "MACAS",
+        "TIPOLOGIA": "A",
+        "CASOS": 10,
+        "ETIQUETA": "84 | A",
+        "PUNTO REFERENCIAL": "Colegio Macas",
+        "PUNTO_REFERENCIAL": "Colegio Macas"
       }
     },
     {
@@ -2204,11 +2792,18 @@
         "etiqueta": "85 | H",
         "etiquetaSC": "85 | H",
         "identificador": "REF-MAC-085",
-        "punto_referencial": "Cerca de Espoch Extencion Morona Santiago",
+        "punto_referencial": "ESPOCH Extensión Macas",
         "casos": 10,
         "latitud": -2.292132,
         "longitud": -78.112003,
-        "referencia_corta": "Cabecera / Sector Central (MACAS)"
+        "referencia_corta": "ESPOCH Extensión Macas",
+        "CANTON": "MORONA",
+        "PARROQUIA": "MACAS",
+        "TIPOLOGIA": "H",
+        "CASOS": 10,
+        "ETIQUETA": "85 | H",
+        "PUNTO REFERENCIAL": "ESPOCH Extensión Macas",
+        "PUNTO_REFERENCIAL": "ESPOCH Extensión Macas"
       }
     },
     {
@@ -2230,11 +2825,18 @@
         "etiqueta": "86 | G",
         "etiquetaSC": "86 | G",
         "identificador": "REF-MAC-086",
-        "punto_referencial": "Cerca de Escuela de Educacion Basica Fisca",
+        "punto_referencial": "Escuela Fiscal Central",
         "casos": 10,
         "latitud": -2.291606,
         "longitud": -78.123674,
-        "referencia_corta": "Cabecera / Sector Central (MACAS)"
+        "referencia_corta": "Escuela Fiscal Central",
+        "CANTON": "MORONA",
+        "PARROQUIA": "MACAS",
+        "TIPOLOGIA": "G",
+        "CASOS": 10,
+        "ETIQUETA": "86 | G",
+        "PUNTO REFERENCIAL": "Escuela Fiscal Central",
+        "PUNTO_REFERENCIAL": "Escuela Fiscal Central"
       }
     },
     {
@@ -2256,11 +2858,18 @@
         "etiqueta": "87 | E",
         "etiquetaSC": "87 | E",
         "identificador": "REF-MAC-087",
-        "punto_referencial": "Ministerio de Inclusion Economica y Social",
+        "punto_referencial": "MIES Macas",
         "casos": 10,
         "latitud": -2.294496,
         "longitud": -78.117923,
-        "referencia_corta": "Cabecera / Sector Central (MACAS)"
+        "referencia_corta": "MIES Macas",
+        "CANTON": "MORONA",
+        "PARROQUIA": "MACAS",
+        "TIPOLOGIA": "E",
+        "CASOS": 10,
+        "ETIQUETA": "87 | E",
+        "PUNTO REFERENCIAL": "MIES Macas",
+        "PUNTO_REFERENCIAL": "MIES Macas"
       }
     },
     {
@@ -2282,11 +2891,18 @@
         "etiqueta": "88 | B",
         "etiquetaSC": "88 | B",
         "identificador": "REF-MAC-088",
-        "punto_referencial": "Cerca de Nacionalidad Azhuar del Ecuador",
+        "punto_referencial": "Sede NAE Achuar",
         "casos": 10,
         "latitud": -2.297875,
         "longitud": -78.11629,
-        "referencia_corta": "Cabecera / Sector Central (MACAS)"
+        "referencia_corta": "Sede NAE Achuar",
+        "CANTON": "MORONA",
+        "PARROQUIA": "MACAS",
+        "TIPOLOGIA": "B",
+        "CASOS": 10,
+        "ETIQUETA": "88 | B",
+        "PUNTO REFERENCIAL": "Sede NAE Achuar",
+        "PUNTO_REFERENCIAL": "Sede NAE Achuar"
       }
     },
     {
@@ -2308,11 +2924,18 @@
         "etiqueta": "89 | A",
         "etiquetaSC": "89 | A",
         "identificador": "REF-MAC-089",
-        "punto_referencial": "Aeropuerto Coronel Carvajal",
+        "punto_referencial": "Aeropuerto Macas",
         "casos": 10,
         "latitud": -2.299452,
         "longitud": -78.120814,
-        "referencia_corta": "Aeropuerto Coronel Carvajal"
+        "referencia_corta": "Aeropuerto Macas",
+        "CANTON": "MORONA",
+        "PARROQUIA": "MACAS",
+        "TIPOLOGIA": "A",
+        "CASOS": 10,
+        "ETIQUETA": "89 | A",
+        "PUNTO REFERENCIAL": "Aeropuerto Macas",
+        "PUNTO_REFERENCIAL": "Aeropuerto Macas"
       }
     },
     {
@@ -2334,11 +2957,18 @@
         "etiqueta": "90 | D",
         "etiquetaSC": "90 | D",
         "identificador": "REF-MAC-090",
-        "punto_referencial": "Cerca de Casa de Reuniondes del Barrio Mir",
+        "punto_referencial": "Casa Barrial El Mirador",
         "casos": 10,
         "latitud": -2.30204,
         "longitud": -78.115945,
-        "referencia_corta": "Cabecera / Sector Central (MACAS)"
+        "referencia_corta": "Casa Barrial El Mirador",
+        "CANTON": "MORONA",
+        "PARROQUIA": "MACAS",
+        "TIPOLOGIA": "D",
+        "CASOS": 10,
+        "ETIQUETA": "90 | D",
+        "PUNTO REFERENCIAL": "Casa Barrial El Mirador",
+        "PUNTO_REFERENCIAL": "Casa Barrial El Mirador"
       }
     },
     {
@@ -2360,11 +2990,18 @@
         "etiqueta": "91 | F",
         "etiquetaSC": "91 | F",
         "identificador": "REF-MAC-091",
-        "punto_referencial": "Cerca de Ecu 911",
+        "punto_referencial": "Parque Central de Macas",
         "casos": 10,
         "latitud": -2.302935,
         "longitud": -78.124118,
-        "referencia_corta": "Cabecera / Sector Central (MACAS)"
+        "referencia_corta": "Parque Central de Macas",
+        "CANTON": "MORONA",
+        "PARROQUIA": "MACAS",
+        "TIPOLOGIA": "F",
+        "CASOS": 10,
+        "ETIQUETA": "91 | F",
+        "PUNTO REFERENCIAL": "Parque Central de Macas",
+        "PUNTO_REFERENCIAL": "Parque Central de Macas"
       }
     },
     {
@@ -2386,11 +3023,18 @@
         "etiqueta": "92 | E",
         "etiquetaSC": "92 | E",
         "identificador": "REF-MAC-092",
-        "punto_referencial": "Sector U. E. Fiscomisional Dr. Camilo Gall",
+        "punto_referencial": "U.E. Camilo Gallegos",
         "casos": 10,
         "latitud": -2.304133,
         "longitud": -78.111263,
-        "referencia_corta": "Cabecera / Sector Central (MACAS)"
+        "referencia_corta": "U.E. Camilo Gallegos",
+        "CANTON": "MORONA",
+        "PARROQUIA": "MACAS",
+        "TIPOLOGIA": "E",
+        "CASOS": 10,
+        "ETIQUETA": "92 | E",
+        "PUNTO REFERENCIAL": "U.E. Camilo Gallegos",
+        "PUNTO_REFERENCIAL": "U.E. Camilo Gallegos"
       }
     },
     {
@@ -2412,11 +3056,18 @@
         "etiqueta": "93 | B",
         "etiquetaSC": "93 | B",
         "identificador": "REF-MAC-093",
-        "punto_referencial": "Cerca de Banco del Pichincha",
+        "punto_referencial": "Banco Pichincha Macas",
         "casos": 10,
         "latitud": -2.306045,
         "longitud": -78.118583,
-        "referencia_corta": "Cabecera / Sector Central (MACAS)"
+        "referencia_corta": "Banco Pichincha Macas",
+        "CANTON": "MORONA",
+        "PARROQUIA": "MACAS",
+        "TIPOLOGIA": "B",
+        "CASOS": 10,
+        "ETIQUETA": "93 | B",
+        "PUNTO REFERENCIAL": "Banco Pichincha Macas",
+        "PUNTO_REFERENCIAL": "Banco Pichincha Macas"
       }
     },
     {
@@ -2438,11 +3089,18 @@
         "etiqueta": "94 | C",
         "etiquetaSC": "94 | C",
         "identificador": "REF-MAC-094",
-        "punto_referencial": "Cerca de Sangay Aeropuertos",
+        "punto_referencial": "Sector Pista Macas",
         "casos": 10,
         "latitud": -2.308809,
         "longitud": -78.124535,
-        "referencia_corta": "Cabecera / Sector Central (MACAS)"
+        "referencia_corta": "Sector Pista Macas",
+        "CANTON": "MORONA",
+        "PARROQUIA": "MACAS",
+        "TIPOLOGIA": "C",
+        "CASOS": 10,
+        "ETIQUETA": "94 | C",
+        "PUNTO REFERENCIAL": "Sector Pista Macas",
+        "PUNTO_REFERENCIAL": "Sector Pista Macas"
       }
     },
     {
@@ -2464,11 +3122,18 @@
         "etiqueta": "95 | F",
         "etiquetaSC": "95 | F",
         "identificador": "REF-MAC-095",
-        "punto_referencial": "Ministerio de Salud",
+        "punto_referencial": "Catedral Purísima de Macas",
         "casos": 10,
         "latitud": -2.312266,
         "longitud": -78.121492,
-        "referencia_corta": "Ministerio de Salud"
+        "referencia_corta": "Catedral Purísima de Macas",
+        "CANTON": "MORONA",
+        "PARROQUIA": "MACAS",
+        "TIPOLOGIA": "F",
+        "CASOS": 10,
+        "ETIQUETA": "95 | F",
+        "PUNTO REFERENCIAL": "Catedral Purísima de Macas",
+        "PUNTO_REFERENCIAL": "Catedral Purísima de Macas"
       }
     },
     {
@@ -2490,11 +3155,18 @@
         "etiqueta": "96 | E",
         "etiquetaSC": "96 | E",
         "identificador": "REF-MAC-096",
-        "punto_referencial": "Centro de Desarrollo los Angelitos",
+        "punto_referencial": "CDI Los Angelitos",
         "casos": 10,
         "latitud": -2.313589,
         "longitud": -78.117251,
-        "referencia_corta": "Centro de Desarrollo los Angelitos"
+        "referencia_corta": "CDI Los Angelitos",
+        "CANTON": "MORONA",
+        "PARROQUIA": "MACAS",
+        "TIPOLOGIA": "E",
+        "CASOS": 10,
+        "ETIQUETA": "96 | E",
+        "PUNTO REFERENCIAL": "CDI Los Angelitos",
+        "PUNTO_REFERENCIAL": "CDI Los Angelitos"
       }
     },
     {
@@ -2516,11 +3188,18 @@
         "etiqueta": "97 | G",
         "etiquetaSC": "97 | G",
         "identificador": "REF-MAC-097",
-        "punto_referencial": "Centro de Educacion Inicial 29 de Mayo",
+        "punto_referencial": "Inicial 29 de Mayo",
         "casos": 10,
         "latitud": -2.313637,
         "longitud": -78.127654,
-        "referencia_corta": "Centro de Educacion Inicial 29 de Mayo"
+        "referencia_corta": "Inicial 29 de Mayo",
+        "CANTON": "MORONA",
+        "PARROQUIA": "MACAS",
+        "TIPOLOGIA": "G",
+        "CASOS": 10,
+        "ETIQUETA": "97 | G",
+        "PUNTO REFERENCIAL": "Inicial 29 de Mayo",
+        "PUNTO_REFERENCIAL": "Inicial 29 de Mayo"
       }
     },
     {
@@ -2542,11 +3221,18 @@
         "etiqueta": "98 | D",
         "etiquetaSC": "98 | D",
         "identificador": "REF-MAC-098",
-        "punto_referencial": "Cerca de Nuevo Terminal Terrestre Roberto",
+        "punto_referencial": "Terminal Terrestre Macas",
         "casos": 10,
         "latitud": -2.316975,
         "longitud": -78.124331,
-        "referencia_corta": "Cabecera / Sector Central (MACAS)"
+        "referencia_corta": "Terminal Terrestre Macas",
+        "CANTON": "MORONA",
+        "PARROQUIA": "MACAS",
+        "TIPOLOGIA": "D",
+        "CASOS": 10,
+        "ETIQUETA": "98 | D",
+        "PUNTO REFERENCIAL": "Terminal Terrestre Macas",
+        "PUNTO_REFERENCIAL": "Terminal Terrestre Macas"
       }
     },
     {
@@ -2568,11 +3254,18 @@
         "etiqueta": "99 | B",
         "etiquetaSC": "99 | B",
         "identificador": "REF-MAC-099",
-        "punto_referencial": "Cerca de Cancha",
+        "punto_referencial": "Coliseo 29 de Mayo",
         "casos": 10,
         "latitud": -2.31799,
         "longitud": -78.131704,
-        "referencia_corta": "Cabecera / Sector Central (MACAS)"
+        "referencia_corta": "Coliseo 29 de Mayo",
+        "CANTON": "MORONA",
+        "PARROQUIA": "MACAS",
+        "TIPOLOGIA": "B",
+        "CASOS": 10,
+        "ETIQUETA": "99 | B",
+        "PUNTO REFERENCIAL": "Coliseo 29 de Mayo",
+        "PUNTO_REFERENCIAL": "Coliseo 29 de Mayo"
       }
     },
     {
@@ -2594,11 +3287,18 @@
         "etiqueta": "100 | F",
         "etiquetaSC": "100 | F",
         "identificador": "REF-MAC-100",
-        "punto_referencial": "Cerca de CIBV  \"Los Corderitos\"",
+        "punto_referencial": "CIBV Los Corderitos",
         "casos": 10,
         "latitud": -2.319778,
         "longitud": -78.120541,
-        "referencia_corta": "Cabecera / Sector Central (MACAS)"
+        "referencia_corta": "CIBV Los Corderitos",
+        "CANTON": "MORONA",
+        "PARROQUIA": "MACAS",
+        "TIPOLOGIA": "F",
+        "CASOS": 10,
+        "ETIQUETA": "100 | F",
+        "PUNTO REFERENCIAL": "CIBV Los Corderitos",
+        "PUNTO_REFERENCIAL": "CIBV Los Corderitos"
       }
     },
     {
@@ -2620,11 +3320,18 @@
         "etiqueta": "101 | C",
         "etiquetaSC": "101 | C",
         "identificador": "REF-MAC-101",
-        "punto_referencial": "Sector Cancha",
+        "punto_referencial": "Mercado Central de Macas",
         "casos": 10,
         "latitud": -2.321197,
         "longitud": -78.135552,
-        "referencia_corta": "Cabecera / Sector Central (MACAS)"
+        "referencia_corta": "Mercado Central de Macas",
+        "CANTON": "MORONA",
+        "PARROQUIA": "MACAS",
+        "TIPOLOGIA": "C",
+        "CASOS": 10,
+        "ETIQUETA": "101 | C",
+        "PUNTO REFERENCIAL": "Mercado Central de Macas",
+        "PUNTO_REFERENCIAL": "Mercado Central de Macas"
       }
     },
     {
@@ -2646,11 +3353,18 @@
         "etiqueta": "102 | H",
         "etiquetaSC": "102 | H",
         "identificador": "REF-MAC-102",
-        "punto_referencial": "Cerca de Centro de Revision Vehicular",
+        "punto_referencial": "Revisión Vehicular Macas",
         "casos": 10,
         "latitud": -2.321951,
         "longitud": -78.125502,
-        "referencia_corta": "Cabecera / Sector Central (MACAS)"
+        "referencia_corta": "Revisión Vehicular Macas",
+        "CANTON": "MORONA",
+        "PARROQUIA": "MACAS",
+        "TIPOLOGIA": "H",
+        "CASOS": 10,
+        "ETIQUETA": "102 | H",
+        "PUNTO REFERENCIAL": "Revisión Vehicular Macas",
+        "PUNTO_REFERENCIAL": "Revisión Vehicular Macas"
       }
     },
     {
@@ -2672,11 +3386,18 @@
         "etiqueta": "103 | G",
         "etiquetaSC": "103 | G",
         "identificador": "REF-MAC-103",
-        "punto_referencial": "Sector U.E. Purisima de Macas",
+        "punto_referencial": "U.E. Purísima de Macas",
         "casos": 10,
         "latitud": -2.327443,
         "longitud": -78.131253,
-        "referencia_corta": "Cabecera / Sector Central (MACAS)"
+        "referencia_corta": "U.E. Purísima de Macas",
+        "CANTON": "MORONA",
+        "PARROQUIA": "MACAS",
+        "TIPOLOGIA": "G",
+        "CASOS": 10,
+        "ETIQUETA": "103 | G",
+        "PUNTO REFERENCIAL": "U.E. Purísima de Macas",
+        "PUNTO_REFERENCIAL": "U.E. Purísima de Macas"
       }
     },
     {
@@ -2698,11 +3419,18 @@
         "etiqueta": "104 | D",
         "etiquetaSC": "104 | D",
         "identificador": "REF-MAC-104",
-        "punto_referencial": "Centro de Predicacion de la Amazonia Sur",
+        "punto_referencial": "Centro de Predicación Sur",
         "casos": 10,
         "latitud": -2.331438,
         "longitud": -78.12792,
-        "referencia_corta": "Centro de Predicacion de la Amazonia Sur"
+        "referencia_corta": "Centro de Predicación Sur",
+        "CANTON": "MORONA",
+        "PARROQUIA": "MACAS",
+        "TIPOLOGIA": "D",
+        "CASOS": 10,
+        "ETIQUETA": "104 | D",
+        "PUNTO REFERENCIAL": "Centro de Predicación Sur",
+        "PUNTO_REFERENCIAL": "Centro de Predicación Sur"
       }
     },
     {
@@ -2724,11 +3452,18 @@
         "etiqueta": "105 | F",
         "etiquetaSC": "105 | F",
         "identificador": "REF-RIO-105",
-        "punto_referencial": "Cerca de Escuela Antonio Granda Centeno",
+        "punto_referencial": "Escuela Antonio Granda",
         "casos": 10,
         "latitud": -2.343466,
         "longitud": -78.156015,
-        "referencia_corta": "Cabecera / Sector Central (RIO BLANCO)"
+        "referencia_corta": "Escuela Antonio Granda",
+        "CANTON": "MORONA",
+        "PARROQUIA": "RIO BLANCO",
+        "TIPOLOGIA": "F",
+        "CASOS": 10,
+        "ETIQUETA": "105 | F",
+        "PUNTO REFERENCIAL": "Escuela Antonio Granda",
+        "PUNTO_REFERENCIAL": "Escuela Antonio Granda"
       }
     },
     {
@@ -2750,11 +3485,18 @@
         "etiqueta": "106 | D",
         "etiquetaSC": "106 | D",
         "identificador": "REF-RIO-106",
-        "punto_referencial": "Cerca de Iglesia Evangelca",
+        "punto_referencial": "Hospital General de Macas",
         "casos": 10,
         "latitud": -2.345461,
         "longitud": -78.143919,
-        "referencia_corta": "Cabecera / Sector Central (RIO BLANCO)"
+        "referencia_corta": "Hospital General de Macas",
+        "CANTON": "MORONA",
+        "PARROQUIA": "RIO BLANCO",
+        "TIPOLOGIA": "D",
+        "CASOS": 10,
+        "ETIQUETA": "106 | D",
+        "PUNTO REFERENCIAL": "Hospital General de Macas",
+        "PUNTO_REFERENCIAL": "Hospital General de Macas"
       }
     },
     {
@@ -2776,11 +3518,18 @@
         "etiqueta": "107 | C",
         "etiquetaSC": "107 | C",
         "identificador": "REF-RIO-107",
-        "punto_referencial": "Comunidad San Jose",
+        "punto_referencial": "Municipio de Morona",
         "casos": 10,
         "latitud": -2.357696,
         "longitud": -78.157681,
-        "referencia_corta": "Cabecera / Sector Central (RIO BLANCO)"
+        "referencia_corta": "Municipio de Morona",
+        "CANTON": "MORONA",
+        "PARROQUIA": "RIO BLANCO",
+        "TIPOLOGIA": "C",
+        "CASOS": 10,
+        "ETIQUETA": "107 | C",
+        "PUNTO REFERENCIAL": "Municipio de Morona",
+        "PUNTO_REFERENCIAL": "Municipio de Morona"
       }
     },
     {
@@ -2802,11 +3551,18 @@
         "etiqueta": "108 | B",
         "etiquetaSC": "108 | B",
         "identificador": "REF-SAN-108",
-        "punto_referencial": "Cerca de Centro de Reuniones del Adulto Ma",
+        "punto_referencial": "Centro Adulto Mayor",
         "casos": 10,
         "latitud": -2.21287,
         "longitud": -78.165583,
-        "referencia_corta": "Cabecera / Sector Central (SAN ISIDRO)"
+        "referencia_corta": "Centro Adulto Mayor",
+        "CANTON": "MORONA",
+        "PARROQUIA": "SAN ISIDRO",
+        "TIPOLOGIA": "B",
+        "CASOS": 10,
+        "ETIQUETA": "108 | B",
+        "PUNTO REFERENCIAL": "Centro Adulto Mayor",
+        "PUNTO_REFERENCIAL": "Centro Adulto Mayor"
       }
     },
     {
@@ -2828,11 +3584,18 @@
         "etiqueta": "109 | G",
         "etiquetaSC": "109 | G",
         "identificador": "REF-SIN-109",
-        "punto_referencial": "Iglesia de la Parroquia Jesus del Buen Pas",
+        "punto_referencial": "Iglesia Jesús Buen Pastor",
         "casos": 10,
         "latitud": -2.095185,
         "longitud": -78.052586,
-        "referencia_corta": "Cabecera / Sector Central (SINAI)"
+        "referencia_corta": "Iglesia Jesús Buen Pastor",
+        "CANTON": "MORONA",
+        "PARROQUIA": "SINAI",
+        "TIPOLOGIA": "G",
+        "CASOS": 10,
+        "ETIQUETA": "109 | G",
+        "PUNTO REFERENCIAL": "Iglesia Jesús Buen Pastor",
+        "PUNTO_REFERENCIAL": "Iglesia Jesús Buen Pastor"
       }
     },
     {
@@ -2854,11 +3617,18 @@
         "etiqueta": "110 | B",
         "etiquetaSC": "110 | B",
         "identificador": "REF-SIN-110",
-        "punto_referencial": "Zona Urbana Sinai",
+        "punto_referencial": "GAD San Isidro",
         "casos": 10,
         "latitud": -2.116979,
         "longitud": -78.043474,
-        "referencia_corta": "Cabecera / Sector Central (SINAI)"
+        "referencia_corta": "GAD San Isidro",
+        "CANTON": "MORONA",
+        "PARROQUIA": "SINAI",
+        "TIPOLOGIA": "B",
+        "CASOS": 10,
+        "ETIQUETA": "110 | B",
+        "PUNTO REFERENCIAL": "GAD San Isidro",
+        "PUNTO_REFERENCIAL": "GAD San Isidro"
       }
     },
     {
@@ -2880,11 +3650,18 @@
         "etiqueta": "111 | C",
         "etiquetaSC": "111 | C",
         "identificador": "REF-PAB-111",
-        "punto_referencial": "Puesto de Salud",
+        "punto_referencial": "Parque Central San Isidro",
         "casos": 10,
         "latitud": -1.894605,
         "longitud": -78.062965,
-        "referencia_corta": "Puesto de Salud"
+        "referencia_corta": "Parque Central San Isidro",
+        "CANTON": "PABLO SEXTO",
+        "PARROQUIA": "PABLO SEXTO",
+        "TIPOLOGIA": "C",
+        "CASOS": 10,
+        "ETIQUETA": "111 | C",
+        "PUNTO REFERENCIAL": "Parque Central San Isidro",
+        "PUNTO_REFERENCIAL": "Parque Central San Isidro"
       }
     },
     {
@@ -2906,11 +3683,18 @@
         "etiqueta": "112 | B",
         "etiquetaSC": "112 | B",
         "identificador": "REF-PAB-112",
-        "punto_referencial": "Comunidad Lambuzha",
+        "punto_referencial": "Subcentro San Isidro",
         "casos": 10,
         "latitud": -1.889932,
         "longitud": -78.071324,
-        "referencia_corta": "Cabecera / Sector Central (PABLO SEXTO)"
+        "referencia_corta": "Subcentro San Isidro",
+        "CANTON": "PABLO SEXTO",
+        "PARROQUIA": "PABLO SEXTO",
+        "TIPOLOGIA": "B",
+        "CASOS": 10,
+        "ETIQUETA": "112 | B",
+        "PUNTO REFERENCIAL": "Subcentro San Isidro",
+        "PUNTO_REFERENCIAL": "Subcentro San Isidro"
       }
     },
     {
@@ -2932,11 +3716,18 @@
         "etiqueta": "113 | E",
         "etiquetaSC": "113 | E",
         "identificador": "REF-PAB-113",
-        "punto_referencial": "Sector Puesto de Salud",
+        "punto_referencial": "GAD Parroquial Sinaí",
         "casos": 10,
         "latitud": -1.895792,
         "longitud": -78.058734,
-        "referencia_corta": "Cabecera / Sector Central (PABLO SEXTO)"
+        "referencia_corta": "GAD Parroquial Sinaí",
+        "CANTON": "PABLO SEXTO",
+        "PARROQUIA": "PABLO SEXTO",
+        "TIPOLOGIA": "E",
+        "CASOS": 10,
+        "ETIQUETA": "113 | E",
+        "PUNTO REFERENCIAL": "GAD Parroquial Sinaí",
+        "PUNTO_REFERENCIAL": "GAD Parroquial Sinaí"
       }
     },
     {
@@ -2958,11 +3749,18 @@
         "etiqueta": "114 | A",
         "etiquetaSC": "114 | A",
         "identificador": "REF-PAB-114",
-        "punto_referencial": "Coliseo",
+        "punto_referencial": "Parque Central Sinaí",
         "casos": 10,
         "latitud": -1.895772,
         "longitud": -78.063781,
-        "referencia_corta": "Cabecera / Sector Central (PABLO SEXTO)"
+        "referencia_corta": "Parque Central Sinaí",
+        "CANTON": "PABLO SEXTO",
+        "PARROQUIA": "PABLO SEXTO",
+        "TIPOLOGIA": "A",
+        "CASOS": 10,
+        "ETIQUETA": "114 | A",
+        "PUNTO REFERENCIAL": "Parque Central Sinaí",
+        "PUNTO_REFERENCIAL": "Parque Central Sinaí"
       }
     },
     {
@@ -2984,11 +3782,18 @@
         "etiqueta": "115 | H",
         "etiquetaSC": "115 | H",
         "identificador": "REF-PAB-115",
-        "punto_referencial": "CIBV los Chavitos",
+        "punto_referencial": "Subcentro Salud Sinaí",
         "casos": 10,
         "latitud": -1.894721,
         "longitud": -78.064834,
-        "referencia_corta": "CIBV los Chavitos"
+        "referencia_corta": "Subcentro Salud Sinaí",
+        "CANTON": "PABLO SEXTO",
+        "PARROQUIA": "PABLO SEXTO",
+        "TIPOLOGIA": "H",
+        "CASOS": 10,
+        "ETIQUETA": "115 | H",
+        "PUNTO REFERENCIAL": "Subcentro Salud Sinaí",
+        "PUNTO_REFERENCIAL": "Subcentro Salud Sinaí"
       }
     },
     {
@@ -3010,11 +3815,18 @@
         "etiqueta": "116 | D",
         "etiquetaSC": "116 | D",
         "identificador": "REF-PAB-116",
-        "punto_referencial": "Comunidad la Mina",
+        "punto_referencial": "Parque Central Río Blanco",
         "casos": 10,
         "latitud": -1.903077,
         "longitud": -78.055793,
-        "referencia_corta": "Cabecera / Sector Central (PABLO SEXTO)"
+        "referencia_corta": "Parque Central Río Blanco",
+        "CANTON": "PABLO SEXTO",
+        "PARROQUIA": "PABLO SEXTO",
+        "TIPOLOGIA": "D",
+        "CASOS": 10,
+        "ETIQUETA": "116 | D",
+        "PUNTO REFERENCIAL": "Parque Central Río Blanco",
+        "PUNTO_REFERENCIAL": "Parque Central Río Blanco"
       }
     },
     {
@@ -3036,11 +3848,18 @@
         "etiqueta": "117 | D",
         "etiquetaSC": "117 | D",
         "identificador": "REF-PAB-117",
-        "punto_referencial": "Cerca de Coliseo",
+        "punto_referencial": "Subcentro Río Blanco",
         "casos": 10,
         "latitud": -1.89668,
         "longitud": -78.065165,
-        "referencia_corta": "Cabecera / Sector Central (PABLO SEXTO)"
+        "referencia_corta": "Subcentro Río Blanco",
+        "CANTON": "PABLO SEXTO",
+        "PARROQUIA": "PABLO SEXTO",
+        "TIPOLOGIA": "D",
+        "CASOS": 10,
+        "ETIQUETA": "117 | D",
+        "PUNTO REFERENCIAL": "Subcentro Río Blanco",
+        "PUNTO_REFERENCIAL": "Subcentro Río Blanco"
       }
     },
     {
@@ -3062,11 +3881,18 @@
         "etiqueta": "118 | A",
         "etiquetaSC": "118 | A",
         "identificador": "REF-PAB-118",
-        "punto_referencial": "Zona Urbana Pablo Sexto",
+        "punto_referencial": "GAD Parroquial Río Blanco",
         "casos": 10,
         "latitud": -1.918858,
         "longitud": -78.018042,
-        "referencia_corta": "Cabecera / Sector Central (PABLO SEXTO)"
+        "referencia_corta": "GAD Parroquial Río Blanco",
+        "CANTON": "PABLO SEXTO",
+        "PARROQUIA": "PABLO SEXTO",
+        "TIPOLOGIA": "A",
+        "CASOS": 10,
+        "ETIQUETA": "118 | A",
+        "PUNTO REFERENCIAL": "GAD Parroquial Río Blanco",
+        "PUNTO_REFERENCIAL": "GAD Parroquial Río Blanco"
       }
     },
     {
@@ -3088,11 +3914,18 @@
         "etiqueta": "119 | C",
         "etiquetaSC": "119 | C",
         "identificador": "REF-PAB-119",
-        "punto_referencial": "Zona Urbana Pablo Sexto",
+        "punto_referencial": "Parque Pablo Sexto",
         "casos": 10,
         "latitud": -1.917445,
         "longitud": -78.015707,
-        "referencia_corta": "Cabecera / Sector Central (PABLO SEXTO)"
+        "referencia_corta": "Parque Pablo Sexto",
+        "CANTON": "PABLO SEXTO",
+        "PARROQUIA": "PABLO SEXTO",
+        "TIPOLOGIA": "C",
+        "CASOS": 10,
+        "ETIQUETA": "119 | C",
+        "PUNTO REFERENCIAL": "Parque Pablo Sexto",
+        "PUNTO_REFERENCIAL": "Parque Pablo Sexto"
       }
     },
     {
@@ -3114,11 +3947,18 @@
         "etiqueta": "120 | A",
         "etiquetaSC": "120 | A",
         "identificador": "REF-PAB-120",
-        "punto_referencial": "Cerca de Centro de Desarrollo Infantil Mis",
+        "punto_referencial": "CDI Mis Pequeños",
         "casos": 10,
         "latitud": -1.925126,
         "longitud": -78.0285,
-        "referencia_corta": "Cabecera / Sector Central (PABLO SEXTO)"
+        "referencia_corta": "CDI Mis Pequeños",
+        "CANTON": "PABLO SEXTO",
+        "PARROQUIA": "PABLO SEXTO",
+        "TIPOLOGIA": "A",
+        "CASOS": 10,
+        "ETIQUETA": "120 | A",
+        "PUNTO REFERENCIAL": "CDI Mis Pequeños",
+        "PUNTO_REFERENCIAL": "CDI Mis Pequeños"
       }
     },
     {
@@ -3140,11 +3980,18 @@
         "etiqueta": "121 | H",
         "etiquetaSC": "121 | H",
         "identificador": "REF-PAB-121",
-        "punto_referencial": "Comunidad Pablo Sexto Rural",
+        "punto_referencial": "Comunidad Pablo Sexto Norte",
         "casos": 10,
         "latitud": -1.933643,
         "longitud": -78.015183,
-        "referencia_corta": "Cabecera / Sector Central (PABLO SEXTO)"
+        "referencia_corta": "Comunidad Pablo Sexto Norte",
+        "CANTON": "PABLO SEXTO",
+        "PARROQUIA": "PABLO SEXTO",
+        "TIPOLOGIA": "H",
+        "CASOS": 10,
+        "ETIQUETA": "121 | H",
+        "PUNTO REFERENCIAL": "Comunidad Pablo Sexto Norte",
+        "PUNTO_REFERENCIAL": "Comunidad Pablo Sexto Norte"
       }
     },
     {
@@ -3166,11 +4013,18 @@
         "etiqueta": "122 | G",
         "etiquetaSC": "122 | G",
         "identificador": "REF-PAB-122",
-        "punto_referencial": "Cerca de Cementerio de Pablo Sexto",
+        "punto_referencial": "Cementerio Pablo Sexto",
         "casos": 10,
         "latitud": -1.93012,
         "longitud": -78.021329,
-        "referencia_corta": "Cabecera / Sector Central (PABLO SEXTO)"
+        "referencia_corta": "Cementerio Pablo Sexto",
+        "CANTON": "PABLO SEXTO",
+        "PARROQUIA": "PABLO SEXTO",
+        "TIPOLOGIA": "G",
+        "CASOS": 10,
+        "ETIQUETA": "122 | G",
+        "PUNTO REFERENCIAL": "Cementerio Pablo Sexto",
+        "PUNTO_REFERENCIAL": "Cementerio Pablo Sexto"
       }
     },
     {
@@ -3192,11 +4046,18 @@
         "etiqueta": "123 | B",
         "etiquetaSC": "123 | B",
         "identificador": "REF-PAB-123",
-        "punto_referencial": "Comunidad Pablo Sexto Rural",
+        "punto_referencial": "Comunidad Pablo Sexto Sur",
         "casos": 10,
         "latitud": -1.934463,
         "longitud": -78.014481,
-        "referencia_corta": "Cabecera / Sector Central (PABLO SEXTO)"
+        "referencia_corta": "Comunidad Pablo Sexto Sur",
+        "CANTON": "PABLO SEXTO",
+        "PARROQUIA": "PABLO SEXTO",
+        "TIPOLOGIA": "B",
+        "CASOS": 10,
+        "ETIQUETA": "123 | B",
+        "PUNTO REFERENCIAL": "Comunidad Pablo Sexto Sur",
+        "PUNTO_REFERENCIAL": "Comunidad Pablo Sexto Sur"
       }
     },
     {
@@ -3218,11 +4079,18 @@
         "etiqueta": "124 | E",
         "etiquetaSC": "124 | E",
         "identificador": "REF-PAB-124",
-        "punto_referencial": "Coliseo de Pablo Sexto",
+        "punto_referencial": "Municipio de Pablo Sexto",
         "casos": 10,
         "latitud": -1.92951,
         "longitud": -78.027851,
-        "referencia_corta": "Coliseo de Pablo Sexto"
+        "referencia_corta": "Municipio de Pablo Sexto",
+        "CANTON": "PABLO SEXTO",
+        "PARROQUIA": "PABLO SEXTO",
+        "TIPOLOGIA": "E",
+        "CASOS": 10,
+        "ETIQUETA": "124 | E",
+        "PUNTO REFERENCIAL": "Municipio de Pablo Sexto",
+        "PUNTO_REFERENCIAL": "Municipio de Pablo Sexto"
       }
     },
     {
@@ -3244,11 +4112,18 @@
         "etiqueta": "125 | F",
         "etiquetaSC": "125 | F",
         "identificador": "REF-PAB-125",
-        "punto_referencial": "Sector Empresa Electrica Ambato",
+        "punto_referencial": "Empresa Eléctrica EEASA",
         "casos": 10,
         "latitud": -1.935819,
         "longitud": -78.021653,
-        "referencia_corta": "Cabecera / Sector Central (PABLO SEXTO)"
+        "referencia_corta": "Empresa Eléctrica EEASA",
+        "CANTON": "PABLO SEXTO",
+        "PARROQUIA": "PABLO SEXTO",
+        "TIPOLOGIA": "F",
+        "CASOS": 10,
+        "ETIQUETA": "125 | F",
+        "PUNTO REFERENCIAL": "Empresa Eléctrica EEASA",
+        "PUNTO_REFERENCIAL": "Empresa Eléctrica EEASA"
       }
     },
     {
@@ -3270,11 +4145,18 @@
         "etiqueta": "126 | C",
         "etiquetaSC": "126 | C",
         "identificador": "REF-16 -126",
-        "punto_referencial": "GAD 16 de Agosto",
+        "punto_referencial": "Subcentro Pablo Sexto",
         "casos": 10,
         "latitud": -1.746475,
         "longitud": -77.91465,
-        "referencia_corta": "GAD 16 de Agosto"
+        "referencia_corta": "Subcentro Pablo Sexto",
+        "CANTON": "PALORA",
+        "PARROQUIA": "16 DE AGOSTO",
+        "TIPOLOGIA": "C",
+        "CASOS": 10,
+        "ETIQUETA": "126 | C",
+        "PUNTO REFERENCIAL": "Subcentro Pablo Sexto",
+        "PUNTO_REFERENCIAL": "Subcentro Pablo Sexto"
       }
     },
     {
@@ -3296,11 +4178,18 @@
         "etiqueta": "127 | A",
         "etiquetaSC": "127 | A",
         "identificador": "REF-16 -127",
-        "punto_referencial": "Zona Urbana 16 de Agosto",
+        "punto_referencial": "Coliseo Pablo Sexto",
         "casos": 10,
         "latitud": -1.758685,
         "longitud": -77.901566,
-        "referencia_corta": "Cabecera / Sector Central (16 DE AGOSTO)"
+        "referencia_corta": "Coliseo Pablo Sexto",
+        "CANTON": "PALORA",
+        "PARROQUIA": "16 DE AGOSTO",
+        "TIPOLOGIA": "A",
+        "CASOS": 10,
+        "ETIQUETA": "127 | A",
+        "PUNTO REFERENCIAL": "Coliseo Pablo Sexto",
+        "PUNTO_REFERENCIAL": "Coliseo Pablo Sexto"
       }
     },
     {
@@ -3317,16 +4206,23 @@
         "sc": "128",
         "codigo_muestra": "128",
         "canton": "PALORA",
-        "parroquia": "PALORA",
+        "parroquia": "ARAPICOS",
         "tipologia": "C",
         "etiqueta": "128 | C",
         "etiquetaSC": "128 | C",
         "identificador": "REF-PAL-128",
-        "punto_referencial": "Zona Urbana Palora",
+        "punto_referencial": "Parque Central Arapicos",
         "casos": 10,
         "latitud": -1.68591,
         "longitud": -77.980207,
-        "referencia_corta": "Cabecera / Sector Central (PALORA)"
+        "referencia_corta": "Parque Central Arapicos",
+        "CANTON": "PALORA",
+        "PARROQUIA": "ARAPICOS",
+        "TIPOLOGIA": "C",
+        "CASOS": 10,
+        "ETIQUETA": "128 | C",
+        "PUNTO REFERENCIAL": "Parque Central Arapicos",
+        "PUNTO_REFERENCIAL": "Parque Central Arapicos"
       }
     },
     {
@@ -3343,16 +4239,23 @@
         "sc": "129",
         "codigo_muestra": "129",
         "canton": "PALORA",
-        "parroquia": "PALORA",
+        "parroquia": "CUMANDA",
         "tipologia": "B",
         "etiqueta": "129 | B",
         "etiquetaSC": "129 | B",
         "identificador": "REF-PAL-129",
-        "punto_referencial": "Camal en Construccion",
+        "punto_referencial": "Plaza Central Cumandá",
         "casos": 10,
         "latitud": -1.692434,
         "longitud": -77.968285,
-        "referencia_corta": "Camal en Construccion"
+        "referencia_corta": "Plaza Central Cumandá",
+        "CANTON": "PALORA",
+        "PARROQUIA": "CUMANDA",
+        "TIPOLOGIA": "B",
+        "CASOS": 10,
+        "ETIQUETA": "129 | B",
+        "PUNTO REFERENCIAL": "Plaza Central Cumandá",
+        "PUNTO_REFERENCIAL": "Plaza Central Cumandá"
       }
     },
     {
@@ -3374,11 +4277,18 @@
         "etiqueta": "130 | F",
         "etiquetaSC": "130 | F",
         "identificador": "REF-PAL-130",
-        "punto_referencial": "Sindicato de Choferes",
+        "punto_referencial": "Parque Central Palora",
         "casos": 10,
         "latitud": -1.698388,
         "longitud": -77.966945,
-        "referencia_corta": "Cabecera / Sector Central (PALORA)"
+        "referencia_corta": "Parque Central Palora",
+        "CANTON": "PALORA",
+        "PARROQUIA": "PALORA",
+        "TIPOLOGIA": "F",
+        "CASOS": 10,
+        "ETIQUETA": "130 | F",
+        "PUNTO REFERENCIAL": "Parque Central Palora",
+        "PUNTO_REFERENCIAL": "Parque Central Palora"
       }
     },
     {
@@ -3400,11 +4310,18 @@
         "etiqueta": "131 | E",
         "etiquetaSC": "131 | E",
         "identificador": "REF-PAL-131",
-        "punto_referencial": "Cerca de Colegio a Distancia Camilo Galleg",
+        "punto_referencial": "Colegio Camilo Gallegos",
         "casos": 10,
         "latitud": -1.699929,
         "longitud": -77.972826,
-        "referencia_corta": "Cabecera / Sector Central (PALORA)"
+        "referencia_corta": "Colegio Camilo Gallegos",
+        "CANTON": "PALORA",
+        "PARROQUIA": "PALORA",
+        "TIPOLOGIA": "E",
+        "CASOS": 10,
+        "ETIQUETA": "131 | E",
+        "PUNTO REFERENCIAL": "Colegio Camilo Gallegos",
+        "PUNTO_REFERENCIAL": "Colegio Camilo Gallegos"
       }
     },
     {
@@ -3426,11 +4343,18 @@
         "etiqueta": "132 | B",
         "etiquetaSC": "132 | B",
         "identificador": "REF-PAL-132",
-        "punto_referencial": "Jardin de Infantes Integrado la Florida",
+        "punto_referencial": "Jardín La Florida",
         "casos": 10,
         "latitud": -1.705337,
         "longitud": -77.963189,
-        "referencia_corta": "Cabecera / Sector Central (PALORA)"
+        "referencia_corta": "Jardín La Florida",
+        "CANTON": "PALORA",
+        "PARROQUIA": "PALORA",
+        "TIPOLOGIA": "B",
+        "CASOS": 10,
+        "ETIQUETA": "132 | B",
+        "PUNTO REFERENCIAL": "Jardín La Florida",
+        "PUNTO_REFERENCIAL": "Jardín La Florida"
       }
     },
     {
@@ -3452,11 +4376,18 @@
         "etiqueta": "133 | D",
         "etiquetaSC": "133 | D",
         "identificador": "REF-PAL-133",
-        "punto_referencial": "Cerca de Antena",
+        "punto_referencial": "Municipio de Palora",
         "casos": 10,
         "latitud": -1.705712,
         "longitud": -77.972971,
-        "referencia_corta": "Cabecera / Sector Central (PALORA)"
+        "referencia_corta": "Municipio de Palora",
+        "CANTON": "PALORA",
+        "PARROQUIA": "PALORA",
+        "TIPOLOGIA": "D",
+        "CASOS": 10,
+        "ETIQUETA": "133 | D",
+        "PUNTO REFERENCIAL": "Municipio de Palora",
+        "PUNTO_REFERENCIAL": "Municipio de Palora"
       }
     },
     {
@@ -3478,11 +4409,18 @@
         "etiqueta": "134 | H",
         "etiquetaSC": "134 | H",
         "identificador": "REF-PAL-134",
-        "punto_referencial": "Parque Barrios Lirios",
+        "punto_referencial": "Hospital Básico Palora",
         "casos": 10,
         "latitud": -1.709104,
         "longitud": -77.96687,
-        "referencia_corta": "Cabecera / Sector Central (PALORA)"
+        "referencia_corta": "Hospital Básico Palora",
+        "CANTON": "PALORA",
+        "PARROQUIA": "PALORA",
+        "TIPOLOGIA": "H",
+        "CASOS": 10,
+        "ETIQUETA": "134 | H",
+        "PUNTO REFERENCIAL": "Hospital Básico Palora",
+        "PUNTO_REFERENCIAL": "Hospital Básico Palora"
       }
     },
     {
@@ -3504,11 +4442,18 @@
         "etiqueta": "135 | A",
         "etiquetaSC": "135 | A",
         "identificador": "REF-PAL-135",
-        "punto_referencial": "Cerca de Estacion de Servicio Gomez",
+        "punto_referencial": "Gasolinera Gómez Palora",
         "casos": 10,
         "latitud": -1.7159,
         "longitud": -77.963091,
-        "referencia_corta": "Cabecera / Sector Central (PALORA)"
+        "referencia_corta": "Gasolinera Gómez Palora",
+        "CANTON": "PALORA",
+        "PARROQUIA": "PALORA",
+        "TIPOLOGIA": "A",
+        "CASOS": 10,
+        "ETIQUETA": "135 | A",
+        "PUNTO REFERENCIAL": "Gasolinera Gómez Palora",
+        "PUNTO_REFERENCIAL": "Gasolinera Gómez Palora"
       }
     },
     {
@@ -3530,11 +4475,18 @@
         "etiqueta": "136 | G",
         "etiquetaSC": "136 | G",
         "identificador": "REF-PAL-136",
-        "punto_referencial": "Parque Central de Palora",
+        "punto_referencial": "Barrio Central Palora",
         "casos": 10,
         "latitud": -1.698155,
         "longitud": -77.967524,
-        "referencia_corta": "Parque Central de Palora"
+        "referencia_corta": "Barrio Central Palora",
+        "CANTON": "PALORA",
+        "PARROQUIA": "PALORA",
+        "TIPOLOGIA": "G",
+        "CASOS": 10,
+        "ETIQUETA": "136 | G",
+        "PUNTO REFERENCIAL": "Barrio Central Palora",
+        "PUNTO_REFERENCIAL": "Barrio Central Palora"
       }
     },
     {
@@ -3556,11 +4508,18 @@
         "etiqueta": "137 | C",
         "etiquetaSC": "137 | C",
         "identificador": "REF-PAL-137",
-        "punto_referencial": "U.E. Palora",
+        "punto_referencial": "Coliseo Municipal Palora",
         "casos": 10,
         "latitud": -1.71138,
         "longitud": -77.96283,
-        "referencia_corta": "Unidad Educativa Palora"
+        "referencia_corta": "Coliseo Municipal Palora",
+        "CANTON": "PALORA",
+        "PARROQUIA": "PALORA",
+        "TIPOLOGIA": "C",
+        "CASOS": 10,
+        "ETIQUETA": "137 | C",
+        "PUNTO REFERENCIAL": "Coliseo Municipal Palora",
+        "PUNTO_REFERENCIAL": "Coliseo Municipal Palora"
       }
     },
     {
@@ -3582,11 +4541,18 @@
         "etiqueta": "138 | D",
         "etiquetaSC": "138 | D",
         "identificador": "REF-SAN-138",
-        "punto_referencial": "U.E. Fray Sebastian Rosero",
+        "punto_referencial": "Plaza 16 de Agosto",
         "casos": 10,
         "latitud": -1.786304,
         "longitud": -77.982755,
-        "referencia_corta": "Cabecera / Sector Central (SANGAY)"
+        "referencia_corta": "Plaza 16 de Agosto",
+        "CANTON": "PALORA",
+        "PARROQUIA": "SANGAY",
+        "TIPOLOGIA": "D",
+        "CASOS": 10,
+        "ETIQUETA": "138 | D",
+        "PUNTO REFERENCIAL": "Plaza 16 de Agosto",
+        "PUNTO_REFERENCIAL": "Plaza 16 de Agosto"
       }
     },
     {
@@ -3608,11 +4574,18 @@
         "etiqueta": "139 | E",
         "etiquetaSC": "139 | E",
         "identificador": "REF-SAN-139",
-        "punto_referencial": "Sector IESS de Sangay",
+        "punto_referencial": "Subcentro 16 de Agosto",
         "casos": 10,
         "latitud": -1.793302,
         "longitud": -77.984425,
-        "referencia_corta": "Cabecera / Sector Central (SANGAY)"
+        "referencia_corta": "Subcentro 16 de Agosto",
+        "CANTON": "PALORA",
+        "PARROQUIA": "SANGAY",
+        "TIPOLOGIA": "E",
+        "CASOS": 10,
+        "ETIQUETA": "139 | E",
+        "PUNTO REFERENCIAL": "Subcentro 16 de Agosto",
+        "PUNTO_REFERENCIAL": "Subcentro 16 de Agosto"
       }
     },
     {
@@ -3634,11 +4607,18 @@
         "etiqueta": "140 | H",
         "etiquetaSC": "140 | H",
         "identificador": "REF-SAN-140",
-        "punto_referencial": "Sector Iglesia de Sangay Nuestra Seniora d",
+        "punto_referencial": "Iglesia Sangay Central",
         "casos": 10,
         "latitud": -1.792781,
         "longitud": -77.97874,
-        "referencia_corta": "Cabecera / Sector Central (SANGAY)"
+        "referencia_corta": "Iglesia Sangay Central",
+        "CANTON": "PALORA",
+        "PARROQUIA": "SANGAY",
+        "TIPOLOGIA": "H",
+        "CASOS": 10,
+        "ETIQUETA": "140 | H",
+        "PUNTO REFERENCIAL": "Iglesia Sangay Central",
+        "PUNTO_REFERENCIAL": "Iglesia Sangay Central"
       }
     },
     {
@@ -3655,16 +4635,23 @@
         "sc": "141",
         "codigo_muestra": "141",
         "canton": "SAN JUAN BOSCO",
-        "parroquia": "SAN JUAN BOSCO",
+        "parroquia": "PAN DE AZUCAR",
         "tipologia": "C",
         "etiqueta": "141 | C",
         "etiquetaSC": "141 | C",
         "identificador": "REF-SAN-141",
-        "punto_referencial": "Cerca de Centro de Acopio Asociacion de Ga",
+        "punto_referencial": "Centro Acopio Pan de Azúcar",
         "casos": 10,
         "latitud": -3.111118,
         "longitud": -78.526116,
-        "referencia_corta": "Cabecera / Sector Central (SAN JUAN BOSCO)"
+        "referencia_corta": "Centro Acopio Pan de Azúcar",
+        "CANTON": "SAN JUAN BOSCO",
+        "PARROQUIA": "PAN DE AZUCAR",
+        "TIPOLOGIA": "C",
+        "CASOS": 10,
+        "ETIQUETA": "141 | C",
+        "PUNTO REFERENCIAL": "Centro Acopio Pan de Azúcar",
+        "PUNTO_REFERENCIAL": "Centro Acopio Pan de Azúcar"
       }
     },
     {
@@ -3686,19 +4673,22 @@
         "etiqueta": "142 | A",
         "etiquetaSC": "142 | A",
         "identificador": "REF-SAN-142",
-        "punto_referencial": "Entrada Norte San Carlos de Limón",
+        "punto_referencial": "Entrada San Carlos de Limón",
         "casos": 10,
         "latitud": -3.2005,
         "longitud": -78.4362,
         "CANTON": "SAN JUAN BOSCO",
         "PARROQUIA": "SAN CARLOS DE LIMON",
-        "referencia_corta": "Entrada Norte San Carlos de Limón",
-        "PUNTO REFERENCIAL": "Entrada Norte San Carlos de Limón",
-        "PUNTO_REFERENCIAL": "Entrada Norte San Carlos de Limón",
+        "referencia_corta": "Entrada San Carlos de Limón",
+        "PUNTO REFERENCIAL": "Entrada San Carlos de Limón",
+        "PUNTO_REFERENCIAL": "Entrada San Carlos de Limón",
         "LATITUD": -3.2005,
         "LONGITUD": -78.4362,
         "X_UTM": 784939.9,
-        "Y_UTM": 9645888.79
+        "Y_UTM": 9645888.79,
+        "TIPOLOGIA": "A",
+        "CASOS": 10,
+        "ETIQUETA": "142 | A"
       }
     },
     {
@@ -3720,11 +4710,18 @@
         "etiqueta": "143 | C",
         "etiquetaSC": "143 | C",
         "identificador": "REF-SAN-143",
-        "punto_referencial": "Joaquin de Olmedo",
+        "punto_referencial": "Joaquín de Olmedo Centro",
         "casos": 10,
         "latitud": -3.203568,
         "longitud": -78.4352,
-        "referencia_corta": "Joaquin de Olmedo"
+        "referencia_corta": "Joaquín de Olmedo Centro",
+        "CANTON": "SAN JUAN BOSCO",
+        "PARROQUIA": "SAN CARLOS DE LIMON",
+        "TIPOLOGIA": "C",
+        "CASOS": 10,
+        "ETIQUETA": "143 | C",
+        "PUNTO REFERENCIAL": "Joaquín de Olmedo Centro",
+        "PUNTO_REFERENCIAL": "Joaquín de Olmedo Centro"
       }
     },
     {
@@ -3746,11 +4743,18 @@
         "etiqueta": "144 | B",
         "etiquetaSC": "144 | B",
         "identificador": "REF-SAN-144",
-        "punto_referencial": "Cerca de GAD San Carlos de Limon",
+        "punto_referencial": "GAD San Carlos de Limón",
         "casos": 10,
         "latitud": -3.208,
         "longitud": -78.435635,
-        "referencia_corta": "Cabecera / Sector Central (SAN CARLOS DE LIMON)"
+        "referencia_corta": "GAD San Carlos de Limón",
+        "CANTON": "SAN JUAN BOSCO",
+        "PARROQUIA": "SAN CARLOS DE LIMON",
+        "TIPOLOGIA": "B",
+        "CASOS": 10,
+        "ETIQUETA": "144 | B",
+        "PUNTO REFERENCIAL": "GAD San Carlos de Limón",
+        "PUNTO_REFERENCIAL": "GAD San Carlos de Limón"
       }
     },
     {
@@ -3767,16 +4771,23 @@
         "sc": "145",
         "codigo_muestra": "145",
         "canton": "SAN JUAN BOSCO",
-        "parroquia": "SAN JUAN BOSCO",
+        "parroquia": "SAN JACINTO DE WAKAMBEIS",
         "tipologia": "D",
         "etiqueta": "145 | D",
         "etiquetaSC": "145 | D",
         "identificador": "REF-SAN-145",
-        "punto_referencial": "Zona Urbana San Juan Bosco",
+        "punto_referencial": "Plaza San Jacinto Wakambeis",
         "casos": 10,
         "latitud": -3.115389,
         "longitud": -78.542284,
-        "referencia_corta": "Cabecera / Sector Central (SAN JUAN BOSCO)"
+        "referencia_corta": "Plaza San Jacinto Wakambeis",
+        "CANTON": "SAN JUAN BOSCO",
+        "PARROQUIA": "SAN JACINTO DE WAKAMBEIS",
+        "TIPOLOGIA": "D",
+        "CASOS": 10,
+        "ETIQUETA": "145 | D",
+        "PUNTO REFERENCIAL": "Plaza San Jacinto Wakambeis",
+        "PUNTO_REFERENCIAL": "Plaza San Jacinto Wakambeis"
       }
     },
     {
@@ -3798,11 +4809,18 @@
         "etiqueta": "146 | F",
         "etiquetaSC": "146 | F",
         "identificador": "REF-SAN-146",
-        "punto_referencial": "Parque Central San Juan Bosco",
+        "punto_referencial": "Parque San Juan Bosco",
         "casos": 10,
         "latitud": -3.118015,
         "longitud": -78.53031,
-        "referencia_corta": "Cabecera / Sector Central (SAN JUAN BOSCO)"
+        "referencia_corta": "Parque San Juan Bosco",
+        "CANTON": "SAN JUAN BOSCO",
+        "PARROQUIA": "SAN JUAN BOSCO",
+        "TIPOLOGIA": "F",
+        "CASOS": 10,
+        "ETIQUETA": "146 | F",
+        "PUNTO REFERENCIAL": "Parque San Juan Bosco",
+        "PUNTO_REFERENCIAL": "Parque San Juan Bosco"
       }
     },
     {
@@ -3824,11 +4842,18 @@
         "etiqueta": "147 | E",
         "etiquetaSC": "147 | E",
         "identificador": "REF-SAN-147",
-        "punto_referencial": "Sector Antena",
+        "punto_referencial": "Municipio San Juan Bosco",
         "casos": 10,
         "latitud": -3.120663,
         "longitud": -78.522135,
-        "referencia_corta": "Cabecera / Sector Central (SAN JUAN BOSCO)"
+        "referencia_corta": "Municipio San Juan Bosco",
+        "CANTON": "SAN JUAN BOSCO",
+        "PARROQUIA": "SAN JUAN BOSCO",
+        "TIPOLOGIA": "E",
+        "CASOS": 10,
+        "ETIQUETA": "147 | E",
+        "PUNTO REFERENCIAL": "Municipio San Juan Bosco",
+        "PUNTO_REFERENCIAL": "Municipio San Juan Bosco"
       }
     },
     {
@@ -3850,11 +4875,18 @@
         "etiqueta": "148 | B",
         "etiquetaSC": "148 | B",
         "identificador": "REF-SAN-148",
-        "punto_referencial": "Cerca de Parque Lineal",
+        "punto_referencial": "Subcentro San Juan Bosco",
         "casos": 10,
         "latitud": -3.12348,
         "longitud": -78.535898,
-        "referencia_corta": "Cabecera / Sector Central (SAN JUAN BOSCO)"
+        "referencia_corta": "Subcentro San Juan Bosco",
+        "CANTON": "SAN JUAN BOSCO",
+        "PARROQUIA": "SAN JUAN BOSCO",
+        "TIPOLOGIA": "B",
+        "CASOS": 10,
+        "ETIQUETA": "148 | B",
+        "PUNTO REFERENCIAL": "Subcentro San Juan Bosco",
+        "PUNTO_REFERENCIAL": "Subcentro San Juan Bosco"
       }
     },
     {
@@ -3876,11 +4908,18 @@
         "etiqueta": "149 | D",
         "etiquetaSC": "149 | D",
         "identificador": "REF-SAN-149",
-        "punto_referencial": "Cerca de Tanque de Agua",
+        "punto_referencial": "Coliseo San Juan Bosco",
         "casos": 10,
         "latitud": -3.126935,
         "longitud": -78.544018,
-        "referencia_corta": "Cabecera / Sector Central (SAN JUAN BOSCO)"
+        "referencia_corta": "Coliseo San Juan Bosco",
+        "CANTON": "SAN JUAN BOSCO",
+        "PARROQUIA": "SAN JUAN BOSCO",
+        "TIPOLOGIA": "D",
+        "CASOS": 10,
+        "ETIQUETA": "149 | D",
+        "PUNTO REFERENCIAL": "Coliseo San Juan Bosco",
+        "PUNTO_REFERENCIAL": "Coliseo San Juan Bosco"
       }
     },
     {
@@ -3902,11 +4941,18 @@
         "etiqueta": "150 | H",
         "etiquetaSC": "150 | H",
         "identificador": "REF-SAN-150",
-        "punto_referencial": "Sector Parque Lineal",
+        "punto_referencial": "Barrio Central SJB",
         "casos": 10,
         "latitud": -3.129008,
         "longitud": -78.532432,
-        "referencia_corta": "Cabecera / Sector Central (SAN JUAN BOSCO)"
+        "referencia_corta": "Barrio Central SJB",
+        "CANTON": "SAN JUAN BOSCO",
+        "PARROQUIA": "SAN JUAN BOSCO",
+        "TIPOLOGIA": "H",
+        "CASOS": 10,
+        "ETIQUETA": "150 | H",
+        "PUNTO REFERENCIAL": "Barrio Central SJB",
+        "PUNTO_REFERENCIAL": "Barrio Central SJB"
       }
     },
     {
@@ -3928,11 +4974,18 @@
         "etiqueta": "151 | A",
         "etiquetaSC": "151 | A",
         "identificador": "REF-SAN-151",
-        "punto_referencial": "Tanque de Agua",
+        "punto_referencial": "GAD Santiago de Panantza",
         "casos": 10,
         "latitud": -3.128815,
         "longitud": -78.542281,
-        "referencia_corta": "Tanque de Agua"
+        "referencia_corta": "GAD Santiago de Panantza",
+        "CANTON": "SAN JUAN BOSCO",
+        "PARROQUIA": "SAN JUAN BOSCO",
+        "TIPOLOGIA": "A",
+        "CASOS": 10,
+        "ETIQUETA": "151 | A",
+        "PUNTO REFERENCIAL": "GAD Santiago de Panantza",
+        "PUNTO_REFERENCIAL": "GAD Santiago de Panantza"
       }
     },
     {
@@ -3954,11 +5007,18 @@
         "etiqueta": "152 | G",
         "etiquetaSC": "152 | G",
         "identificador": "REF-SAN-152",
-        "punto_referencial": "Comunidad el Progreso",
+        "punto_referencial": "Parque Central Panantza",
         "casos": 10,
         "latitud": -3.133666,
         "longitud": -78.537694,
-        "referencia_corta": "Cabecera / Sector Central (SAN JUAN BOSCO)"
+        "referencia_corta": "Parque Central Panantza",
+        "CANTON": "SAN JUAN BOSCO",
+        "PARROQUIA": "SAN JUAN BOSCO",
+        "TIPOLOGIA": "G",
+        "CASOS": 10,
+        "ETIQUETA": "152 | G",
+        "PUNTO REFERENCIAL": "Parque Central Panantza",
+        "PUNTO_REFERENCIAL": "Parque Central Panantza"
       }
     },
     {
@@ -3980,11 +5040,18 @@
         "etiqueta": "153 | C",
         "etiquetaSC": "153 | C",
         "identificador": "REF-SAN-153",
-        "punto_referencial": "Iglesia Evangelica Luz del Mundo",
+        "punto_referencial": "Iglesia Luz del Mundo",
         "casos": 10,
         "latitud": -3.226688,
         "longitud": -78.556783,
-        "referencia_corta": "Cabecera / Sector Central (SAN JUAN BOSCO)"
+        "referencia_corta": "Iglesia Luz del Mundo",
+        "CANTON": "SAN JUAN BOSCO",
+        "PARROQUIA": "SAN JUAN BOSCO",
+        "TIPOLOGIA": "C",
+        "CASOS": 10,
+        "ETIQUETA": "153 | C",
+        "PUNTO REFERENCIAL": "Iglesia Luz del Mundo",
+        "PUNTO_REFERENCIAL": "Iglesia Luz del Mundo"
       }
     },
     {
@@ -4006,11 +5073,18 @@
         "etiqueta": "154 | E",
         "etiquetaSC": "154 | E",
         "identificador": "REF-SAN-154",
-        "punto_referencial": "UPC Pananza",
+        "punto_referencial": "Subcentro Panantza",
         "casos": 10,
         "latitud": -3.153989,
         "longitud": -78.483539,
-        "referencia_corta": "UPC Pananza"
+        "referencia_corta": "Subcentro Panantza",
+        "CANTON": "SAN JUAN BOSCO",
+        "PARROQUIA": "SANTIAGO DE PANANZA",
+        "TIPOLOGIA": "E",
+        "CASOS": 10,
+        "ETIQUETA": "154 | E",
+        "PUNTO REFERENCIAL": "Subcentro Panantza",
+        "PUNTO_REFERENCIAL": "Subcentro Panantza"
       }
     },
     {
@@ -4032,11 +5106,18 @@
         "etiqueta": "155 | H",
         "etiquetaSC": "155 | H",
         "identificador": "REF-SAN-155",
-        "punto_referencial": "Infocentro Santiago de Pananza",
+        "punto_referencial": "Infocentro Panantza",
         "casos": 10,
         "latitud": -3.155079,
         "longitud": -78.485234,
-        "referencia_corta": "Infocentro Santiago de Pananza"
+        "referencia_corta": "Infocentro Panantza",
+        "CANTON": "SAN JUAN BOSCO",
+        "PARROQUIA": "SANTIAGO DE PANANZA",
+        "TIPOLOGIA": "H",
+        "CASOS": 10,
+        "ETIQUETA": "155 | H",
+        "PUNTO REFERENCIAL": "Infocentro Panantza",
+        "PUNTO_REFERENCIAL": "Infocentro Panantza"
       }
     },
     {
@@ -4053,16 +5134,23 @@
         "sc": "156",
         "codigo_muestra": "156",
         "canton": "SANTIAGO",
-        "parroquia": "MENDEZ",
+        "parroquia": "CHUPIANZA",
         "tipologia": "C",
         "etiqueta": "156 | C",
         "etiquetaSC": "156 | C",
         "identificador": "REF-MEN-156",
-        "punto_referencial": "Cerca de Iglesia Evangelica Apostolica",
+        "punto_referencial": "Plaza Central Chupianza",
         "casos": 10,
         "latitud": -2.71129,
         "longitud": -78.325837,
-        "referencia_corta": "Cabecera / Sector Central (MENDEZ)"
+        "referencia_corta": "Plaza Central Chupianza",
+        "CANTON": "SANTIAGO",
+        "PARROQUIA": "CHUPIANZA",
+        "TIPOLOGIA": "C",
+        "CASOS": 10,
+        "ETIQUETA": "156 | C",
+        "PUNTO REFERENCIAL": "Plaza Central Chupianza",
+        "PUNTO_REFERENCIAL": "Plaza Central Chupianza"
       }
     },
     {
@@ -4079,16 +5167,23 @@
         "sc": "157",
         "codigo_muestra": "157",
         "canton": "SANTIAGO",
-        "parroquia": "MENDEZ",
+        "parroquia": "COPAL",
         "tipologia": "D",
         "etiqueta": "157 | D",
         "etiquetaSC": "157 | D",
         "identificador": "REF-MEN-157",
-        "punto_referencial": "Escuela Inhabilitada",
+        "punto_referencial": "Plaza Central Copal",
         "casos": 10,
         "latitud": -2.71268,
         "longitud": -78.32131,
-        "referencia_corta": "Cabecera / Sector Central (MENDEZ)"
+        "referencia_corta": "Plaza Central Copal",
+        "CANTON": "SANTIAGO",
+        "PARROQUIA": "COPAL",
+        "TIPOLOGIA": "D",
+        "CASOS": 10,
+        "ETIQUETA": "157 | D",
+        "PUNTO REFERENCIAL": "Plaza Central Copal",
+        "PUNTO_REFERENCIAL": "Plaza Central Copal"
       }
     },
     {
@@ -4110,11 +5205,18 @@
         "etiqueta": "158 | A",
         "etiquetaSC": "158 | A",
         "identificador": "REF-MEN-158",
-        "punto_referencial": "U.E. \"24 de Mayo\"",
+        "punto_referencial": "Parque Central de Méndez",
         "casos": 10,
         "latitud": -2.717951,
         "longitud": -78.321083,
-        "referencia_corta": "Unidad Educativa \"24 de Mayo\""
+        "referencia_corta": "Parque Central de Méndez",
+        "CANTON": "SANTIAGO",
+        "PARROQUIA": "MENDEZ",
+        "TIPOLOGIA": "A",
+        "CASOS": 10,
+        "ETIQUETA": "158 | A",
+        "PUNTO REFERENCIAL": "Parque Central de Méndez",
+        "PUNTO_REFERENCIAL": "Parque Central de Méndez"
       }
     },
     {
@@ -4136,11 +5238,18 @@
         "etiqueta": "159 | D",
         "etiquetaSC": "159 | D",
         "identificador": "REF-MEN-159",
-        "punto_referencial": "Cerca de Parque la Florida",
+        "punto_referencial": "Municipio de Méndez",
         "casos": 10,
         "latitud": -2.718411,
         "longitud": -78.316976,
-        "referencia_corta": "Cabecera / Sector Central (MENDEZ)"
+        "referencia_corta": "Municipio de Méndez",
+        "CANTON": "SANTIAGO",
+        "PARROQUIA": "MENDEZ",
+        "TIPOLOGIA": "D",
+        "CASOS": 10,
+        "ETIQUETA": "159 | D",
+        "PUNTO REFERENCIAL": "Municipio de Méndez",
+        "PUNTO_REFERENCIAL": "Municipio de Méndez"
       }
     },
     {
@@ -4162,11 +5271,18 @@
         "etiqueta": "160 | B",
         "etiquetaSC": "160 | B",
         "identificador": "REF-MEN-160",
-        "punto_referencial": "Cerca de Cementerio General",
+        "punto_referencial": "Cementerio General Méndez",
         "casos": 10,
         "latitud": -2.72309,
         "longitud": -78.314966,
-        "referencia_corta": "Cabecera / Sector Central (MENDEZ)"
+        "referencia_corta": "Cementerio General Méndez",
+        "CANTON": "SANTIAGO",
+        "PARROQUIA": "MENDEZ",
+        "TIPOLOGIA": "B",
+        "CASOS": 10,
+        "ETIQUETA": "160 | B",
+        "PUNTO REFERENCIAL": "Cementerio General Méndez",
+        "PUNTO_REFERENCIAL": "Cementerio General Méndez"
       }
     },
     {
@@ -4188,11 +5304,18 @@
         "etiqueta": "161 | A",
         "etiquetaSC": "161 | A",
         "identificador": "REF-MEN-161",
-        "punto_referencial": "Parque Central de Mendez",
+        "punto_referencial": "Hospital Básico Méndez",
         "casos": 10,
         "latitud": -2.715724,
         "longitud": -78.322735,
-        "referencia_corta": "Parque Central de Mendez"
+        "referencia_corta": "Hospital Básico Méndez",
+        "CANTON": "SANTIAGO",
+        "PARROQUIA": "MENDEZ",
+        "TIPOLOGIA": "A",
+        "CASOS": 10,
+        "ETIQUETA": "161 | A",
+        "PUNTO REFERENCIAL": "Hospital Básico Méndez",
+        "PUNTO_REFERENCIAL": "Hospital Básico Méndez"
       }
     },
     {
@@ -4214,11 +5337,18 @@
         "etiqueta": "162 | C",
         "etiquetaSC": "162 | C",
         "identificador": "REF-MEN-162",
-        "punto_referencial": "Escuela Edmundo Chiriboga",
+        "punto_referencial": "Mercado Central Méndez",
         "casos": 10,
         "latitud": -2.739864,
         "longitud": -78.298244,
-        "referencia_corta": "Escuela Edmundo Chiriboga"
+        "referencia_corta": "Mercado Central Méndez",
+        "CANTON": "SANTIAGO",
+        "PARROQUIA": "MENDEZ",
+        "TIPOLOGIA": "C",
+        "CASOS": 10,
+        "ETIQUETA": "162 | C",
+        "PUNTO REFERENCIAL": "Mercado Central Méndez",
+        "PUNTO_REFERENCIAL": "Mercado Central Méndez"
       }
     },
     {
@@ -4240,11 +5370,18 @@
         "etiqueta": "163 | B",
         "etiquetaSC": "163 | B",
         "identificador": "REF-PAT-163",
-        "punto_referencial": "Cerca de Brigada Selva No. 21",
+        "punto_referencial": "Brigada de Selva 21",
         "casos": 10,
         "latitud": -2.753543,
         "longitud": -78.262195,
-        "referencia_corta": "Cabecera / Sector Central (PATUCA)"
+        "referencia_corta": "Brigada de Selva 21",
+        "CANTON": "SANTIAGO",
+        "PARROQUIA": "PATUCA",
+        "TIPOLOGIA": "B",
+        "CASOS": 10,
+        "ETIQUETA": "163 | B",
+        "PUNTO REFERENCIAL": "Brigada de Selva 21",
+        "PUNTO_REFERENCIAL": "Brigada de Selva 21"
       }
     },
     {
@@ -4266,11 +5403,18 @@
         "etiqueta": "164 | H",
         "etiquetaSC": "164 | H",
         "identificador": "REF-PAT-164",
-        "punto_referencial": "Estadio Amazonas",
+        "punto_referencial": "Terminal Terrestre Méndez",
         "casos": 10,
         "latitud": -2.756241,
         "longitud": -78.264838,
-        "referencia_corta": "Estadio Amazonas"
+        "referencia_corta": "Terminal Terrestre Méndez",
+        "CANTON": "SANTIAGO",
+        "PARROQUIA": "PATUCA",
+        "TIPOLOGIA": "H",
+        "CASOS": 10,
+        "ETIQUETA": "164 | H",
+        "PUNTO REFERENCIAL": "Terminal Terrestre Méndez",
+        "PUNTO_REFERENCIAL": "Terminal Terrestre Méndez"
       }
     },
     {
@@ -4292,11 +5436,18 @@
         "etiqueta": "165 | A",
         "etiquetaSC": "165 | A",
         "identificador": "REF-SAN-165",
-        "punto_referencial": "Escuela Rio Pania",
+        "punto_referencial": "Barrio El Rosario Méndez",
         "casos": 10,
         "latitud": -2.691513,
         "longitud": -78.211556,
-        "referencia_corta": "Escuela Rio Pania"
+        "referencia_corta": "Barrio El Rosario Méndez",
+        "CANTON": "SANTIAGO",
+        "PARROQUIA": "SAN FCO. DE CHINIMBIMI",
+        "TIPOLOGIA": "A",
+        "CASOS": 10,
+        "ETIQUETA": "165 | A",
+        "PUNTO REFERENCIAL": "Barrio El Rosario Méndez",
+        "PUNTO_REFERENCIAL": "Barrio El Rosario Méndez"
       }
     },
     {
@@ -4318,11 +5469,18 @@
         "etiqueta": "166 | F",
         "etiquetaSC": "166 | F",
         "identificador": "REF-SAN-166",
-        "punto_referencial": "Cerca de Escuela Abandonada",
+        "punto_referencial": "Sector Esc. Central Méndez",
         "casos": 10,
         "latitud": -2.688038,
         "longitud": -78.208616,
-        "referencia_corta": "Cabecera / Sector Central (SAN FCO. DE CHINIMBIMI)"
+        "referencia_corta": "Sector Esc. Central Méndez",
+        "CANTON": "SANTIAGO",
+        "PARROQUIA": "SAN FCO. DE CHINIMBIMI",
+        "TIPOLOGIA": "F",
+        "CASOS": 10,
+        "ETIQUETA": "166 | F",
+        "PUNTO REFERENCIAL": "Sector Esc. Central Méndez",
+        "PUNTO_REFERENCIAL": "Sector Esc. Central Méndez"
       }
     },
     {
@@ -4344,11 +5502,18 @@
         "etiqueta": "167 | B",
         "etiquetaSC": "167 | B",
         "identificador": "REF-SAN-167",
-        "punto_referencial": "Iglesia Jesus del Gran Poder",
+        "punto_referencial": "Iglesia Gran Poder Méndez",
         "casos": 10,
         "latitud": -2.797308,
         "longitud": -78.316414,
-        "referencia_corta": "Iglesia Jesus del Gran Poder"
+        "referencia_corta": "Iglesia Gran Poder Méndez",
+        "CANTON": "SANTIAGO",
+        "PARROQUIA": "SAN LUIS DEL ACHO",
+        "TIPOLOGIA": "B",
+        "CASOS": 10,
+        "ETIQUETA": "167 | B",
+        "PUNTO REFERENCIAL": "Iglesia Gran Poder Méndez",
+        "PUNTO_REFERENCIAL": "Iglesia Gran Poder Méndez"
       }
     },
     {
@@ -4370,11 +5535,18 @@
         "etiqueta": "168 | D",
         "etiquetaSC": "168 | D",
         "identificador": "REF-TAY-168",
-        "punto_referencial": "Cerca de U.E. Tayuza",
+        "punto_referencial": "GAD Parroquial Patuca",
         "casos": 10,
         "latitud": -2.696515,
         "longitud": -78.24122,
-        "referencia_corta": "Cabecera / Sector Central (TAYUZA)"
+        "referencia_corta": "GAD Parroquial Patuca",
+        "CANTON": "SANTIAGO",
+        "PARROQUIA": "TAYUZA",
+        "TIPOLOGIA": "D",
+        "CASOS": 10,
+        "ETIQUETA": "168 | D",
+        "PUNTO REFERENCIAL": "GAD Parroquial Patuca",
+        "PUNTO_REFERENCIAL": "GAD Parroquial Patuca"
       }
     },
     {
@@ -4396,11 +5568,18 @@
         "etiqueta": "169 | G",
         "etiquetaSC": "169 | G",
         "identificador": "REF-TAY-169",
-        "punto_referencial": "Sector Dispensario Tayuza",
+        "punto_referencial": "Parque Central Patuca",
         "casos": 10,
         "latitud": -2.700432,
         "longitud": -78.245827,
-        "referencia_corta": "Cabecera / Sector Central (TAYUZA)"
+        "referencia_corta": "Parque Central Patuca",
+        "CANTON": "SANTIAGO",
+        "PARROQUIA": "TAYUZA",
+        "TIPOLOGIA": "G",
+        "CASOS": 10,
+        "ETIQUETA": "169 | G",
+        "PUNTO REFERENCIAL": "Parque Central Patuca",
+        "PUNTO_REFERENCIAL": "Parque Central Patuca"
       }
     },
     {
@@ -4422,11 +5601,18 @@
         "etiqueta": "170 | E",
         "etiquetaSC": "170 | E",
         "identificador": "REF-TAY-170",
-        "punto_referencial": "Coliseo de Tayuza",
+        "punto_referencial": "Plaza San Fco. Chinimbimi",
         "casos": 10,
         "latitud": -2.70055,
         "longitud": -78.238625,
-        "referencia_corta": "Cabecera / Sector Central (TAYUZA)"
+        "referencia_corta": "Plaza San Fco. Chinimbimi",
+        "CANTON": "SANTIAGO",
+        "PARROQUIA": "TAYUZA",
+        "TIPOLOGIA": "E",
+        "CASOS": 10,
+        "ETIQUETA": "170 | E",
+        "PUNTO REFERENCIAL": "Plaza San Fco. Chinimbimi",
+        "PUNTO_REFERENCIAL": "Plaza San Fco. Chinimbimi"
       }
     },
     {
@@ -4448,12 +5634,18 @@
         "etiqueta": "171 | C",
         "etiquetaSC": "171 | C",
         "identificador": "REF-SEV-171",
-        "punto_referencial": "Zona Urbana Sevilla Don Bosco",
+        "punto_referencial": "Parque San Luis del Acho",
         "casos": 10,
         "latitud": -2.284706,
         "longitud": -78.086497,
         "CANTON": "SEVILLA DON BOSCO",
-        "referencia_corta": "Cabecera / Sector Central (SEVILLA DON BOSCO)"
+        "referencia_corta": "Parque San Luis del Acho",
+        "PARROQUIA": "SEVILLA DON BOSCO",
+        "TIPOLOGIA": "C",
+        "CASOS": 10,
+        "ETIQUETA": "171 | C",
+        "PUNTO REFERENCIAL": "Parque San Luis del Acho",
+        "PUNTO_REFERENCIAL": "Parque San Luis del Acho"
       }
     },
     {
@@ -4475,12 +5667,18 @@
         "etiqueta": "172 | D",
         "etiquetaSC": "172 | D",
         "identificador": "REF-SEV-172",
-        "punto_referencial": "Sector Junta de Agua",
+        "punto_referencial": "GAD Parroquial Tayuza",
         "casos": 10,
         "latitud": -2.296714,
         "longitud": -78.094685,
         "CANTON": "SEVILLA DON BOSCO",
-        "referencia_corta": "Cabecera / Sector Central (SEVILLA DON BOSCO)"
+        "referencia_corta": "GAD Parroquial Tayuza",
+        "PARROQUIA": "SEVILLA DON BOSCO",
+        "TIPOLOGIA": "D",
+        "CASOS": 10,
+        "ETIQUETA": "172 | D",
+        "PUNTO REFERENCIAL": "GAD Parroquial Tayuza",
+        "PUNTO_REFERENCIAL": "GAD Parroquial Tayuza"
       }
     },
     {
@@ -4502,12 +5700,18 @@
         "etiqueta": "173 | D",
         "etiquetaSC": "173 | D",
         "identificador": "REF-SEV-173",
-        "punto_referencial": "Cerca de Junta de Agua",
+        "punto_referencial": "Parque Central Tayuza",
         "casos": 10,
         "latitud": -2.298138,
         "longitud": -78.097273,
         "CANTON": "SEVILLA DON BOSCO",
-        "referencia_corta": "Cabecera / Sector Central (SEVILLA DON BOSCO)"
+        "referencia_corta": "Parque Central Tayuza",
+        "PARROQUIA": "SEVILLA DON BOSCO",
+        "TIPOLOGIA": "D",
+        "CASOS": 10,
+        "ETIQUETA": "173 | D",
+        "PUNTO REFERENCIAL": "Parque Central Tayuza",
+        "PUNTO_REFERENCIAL": "Parque Central Tayuza"
       }
     },
     {
@@ -4529,12 +5733,18 @@
         "etiqueta": "174 | E",
         "etiquetaSC": "174 | E",
         "identificador": "REF-SEV-174",
-        "punto_referencial": "Sector Casa Asociados Cnt",
+        "punto_referencial": "Subcentro Salud Tayuza",
         "casos": 10,
         "latitud": -2.297989,
         "longitud": -78.083996,
         "CANTON": "SEVILLA DON BOSCO",
-        "referencia_corta": "Cabecera / Sector Central (SEVILLA DON BOSCO)"
+        "referencia_corta": "Subcentro Salud Tayuza",
+        "PARROQUIA": "SEVILLA DON BOSCO",
+        "TIPOLOGIA": "E",
+        "CASOS": 10,
+        "ETIQUETA": "174 | E",
+        "PUNTO REFERENCIAL": "Subcentro Salud Tayuza",
+        "PUNTO_REFERENCIAL": "Subcentro Salud Tayuza"
       }
     },
     {
@@ -4556,12 +5766,18 @@
         "etiqueta": "175 | B",
         "etiquetaSC": "175 | B",
         "identificador": "REF-SEV-175",
-        "punto_referencial": "Cerca de Esc. Angel Noguera",
+        "punto_referencial": "Escuela Ángel Noguera Norte",
         "casos": 10,
         "latitud": -2.301095,
         "longitud": -78.096938,
         "CANTON": "SEVILLA DON BOSCO",
-        "referencia_corta": "Cabecera / Sector Central (SEVILLA DON BOSCO)"
+        "referencia_corta": "Escuela Ángel Noguera Norte",
+        "PARROQUIA": "SEVILLA DON BOSCO",
+        "TIPOLOGIA": "B",
+        "CASOS": 10,
+        "ETIQUETA": "175 | B",
+        "PUNTO REFERENCIAL": "Escuela Ángel Noguera Norte",
+        "PUNTO_REFERENCIAL": "Escuela Ángel Noguera Norte"
       }
     },
     {
@@ -4583,12 +5799,18 @@
         "etiqueta": "176 | D",
         "etiquetaSC": "176 | D",
         "identificador": "REF-SEV-176",
-        "punto_referencial": "Cerca de Esc. Angel Noguera",
+        "punto_referencial": "Escuela Ángel Noguera Sur",
         "casos": 10,
         "latitud": -2.304137,
         "longitud": -78.097844,
         "CANTON": "SEVILLA DON BOSCO",
-        "referencia_corta": "Cabecera / Sector Central (SEVILLA DON BOSCO)"
+        "referencia_corta": "Escuela Ángel Noguera Sur",
+        "PARROQUIA": "SEVILLA DON BOSCO",
+        "TIPOLOGIA": "D",
+        "CASOS": 10,
+        "ETIQUETA": "176 | D",
+        "PUNTO REFERENCIAL": "Escuela Ángel Noguera Sur",
+        "PUNTO_REFERENCIAL": "Escuela Ángel Noguera Sur"
       }
     },
     {
@@ -4610,12 +5832,18 @@
         "etiqueta": "177 | C",
         "etiquetaSC": "177 | C",
         "identificador": "REF-SEV-177",
-        "punto_referencial": "Cerca de Centro Intercultural Comunitario",
+        "punto_referencial": "Centro Intercultural Sevilla",
         "casos": 10,
         "latitud": -2.308419,
         "longitud": -78.102591,
         "CANTON": "SEVILLA DON BOSCO",
-        "referencia_corta": "Cabecera / Sector Central (SEVILLA DON BOSCO)"
+        "referencia_corta": "Centro Intercultural Sevilla",
+        "PARROQUIA": "SEVILLA DON BOSCO",
+        "TIPOLOGIA": "C",
+        "CASOS": 10,
+        "ETIQUETA": "177 | C",
+        "PUNTO REFERENCIAL": "Centro Intercultural Sevilla",
+        "PUNTO_REFERENCIAL": "Centro Intercultural Sevilla"
       }
     },
     {
@@ -4637,12 +5865,18 @@
         "etiqueta": "178 | G",
         "etiquetaSC": "178 | G",
         "identificador": "REF-SEV-178",
-        "punto_referencial": "Comunidad Yuquipa Oeste / Ex Escuela",
+        "punto_referencial": "Comunidad Yuquipa Oeste",
         "casos": 10,
         "latitud": -2.30055,
         "longitud": -78.074276,
         "CANTON": "SEVILLA DON BOSCO",
-        "referencia_corta": "Comunidad Yuquipa Oeste / Ex Escuela"
+        "referencia_corta": "Comunidad Yuquipa Oeste",
+        "PARROQUIA": "SEVILLA DON BOSCO",
+        "TIPOLOGIA": "G",
+        "CASOS": 10,
+        "ETIQUETA": "178 | G",
+        "PUNTO REFERENCIAL": "Comunidad Yuquipa Oeste",
+        "PUNTO_REFERENCIAL": "Comunidad Yuquipa Oeste"
       }
     },
     {
@@ -4669,7 +5903,13 @@
         "latitud": -2.314403,
         "longitud": -78.103827,
         "CANTON": "SEVILLA DON BOSCO",
-        "referencia_corta": "Cabecera / Sector Central (SEVILLA DON BOSCO)"
+        "referencia_corta": "Parque Sevilla Don Bosco",
+        "PARROQUIA": "SEVILLA DON BOSCO",
+        "TIPOLOGIA": "B",
+        "CASOS": 10,
+        "ETIQUETA": "179 | B",
+        "PUNTO REFERENCIAL": "Parque Sevilla Don Bosco",
+        "PUNTO_REFERENCIAL": "Parque Sevilla Don Bosco"
       }
     },
     {
@@ -4691,12 +5931,18 @@
         "etiqueta": "180 | E",
         "etiquetaSC": "180 | E",
         "identificador": "REF-SEV-180",
-        "punto_referencial": "Capilla Virgen Purisima de Macas",
+        "punto_referencial": "Capilla Purísima de Macas",
         "casos": 10,
         "latitud": -2.31852,
         "longitud": -78.10697,
         "CANTON": "SEVILLA DON BOSCO",
-        "referencia_corta": "Capilla Virgen Purisima de Macas"
+        "referencia_corta": "Capilla Purísima de Macas",
+        "PARROQUIA": "SEVILLA DON BOSCO",
+        "TIPOLOGIA": "E",
+        "CASOS": 10,
+        "ETIQUETA": "180 | E",
+        "PUNTO REFERENCIAL": "Capilla Purísima de Macas",
+        "PUNTO_REFERENCIAL": "Capilla Purísima de Macas"
       }
     },
     {
@@ -4718,12 +5964,18 @@
         "etiqueta": "181 | A",
         "etiquetaSC": "181 | A",
         "identificador": "REF-SEV-181",
-        "punto_referencial": "Cerca de Centro Educativo \"Gral. Cariosmag",
+        "punto_referencial": "Escuela Carlos Magno",
         "casos": 10,
         "latitud": -2.317994,
         "longitud": -78.097185,
         "CANTON": "SEVILLA DON BOSCO",
-        "referencia_corta": "Cabecera / Sector Central (SEVILLA DON BOSCO)"
+        "referencia_corta": "Escuela Carlos Magno",
+        "PARROQUIA": "SEVILLA DON BOSCO",
+        "TIPOLOGIA": "A",
+        "CASOS": 10,
+        "ETIQUETA": "181 | A",
+        "PUNTO REFERENCIAL": "Escuela Carlos Magno",
+        "PUNTO_REFERENCIAL": "Escuela Carlos Magno"
       }
     },
     {
@@ -4745,12 +5997,18 @@
         "etiqueta": "182 | F",
         "etiquetaSC": "182 | F",
         "identificador": "REF-SEV-182",
-        "punto_referencial": "Cerca de Coliseo Deportivo",
+        "punto_referencial": "Coliseo Deportivo Sevilla",
         "casos": 10,
         "latitud": -2.318164,
         "longitud": -78.101379,
         "CANTON": "SEVILLA DON BOSCO",
-        "referencia_corta": "Cabecera / Sector Central (SEVILLA DON BOSCO)"
+        "referencia_corta": "Coliseo Deportivo Sevilla",
+        "PARROQUIA": "SEVILLA DON BOSCO",
+        "TIPOLOGIA": "F",
+        "CASOS": 10,
+        "ETIQUETA": "182 | F",
+        "PUNTO REFERENCIAL": "Coliseo Deportivo Sevilla",
+        "PUNTO_REFERENCIAL": "Coliseo Deportivo Sevilla"
       }
     },
     {
@@ -4777,7 +6035,13 @@
         "latitud": -2.323893,
         "longitud": -78.103127,
         "CANTON": "SEVILLA DON BOSCO",
-        "referencia_corta": "Cabecera / Sector Central (SEVILLA DON BOSCO)"
+        "referencia_corta": "Comunidad Casiragi",
+        "PARROQUIA": "SEVILLA DON BOSCO",
+        "TIPOLOGIA": "C",
+        "CASOS": 10,
+        "ETIQUETA": "183 | C",
+        "PUNTO REFERENCIAL": "Comunidad Casiragi",
+        "PUNTO_REFERENCIAL": "Comunidad Casiragi"
       }
     },
     {
@@ -4804,7 +6068,13 @@
         "latitud": -2.331551,
         "longitud": -78.105755,
         "CANTON": "SEVILLA DON BOSCO",
-        "referencia_corta": "Cabecera / Sector Central (SEVILLA DON BOSCO)"
+        "referencia_corta": "Comunidad Hermita",
+        "PARROQUIA": "SEVILLA DON BOSCO",
+        "TIPOLOGIA": "F",
+        "CASOS": 10,
+        "ETIQUETA": "184 | F",
+        "PUNTO REFERENCIAL": "Comunidad Hermita",
+        "PUNTO_REFERENCIAL": "Comunidad Hermita"
       }
     },
     {
@@ -4831,7 +6101,13 @@
         "latitud": -2.334437,
         "longitud": -78.094249,
         "CANTON": "SEVILLA DON BOSCO",
-        "referencia_corta": "Cabecera / Sector Central (SEVILLA DON BOSCO)"
+        "referencia_corta": "Comunidad Guadalupe",
+        "PARROQUIA": "SEVILLA DON BOSCO",
+        "TIPOLOGIA": "A",
+        "CASOS": 10,
+        "ETIQUETA": "185 | A",
+        "PUNTO REFERENCIAL": "Comunidad Guadalupe",
+        "PUNTO_REFERENCIAL": "Comunidad Guadalupe"
       }
     },
     {
@@ -4853,12 +6129,18 @@
         "etiqueta": "186 | G",
         "etiquetaSC": "186 | G",
         "identificador": "REF-SEV-186",
-        "punto_referencial": "Zona Urbana Sevilla Don Bosco",
+        "punto_referencial": "Barrio Central Sevilla",
         "casos": 10,
         "latitud": -2.334694,
         "longitud": -78.083925,
         "CANTON": "SEVILLA DON BOSCO",
-        "referencia_corta": "Cabecera / Sector Central (SEVILLA DON BOSCO)"
+        "referencia_corta": "Barrio Central Sevilla",
+        "PARROQUIA": "SEVILLA DON BOSCO",
+        "TIPOLOGIA": "G",
+        "CASOS": 10,
+        "ETIQUETA": "186 | G",
+        "PUNTO REFERENCIAL": "Barrio Central Sevilla",
+        "PUNTO_REFERENCIAL": "Barrio Central Sevilla"
       }
     },
     {
@@ -4880,12 +6162,18 @@
         "etiqueta": "187 | H",
         "etiquetaSC": "187 | H",
         "identificador": "REF-SEV-187",
-        "punto_referencial": "Comunidad Angel Rouby",
+        "punto_referencial": "Comunidad Ángel Rouby",
         "casos": 10,
         "latitud": -2.338118,
         "longitud": -78.073484,
         "CANTON": "SEVILLA DON BOSCO",
-        "referencia_corta": "Cabecera / Sector Central (SEVILLA DON BOSCO)"
+        "referencia_corta": "Comunidad Ángel Rouby",
+        "PARROQUIA": "SEVILLA DON BOSCO",
+        "TIPOLOGIA": "H",
+        "CASOS": 10,
+        "ETIQUETA": "187 | H",
+        "PUNTO REFERENCIAL": "Comunidad Ángel Rouby",
+        "PUNTO_REFERENCIAL": "Comunidad Ángel Rouby"
       }
     },
     {
@@ -4907,12 +6195,18 @@
         "etiqueta": "188 | A",
         "etiquetaSC": "188 | A",
         "identificador": "REF-SEV-188",
-        "punto_referencial": "Sector Escuela Abandonada",
+        "punto_referencial": "Comunidad Don Bosco Norte",
         "casos": 10,
         "latitud": -2.345447,
         "longitud": -78.115745,
         "CANTON": "SEVILLA DON BOSCO",
-        "referencia_corta": "Cabecera / Sector Central (SEVILLA DON BOSCO)"
+        "referencia_corta": "Comunidad Don Bosco Norte",
+        "PARROQUIA": "SEVILLA DON BOSCO",
+        "TIPOLOGIA": "A",
+        "CASOS": 10,
+        "ETIQUETA": "188 | A",
+        "PUNTO REFERENCIAL": "Comunidad Don Bosco Norte",
+        "PUNTO_REFERENCIAL": "Comunidad Don Bosco Norte"
       }
     },
     {
@@ -4934,12 +6228,18 @@
         "etiqueta": "189 | H",
         "etiquetaSC": "189 | H",
         "identificador": "REF-SEV-189",
-        "punto_referencial": "Zona Urbana Sevilla Don Bosco",
+        "punto_referencial": "Barrio El Recreo Sevilla",
         "casos": 10,
         "latitud": -2.348832,
         "longitud": -78.10208,
         "CANTON": "SEVILLA DON BOSCO",
-        "referencia_corta": "Cabecera / Sector Central (SEVILLA DON BOSCO)"
+        "referencia_corta": "Barrio El Recreo Sevilla",
+        "PARROQUIA": "SEVILLA DON BOSCO",
+        "TIPOLOGIA": "H",
+        "CASOS": 10,
+        "ETIQUETA": "189 | H",
+        "PUNTO REFERENCIAL": "Barrio El Recreo Sevilla",
+        "PUNTO_REFERENCIAL": "Barrio El Recreo Sevilla"
       }
     },
     {
@@ -4961,12 +6261,18 @@
         "etiqueta": "190 | B",
         "etiquetaSC": "190 | B",
         "identificador": "REF-SEV-190",
-        "punto_referencial": "Cerca de C.N.H",
+        "punto_referencial": "Centro CNH Sevilla",
         "casos": 10,
         "latitud": -2.347535,
         "longitud": -78.093515,
         "CANTON": "SEVILLA DON BOSCO",
-        "referencia_corta": "Cabecera / Sector Central (SEVILLA DON BOSCO)"
+        "referencia_corta": "Centro CNH Sevilla",
+        "PARROQUIA": "SEVILLA DON BOSCO",
+        "TIPOLOGIA": "B",
+        "CASOS": 10,
+        "ETIQUETA": "190 | B",
+        "PUNTO REFERENCIAL": "Centro CNH Sevilla",
+        "PUNTO_REFERENCIAL": "Centro CNH Sevilla"
       }
     },
     {
@@ -5000,7 +6306,10 @@
         "LATITUD": -2.4678,
         "LONGITUD": -78.1802,
         "X_UTM": 813611.09,
-        "Y_UTM": 9726899.77
+        "Y_UTM": 9726899.77,
+        "TIPOLOGIA": "H",
+        "CASOS": 10,
+        "ETIQUETA": "191 | H"
       }
     },
     {
@@ -5022,11 +6331,18 @@
         "etiqueta": "192 | F",
         "etiquetaSC": "192 | F",
         "identificador": "REF-ASU-192",
-        "punto_referencial": "Sector GAD Parroquial",
+        "punto_referencial": "Sector GAD Asunción",
         "casos": 10,
         "latitud": -2.471213,
         "longitud": -78.180126,
-        "referencia_corta": "Cabecera / Sector Central (ASUNCION)"
+        "referencia_corta": "Sector GAD Asunción",
+        "CANTON": "SUCUA",
+        "PARROQUIA": "ASUNCION",
+        "TIPOLOGIA": "F",
+        "CASOS": 10,
+        "ETIQUETA": "192 | F",
+        "PUNTO REFERENCIAL": "Sector GAD Asunción",
+        "PUNTO_REFERENCIAL": "Sector GAD Asunción"
       }
     },
     {
@@ -5048,11 +6364,18 @@
         "etiqueta": "193 | B",
         "etiquetaSC": "193 | B",
         "identificador": "REF-ASU-193",
-        "punto_referencial": "Cerca de Coliseo de Asuncion",
+        "punto_referencial": "Coliseo de Asunción",
         "casos": 10,
         "latitud": -2.473475,
         "longitud": -78.183909,
-        "referencia_corta": "Cabecera / Sector Central (ASUNCION)"
+        "referencia_corta": "Coliseo de Asunción",
+        "CANTON": "SUCUA",
+        "PARROQUIA": "ASUNCION",
+        "TIPOLOGIA": "B",
+        "CASOS": 10,
+        "ETIQUETA": "193 | B",
+        "PUNTO REFERENCIAL": "Coliseo de Asunción",
+        "PUNTO_REFERENCIAL": "Coliseo de Asunción"
       }
     },
     {
@@ -5074,11 +6397,18 @@
         "etiqueta": "194 | H",
         "etiquetaSC": "194 | H",
         "identificador": "REF-HUA-194",
-        "punto_referencial": "Comunidad Huambi",
+        "punto_referencial": "Comunidad Huambi Norte",
         "casos": 10,
         "latitud": -2.52764,
         "longitud": -78.154814,
-        "referencia_corta": "Cabecera / Sector Central (HUAMBI)"
+        "referencia_corta": "Comunidad Huambi Norte",
+        "CANTON": "SUCUA",
+        "PARROQUIA": "HUAMBI",
+        "TIPOLOGIA": "H",
+        "CASOS": 10,
+        "ETIQUETA": "194 | H",
+        "PUNTO REFERENCIAL": "Comunidad Huambi Norte",
+        "PUNTO_REFERENCIAL": "Comunidad Huambi Norte"
       }
     },
     {
@@ -5100,11 +6430,18 @@
         "etiqueta": "195 | A",
         "etiquetaSC": "195 | A",
         "identificador": "REF-HUA-195",
-        "punto_referencial": "Cerca de Coliseo de la Liga Parroquial de",
+        "punto_referencial": "Coliseo Liga Huambi",
         "casos": 10,
         "latitud": -2.533978,
         "longitud": -78.15813,
-        "referencia_corta": "Cabecera / Sector Central (HUAMBI)"
+        "referencia_corta": "Coliseo Liga Huambi",
+        "CANTON": "SUCUA",
+        "PARROQUIA": "HUAMBI",
+        "TIPOLOGIA": "A",
+        "CASOS": 10,
+        "ETIQUETA": "195 | A",
+        "PUNTO REFERENCIAL": "Coliseo Liga Huambi",
+        "PUNTO_REFERENCIAL": "Coliseo Liga Huambi"
       }
     },
     {
@@ -5126,11 +6463,18 @@
         "etiqueta": "196 | D",
         "etiquetaSC": "196 | D",
         "identificador": "REF-HUA-196",
-        "punto_referencial": "Cerca de Iglesia Cristo Luz del Mundo",
+        "punto_referencial": "Iglesia Luz del Mundo Huambi",
         "casos": 10,
         "latitud": -2.541057,
         "longitud": -78.165229,
-        "referencia_corta": "Cabecera / Sector Central (HUAMBI)"
+        "referencia_corta": "Iglesia Luz del Mundo Huambi",
+        "CANTON": "SUCUA",
+        "PARROQUIA": "HUAMBI",
+        "TIPOLOGIA": "D",
+        "CASOS": 10,
+        "ETIQUETA": "196 | D",
+        "PUNTO REFERENCIAL": "Iglesia Luz del Mundo Huambi",
+        "PUNTO_REFERENCIAL": "Iglesia Luz del Mundo Huambi"
       }
     },
     {
@@ -5152,11 +6496,18 @@
         "etiqueta": "197 | E",
         "etiquetaSC": "197 | E",
         "identificador": "REF-HUA-197",
-        "punto_referencial": "Comunidad Huambi",
+        "punto_referencial": "Comunidad Huambi Centro",
         "casos": 10,
         "latitud": -2.547584,
         "longitud": -78.163099,
-        "referencia_corta": "Cabecera / Sector Central (HUAMBI)"
+        "referencia_corta": "Comunidad Huambi Centro",
+        "CANTON": "SUCUA",
+        "PARROQUIA": "HUAMBI",
+        "TIPOLOGIA": "E",
+        "CASOS": 10,
+        "ETIQUETA": "197 | E",
+        "PUNTO REFERENCIAL": "Comunidad Huambi Centro",
+        "PUNTO_REFERENCIAL": "Comunidad Huambi Centro"
       }
     },
     {
@@ -5178,11 +6529,18 @@
         "etiqueta": "198 | G",
         "etiquetaSC": "198 | G",
         "identificador": "REF-HUA-198",
-        "punto_referencial": "Cerca de Templo Cristiano Rios de Agua Viv",
+        "punto_referencial": "Templo Ríos de Agua Viva",
         "casos": 10,
         "latitud": -2.555178,
         "longitud": -78.145037,
-        "referencia_corta": "Cabecera / Sector Central (HUAMBI)"
+        "referencia_corta": "Templo Ríos de Agua Viva",
+        "CANTON": "SUCUA",
+        "PARROQUIA": "HUAMBI",
+        "TIPOLOGIA": "G",
+        "CASOS": 10,
+        "ETIQUETA": "198 | G",
+        "PUNTO REFERENCIAL": "Templo Ríos de Agua Viva",
+        "PUNTO_REFERENCIAL": "Templo Ríos de Agua Viva"
       }
     },
     {
@@ -5204,11 +6562,18 @@
         "etiqueta": "199 | C",
         "etiquetaSC": "199 | C",
         "identificador": "REF-SAN-199",
-        "punto_referencial": "Cerca de GAD Parroquial de Santa Marianita",
+        "punto_referencial": "GAD Santa Marianita",
         "casos": 10,
         "latitud": -2.415951,
         "longitud": -78.153031,
-        "referencia_corta": "Cabecera / Sector Central (SANTA MARIANITA DE JESUS)"
+        "referencia_corta": "GAD Santa Marianita",
+        "CANTON": "SUCUA",
+        "PARROQUIA": "SANTA MARIANITA DE JESUS",
+        "TIPOLOGIA": "C",
+        "CASOS": 10,
+        "ETIQUETA": "199 | C",
+        "PUNTO REFERENCIAL": "GAD Santa Marianita",
+        "PUNTO_REFERENCIAL": "GAD Santa Marianita"
       }
     },
     {
@@ -5230,11 +6595,18 @@
         "etiqueta": "200 | B",
         "etiquetaSC": "200 | B",
         "identificador": "REF-SUC-200",
-        "punto_referencial": "Cerca de Planta de Tratamiento de Agua Pot",
+        "punto_referencial": "Planta de Agua Sucúa",
         "casos": 10,
         "latitud": -2.434388,
         "longitud": -78.184487,
-        "referencia_corta": "Cabecera / Sector Central (SUCUA)"
+        "referencia_corta": "Planta de Agua Sucúa",
+        "CANTON": "SUCUA",
+        "PARROQUIA": "SUCUA",
+        "TIPOLOGIA": "B",
+        "CASOS": 10,
+        "ETIQUETA": "200 | B",
+        "PUNTO REFERENCIAL": "Planta de Agua Sucúa",
+        "PUNTO_REFERENCIAL": "Planta de Agua Sucúa"
       }
     },
     {
@@ -5256,11 +6628,18 @@
         "etiqueta": "201 | E",
         "etiquetaSC": "201 | E",
         "identificador": "REF-SUC-201",
-        "punto_referencial": "Iglesia Pentecostal Unida Internacional",
+        "punto_referencial": "Iglesia Pentecostal Sucúa",
         "casos": 10,
         "latitud": -2.441402,
         "longitud": -78.161179,
-        "referencia_corta": "Iglesia Pentecostal Unida Internacional"
+        "referencia_corta": "Iglesia Pentecostal Sucúa",
+        "CANTON": "SUCUA",
+        "PARROQUIA": "SUCUA",
+        "TIPOLOGIA": "E",
+        "CASOS": 10,
+        "ETIQUETA": "201 | E",
+        "PUNTO REFERENCIAL": "Iglesia Pentecostal Sucúa",
+        "PUNTO_REFERENCIAL": "Iglesia Pentecostal Sucúa"
       }
     },
     {
@@ -5282,11 +6661,18 @@
         "etiqueta": "202 | A",
         "etiquetaSC": "202 | A",
         "identificador": "REF-SUC-202",
-        "punto_referencial": "Cerca de Escuela Miguel Jara Sin Funcionam",
+        "punto_referencial": "Sector Esc. Miguel Jara",
         "casos": 10,
         "latitud": -2.443086,
         "longitud": -78.145248,
-        "referencia_corta": "Cabecera / Sector Central (SUCUA)"
+        "referencia_corta": "Sector Esc. Miguel Jara",
+        "CANTON": "SUCUA",
+        "PARROQUIA": "SUCUA",
+        "TIPOLOGIA": "A",
+        "CASOS": 10,
+        "ETIQUETA": "202 | A",
+        "PUNTO REFERENCIAL": "Sector Esc. Miguel Jara",
+        "PUNTO_REFERENCIAL": "Sector Esc. Miguel Jara"
       }
     },
     {
@@ -5308,11 +6694,18 @@
         "etiqueta": "203 | H",
         "etiquetaSC": "203 | H",
         "identificador": "REF-SUC-203",
-        "punto_referencial": "Cerca de Esc. de Educacion Basica Padre El",
+        "punto_referencial": "Escuela Padre Eladio",
         "casos": 10,
         "latitud": -2.443508,
         "longitud": -78.179283,
-        "referencia_corta": "Cabecera / Sector Central (SUCUA)"
+        "referencia_corta": "Escuela Padre Eladio",
+        "CANTON": "SUCUA",
+        "PARROQUIA": "SUCUA",
+        "TIPOLOGIA": "H",
+        "CASOS": 10,
+        "ETIQUETA": "203 | H",
+        "PUNTO REFERENCIAL": "Escuela Padre Eladio",
+        "PUNTO_REFERENCIAL": "Escuela Padre Eladio"
       }
     },
     {
@@ -5334,11 +6727,18 @@
         "etiqueta": "204 | D",
         "etiquetaSC": "204 | D",
         "identificador": "REF-SUC-204",
-        "punto_referencial": "Cerca de Centro de Desarrollo Infantil Pri",
+        "punto_referencial": "CDI Primeros Pasos Sucúa",
         "casos": 10,
         "latitud": -2.444349,
         "longitud": -78.172012,
-        "referencia_corta": "Cabecera / Sector Central (SUCUA)"
+        "referencia_corta": "CDI Primeros Pasos Sucúa",
+        "CANTON": "SUCUA",
+        "PARROQUIA": "SUCUA",
+        "TIPOLOGIA": "D",
+        "CASOS": 10,
+        "ETIQUETA": "204 | D",
+        "PUNTO REFERENCIAL": "CDI Primeros Pasos Sucúa",
+        "PUNTO_REFERENCIAL": "CDI Primeros Pasos Sucúa"
       }
     },
     {
@@ -5360,11 +6760,18 @@
         "etiqueta": "205 | D",
         "etiquetaSC": "205 | D",
         "identificador": "REF-SUC-205",
-        "punto_referencial": "Cerca de Iglesia Catolica Nuevo Israel",
+        "punto_referencial": "Iglesia Nuevo Israel",
         "casos": 10,
         "latitud": -2.447065,
         "longitud": -78.139543,
-        "referencia_corta": "Cabecera / Sector Central (SUCUA)"
+        "referencia_corta": "Iglesia Nuevo Israel",
+        "CANTON": "SUCUA",
+        "PARROQUIA": "SUCUA",
+        "TIPOLOGIA": "D",
+        "CASOS": 10,
+        "ETIQUETA": "205 | D",
+        "PUNTO REFERENCIAL": "Iglesia Nuevo Israel",
+        "PUNTO_REFERENCIAL": "Iglesia Nuevo Israel"
       }
     },
     {
@@ -5390,7 +6797,14 @@
         "casos": 10,
         "latitud": -2.448139,
         "longitud": -78.153261,
-        "referencia_corta": "Cabecera / Sector Central (SUCUA)"
+        "referencia_corta": "Comunidad Nuevo Israel",
+        "CANTON": "SUCUA",
+        "PARROQUIA": "SUCUA",
+        "TIPOLOGIA": "E",
+        "CASOS": 10,
+        "ETIQUETA": "206 | E",
+        "PUNTO REFERENCIAL": "Comunidad Nuevo Israel",
+        "PUNTO_REFERENCIAL": "Comunidad Nuevo Israel"
       }
     },
     {
@@ -5412,11 +6826,18 @@
         "etiqueta": "207 | B",
         "etiquetaSC": "207 | B",
         "identificador": "REF-SUC-207",
-        "punto_referencial": "Sector Centro Infantil del Buen Vivir la F",
+        "punto_referencial": "CIBV La Familia Sucúa",
         "casos": 10,
         "latitud": -2.450497,
         "longitud": -78.160637,
-        "referencia_corta": "Cabecera / Sector Central (SUCUA)"
+        "referencia_corta": "CIBV La Familia Sucúa",
+        "CANTON": "SUCUA",
+        "PARROQUIA": "SUCUA",
+        "TIPOLOGIA": "B",
+        "CASOS": 10,
+        "ETIQUETA": "207 | B",
+        "PUNTO REFERENCIAL": "CIBV La Familia Sucúa",
+        "PUNTO_REFERENCIAL": "CIBV La Familia Sucúa"
       }
     },
     {
@@ -5438,11 +6859,18 @@
         "etiqueta": "208 | E",
         "etiquetaSC": "208 | E",
         "identificador": "REF-SUC-208",
-        "punto_referencial": "Cerca de Iglesia Cristianos en Accion",
+        "punto_referencial": "Iglesia Cristianos Acción",
         "casos": 10,
         "latitud": -2.44977,
         "longitud": -78.176606,
-        "referencia_corta": "Cabecera / Sector Central (SUCUA)"
+        "referencia_corta": "Iglesia Cristianos Acción",
+        "CANTON": "SUCUA",
+        "PARROQUIA": "SUCUA",
+        "TIPOLOGIA": "E",
+        "CASOS": 10,
+        "ETIQUETA": "208 | E",
+        "PUNTO REFERENCIAL": "Iglesia Cristianos Acción",
+        "PUNTO_REFERENCIAL": "Iglesia Cristianos Acción"
       }
     },
     {
@@ -5464,11 +6892,18 @@
         "etiqueta": "209 | G",
         "etiquetaSC": "209 | G",
         "identificador": "REF-SUC-209",
-        "punto_referencial": "U.E. Sucua",
+        "punto_referencial": "U.E. Sucúa",
         "casos": 10,
         "latitud": -2.452332,
         "longitud": -78.168394,
-        "referencia_corta": "Cabecera / Sector Central (SUCUA)"
+        "referencia_corta": "U.E. Sucúa",
+        "CANTON": "SUCUA",
+        "PARROQUIA": "SUCUA",
+        "TIPOLOGIA": "G",
+        "CASOS": 10,
+        "ETIQUETA": "209 | G",
+        "PUNTO REFERENCIAL": "U.E. Sucúa",
+        "PUNTO_REFERENCIAL": "U.E. Sucúa"
       }
     },
     {
@@ -5490,11 +6925,18 @@
         "etiqueta": "210 | F",
         "etiquetaSC": "210 | F",
         "identificador": "REF-SUC-210",
-        "punto_referencial": "Sindicato de Choferes de Sucua",
+        "punto_referencial": "Sindicato de Choferes Sucúa",
         "casos": 10,
         "latitud": -2.457061,
         "longitud": -78.173018,
-        "referencia_corta": "Cabecera / Sector Central (SUCUA)"
+        "referencia_corta": "Sindicato de Choferes Sucúa",
+        "CANTON": "SUCUA",
+        "PARROQUIA": "SUCUA",
+        "TIPOLOGIA": "F",
+        "CASOS": 10,
+        "ETIQUETA": "210 | F",
+        "PUNTO REFERENCIAL": "Sindicato de Choferes Sucúa",
+        "PUNTO_REFERENCIAL": "Sindicato de Choferes Sucúa"
       }
     },
     {
@@ -5520,7 +6962,14 @@
         "casos": 10,
         "latitud": -2.459422,
         "longitud": -78.166055,
-        "referencia_corta": "Cabecera / Sector Central (SUCUA)"
+        "referencia_corta": "Parque Tres de Noviembre",
+        "CANTON": "SUCUA",
+        "PARROQUIA": "SUCUA",
+        "TIPOLOGIA": "C",
+        "CASOS": 10,
+        "ETIQUETA": "211 | C",
+        "PUNTO REFERENCIAL": "Parque Tres de Noviembre",
+        "PUNTO_REFERENCIAL": "Parque Tres de Noviembre"
       }
     },
     {
@@ -5542,11 +6991,18 @@
         "etiqueta": "212 | H",
         "etiquetaSC": "212 | H",
         "identificador": "REF-SUC-212",
-        "punto_referencial": "Cerca de Coliseo Jaime Roldos",
+        "punto_referencial": "Coliseo Jaime Roldós Sucúa",
         "casos": 10,
         "latitud": -2.460394,
         "longitud": -78.17836,
-        "referencia_corta": "Cabecera / Sector Central (SUCUA)"
+        "referencia_corta": "Coliseo Jaime Roldós Sucúa",
+        "CANTON": "SUCUA",
+        "PARROQUIA": "SUCUA",
+        "TIPOLOGIA": "H",
+        "CASOS": 10,
+        "ETIQUETA": "212 | H",
+        "PUNTO REFERENCIAL": "Coliseo Jaime Roldós Sucúa",
+        "PUNTO_REFERENCIAL": "Coliseo Jaime Roldós Sucúa"
       }
     },
     {
@@ -5572,7 +7028,14 @@
         "casos": 10,
         "latitud": -2.462076,
         "longitud": -78.158417,
-        "referencia_corta": "Cabecera / Sector Central (SUCUA)"
+        "referencia_corta": "Comunidad Kimi",
+        "CANTON": "SUCUA",
+        "PARROQUIA": "SUCUA",
+        "TIPOLOGIA": "C",
+        "CASOS": 10,
+        "ETIQUETA": "213 | C",
+        "PUNTO REFERENCIAL": "Comunidad Kimi",
+        "PUNTO_REFERENCIAL": "Comunidad Kimi"
       }
     },
     {
@@ -5594,11 +7057,18 @@
         "etiqueta": "214 | G",
         "etiquetaSC": "214 | G",
         "identificador": "REF-SUC-214",
-        "punto_referencial": "Cerca de Clinica Maria Auxiliadora",
+        "punto_referencial": "Clínica María Auxiliadora",
         "casos": 10,
         "latitud": -2.463677,
         "longitud": -78.169039,
-        "referencia_corta": "Cabecera / Sector Central (SUCUA)"
+        "referencia_corta": "Clínica María Auxiliadora",
+        "CANTON": "SUCUA",
+        "PARROQUIA": "SUCUA",
+        "TIPOLOGIA": "G",
+        "CASOS": 10,
+        "ETIQUETA": "214 | G",
+        "PUNTO REFERENCIAL": "Clínica María Auxiliadora",
+        "PUNTO_REFERENCIAL": "Clínica María Auxiliadora"
       }
     },
     {
@@ -5620,11 +7090,18 @@
         "etiqueta": "215 | D",
         "etiquetaSC": "215 | D",
         "identificador": "REF-SUC-215",
-        "punto_referencial": "Cerca de Registro de la Propiedad",
+        "punto_referencial": "Registro de la Propiedad",
         "casos": 10,
         "latitud": -2.46484,
         "longitud": -78.164386,
-        "referencia_corta": "Cabecera / Sector Central (SUCUA)"
+        "referencia_corta": "Registro de la Propiedad",
+        "CANTON": "SUCUA",
+        "PARROQUIA": "SUCUA",
+        "TIPOLOGIA": "D",
+        "CASOS": 10,
+        "ETIQUETA": "215 | D",
+        "PUNTO REFERENCIAL": "Registro de la Propiedad",
+        "PUNTO_REFERENCIAL": "Registro de la Propiedad"
       }
     },
     {
@@ -5646,11 +7123,18 @@
         "etiqueta": "216 | A",
         "etiquetaSC": "216 | A",
         "identificador": "REF-SUC-216",
-        "punto_referencial": "Cerca de Hospital Basico de Sucua",
+        "punto_referencial": "Hospital Básico de Sucúa",
         "casos": 10,
         "latitud": -2.467322,
         "longitud": -78.172982,
-        "referencia_corta": "Cabecera / Sector Central (SUCUA)"
+        "referencia_corta": "Hospital Básico de Sucúa",
+        "CANTON": "SUCUA",
+        "PARROQUIA": "SUCUA",
+        "TIPOLOGIA": "A",
+        "CASOS": 10,
+        "ETIQUETA": "216 | A",
+        "PUNTO REFERENCIAL": "Hospital Básico de Sucúa",
+        "PUNTO_REFERENCIAL": "Hospital Básico de Sucúa"
       }
     },
     {
@@ -5672,11 +7156,18 @@
         "etiqueta": "217 | F",
         "etiquetaSC": "217 | F",
         "identificador": "REF-SUC-217",
-        "punto_referencial": "Cerca de Creciendo con Nuestros Hijos",
+        "punto_referencial": "CNH Sucúa",
         "casos": 10,
         "latitud": -2.471417,
         "longitud": -78.144559,
-        "referencia_corta": "Cabecera / Sector Central (SUCUA)"
+        "referencia_corta": "CNH Sucúa",
+        "CANTON": "SUCUA",
+        "PARROQUIA": "SUCUA",
+        "TIPOLOGIA": "F",
+        "CASOS": 10,
+        "ETIQUETA": "217 | F",
+        "PUNTO REFERENCIAL": "CNH Sucúa",
+        "PUNTO_REFERENCIAL": "CNH Sucúa"
       }
     },
     {
@@ -5698,11 +7189,18 @@
         "etiqueta": "218 | B",
         "etiquetaSC": "218 | B",
         "identificador": "REF-SUC-218",
-        "punto_referencial": "Cerca de Parque Lineal Sucua",
+        "punto_referencial": "Parque Lineal Sucúa",
         "casos": 10,
         "latitud": -2.47314,
         "longitud": -78.172332,
-        "referencia_corta": "Cabecera / Sector Central (SUCUA)"
+        "referencia_corta": "Parque Lineal Sucúa",
+        "CANTON": "SUCUA",
+        "PARROQUIA": "SUCUA",
+        "TIPOLOGIA": "B",
+        "CASOS": 10,
+        "ETIQUETA": "218 | B",
+        "PUNTO REFERENCIAL": "Parque Lineal Sucúa",
+        "PUNTO_REFERENCIAL": "Parque Lineal Sucúa"
       }
     },
     {
@@ -5724,11 +7222,18 @@
         "etiqueta": "219 | A",
         "etiquetaSC": "219 | A",
         "identificador": "REF-SUC-219",
-        "punto_referencial": "Sector Iglesia Evangelica en Construccion",
+        "punto_referencial": "Iglesia Evangélica Sucúa",
         "casos": 10,
         "latitud": -2.477449,
         "longitud": -78.158471,
-        "referencia_corta": "Cabecera / Sector Central (SUCUA)"
+        "referencia_corta": "Iglesia Evangélica Sucúa",
+        "CANTON": "SUCUA",
+        "PARROQUIA": "SUCUA",
+        "TIPOLOGIA": "A",
+        "CASOS": 10,
+        "ETIQUETA": "219 | A",
+        "PUNTO REFERENCIAL": "Iglesia Evangélica Sucúa",
+        "PUNTO_REFERENCIAL": "Iglesia Evangélica Sucúa"
       }
     },
     {
@@ -5750,11 +7255,18 @@
         "etiqueta": "220 | C",
         "etiquetaSC": "220 | C",
         "identificador": "REF-SUC-220",
-        "punto_referencial": "Cerca de Casa Comunal el Nazareno",
+        "punto_referencial": "Casa Comunal El Nazareno",
         "casos": 10,
         "latitud": -2.48649,
         "longitud": -78.167813,
-        "referencia_corta": "Cabecera / Sector Central (SUCUA)"
+        "referencia_corta": "Casa Comunal El Nazareno",
+        "CANTON": "SUCUA",
+        "PARROQUIA": "SUCUA",
+        "TIPOLOGIA": "C",
+        "CASOS": 10,
+        "ETIQUETA": "220 | C",
+        "PUNTO REFERENCIAL": "Casa Comunal El Nazareno",
+        "PUNTO_REFERENCIAL": "Casa Comunal El Nazareno"
       }
     },
     {
@@ -5776,11 +7288,18 @@
         "etiqueta": "221 | G",
         "etiquetaSC": "221 | G",
         "identificador": "REF-HUA-221",
-        "punto_referencial": "U.E. Taki (Huasaga /Wampuik)",
+        "punto_referencial": "U.E. Taki Wampuik",
         "casos": 10,
         "latitud": -2.614396,
         "longitud": -77.02252,
-        "referencia_corta": "Unidad Educativa Taki (Huasaga /Wampuik)"
+        "referencia_corta": "U.E. Taki Wampuik",
+        "CANTON": "TAISHA",
+        "PARROQUIA": "HUASAGA /WAMPUIK",
+        "TIPOLOGIA": "G",
+        "CASOS": 10,
+        "ETIQUETA": "221 | G",
+        "PUNTO REFERENCIAL": "U.E. Taki Wampuik",
+        "PUNTO_REFERENCIAL": "U.E. Taki Wampuik"
       }
     },
     {
@@ -5806,7 +7325,14 @@
         "casos": 10,
         "latitud": -2.614626,
         "longitud": -77.027103,
-        "referencia_corta": "Cabecera / Sector Central (HUASAGA /WAMPUIK)"
+        "referencia_corta": "Comunidad Warush",
+        "CANTON": "TAISHA",
+        "PARROQUIA": "HUASAGA /WAMPUIK",
+        "TIPOLOGIA": "F",
+        "CASOS": 10,
+        "ETIQUETA": "222 | F",
+        "PUNTO REFERENCIAL": "Comunidad Warush",
+        "PUNTO_REFERENCIAL": "Comunidad Warush"
       }
     },
     {
@@ -5828,11 +7354,18 @@
         "etiqueta": "223 | B",
         "etiquetaSC": "223 | B",
         "identificador": "REF-HUA-223",
-        "punto_referencial": "Cerca de Subcentro de Wampi",
+        "punto_referencial": "Subcentro de Wampi",
         "casos": 10,
         "latitud": -2.620324,
         "longitud": -77.023296,
-        "referencia_corta": "Cabecera / Sector Central (HUASAGA /WAMPUIK)"
+        "referencia_corta": "Subcentro de Wampi",
+        "CANTON": "TAISHA",
+        "PARROQUIA": "HUASAGA /WAMPUIK",
+        "TIPOLOGIA": "B",
+        "CASOS": 10,
+        "ETIQUETA": "223 | B",
+        "PUNTO REFERENCIAL": "Subcentro de Wampi",
+        "PUNTO_REFERENCIAL": "Subcentro de Wampi"
       }
     },
     {
@@ -5854,11 +7387,18 @@
         "etiqueta": "224 | H",
         "etiquetaSC": "224 | H",
         "identificador": "REF-MAC-224",
-        "punto_referencial": "Sector Escuela Rio Macuma",
+        "punto_referencial": "Escuela Río Macuma",
         "casos": 10,
         "latitud": -2.132313,
         "longitud": -77.700235,
-        "referencia_corta": "Cabecera / Sector Central (MACUMA)"
+        "referencia_corta": "Escuela Río Macuma",
+        "CANTON": "TAISHA",
+        "PARROQUIA": "MACUMA",
+        "TIPOLOGIA": "H",
+        "CASOS": 10,
+        "ETIQUETA": "224 | H",
+        "PUNTO REFERENCIAL": "Escuela Río Macuma",
+        "PUNTO_REFERENCIAL": "Escuela Río Macuma"
       }
     },
     {
@@ -5880,11 +7420,18 @@
         "etiqueta": "225 | A",
         "etiquetaSC": "225 | A",
         "identificador": "REF-MAC-225",
-        "punto_referencial": "Comunidad Macuma",
+        "punto_referencial": "Comunidad Macuma Centro",
         "casos": 10,
         "latitud": -2.140041,
         "longitud": -77.691134,
-        "referencia_corta": "Cabecera / Sector Central (MACUMA)"
+        "referencia_corta": "Comunidad Macuma Centro",
+        "CANTON": "TAISHA",
+        "PARROQUIA": "MACUMA",
+        "TIPOLOGIA": "A",
+        "CASOS": 10,
+        "ETIQUETA": "225 | A",
+        "PUNTO REFERENCIAL": "Comunidad Macuma Centro",
+        "PUNTO_REFERENCIAL": "Comunidad Macuma Centro"
       }
     },
     {
@@ -5906,11 +7453,18 @@
         "etiqueta": "226 | D",
         "etiquetaSC": "226 | D",
         "identificador": "REF-MAC-226",
-        "punto_referencial": "Misiones Evangelicas",
+        "punto_referencial": "Misiones Evangélicas Macuma",
         "casos": 10,
         "latitud": -2.144234,
         "longitud": -77.701816,
-        "referencia_corta": "Misiones Evangelicas"
+        "referencia_corta": "Misiones Evangélicas Macuma",
+        "CANTON": "TAISHA",
+        "PARROQUIA": "MACUMA",
+        "TIPOLOGIA": "D",
+        "CASOS": 10,
+        "ETIQUETA": "226 | D",
+        "PUNTO REFERENCIAL": "Misiones Evangélicas Macuma",
+        "PUNTO_REFERENCIAL": "Misiones Evangélicas Macuma"
       }
     },
     {
@@ -5932,11 +7486,18 @@
         "etiqueta": "227 | E",
         "etiquetaSC": "227 | E",
         "identificador": "REF-MAC-227",
-        "punto_referencial": "Cerca de Subcentro de Salud",
+        "punto_referencial": "Subcentro Salud Macuma",
         "casos": 10,
         "latitud": -2.146522,
         "longitud": -77.692973,
-        "referencia_corta": "Cabecera / Sector Central (MACUMA)"
+        "referencia_corta": "Subcentro Salud Macuma",
+        "CANTON": "TAISHA",
+        "PARROQUIA": "MACUMA",
+        "TIPOLOGIA": "E",
+        "CASOS": 10,
+        "ETIQUETA": "227 | E",
+        "PUNTO REFERENCIAL": "Subcentro Salud Macuma",
+        "PUNTO_REFERENCIAL": "Subcentro Salud Macuma"
       }
     },
     {
@@ -5958,11 +7519,18 @@
         "etiqueta": "228 | H",
         "etiquetaSC": "228 | H",
         "identificador": "REF-MAC-228",
-        "punto_referencial": "Cerca de Iglesia Evangelica",
+        "punto_referencial": "Iglesia Evangélica Macuma",
         "casos": 10,
         "latitud": -2.146404,
         "longitud": -77.699256,
-        "referencia_corta": "Cabecera / Sector Central (MACUMA)"
+        "referencia_corta": "Iglesia Evangélica Macuma",
+        "CANTON": "TAISHA",
+        "PARROQUIA": "MACUMA",
+        "TIPOLOGIA": "H",
+        "CASOS": 10,
+        "ETIQUETA": "228 | H",
+        "PUNTO REFERENCIAL": "Iglesia Evangélica Macuma",
+        "PUNTO_REFERENCIAL": "Iglesia Evangélica Macuma"
       }
     },
     {
@@ -5984,11 +7552,18 @@
         "etiqueta": "229 | C",
         "etiquetaSC": "229 | C",
         "identificador": "REF-MAC-229",
-        "punto_referencial": "Zona Urbana Macuma",
+        "punto_referencial": "Barrio Central Macuma",
         "casos": 10,
         "latitud": -2.150444,
         "longitud": -77.706716,
-        "referencia_corta": "Cabecera / Sector Central (MACUMA)"
+        "referencia_corta": "Barrio Central Macuma",
+        "CANTON": "TAISHA",
+        "PARROQUIA": "MACUMA",
+        "TIPOLOGIA": "C",
+        "CASOS": 10,
+        "ETIQUETA": "229 | C",
+        "PUNTO REFERENCIAL": "Barrio Central Macuma",
+        "PUNTO_REFERENCIAL": "Barrio Central Macuma"
       }
     },
     {
@@ -6010,11 +7585,18 @@
         "etiqueta": "230 | B",
         "etiquetaSC": "230 | B",
         "identificador": "REF-MAC-230",
-        "punto_referencial": "Colegio Nacional Antonio Samaniego",
+        "punto_referencial": "Colegio Antonio Samaniego",
         "casos": 10,
         "latitud": -2.151135,
         "longitud": -77.696691,
-        "referencia_corta": "Colegio Nacional Antonio Samaniego"
+        "referencia_corta": "Colegio Antonio Samaniego",
+        "CANTON": "TAISHA",
+        "PARROQUIA": "MACUMA",
+        "TIPOLOGIA": "B",
+        "CASOS": 10,
+        "ETIQUETA": "230 | B",
+        "PUNTO REFERENCIAL": "Colegio Antonio Samaniego",
+        "PUNTO_REFERENCIAL": "Colegio Antonio Samaniego"
       }
     },
     {
@@ -6036,11 +7618,18 @@
         "etiqueta": "231 | E",
         "etiquetaSC": "231 | E",
         "identificador": "REF-MAC-231",
-        "punto_referencial": "Zona Urbana Macuma",
+        "punto_referencial": "Macuma Sector Norte",
         "casos": 10,
         "latitud": -2.155358,
         "longitud": -77.709777,
-        "referencia_corta": "Cabecera / Sector Central (MACUMA)"
+        "referencia_corta": "Macuma Sector Norte",
+        "CANTON": "TAISHA",
+        "PARROQUIA": "MACUMA",
+        "TIPOLOGIA": "E",
+        "CASOS": 10,
+        "ETIQUETA": "231 | E",
+        "PUNTO REFERENCIAL": "Macuma Sector Norte",
+        "PUNTO_REFERENCIAL": "Macuma Sector Norte"
       }
     },
     {
@@ -6062,11 +7651,18 @@
         "etiqueta": "232 | A",
         "etiquetaSC": "232 | A",
         "identificador": "REF-PUM-232",
-        "punto_referencial": "Cerca de Iglesia de Pumpuentsa",
+        "punto_referencial": "Iglesia de Pumpuentsa",
         "casos": 10,
         "latitud": -2.470598,
         "longitud": -77.331907,
-        "referencia_corta": "Cabecera / Sector Central (PUMPUENTSA)"
+        "referencia_corta": "Iglesia de Pumpuentsa",
+        "CANTON": "TAISHA",
+        "PARROQUIA": "PUMPUENTSA",
+        "TIPOLOGIA": "A",
+        "CASOS": 10,
+        "ETIQUETA": "232 | A",
+        "PUNTO REFERENCIAL": "Iglesia de Pumpuentsa",
+        "PUNTO_REFERENCIAL": "Iglesia de Pumpuentsa"
       }
     },
     {
@@ -6092,7 +7688,14 @@
         "casos": 10,
         "latitud": -2.476736,
         "longitud": -77.334207,
-        "referencia_corta": "Cabecera / Sector Central (PUMPUENTSA)"
+        "referencia_corta": "GAD Parroquial Pumpuentsa",
+        "CANTON": "TAISHA",
+        "PARROQUIA": "PUMPUENTSA",
+        "TIPOLOGIA": "H",
+        "CASOS": 10,
+        "ETIQUETA": "233 | H",
+        "PUNTO REFERENCIAL": "GAD Parroquial Pumpuentsa",
+        "PUNTO_REFERENCIAL": "GAD Parroquial Pumpuentsa"
       }
     },
     {
@@ -6114,11 +7717,18 @@
         "etiqueta": "234 | D",
         "etiquetaSC": "234 | D",
         "identificador": "REF-PUM-234",
-        "punto_referencial": "Cerca de Subcentro de Salud de Pumpuentsa",
+        "punto_referencial": "Subcentro Pumpuentsa",
         "casos": 10,
         "latitud": -2.477247,
         "longitud": -77.328433,
-        "referencia_corta": "Cabecera / Sector Central (PUMPUENTSA)"
+        "referencia_corta": "Subcentro Pumpuentsa",
+        "CANTON": "TAISHA",
+        "PARROQUIA": "PUMPUENTSA",
+        "TIPOLOGIA": "D",
+        "CASOS": 10,
+        "ETIQUETA": "234 | D",
+        "PUNTO REFERENCIAL": "Subcentro Pumpuentsa",
+        "PUNTO_REFERENCIAL": "Subcentro Pumpuentsa"
       }
     },
     {
@@ -6140,11 +7750,18 @@
         "etiqueta": "235 | D",
         "etiquetaSC": "235 | D",
         "identificador": "REF-TAI-235",
-        "punto_referencial": "Cerca de Gasolinera el Momo",
+        "punto_referencial": "Gasolinera El Momo Taisha",
         "casos": 10,
         "latitud": -2.373956,
         "longitud": -77.504915,
-        "referencia_corta": "Cabecera / Sector Central (TAISHA)"
+        "referencia_corta": "Gasolinera El Momo Taisha",
+        "CANTON": "TAISHA",
+        "PARROQUIA": "TAISHA",
+        "TIPOLOGIA": "D",
+        "CASOS": 10,
+        "ETIQUETA": "235 | D",
+        "PUNTO REFERENCIAL": "Gasolinera El Momo Taisha",
+        "PUNTO_REFERENCIAL": "Gasolinera El Momo Taisha"
       }
     },
     {
@@ -6166,11 +7783,18 @@
         "etiqueta": "236 | E",
         "etiquetaSC": "236 | E",
         "identificador": "REF-TAI-236",
-        "punto_referencial": "Sector Batallon de Selva Nc50",
+        "punto_referencial": "Batallón de Selva BS-50",
         "casos": 10,
         "latitud": -2.37806,
         "longitud": -77.499523,
-        "referencia_corta": "Cabecera / Sector Central (TAISHA)"
+        "referencia_corta": "Batallón de Selva BS-50",
+        "CANTON": "TAISHA",
+        "PARROQUIA": "TAISHA",
+        "TIPOLOGIA": "E",
+        "CASOS": 10,
+        "ETIQUETA": "236 | E",
+        "PUNTO REFERENCIAL": "Batallón de Selva BS-50",
+        "PUNTO_REFERENCIAL": "Batallón de Selva BS-50"
       }
     },
     {
@@ -6192,11 +7816,18 @@
         "etiqueta": "237 | B",
         "etiquetaSC": "237 | B",
         "identificador": "REF-TAI-237",
-        "punto_referencial": "Zona Urbana Taisha",
+        "punto_referencial": "Barrio Central Taisha",
         "casos": 10,
         "latitud": -2.375481,
         "longitud": -77.494686,
-        "referencia_corta": "Cabecera / Sector Central (TAISHA)"
+        "referencia_corta": "Barrio Central Taisha",
+        "CANTON": "TAISHA",
+        "PARROQUIA": "TAISHA",
+        "TIPOLOGIA": "B",
+        "CASOS": 10,
+        "ETIQUETA": "237 | B",
+        "PUNTO REFERENCIAL": "Barrio Central Taisha",
+        "PUNTO_REFERENCIAL": "Barrio Central Taisha"
       }
     },
     {
@@ -6218,11 +7849,18 @@
         "etiqueta": "238 | E",
         "etiquetaSC": "238 | E",
         "identificador": "REF-TAI-238",
-        "punto_referencial": "Pista de Aterrizaje de Taisha",
+        "punto_referencial": "Pista Aterrizaje Taisha",
         "casos": 10,
         "latitud": -2.381991,
         "longitud": -77.503374,
-        "referencia_corta": "Pista de Aterrizaje de Taisha"
+        "referencia_corta": "Pista Aterrizaje Taisha",
+        "CANTON": "TAISHA",
+        "PARROQUIA": "TAISHA",
+        "TIPOLOGIA": "E",
+        "CASOS": 10,
+        "ETIQUETA": "238 | E",
+        "PUNTO REFERENCIAL": "Pista Aterrizaje Taisha",
+        "PUNTO_REFERENCIAL": "Pista Aterrizaje Taisha"
       }
     },
     {
@@ -6248,7 +7886,14 @@
         "casos": 10,
         "latitud": -2.383332,
         "longitud": -77.502002,
-        "referencia_corta": "Aeropuerto de Taisha"
+        "referencia_corta": "Aeropuerto de Taisha",
+        "CANTON": "TAISHA",
+        "PARROQUIA": "TAISHA",
+        "TIPOLOGIA": "G",
+        "CASOS": 10,
+        "ETIQUETA": "239 | G",
+        "PUNTO REFERENCIAL": "Aeropuerto de Taisha",
+        "PUNTO_REFERENCIAL": "Aeropuerto de Taisha"
       }
     },
     {
@@ -6270,11 +7915,18 @@
         "etiqueta": "240 | F",
         "etiquetaSC": "240 | F",
         "identificador": "REF-TAI-240",
-        "punto_referencial": "Cerca de U.E. Dr. Camilo Gallegos Domingue",
+        "punto_referencial": "U.E. Camilo Gallegos Taisha",
         "casos": 10,
         "latitud": -2.383605,
         "longitud": -77.504654,
-        "referencia_corta": "Cabecera / Sector Central (TAISHA)"
+        "referencia_corta": "U.E. Camilo Gallegos Taisha",
+        "CANTON": "TAISHA",
+        "PARROQUIA": "TAISHA",
+        "TIPOLOGIA": "F",
+        "CASOS": 10,
+        "ETIQUETA": "240 | F",
+        "PUNTO REFERENCIAL": "U.E. Camilo Gallegos Taisha",
+        "PUNTO_REFERENCIAL": "U.E. Camilo Gallegos Taisha"
       }
     },
     {
@@ -6296,11 +7948,18 @@
         "etiqueta": "241 | C",
         "etiquetaSC": "241 | C",
         "identificador": "REF-TAI-241",
-        "punto_referencial": "Zona Urbana Taisha",
+        "punto_referencial": "Sector Comercial Taisha",
         "casos": 10,
         "latitud": -2.380825,
         "longitud": -77.48916,
-        "referencia_corta": "Cabecera / Sector Central (TAISHA)"
+        "referencia_corta": "Sector Comercial Taisha",
+        "CANTON": "TAISHA",
+        "PARROQUIA": "TAISHA",
+        "TIPOLOGIA": "C",
+        "CASOS": 10,
+        "ETIQUETA": "241 | C",
+        "PUNTO REFERENCIAL": "Sector Comercial Taisha",
+        "PUNTO_REFERENCIAL": "Sector Comercial Taisha"
       }
     },
     {
@@ -6322,11 +7981,18 @@
         "etiqueta": "242 | H",
         "etiquetaSC": "242 | H",
         "identificador": "REF-TAI-242",
-        "punto_referencial": "Aeropuerto de Taisha",
+        "punto_referencial": "Hangar Aéreo Taisha",
         "casos": 10,
         "latitud": -2.383332,
         "longitud": -77.502002,
-        "referencia_corta": "Aeropuerto de Taisha"
+        "referencia_corta": "Hangar Aéreo Taisha",
+        "CANTON": "TAISHA",
+        "PARROQUIA": "TAISHA",
+        "TIPOLOGIA": "H",
+        "CASOS": 10,
+        "ETIQUETA": "242 | H",
+        "PUNTO REFERENCIAL": "Hangar Aéreo Taisha",
+        "PUNTO_REFERENCIAL": "Hangar Aéreo Taisha"
       }
     },
     {
@@ -6348,11 +8014,18 @@
         "etiqueta": "243 | C",
         "etiquetaSC": "243 | C",
         "identificador": "REF-TAI-243",
-        "punto_referencial": "Centro Comunitario de Justicia Taisha",
+        "punto_referencial": "Centro de Justicia Taisha",
         "casos": 10,
         "latitud": -2.387209,
         "longitud": -77.504164,
-        "referencia_corta": "Centro Comunitario de Justicia Taisha"
+        "referencia_corta": "Centro de Justicia Taisha",
+        "CANTON": "TAISHA",
+        "PARROQUIA": "TAISHA",
+        "TIPOLOGIA": "C",
+        "CASOS": 10,
+        "ETIQUETA": "243 | C",
+        "PUNTO REFERENCIAL": "Centro de Justicia Taisha",
+        "PUNTO_REFERENCIAL": "Centro de Justicia Taisha"
       }
     },
     {
@@ -6374,11 +8047,18 @@
         "etiqueta": "244 | G",
         "etiquetaSC": "244 | G",
         "identificador": "REF-TAI-244",
-        "punto_referencial": "Zona Urbana Taisha",
+        "punto_referencial": "Barrio El Pangui Taisha",
         "casos": 10,
         "latitud": -2.391287,
         "longitud": -77.491212,
-        "referencia_corta": "Cabecera / Sector Central (TAISHA)"
+        "referencia_corta": "Barrio El Pangui Taisha",
+        "CANTON": "TAISHA",
+        "PARROQUIA": "TAISHA",
+        "TIPOLOGIA": "G",
+        "CASOS": 10,
+        "ETIQUETA": "244 | G",
+        "PUNTO REFERENCIAL": "Barrio El Pangui Taisha",
+        "PUNTO_REFERENCIAL": "Barrio El Pangui Taisha"
       }
     },
     {
@@ -6400,11 +8080,18 @@
         "etiqueta": "245 | D",
         "etiquetaSC": "245 | D",
         "identificador": "REF-TUT-245",
-        "punto_referencial": "Sector Subcentro de Salud Tuutinentza",
+        "punto_referencial": "Subcentro Tuutinentza Norte",
         "casos": 10,
         "latitud": -2.541155,
         "longitud": -77.466703,
-        "referencia_corta": "Cabecera / Sector Central (TUTINENTZA)"
+        "referencia_corta": "Subcentro Tuutinentza Norte",
+        "CANTON": "TAISHA",
+        "PARROQUIA": "TUTINENTZA",
+        "TIPOLOGIA": "D",
+        "CASOS": 10,
+        "ETIQUETA": "245 | D",
+        "PUNTO REFERENCIAL": "Subcentro Tuutinentza Norte",
+        "PUNTO_REFERENCIAL": "Subcentro Tuutinentza Norte"
       }
     },
     {
@@ -6426,11 +8113,18 @@
         "etiqueta": "246 | A",
         "etiquetaSC": "246 | A",
         "identificador": "REF-TUT-246",
-        "punto_referencial": "Sector Antiguo Centro Educativo",
+        "punto_referencial": "Centro Educativo Tuutinentza",
         "casos": 10,
         "latitud": -2.54,
         "longitud": -77.471608,
-        "referencia_corta": "Cabecera / Sector Central (TUTINENTZA)"
+        "referencia_corta": "Centro Educativo Tuutinentza",
+        "CANTON": "TAISHA",
+        "PARROQUIA": "TUTINENTZA",
+        "TIPOLOGIA": "A",
+        "CASOS": 10,
+        "ETIQUETA": "246 | A",
+        "PUNTO REFERENCIAL": "Centro Educativo Tuutinentza",
+        "PUNTO_REFERENCIAL": "Centro Educativo Tuutinentza"
       }
     },
     {
@@ -6452,11 +8146,18 @@
         "etiqueta": "247 | F",
         "etiquetaSC": "247 | F",
         "identificador": "REF-TUT-247",
-        "punto_referencial": "Zona Urbana Tutinentza",
+        "punto_referencial": "Barrio Central Tuutinentza",
         "casos": 10,
         "latitud": -2.546594,
         "longitud": -77.458922,
-        "referencia_corta": "Cabecera / Sector Central (TUTINENTZA)"
+        "referencia_corta": "Barrio Central Tuutinentza",
+        "CANTON": "TAISHA",
+        "PARROQUIA": "TUTINENTZA",
+        "TIPOLOGIA": "F",
+        "CASOS": 10,
+        "ETIQUETA": "247 | F",
+        "PUNTO REFERENCIAL": "Barrio Central Tuutinentza",
+        "PUNTO_REFERENCIAL": "Barrio Central Tuutinentza"
       }
     },
     {
@@ -6478,11 +8179,18 @@
         "etiqueta": "248 | B",
         "etiquetaSC": "248 | B",
         "identificador": "REF-TUT-248",
-        "punto_referencial": "Cerca de Subcentro de Salud Tuutinentza",
+        "punto_referencial": "Subcentro Tuutinentza Sur",
         "casos": 10,
         "latitud": -2.547506,
         "longitud": -77.471194,
-        "referencia_corta": "Cabecera / Sector Central (TUTINENTZA)"
+        "referencia_corta": "Subcentro Tuutinentza Sur",
+        "CANTON": "TAISHA",
+        "PARROQUIA": "TUTINENTZA",
+        "TIPOLOGIA": "B",
+        "CASOS": 10,
+        "ETIQUETA": "248 | B",
+        "PUNTO REFERENCIAL": "Subcentro Tuutinentza Sur",
+        "PUNTO_REFERENCIAL": "Subcentro Tuutinentza Sur"
       }
     },
     {
@@ -6504,11 +8212,18 @@
         "etiqueta": "249 | A",
         "etiquetaSC": "249 | A",
         "identificador": "REF-TUT-249",
-        "punto_referencial": "Cerca de U.E. Tuutinentza",
+        "punto_referencial": "U.E. Tuutinentza",
         "casos": 10,
         "latitud": -2.549655,
         "longitud": -77.473092,
-        "referencia_corta": "Cabecera / Sector Central (TUTINENTZA)"
+        "referencia_corta": "U.E. Tuutinentza",
+        "CANTON": "TAISHA",
+        "PARROQUIA": "TUTINENTZA",
+        "TIPOLOGIA": "A",
+        "CASOS": 10,
+        "ETIQUETA": "249 | A",
+        "PUNTO REFERENCIAL": "U.E. Tuutinentza",
+        "PUNTO_REFERENCIAL": "U.E. Tuutinentza"
       }
     },
     {
@@ -6530,11 +8245,18 @@
         "etiqueta": "250 | C",
         "etiquetaSC": "250 | C",
         "identificador": "REF-TUT-250",
-        "punto_referencial": "Cementerio General de Tuutinentza",
+        "punto_referencial": "Cementerio Tuutinentza",
         "casos": 10,
         "latitud": -2.552356,
         "longitud": -77.469824,
-        "referencia_corta": "Cementerio General de Tuutinentza"
+        "referencia_corta": "Cementerio Tuutinentza",
+        "CANTON": "TAISHA",
+        "PARROQUIA": "TUTINENTZA",
+        "TIPOLOGIA": "C",
+        "CASOS": 10,
+        "ETIQUETA": "250 | C",
+        "PUNTO REFERENCIAL": "Cementerio Tuutinentza",
+        "PUNTO_REFERENCIAL": "Cementerio Tuutinentza"
       }
     },
     {
@@ -6556,11 +8278,18 @@
         "etiqueta": "251 | C",
         "etiquetaSC": "251 | C",
         "identificador": "REF-TUT-251",
-        "punto_referencial": "Cerca de Mercado Central Tuutinentza",
+        "punto_referencial": "Mercado Tuutinentza",
         "casos": 10,
         "latitud": -2.554236,
         "longitud": -77.474947,
-        "referencia_corta": "Cabecera / Sector Central (TUTINENTZA)"
+        "referencia_corta": "Mercado Tuutinentza",
+        "CANTON": "TAISHA",
+        "PARROQUIA": "TUTINENTZA",
+        "TIPOLOGIA": "C",
+        "CASOS": 10,
+        "ETIQUETA": "251 | C",
+        "PUNTO REFERENCIAL": "Mercado Tuutinentza",
+        "PUNTO_REFERENCIAL": "Mercado Tuutinentza"
       }
     },
     {
@@ -6586,7 +8315,14 @@
         "casos": 10,
         "latitud": -2.875739,
         "longitud": -77.667591,
-        "referencia_corta": "Cabecera / Sector Central (SAN JOSE DE MORONA)"
+        "referencia_corta": "Comunidad Kirup",
+        "CANTON": "TIWINTZA",
+        "PARROQUIA": "SAN JOSE DE MORONA",
+        "TIPOLOGIA": "D",
+        "CASOS": 10,
+        "ETIQUETA": "252 | D",
+        "PUNTO REFERENCIAL": "Comunidad Kirup",
+        "PUNTO_REFERENCIAL": "Comunidad Kirup"
       }
     },
     {
@@ -6608,11 +8344,18 @@
         "etiqueta": "253 | E",
         "etiquetaSC": "253 | E",
         "identificador": "REF-SAN-253",
-        "punto_referencial": "Cerca de UPC",
+        "punto_referencial": "UPC San José de Morona",
         "casos": 10,
         "latitud": -2.880498,
         "longitud": -77.675273,
-        "referencia_corta": "Cabecera / Sector Central (SAN JOSE DE MORONA)"
+        "referencia_corta": "UPC San José de Morona",
+        "CANTON": "TIWINTZA",
+        "PARROQUIA": "SAN JOSE DE MORONA",
+        "TIPOLOGIA": "E",
+        "CASOS": 10,
+        "ETIQUETA": "253 | E",
+        "PUNTO REFERENCIAL": "UPC San José de Morona",
+        "PUNTO_REFERENCIAL": "UPC San José de Morona"
       }
     },
     {
@@ -6634,11 +8377,18 @@
         "etiqueta": "254 | H",
         "etiquetaSC": "254 | H",
         "identificador": "REF-SAN-254",
-        "punto_referencial": "Iglesia San Jose de Morona",
+        "punto_referencial": "Iglesia San José de Morona",
         "casos": 10,
         "latitud": -2.881827,
         "longitud": -77.67126,
-        "referencia_corta": "Cabecera / Sector Central (SAN JOSE DE MORONA)"
+        "referencia_corta": "Iglesia San José de Morona",
+        "CANTON": "TIWINTZA",
+        "PARROQUIA": "SAN JOSE DE MORONA",
+        "TIPOLOGIA": "H",
+        "CASOS": 10,
+        "ETIQUETA": "254 | H",
+        "PUNTO REFERENCIAL": "Iglesia San José de Morona",
+        "PUNTO_REFERENCIAL": "Iglesia San José de Morona"
       }
     },
     {
@@ -6660,11 +8410,18 @@
         "etiqueta": "255 | A",
         "etiquetaSC": "255 | A",
         "identificador": "REF-SAN-255",
-        "punto_referencial": "Cerca de Centro de Acopio de Cacao San Jos",
+        "punto_referencial": "Centro Acopio Cacao Morona",
         "casos": 10,
         "latitud": -2.882376,
         "longitud": -77.66547,
-        "referencia_corta": "Cabecera / Sector Central (SAN JOSE DE MORONA)"
+        "referencia_corta": "Centro Acopio Cacao Morona",
+        "CANTON": "TIWINTZA",
+        "PARROQUIA": "SAN JOSE DE MORONA",
+        "TIPOLOGIA": "A",
+        "CASOS": 10,
+        "ETIQUETA": "255 | A",
+        "PUNTO REFERENCIAL": "Centro Acopio Cacao Morona",
+        "PUNTO_REFERENCIAL": "Centro Acopio Cacao Morona"
       }
     },
     {
@@ -6686,11 +8443,18 @@
         "etiqueta": "256 | B",
         "etiquetaSC": "256 | B",
         "identificador": "REF-SAN-256",
-        "punto_referencial": "Comunidad la Merced",
+        "punto_referencial": "Comunidad La Merced Norte",
         "casos": 10,
         "latitud": -2.887511,
         "longitud": -77.665437,
-        "referencia_corta": "Cabecera / Sector Central (SAN JOSE DE MORONA)"
+        "referencia_corta": "Comunidad La Merced Norte",
+        "CANTON": "TIWINTZA",
+        "PARROQUIA": "SAN JOSE DE MORONA",
+        "TIPOLOGIA": "B",
+        "CASOS": 10,
+        "ETIQUETA": "256 | B",
+        "PUNTO REFERENCIAL": "Comunidad La Merced Norte",
+        "PUNTO_REFERENCIAL": "Comunidad La Merced Norte"
       }
     },
     {
@@ -6712,11 +8476,18 @@
         "etiqueta": "257 | C",
         "etiquetaSC": "257 | C",
         "identificador": "REF-SAN-257",
-        "punto_referencial": "Comunidad la Merced",
+        "punto_referencial": "Comunidad La Merced Sur",
         "casos": 10,
         "latitud": -2.889182,
         "longitud": -77.669998,
-        "referencia_corta": "Cabecera / Sector Central (SAN JOSE DE MORONA)"
+        "referencia_corta": "Comunidad La Merced Sur",
+        "CANTON": "TIWINTZA",
+        "PARROQUIA": "SAN JOSE DE MORONA",
+        "TIPOLOGIA": "C",
+        "CASOS": 10,
+        "ETIQUETA": "257 | C",
+        "PUNTO REFERENCIAL": "Comunidad La Merced Sur",
+        "PUNTO_REFERENCIAL": "Comunidad La Merced Sur"
       }
     },
     {
@@ -6738,11 +8509,18 @@
         "etiqueta": "258 | A",
         "etiquetaSC": "258 | A",
         "identificador": "REF-SAN-258",
-        "punto_referencial": "Iglesia Evengelica Apostolica del Nombre d",
+        "punto_referencial": "Iglesia Evang. Apostólica",
         "casos": 10,
         "latitud": -3.046825,
         "longitud": -78.006704,
-        "referencia_corta": "Iglesia Evengelica Apostolica del Nombre de Jesus"
+        "referencia_corta": "Iglesia Evang. Apostólica",
+        "CANTON": "TIWINTZA",
+        "PARROQUIA": "SANTIAGO",
+        "TIPOLOGIA": "A",
+        "CASOS": 10,
+        "ETIQUETA": "258 | A",
+        "PUNTO REFERENCIAL": "Iglesia Evang. Apostólica",
+        "PUNTO_REFERENCIAL": "Iglesia Evang. Apostólica"
       }
     },
     {
@@ -6764,11 +8542,18 @@
         "etiqueta": "259 | F",
         "etiquetaSC": "259 | F",
         "identificador": "REF-SAN-259",
-        "punto_referencial": "Zona Urbana Santiago",
+        "punto_referencial": "Barrio Central Santiago",
         "casos": 10,
         "latitud": -3.040823,
         "longitud": -77.996251,
-        "referencia_corta": "Cabecera / Sector Central (SANTIAGO)"
+        "referencia_corta": "Barrio Central Santiago",
+        "CANTON": "TIWINTZA",
+        "PARROQUIA": "SANTIAGO",
+        "TIPOLOGIA": "F",
+        "CASOS": 10,
+        "ETIQUETA": "259 | F",
+        "PUNTO REFERENCIAL": "Barrio Central Santiago",
+        "PUNTO_REFERENCIAL": "Barrio Central Santiago"
       }
     },
     {
@@ -6790,11 +8575,18 @@
         "etiqueta": "260 | C",
         "etiquetaSC": "260 | C",
         "identificador": "REF-SAN-260",
-        "punto_referencial": "Policlinico Militar",
+        "punto_referencial": "Policlínico Militar Tiwintza",
         "casos": 10,
         "latitud": -3.048569,
         "longitud": -78.010192,
-        "referencia_corta": "Policlinico Militar"
+        "referencia_corta": "Policlínico Militar Tiwintza",
+        "CANTON": "TIWINTZA",
+        "PARROQUIA": "SANTIAGO",
+        "TIPOLOGIA": "C",
+        "CASOS": 10,
+        "ETIQUETA": "260 | C",
+        "PUNTO REFERENCIAL": "Policlínico Militar Tiwintza",
+        "PUNTO_REFERENCIAL": "Policlínico Militar Tiwintza"
       }
     },
     {
@@ -6816,11 +8608,18 @@
         "etiqueta": "261 | H",
         "etiquetaSC": "261 | H",
         "identificador": "REF-SAN-261",
-        "punto_referencial": "Iglesia de Santiago Tiwintza",
+        "punto_referencial": "Iglesia Central Santiago",
         "casos": 10,
         "latitud": -3.048081,
         "longitud": -78.007543,
-        "referencia_corta": "Iglesia de Santiago Tiwintza"
+        "referencia_corta": "Iglesia Central Santiago",
+        "CANTON": "TIWINTZA",
+        "PARROQUIA": "SANTIAGO",
+        "TIPOLOGIA": "H",
+        "CASOS": 10,
+        "ETIQUETA": "261 | H",
+        "PUNTO REFERENCIAL": "Iglesia Central Santiago",
+        "PUNTO_REFERENCIAL": "Iglesia Central Santiago"
       }
     },
     {
@@ -6842,11 +8641,18 @@
         "etiqueta": "262 | D",
         "etiquetaSC": "262 | D",
         "identificador": "REF-SAN-262",
-        "punto_referencial": "Tanque de Agua",
+        "punto_referencial": "Tanque de Agua Tiwintza",
         "casos": 10,
         "latitud": -3.052446,
         "longitud": -77.999761,
-        "referencia_corta": "Tanque de Agua"
+        "referencia_corta": "Tanque de Agua Tiwintza",
+        "CANTON": "TIWINTZA",
+        "PARROQUIA": "SANTIAGO",
+        "TIPOLOGIA": "D",
+        "CASOS": 10,
+        "ETIQUETA": "262 | D",
+        "PUNTO REFERENCIAL": "Tanque de Agua Tiwintza",
+        "PUNTO_REFERENCIAL": "Tanque de Agua Tiwintza"
       }
     },
     {
@@ -6868,11 +8674,18 @@
         "etiqueta": "263 | A",
         "etiquetaSC": "263 | A",
         "identificador": "REF-SAN-263",
-        "punto_referencial": "Batallon Militar de Selva G1 Santiago",
+        "punto_referencial": "Batallón de Selva BS-61",
         "casos": 10,
         "latitud": -3.04955,
         "longitud": -78.012779,
-        "referencia_corta": "Batallon Militar de Selva G1 Santiago"
+        "referencia_corta": "Batallón de Selva BS-61",
+        "CANTON": "TIWINTZA",
+        "PARROQUIA": "SANTIAGO",
+        "TIPOLOGIA": "A",
+        "CASOS": 10,
+        "ETIQUETA": "263 | A",
+        "PUNTO REFERENCIAL": "Batallón de Selva BS-61",
+        "PUNTO_REFERENCIAL": "Batallón de Selva BS-61"
       }
     },
     {
@@ -6894,11 +8707,18 @@
         "etiqueta": "264 | G",
         "etiquetaSC": "264 | G",
         "identificador": "REF-SAN-264",
-        "punto_referencial": "Cerca de Colegio Jaime Roldos Aguilera",
+        "punto_referencial": "Colegio Jaime Roldós Norte",
         "casos": 10,
         "latitud": -3.053712,
         "longitud": -78.002887,
-        "referencia_corta": "Cabecera / Sector Central (SANTIAGO)"
+        "referencia_corta": "Colegio Jaime Roldós Norte",
+        "CANTON": "TIWINTZA",
+        "PARROQUIA": "SANTIAGO",
+        "TIPOLOGIA": "G",
+        "CASOS": 10,
+        "ETIQUETA": "264 | G",
+        "PUNTO REFERENCIAL": "Colegio Jaime Roldós Norte",
+        "PUNTO_REFERENCIAL": "Colegio Jaime Roldós Norte"
       }
     },
     {
@@ -6924,7 +8744,14 @@
         "casos": 10,
         "latitud": -3.055945,
         "longitud": -78.013125,
-        "referencia_corta": "Cabecera / Sector Central (SANTIAGO)"
+        "referencia_corta": "Comunidad Sharian",
+        "CANTON": "TIWINTZA",
+        "PARROQUIA": "SANTIAGO",
+        "TIPOLOGIA": "B",
+        "CASOS": 10,
+        "ETIQUETA": "265 | B",
+        "PUNTO REFERENCIAL": "Comunidad Sharian",
+        "PUNTO_REFERENCIAL": "Comunidad Sharian"
       }
     },
     {
@@ -6946,11 +8773,18 @@
         "etiqueta": "266 | E",
         "etiquetaSC": "266 | E",
         "identificador": "REF-SAN-266",
-        "punto_referencial": "Sector Colegio Jaime Roldos Aguilera",
+        "punto_referencial": "Colegio Jaime Roldós Sur",
         "casos": 10,
         "latitud": -3.057895,
         "longitud": -78.002977,
-        "referencia_corta": "Cabecera / Sector Central (SANTIAGO)"
+        "referencia_corta": "Colegio Jaime Roldós Sur",
+        "CANTON": "TIWINTZA",
+        "PARROQUIA": "SANTIAGO",
+        "TIPOLOGIA": "E",
+        "CASOS": 10,
+        "ETIQUETA": "266 | E",
+        "PUNTO REFERENCIAL": "Colegio Jaime Roldós Sur",
+        "PUNTO_REFERENCIAL": "Colegio Jaime Roldós Sur"
       }
     }
   ]
