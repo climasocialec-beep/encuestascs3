@@ -1826,10 +1826,10 @@ document.addEventListener('DOMContentLoaded', () => {
         let sectoresData = { type: 'FeatureCollection', features: [] };
 
         try {
-            const cacheBuster = '?v=45.0.0';
+            const cacheBuster = '?t=' + Date.now();
             const [resPar, resSec] = await Promise.all([
-                fetch('assets/parroquias.geojson' + cacheBuster),
-                fetch('assets/sectores_censales.geojson' + cacheBuster)
+                fetch('assets/parroquias.geojson' + cacheBuster, { cache: 'no-cache' }),
+                fetch('assets/sectores_censales.geojson' + cacheBuster, { cache: 'no-cache' })
             ]);
             if (resPar.ok) parroquiasData = await resPar.json();
             if (resSec.ok) sectoresData = await resSec.json();
