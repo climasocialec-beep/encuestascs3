@@ -302,6 +302,24 @@ document.addEventListener('DOMContentLoaded', () => {
     const EXPR_SECTORES_LINE = EXPR_PARROQUIAS_LINE;
     const EXPR_SECTORES_LABEL = EXPR_PARROQUIAS_LABEL;
 
+    const EXPR_PIN_CANTON = [
+        'match',
+        ['upcase', ['coalesce', ['get', 'canton'], ['get', 'CANTON'], '']],
+        'MORONA', 'pin-morona',
+        'GUALAQUIZA', 'pin-gualaquiza',
+        'SUCUA', 'pin-sucua',
+        'PALORA', 'pin-palora',
+        'SANTIAGO', 'pin-santiago',
+        'LIMON INDANZA', 'pin-limon-indanza',
+        'TAISHA', 'pin-taisha',
+        'SAN JUAN BOSCO', 'pin-san-juan-bosco',
+        'HUAMBOYA', 'pin-huamboya',
+        'LOGROÑO', 'pin-logrono',
+        'TIWINTZA', 'pin-tiwintza',
+        'PABLO SEXTO', 'pin-pablo-sexto',
+        'pin-referencia'
+    ];
+
     // Aliases para máxima compatibilidad
     const EXPR_CANTON_PARROQUIAS_LINE = EXPR_PARROQUIAS_LINE;
     const EXPR_CANTON_PARROQUIAS_LABEL = EXPR_PARROQUIAS_LABEL;
@@ -2142,13 +2160,13 @@ document.addEventListener('DOMContentLoaded', () => {
                             'line-opacity': 1.0
                         }
                     },
-                    // Puntos de Referencia Muestral (Marcador tipo PIN estilo Rumiñahui, compacto y discreto)
+                    // Puntos de Referencia Muestral (Marcador tipo PIN estilo Rumiñahui coloreado por Cantón)
                     {
                         id: 'sectores-puntos-circle',
                         type: 'symbol',
                         source: 'sectores-source',
                         layout: {
-                            'icon-image': 'pin-referencia',
+                            'icon-image': EXPR_PIN_CANTON,
                             'icon-size': [
                                 'interpolate', ['linear'], ['zoom'],
                                 8, 0.45,
@@ -2379,6 +2397,31 @@ document.addEventListener('DOMContentLoaded', () => {
                     const pinActivoImg = generarImagenPin('#ea580c', '#f97316', true);
                     if (pinActivoImg) map.addImage('pin-referencia-activo', pinActivoImg, { pixelRatio: 2 });
                 }
+
+                // Generar pin temático oficial para cada cantón según COLORES_CANTON
+                const SLUG_CANTONES = {
+                    'MORONA': 'pin-morona',
+                    'GUALAQUIZA': 'pin-gualaquiza',
+                    'SUCUA': 'pin-sucua',
+                    'PALORA': 'pin-palora',
+                    'SANTIAGO': 'pin-santiago',
+                    'LIMON INDANZA': 'pin-limon-indanza',
+                    'TAISHA': 'pin-taisha',
+                    'SAN JUAN BOSCO': 'pin-san-juan-bosco',
+                    'HUAMBOYA': 'pin-huamboya',
+                    'LOGROÑO': 'pin-logrono',
+                    'TIWINTZA': 'pin-tiwintza',
+                    'PABLO SEXTO': 'pin-pablo-sexto'
+                };
+
+                Object.keys(SLUG_CANTONES).forEach(cantonNombre => {
+                    const idImg = SLUG_CANTONES[cantonNombre];
+                    if (!map.hasImage(idImg)) {
+                        const cfg = COLORES_CANTON[cantonNombre] || { hex: '#475569', lineaSector: '#64748b' };
+                        const img = generarImagenPin(cfg.hex, cfg.lineaSector || cfg.linea || cfg.hex, false);
+                        if (img) map.addImage(idImg, img, { pixelRatio: 2 });
+                    }
+                });
             } catch (errIcon) {
                 console.warn('[MapLibre Pin Marker]', errIcon);
             }
@@ -3046,7 +3089,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (map.getLayer('sectores-puntos-circle')) {
                     map.setFilter('sectores-puntos-circle', filterGeneral);
                     map.setLayoutProperty('sectores-puntos-circle', 'icon-image', [
-                        'case', matchSC, 'pin-referencia-activo', 'pin-referencia'
+                        'case', matchSC, 'pin-referencia-activo', EXPR_PIN_CANTON
                     ]);
                     map.setLayoutProperty('sectores-puntos-circle', 'icon-size', [
                         'case',
@@ -3102,7 +3145,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (map.getLayer('sectores-puntos-circle')) {
                     map.setFilter('sectores-puntos-circle', filterGeneral);
-                    map.setLayoutProperty('sectores-puntos-circle', 'icon-image', 'pin-referencia');
+                    map.setLayoutProperty('sectores-puntos-circle', 'icon-image', EXPR_PIN_CANTON);
                     map.setLayoutProperty('sectores-puntos-circle', 'icon-size', [
                         'interpolate', ['linear'], ['zoom'],
                         8, 0.45,
