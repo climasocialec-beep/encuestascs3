@@ -2142,23 +2142,25 @@ document.addEventListener('DOMContentLoaded', () => {
                             'line-opacity': 1.0
                         }
                     },
-                    // Puntos de Muestreo (Marcadores circulares de los 266 puntos)
+                    // Puntos de Referencia Muestral (Ícono de rombo/diamante discreto para no confundir con las encuestas circulares)
                     {
                         id: 'sectores-puntos-circle',
-                        type: 'circle',
+                        type: 'symbol',
                         source: 'sectores-source',
-                        paint: {
-                            'circle-color': EXPR_SECTORES_FILL,
-                            'circle-radius': [
+                        layout: {
+                            'icon-image': 'ref-diamond-icon',
+                            'icon-size': [
                                 'interpolate', ['linear'], ['zoom'],
-                                8, 4.0,
-                                11, 6.0,
-                                14, 8.5,
-                                17, 11.0
+                                8, 0.45,
+                                11, 0.60,
+                                14, 0.80,
+                                17, 1.05
                             ],
-                            'circle-stroke-width': 2.0,
-                            'circle-stroke-color': '#ffffff',
-                            'circle-opacity': 0.95
+                            'icon-allow-overlap': true,
+                            'icon-ignore-placement': true
+                        },
+                        paint: {
+                            'icon-opacity': 0.90
                         }
                     },
                     {
@@ -2313,6 +2315,44 @@ document.addEventListener('DOMContentLoaded', () => {
 
         map.on('load', () => {
             AppState.mapLoaded = true;
+
+            // Generar ícono vectorial discreto (Rombo / Diamante de referencia con punto interior)
+            // Diseñado especialmente para distinguir puntos de referencia muestral de los círculos de encuestas
+            try {
+                const size = 32;
+                const canvas = document.createElement('canvas');
+                canvas.width = size;
+                canvas.height = size;
+                const ctx = canvas.getContext('2d');
+                ctx.clearRect(0, 0, size, size);
+
+                // Rombo exterior con borde nítido
+                ctx.beginPath();
+                ctx.moveTo(16, 3);
+                ctx.lineTo(29, 16);
+                ctx.lineTo(16, 29);
+                ctx.lineTo(3, 16);
+                ctx.closePath();
+                ctx.fillStyle = '#475569'; // Slate 600 sobrio y discreto
+                ctx.fill();
+                ctx.lineWidth = 2.5;
+                ctx.strokeStyle = '#ffffff';
+                ctx.stroke();
+
+                // Punto central blanco
+                ctx.beginPath();
+                ctx.arc(16, 16, 3.5, 0, Math.PI * 2);
+                ctx.fillStyle = '#ffffff';
+                ctx.fill();
+
+                const imgData = ctx.getImageData(0, 0, size, size);
+                if (!map.hasImage('ref-diamond-icon')) {
+                    map.addImage('ref-diamond-icon', imgData, { pixelRatio: 2 });
+                }
+            } catch (errIcon) {
+                console.warn('[MapLibre Icon]', errIcon);
+            }
+
             configurarCapasWebGL();
             renderizarVista(false, false);
             // Asegurar dimensiones óptimas
@@ -2975,18 +3015,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (map.getLayer('sectores-puntos-circle')) {
                     map.setFilter('sectores-puntos-circle', filterGeneral);
-                    map.setPaintProperty('sectores-puntos-circle', 'circle-stroke-color', [
-                        'case', matchSC, '#f59e0b', '#ffffff'
-                    ]);
-                    map.setPaintProperty('sectores-puntos-circle', 'circle-stroke-width', [
-                        'case', matchSC, 4.0, 2.0
-                    ]);
-                    map.setPaintProperty('sectores-puntos-circle', 'circle-radius', [
+                    map.setLayoutProperty('sectores-puntos-circle', 'icon-size', [
                         'case',
                         matchSC,
-                        ['interpolate', ['linear'], ['zoom'], 8, 7.0, 11, 9.5, 14, 13.0, 17, 16.0],
-                        ['interpolate', ['linear'], ['zoom'], 8, 4.0, 11, 6.0, 14, 8.5, 17, 11.0]
+                        ['interpolate', ['linear'], ['zoom'], 8, 0.70, 11, 0.95, 14, 1.25, 17, 1.50],
+                        ['interpolate', ['linear'], ['zoom'], 8, 0.45, 11, 0.60, 14, 0.80, 17, 1.05]
                     ]);
+                    map.setPaintProperty('sectores-puntos-circle', 'icon-opacity', 1.0);
                 }
 
                 if (map.getLayer('sectores-fill')) {
@@ -3034,15 +3069,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (map.getLayer('sectores-puntos-circle')) {
                     map.setFilter('sectores-puntos-circle', filterGeneral);
-                    map.setPaintProperty('sectores-puntos-circle', 'circle-stroke-color', '#ffffff');
-                    map.setPaintProperty('sectores-puntos-circle', 'circle-stroke-width', 2.0);
-                    map.setPaintProperty('sectores-puntos-circle', 'circle-radius', [
+                    map.setLayoutProperty('sectores-puntos-circle', 'icon-size', [
                         'interpolate', ['linear'], ['zoom'],
-                        8, 4.0,
-                        11, 6.0,
-                        14, 8.5,
-                        17, 11.0
+                        8, 0.45,
+                        11, 0.60,
+                        14, 0.80,
+                        17, 1.05
                     ]);
+                    map.setPaintProperty('sectores-puntos-circle', 'icon-opacity', 0.90);
                 }
 
                 if (map.getLayer('sectores-fill')) {
