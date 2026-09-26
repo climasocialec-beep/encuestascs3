@@ -1860,7 +1860,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let sectoresData = { type: 'FeatureCollection', features: [] };
 
         try {
-            const versionQuery = '?v=65.0.0';
+            const versionQuery = '?v=65.1.0';
             const [resPar, resSec] = await Promise.all([
                 fetch('assets/parroquias.geojson' + versionQuery),
                 fetch('assets/sectores_censales.geojson' + versionQuery)
@@ -2966,10 +2966,6 @@ document.addEventListener('DOMContentLoaded', () => {
                         encontrados++;
                         const bMinX = Array.isArray(b[0]) ? b[0][0] : b[0];
                         const bMinY = Array.isArray(b[0]) ? b[0][1] : b[1];
-                        const bMaxX = Array.isArray(b[1]) ? b[1][0] : b[2];
-                        const bMaxY = Array.isArray(b[1]) ? b[1][1] : b[3];
-                        if (bMinX < minX) minX = bMinX;
-                        if (bMinY < minY) minY = bMinY;
                         const bMaxX = Array.isArray(b[1]) ? b[1][0] : b[2];
                         const bMaxY = Array.isArray(b[1]) ? b[1][1] : b[3];
                         if (bMinX < minX) minX = bMinX;
