@@ -198,7 +198,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const PARROQUIAS_POR_CANTON = {
         'GUALAQUIZA': ['BOMBOIZA', 'CHIGUINDA', 'EL IDEAL', 'GUALAQUIZA', 'MERCEDES MOLINA', 'NUEVA TARQUI', 'ROSARIO'],
         'HUAMBOYA': ['CHIGUAZA', 'HUAMBOYA'],
-        'LIMON INDANZA': ['GRAL. LEONIDAS PLAZA', 'INDANZA', 'SAN ANTONIO', 'SANTA SUSANA DE CHIVIAZA', 'YUNGANZA /EL ROSARIO', 'YUNGANZA 7 EL ROSARIO'],
+        'LIMON INDANZA': ['GRAL. LEONIDAS PLAZA', 'INDANZA', 'SAN ANTONIO', 'SANTA SUSANA DE CHIVIAZA', 'YUNGANZA /EL ROSARIO'],
         'LOGROÑO': ['LOGROÑO', 'SHIMPIS', 'YAUPI'],
         'MORONA': ['CUCHAENTZA', 'GRAL. PROAÑO', 'MACAS', 'RIO BLANCO', 'SAN ISIDRO', 'SINAI'],
         'PABLO SEXTO': ['PABLO SEXTO'],
@@ -1568,13 +1568,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     const p = (f.properties.nombre || f.properties.PARROQUIA || f.properties.name || '').toUpperCase().trim();
                     const c = (f.properties.canton || f.properties.CANTON || '').trim();
                     
-                    // Si hay cantón seleccionado, filtrar para que solo queden las correspondientes a ese cantón
+                    // Si hay cantón seleccionado, filtrar estrictamente para que solo queden las correspondientes a ese cantón
                     if (permitidasCanton) {
                         const targetCan = normStr(cantActivo);
                         const normC = normStr(c);
-                        const coincideCanton = normC && (normC === targetCan || normC.includes(targetCan) || targetCan.includes(normC));
-                        const coincideParroquia = permitidasCanton.some(pp => pp === normStr(p) || normStr(p).includes(pp) || pp.includes(normStr(p)));
-                        if (!coincideCanton && !coincideParroquia) return;
+                        if (normC && normC !== targetCan && !normC.includes(targetCan) && !targetCan.includes(normC)) return;
+                        const normP = normStr(p);
+                        const coincideParroquia = permitidasCanton.includes(normP);
+                        if (!coincideParroquia) return;
                     }
                     if (p && !parList.includes(p)) parList.push(p);
                 });
@@ -1859,7 +1860,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let sectoresData = { type: 'FeatureCollection', features: [] };
 
         try {
-            const versionQuery = '?v=64.0.0';
+            const versionQuery = '?v=65.0.0';
             const [resPar, resSec] = await Promise.all([
                 fetch('assets/parroquias.geojson' + versionQuery),
                 fetch('assets/sectores_censales.geojson' + versionQuery)
@@ -1888,7 +1889,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const tip = String(p.tipologia || '').trim().toUpperCase();
                 const can = String(p.canton || p.CANTON || '').trim();
                 let par = String(p.parroquia || p.PARROQUIA || '').trim().toUpperCase();
-                if (par.includes('YUNGANZA')) par = 'YUNGANZA 7 EL ROSARIO';
+                if (par.includes('YUNGANZA')) par = 'YUNGANZA /EL ROSARIO';
                 const secAnm = String(p.sec_anm || '').trim();
                 const etiq = p.etiquetaSC || (cod && tip ? `${cod} | ${tip}` : (cod || tip));
                 p.sc = cod;
@@ -2813,12 +2814,31 @@ document.addEventListener('DOMContentLoaded', () => {
         if (nombre !== 'Todas') {
             const normP = (s) => String(s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase().trim();
             const targetP = normP(nombre);
+            // Búsqueda de cantón por coincidencia exacta primero para evitar colisión de nombres
+            let cantonEncontrado = null;
             for (const [can, pars] of Object.entries(PARROQUIAS_POR_CANTON)) {
-                if (pars.some(p => normP(p) === targetP || normP(p).includes(targetP) || targetP.includes(normP(p)))) {
-                    AppState.cantonSeleccionado = can;
-                    if (UI.cantonFilter) UI.cantonFilter.value = can;
+                if (pars.some(p => normP(p) === targetP)) {
+                    cantonEncontrado = can;
                     break;
                 }
+            }
+            // Fallback cuidadoso solo si no hubo coincidencia exacta
+            if (!cantonEncontrado) {
+                for (const [can, pars] of Object.entries(PARROQUIAS_POR_CANTON)) {
+                    if (pars.some(p => {
+                        const np = normP(p);
+                        // Prohibir match entre Rosario y Yunganza
+                        if ((np === 'ROSARIO' && targetP.includes('YUNGANZA')) || (targetP === 'ROSARIO' && np.includes('YUNGANZA'))) return false;
+                        return np.includes(targetP) || targetP.includes(np);
+                    })) {
+                        cantonEncontrado = can;
+                        break;
+                    }
+                }
+            }
+            if (cantonEncontrado) {
+                AppState.cantonSeleccionado = cantonEncontrado;
+                if (UI.cantonFilter) UI.cantonFilter.value = cantonEncontrado;
             }
         }
 
@@ -2840,42 +2860,58 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!nombreParroquia || nombreParroquia === 'Todas') return null;
         const norm = (s) => String(s || '').normalize('NFD').replace(/[\u0300-\u036f]/g, '').toUpperCase().trim();
         const target = norm(nombreParroquia);
+        const cantActivo = (AppState.cantonSeleccionado && AppState.cantonSeleccionado !== 'Todos') ? norm(AppState.cantonSeleccionado) : null;
 
-        // 1. Buscar en AppState.parroquiasMap
-        if (AppState.parroquiasMap) {
-            const direct = AppState.parroquiasMap.get(nombreParroquia.toUpperCase().trim());
-            if (direct && direct.bbox) return direct.bbox;
-
-            for (const [k, v] of AppState.parroquiasMap.entries()) {
-                const nk = norm(k);
-                if (nk === target || nk.includes(target) || target.includes(nk)) {
-                    if (v && v.bbox) return v.bbox;
-                    if (v && v.feature && v.feature.geometry) return calcularBBOX(v.feature.geometry);
-                }
-            }
-        }
-
-        // 2. Buscar en AppState.parroquiasGeojson
+        // 1. Buscar en AppState.parroquiasGeojson (priorizando match de cantón y match exacto de parroquia)
         if (AppState.parroquiasGeojson && AppState.parroquiasGeojson.features) {
-            const feat = AppState.parroquiasGeojson.features.find(f => {
+            // Intento 1: Match exacto de nombre y match de cantón
+            let feat = AppState.parroquiasGeojson.features.find(f => {
                 const p = f.properties || {};
                 const n = norm(p.nombre || p.PARROQUIA || p.name || '');
-                return n === target || n.includes(target) || target.includes(n);
+                const c = norm(p.canton || p.CANTON || '');
+                const parMatch = (n === target);
+                const canMatch = !cantActivo || (c === cantActivo || c.includes(cantActivo) || cantActivo.includes(c));
+                return parMatch && canMatch;
             });
+
+            // Intento 2: Match exacto de nombre sin filtro de cantón
+            if (!feat) {
+                feat = AppState.parroquiasGeojson.features.find(f => {
+                    const p = f.properties || {};
+                    const n = norm(p.nombre || p.PARROQUIA || p.name || '');
+                    return n === target;
+                });
+            }
+
+            // Intento 3: Match parcial cuidadoso (prohibiendo colisión Rosario <-> Yunganza)
+            if (!feat) {
+                feat = AppState.parroquiasGeojson.features.find(f => {
+                    const p = f.properties || {};
+                    const n = norm(p.nombre || p.PARROQUIA || p.name || '');
+                    const c = norm(p.canton || p.CANTON || '');
+                    if ((n === 'ROSARIO' && target.includes('YUNGANZA')) || (target === 'ROSARIO' && n.includes('YUNGANZA'))) return false;
+                    const canMatch = !cantActivo || (c === cantActivo);
+                    return canMatch && (n.includes(target) || target.includes(n));
+                });
+            }
+
             if (feat) {
                 if (feat.properties && feat.properties.bbox) return feat.properties.bbox;
                 if (feat.geometry) return calcularBBOX(feat.geometry);
             }
         }
 
-        // 3. Fallback: calcular envolvente de los sectores censales que pertenezcan a esa parroquia
+        // 2. Fallback: calcular envolvente de los sectores censales que pertenezcan a esa parroquia
         if (AppState.sectoresGeojson && AppState.sectoresGeojson.features) {
             let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
             let encontrados = 0;
             AppState.sectoresGeojson.features.forEach(f => {
                 const p = f.properties || {};
                 const par = norm(p.parroquia || p.PARROQUIA || '');
-                if (par && (par === target || par.includes(target) || target.includes(par))) {
+                const c = norm(p.canton || p.CANTON || '');
+                const parMatch = (par === target);
+                const canMatch = !cantActivo || (c === cantActivo);
+                if (parMatch && canMatch) {
                     const b = p.bbox || (f.geometry ? calcularBBOX(f.geometry) : null);
                     if (b) {
                         encontrados++;
@@ -2920,15 +2956,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 const p = f.properties || {};
                 const c = norm(p.canton || p.CANTON || '');
                 const nom = norm(p.nombre || p.PARROQUIA || p.name || '');
+                // El cantón debe coincidir estrictamente si está definido en la propiedad
                 const matchCanton = c && (c === target || c.includes(target) || target.includes(c));
-                const matchPar = parsPermitidas.some(pp => pp === nom || nom.includes(pp) || pp.includes(nom));
+                const matchPar = parsPermitidas.includes(nom);
 
-                if (matchCanton || matchPar) {
+                if (c ? matchCanton : matchPar) {
                     const b = p.bbox || (f.geometry ? calcularBBOX(f.geometry) : null);
                     if (b) {
                         encontrados++;
                         const bMinX = Array.isArray(b[0]) ? b[0][0] : b[0];
                         const bMinY = Array.isArray(b[0]) ? b[0][1] : b[1];
+                        const bMaxX = Array.isArray(b[1]) ? b[1][0] : b[2];
+                        const bMaxY = Array.isArray(b[1]) ? b[1][1] : b[3];
+                        if (bMinX < minX) minX = bMinX;
+                        if (bMinY < minY) minY = bMinY;
                         const bMaxX = Array.isArray(b[1]) ? b[1][0] : b[2];
                         const bMaxY = Array.isArray(b[1]) ? b[1][1] : b[3];
                         if (bMinX < minX) minX = bMinX;
@@ -2976,13 +3017,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 const targetPar = String(AppState.parroquiaSeleccionada).trim().toUpperCase();
                 const variantesPar = [targetPar];
                 if (targetPar.includes('YUNGANZA')) {
-                    variantesPar.push('YUNGANZA 7 EL ROSARIO', 'YUNGANZA / EL ROSARIO', 'YUNGANZA /EL ROSARIO');
+                    variantesPar.push('YUNGANZA / EL ROSARIO', 'YUNGANZA /EL ROSARIO');
                 }
-                const filterSoloParroquia = [
+                const matchParExpr = [
                     'in',
                     ['upcase', ['coalesce', ['get', 'nombre'], ['get', 'parroquia'], ['get', 'PARROQUIA'], '']],
                     ['literal', variantesPar]
                 ];
+                const filterSoloParroquia = (AppState.cantonSeleccionado && AppState.cantonSeleccionado !== 'Todos')
+                    ? ['all', ['==', ['upcase', ['coalesce', ['get', 'canton'], ['get', 'CANTON'], '']], AppState.cantonSeleccionado.toUpperCase()], matchParExpr]
+                    : matchParExpr;
                 if (map.getLayer('parroquias-fill')) {
                     map.setFilter('parroquias-fill', filterSoloParroquia);
                     map.setPaintProperty('parroquias-fill', 'fill-color', EXPR_PARROQUIAS_FILL);
@@ -3073,13 +3117,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 const targetPar = String(AppState.parroquiaSeleccionada).trim().toUpperCase();
                 const variantesPar = [targetPar];
                 if (targetPar.includes('YUNGANZA')) {
-                    variantesPar.push('YUNGANZA 7 EL ROSARIO', 'YUNGANZA / EL ROSARIO', 'YUNGANZA /EL ROSARIO');
+                    variantesPar.push('YUNGANZA / EL ROSARIO', 'YUNGANZA /EL ROSARIO');
                 }
-                baseTerritorialFilter = [
+                const matchParExpr = [
                     'in',
                     ['upcase', ['coalesce', ['get', 'parroquia'], ['get', 'PARROQUIA'], '']],
                     ['literal', variantesPar]
                 ];
+                baseTerritorialFilter = (AppState.cantonSeleccionado && AppState.cantonSeleccionado !== 'Todos')
+                    ? ['all', ['==', ['upcase', ['coalesce', ['get', 'canton'], ['get', 'CANTON'], '']], AppState.cantonSeleccionado.toUpperCase()], matchParExpr]
+                    : matchParExpr;
             } else if (AppState.cantonSeleccionado && AppState.cantonSeleccionado !== 'Todos') {
                 const targetCan = AppState.cantonSeleccionado;
                 const parsPermitidas = (PARROQUIAS_POR_CANTON[targetCan] || []).map(p => p.toUpperCase().trim());
