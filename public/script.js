@@ -463,8 +463,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const titulo = document.getElementById('sectorActivoTitulo');
         const btnGmaps = document.getElementById('btnRutaGoogleMaps');
         if (barra && titulo && btnGmaps) {
-            const subRef = puntoRef ? ` · ${puntoRef}` : '';
-            titulo.textContent = `Punto #${etiq} (${parroquia})${subRef}`;
+            titulo.textContent = `Punto #${etiq}${puntoRef ? ` · ${puntoRef}` : ` (${parroquia})`}`;
             btnGmaps.href = gmapsUrl;
             barra.style.display = 'inline-flex';
         }
@@ -3131,9 +3130,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (sectorMeta && barra && titulo && btnGmaps) {
                     const p = sectorMeta.props || {};
                     const etiq = sectorMeta.etiquetaSC || `Sector ${targetSC}`;
-                    const parr = sectorMeta.parroquia ? ` (${sectorMeta.parroquia})` : '';
+                    const parr = sectorMeta.parroquia ? sectorMeta.parroquia : '';
                     const puntoRef = p.punto_referencial || p.PUNTO_REFERENCIAL || '';
-                    titulo.textContent = `Punto #${etiq}${parr}${puntoRef ? ` · ${puntoRef}` : ''}`;
+                    titulo.textContent = `Punto #${etiq}${puntoRef ? ` · ${puntoRef}` : (parr ? ` (${parr})` : '')}`;
 
                     let lat = null, lng = null;
                     if (sectorMeta.centroid && Array.isArray(sectorMeta.centroid)) {
