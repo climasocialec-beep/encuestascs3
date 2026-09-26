@@ -1,18 +1,18 @@
 /* Modo de contingencia: conserva solo la aplicación y cartografía pública de Morona Santiago 2026.
  * No almacena respuestas de Kobo ni coordenadas de encuestas en el teléfono. */
-const CACHE_NAME = 'clima-social-morona-santiago-2026-v44';
+const CACHE_NAME = 'clima-social-morona-santiago-2026-v45';
 const APP_SHELL = [
   '/',
   '/index.html',
-  '/style.css?v=44.0.0',
-  '/script.js?v=44.0.0',
+  '/style.css?v=45.0.0',
+  '/script.js?v=45.0.0',
   '/libs/maplibre-gl.js',
   '/libs/maplibre-gl.css',
   '/assets/icono.png',
   '/assets/01_ClimaSocial_Horizontal_Transparente.png',
   '/assets/01_Logo_Clima_Social_Horizontal_Oficial.svg',
-  '/assets/parroquias.geojson?v=44.0.0',
-  '/assets/sectores_censales.geojson?v=44.0.0'
+  '/assets/parroquias.geojson?v=45.0.0',
+  '/assets/sectores_censales.geojson?v=45.0.0'
 ];
 
 self.addEventListener('install', event => {
