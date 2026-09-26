@@ -2142,25 +2142,26 @@ document.addEventListener('DOMContentLoaded', () => {
                             'line-opacity': 1.0
                         }
                     },
-                    // Puntos de Referencia Muestral (Ícono de rombo/diamante discreto para no confundir con las encuestas circulares)
+                    // Puntos de Referencia Muestral (Marcador tipo PIN estilo Rumiñahui, compacto y discreto)
                     {
                         id: 'sectores-puntos-circle',
                         type: 'symbol',
                         source: 'sectores-source',
                         layout: {
-                            'icon-image': 'ref-diamond-icon',
+                            'icon-image': 'pin-referencia',
                             'icon-size': [
                                 'interpolate', ['linear'], ['zoom'],
                                 8, 0.45,
-                                11, 0.60,
-                                14, 0.80,
-                                17, 1.05
+                                11, 0.58,
+                                14, 0.75,
+                                17, 0.95
                             ],
+                            'icon-anchor': 'bottom',
                             'icon-allow-overlap': true,
                             'icon-ignore-placement': true
                         },
                         paint: {
-                            'icon-opacity': 0.90
+                            'icon-opacity': 0.92
                         }
                     },
                     {
@@ -2316,41 +2317,70 @@ document.addEventListener('DOMContentLoaded', () => {
         map.on('load', () => {
             AppState.mapLoaded = true;
 
-            // Generar ícono vectorial discreto (Rombo / Diamante de referencia con punto interior)
-            // Diseñado especialmente para distinguir puntos de referencia muestral de los círculos de encuestas
+            // Generar marcador tipo PIN oficial (estilo Rumiñahui, gota estilizada con diana blanca central)
+            // Calibrado con proporciones discretas para no saturar el mapa ni confundirse con las encuestas
             try {
-                const size = 32;
-                const canvas = document.createElement('canvas');
-                canvas.width = size;
-                canvas.height = size;
-                const ctx = canvas.getContext('2d');
-                ctx.clearRect(0, 0, size, size);
+                function generarImagenPin(colorPrincipal, colorSecundario, esActivo = false) {
+                    const width = 48;
+                    const height = 64;
+                    const canvas = document.createElement('canvas');
+                    canvas.width = width;
+                    canvas.height = height;
+                    const ctx = canvas.getContext('2d');
+                    if (!ctx) return null;
 
-                // Rombo exterior con borde nítido
-                ctx.beginPath();
-                ctx.moveTo(16, 3);
-                ctx.lineTo(29, 16);
-                ctx.lineTo(16, 29);
-                ctx.lineTo(3, 16);
-                ctx.closePath();
-                ctx.fillStyle = '#475569'; // Slate 600 sobrio y discreto
-                ctx.fill();
-                ctx.lineWidth = 2.5;
-                ctx.strokeStyle = '#ffffff';
-                ctx.stroke();
+                    ctx.scale(1.5, 1.5);
 
-                // Punto central blanco
-                ctx.beginPath();
-                ctx.arc(16, 16, 3.5, 0, Math.PI * 2);
-                ctx.fillStyle = '#ffffff';
-                ctx.fill();
+                    // 1. Sombra suave de contacto en el suelo
+                    ctx.beginPath();
+                    ctx.ellipse(16, 40, 6.0, 2.0, 0, 0, Math.PI * 2);
+                    ctx.fillStyle = 'rgba(15, 23, 42, 0.28)';
+                    ctx.fill();
 
-                const imgData = ctx.getImageData(0, 0, size, size);
-                if (!map.hasImage('ref-diamond-icon')) {
-                    map.addImage('ref-diamond-icon', imgData, { pixelRatio: 2 });
+                    // 2. Silueta del Pin estilizado (marcador tipo gota de precisión)
+                    ctx.beginPath();
+                    ctx.moveTo(16, 40);
+                    ctx.bezierCurveTo(13.5, 32, 4.5, 22.5, 4.5, 14);
+                    ctx.arc(16, 14, 11.5, Math.PI, 0, false);
+                    ctx.bezierCurveTo(27.5, 22.5, 18.5, 32, 16, 40);
+                    ctx.closePath();
+
+                    const grad = ctx.createLinearGradient(16, 2, 16, 40);
+                    grad.addColorStop(0, colorSecundario || colorPrincipal);
+                    grad.addColorStop(1, colorPrincipal);
+                    ctx.fillStyle = grad;
+                    ctx.fill();
+
+                    // Borde blanco nítido de contraste
+                    ctx.lineWidth = esActivo ? 2.6 : 2.0;
+                    ctx.strokeStyle = '#ffffff';
+                    ctx.lineJoin = 'round';
+                    ctx.stroke();
+
+                    // 3. Diana blanca interior (centro de referencia visual)
+                    ctx.beginPath();
+                    ctx.arc(16, 14, 4.6, 0, Math.PI * 2);
+                    ctx.fillStyle = '#ffffff';
+                    ctx.fill();
+
+                    ctx.beginPath();
+                    ctx.arc(16, 14, 2.2, 0, Math.PI * 2);
+                    ctx.fillStyle = esActivo ? '#c2410c' : colorPrincipal;
+                    ctx.fill();
+
+                    return ctx.getImageData(0, 0, width, height);
+                }
+
+                if (!map.hasImage('pin-referencia')) {
+                    const pinImg = generarImagenPin('#475569', '#64748b', false);
+                    if (pinImg) map.addImage('pin-referencia', pinImg, { pixelRatio: 2 });
+                }
+                if (!map.hasImage('pin-referencia-activo')) {
+                    const pinActivoImg = generarImagenPin('#ea580c', '#f97316', true);
+                    if (pinActivoImg) map.addImage('pin-referencia-activo', pinActivoImg, { pixelRatio: 2 });
                 }
             } catch (errIcon) {
-                console.warn('[MapLibre Icon]', errIcon);
+                console.warn('[MapLibre Pin Marker]', errIcon);
             }
 
             configurarCapasWebGL();
@@ -3015,11 +3045,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (map.getLayer('sectores-puntos-circle')) {
                     map.setFilter('sectores-puntos-circle', filterGeneral);
+                    map.setLayoutProperty('sectores-puntos-circle', 'icon-image', [
+                        'case', matchSC, 'pin-referencia-activo', 'pin-referencia'
+                    ]);
                     map.setLayoutProperty('sectores-puntos-circle', 'icon-size', [
                         'case',
                         matchSC,
-                        ['interpolate', ['linear'], ['zoom'], 8, 0.70, 11, 0.95, 14, 1.25, 17, 1.50],
-                        ['interpolate', ['linear'], ['zoom'], 8, 0.45, 11, 0.60, 14, 0.80, 17, 1.05]
+                        ['interpolate', ['linear'], ['zoom'], 8, 0.65, 11, 0.85, 14, 1.10, 17, 1.30],
+                        ['interpolate', ['linear'], ['zoom'], 8, 0.45, 11, 0.58, 14, 0.75, 17, 0.95]
                     ]);
                     map.setPaintProperty('sectores-puntos-circle', 'icon-opacity', 1.0);
                 }
@@ -3069,14 +3102,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (map.getLayer('sectores-puntos-circle')) {
                     map.setFilter('sectores-puntos-circle', filterGeneral);
+                    map.setLayoutProperty('sectores-puntos-circle', 'icon-image', 'pin-referencia');
                     map.setLayoutProperty('sectores-puntos-circle', 'icon-size', [
                         'interpolate', ['linear'], ['zoom'],
                         8, 0.45,
-                        11, 0.60,
-                        14, 0.80,
-                        17, 1.05
+                        11, 0.58,
+                        14, 0.75,
+                        17, 0.95
                     ]);
-                    map.setPaintProperty('sectores-puntos-circle', 'icon-opacity', 0.90);
+                    map.setPaintProperty('sectores-puntos-circle', 'icon-opacity', 0.92);
                 }
 
                 if (map.getLayer('sectores-fill')) {

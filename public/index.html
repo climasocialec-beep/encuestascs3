@@ -32,7 +32,7 @@
   <link rel="stylesheet" href="libs/maplibre-gl.css" />
 
   <!-- Estilos del Dashboard -->
-  <link rel="stylesheet" href="style.css?v=53.0.0">
+  <link rel="stylesheet" href="style.css?v=54.0.0">
 </head>
 <body>
 
@@ -470,21 +470,21 @@
 
   <!-- ===== SCRIPTS ===== -->
   <script src="libs/maplibre-gl.js"></script>
-  <script src="script.js?v=53.0.0"></script>
+  <script src="script.js?v=54.0.0"></script>
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        // Purgar cualquier caché anterior a v53
+        // Purgar cualquier caché anterior a v54
         if ('caches' in window) {
           caches.keys().then(names => {
             names.forEach(name => {
-              if (name !== 'clima-social-morona-santiago-2026-v53') {
+              if (name !== 'clima-social-morona-santiago-2026-v54') {
                 caches.delete(name);
               }
             });
           });
         }
-        navigator.serviceWorker.register('/service-worker.js?v=53.0.0').then(reg => {
+        navigator.serviceWorker.register('/service-worker.js?v=54.0.0').then(reg => {
           if (reg && reg.update) reg.update();
         }).catch(error => {
           console.warn('No se pudo preparar el modo sin conexión:', error);

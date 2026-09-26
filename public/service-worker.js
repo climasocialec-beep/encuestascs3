@@ -1,11 +1,11 @@
 /* Modo de contingencia: conserva solo la aplicación y cartografía pública de Morona Santiago 2026.
  * No almacena respuestas de Kobo ni coordenadas de encuestas en el teléfono. */
-const CACHE_NAME = 'clima-social-morona-santiago-2026-v53';
+const CACHE_NAME = 'clima-social-morona-santiago-2026-v54';
 const APP_SHELL = [
   '/',
   '/index.html',
-  '/style.css?v=53.0.0',
-  '/script.js?v=53.0.0',
+  '/style.css?v=54.0.0',
+  '/script.js?v=54.0.0',
   '/libs/maplibre-gl.js',
   '/libs/maplibre-gl.css',
   '/assets/icono.png',
