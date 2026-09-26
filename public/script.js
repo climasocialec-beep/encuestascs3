@@ -1859,7 +1859,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let sectoresData = { type: 'FeatureCollection', features: [] };
 
         try {
-            const versionQuery = '?v=63.0.0';
+            const versionQuery = '?v=64.0.0';
             const [resPar, resSec] = await Promise.all([
                 fetch('assets/parroquias.geojson' + versionQuery),
                 fetch('assets/sectores_censales.geojson' + versionQuery)
