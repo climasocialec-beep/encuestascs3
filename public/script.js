@@ -194,25 +194,27 @@ document.addEventListener('DOMContentLoaded', () => {
         '#047857'  // 28: Verde Esmeralda Oscuro
     ];
 
-    // Parroquias oficiales con levantamiento de muestra (45 parroquias activas)
+    // Parroquias oficiales con levantamiento de muestra (45 parroquias activas en 13 cantones)
     const PARROQUIAS_POR_CANTON = {
         'GUALAQUIZA': ['BOMBOIZA', 'CHIGUINDA', 'EL IDEAL', 'GUALAQUIZA', 'MERCEDES MOLINA'],
         'HUAMBOYA': ['CHIGUAZA', 'HUAMBOYA'],
         'LIMON INDANZA': ['GRAL. LEONIDAS PLAZA', 'INDANZA', 'SAN ANTONIO', 'SANTA SUSANA DE CHIVIAZA', 'YUNGANZA 7 EL ROSARIO'],
         'LOGROÑO': ['LOGROÑO', 'SHIMPIS', 'YAUPI'],
-        'MORONA': ['CUCHAENTZA', 'GRAL. PROAÑO', 'MACAS', 'RIO BLANCO', 'SAN ISIDRO', 'SEVILLA DON BOSCO', 'SINAI'],
+        'MORONA': ['CUCHAENTZA', 'GRAL. PROAÑO', 'MACAS', 'RIO BLANCO', 'SAN ISIDRO', 'SINAI'],
         'PABLO SEXTO': ['PABLO SEXTO'],
         'PALORA': ['16 DE AGOSTO', 'PALORA', 'SANGAY'],
         'SAN JUAN BOSCO': ['SAN CARLOS DE LIMON', 'SAN JUAN BOSCO', 'SANTIAGO DE PANANZA'],
         'SANTIAGO': ['MENDEZ', 'PATUCA', 'SAN FCO. DE CHINIMBIMI', 'SAN LUIS DEL ACHO', 'TAYUZA'],
+        'SEVILLA DON BOSCO': ['SEVILLA DON BOSCO'],
         'SUCUA': ['ASUNCION', 'HUAMBI', 'SANTA MARIANITA DE JESUS', 'SUCUA'],
         'TAISHA': ['HUASAGA /WAMPUIK', 'MACUMA', 'PUMPUENTSA', 'TAISHA', 'TUTINENTZA'],
         'TIWINTZA': ['SAN JOSE DE MORONA', 'SANTIAGO']
     };
 
-    // Paleta cromática oficial por Cantón (Encuesta Provincial Morona Santiago 2026)
+    // Paleta cromática oficial por Cantón (Encuesta Provincial Morona Santiago 2026 - 13 Cantones)
     const COLORES_CANTON = {
         'MORONA': { nombre: 'Morona (Macas)', hex: '#059669', linea: '#059669', fill: 'rgba(5, 150, 105, 0.22)', fillSector: 'rgba(5, 150, 105, 0.35)', lineaSector: '#047857', label: '#065f46', badge: '🟢' },
+        'SEVILLA DON BOSCO': { nombre: 'Sevilla Don Bosco', hex: '#d946ef', linea: '#c026d3', fill: 'rgba(217, 70, 239, 0.22)', fillSector: 'rgba(217, 70, 239, 0.35)', lineaSector: '#a21caf', label: '#86198f', badge: '🌸' },
         'GUALAQUIZA': { nombre: 'Gualaquiza', hex: '#d97706', linea: '#d97706', fill: 'rgba(217, 119, 6, 0.22)', fillSector: 'rgba(217, 119, 6, 0.35)', lineaSector: '#b45309', label: '#92400e', badge: '🟡' },
         'SUCUA': { nombre: 'Sucúa', hex: '#2563eb', linea: '#2563eb', fill: 'rgba(37, 99, 235, 0.20)', fillSector: 'rgba(37, 99, 235, 0.35)', lineaSector: '#1d4ed8', label: '#1e40af', badge: '🔵' },
         'PALORA': { nombre: 'Palora', hex: '#0284c7', linea: '#0284c7', fill: 'rgba(2, 132, 199, 0.22)', fillSector: 'rgba(2, 132, 199, 0.35)', lineaSector: '#0369a1', label: '#075985', badge: '🔷' },
@@ -221,7 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'TAISHA': { nombre: 'Taisha', hex: '#16a34a', linea: '#16a34a', fill: 'rgba(22, 163, 74, 0.20)', fillSector: 'rgba(22, 163, 74, 0.35)', lineaSector: '#15803d', label: '#166534', badge: '🟢' },
         'SAN JUAN BOSCO': { nombre: 'San Juan Bosco', hex: '#ea580c', linea: '#ea580c', fill: 'rgba(234, 88, 12, 0.22)', fillSector: 'rgba(234, 88, 12, 0.35)', lineaSector: '#c2410c', label: '#9a3412', badge: '🟠' },
         'HUAMBOYA': { nombre: 'Huamboya', hex: '#0891b2', linea: '#0891b2', fill: 'rgba(8, 145, 178, 0.22)', fillSector: 'rgba(8, 145, 178, 0.35)', lineaSector: '#0e7490', label: '#155e75', badge: '🔷' },
-        'LOGROÑO': { nombre: 'Logroño', hex: '#c026d3', linea: '#c026d3', fill: 'rgba(192, 38, 211, 0.22)', fillSector: 'rgba(192, 38, 211, 0.35)', lineaSector: '#a21caf', label: '#86198f', badge: '🟤' },
+        'LOGROÑO': { nombre: 'Logroño', hex: '#8b5cf6', linea: '#7c3aed', fill: 'rgba(139, 92, 246, 0.22)', fillSector: 'rgba(139, 92, 246, 0.35)', lineaSector: '#6d28d9', label: '#5b21b6', badge: '🟤' },
         'TIWINTZA': { nombre: 'Tiwintza', hex: '#65a30d', linea: '#65a30d', fill: 'rgba(101, 163, 13, 0.22)', fillSector: 'rgba(101, 163, 13, 0.35)', lineaSector: '#4d7c0f', label: '#3f6212', badge: '🟢' },
         'PABLO SEXTO': { nombre: 'Pablo Sexto', hex: '#92400e', linea: '#92400e', fill: 'rgba(146, 64, 14, 0.22)', fillSector: 'rgba(146, 64, 14, 0.35)', lineaSector: '#78350f', label: '#451a03', badge: '🟤' }
     };
@@ -231,6 +233,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'match',
         ['upcase', ['coalesce', ['get', 'canton'], ['get', 'CANTON'], '']],
         'MORONA', 'rgba(5, 150, 105, 0.22)',
+        'SEVILLA DON BOSCO', 'rgba(217, 70, 239, 0.22)',
         'GUALAQUIZA', 'rgba(217, 119, 6, 0.22)',
         'SUCUA', 'rgba(37, 99, 235, 0.20)',
         'PALORA', 'rgba(2, 132, 199, 0.22)',
@@ -239,7 +242,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'TAISHA', 'rgba(22, 163, 74, 0.20)',
         'SAN JUAN BOSCO', 'rgba(234, 88, 12, 0.22)',
         'HUAMBOYA', 'rgba(8, 145, 178, 0.22)',
-        'LOGROÑO', 'rgba(192, 38, 211, 0.22)',
+        'LOGROÑO', 'rgba(139, 92, 246, 0.22)',
         'TIWINTZA', 'rgba(101, 163, 13, 0.22)',
         'PABLO SEXTO', 'rgba(146, 64, 14, 0.22)',
         'rgba(5, 150, 105, 0.18)'
@@ -249,6 +252,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'match',
         ['upcase', ['coalesce', ['get', 'canton'], ['get', 'CANTON'], '']],
         'MORONA', '#059669',
+        'SEVILLA DON BOSCO', '#c026d3',
         'GUALAQUIZA', '#d97706',
         'SUCUA', '#4f46e5',
         'PALORA', '#0284c7',
@@ -257,7 +261,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'TAISHA', '#10b981',
         'SAN JUAN BOSCO', '#ea580c',
         'HUAMBOYA', '#0891b2',
-        'LOGROÑO', '#c026d3',
+        'LOGROÑO', '#8b5cf6',
         'TIWINTZA', '#65a30d',
         'PABLO SEXTO', '#92400e',
         '#059669'
@@ -267,6 +271,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'match',
         ['upcase', ['coalesce', ['get', 'canton'], ['get', 'CANTON'], '']],
         'MORONA', '#065f46',
+        'SEVILLA DON BOSCO', '#86198f',
         'GUALAQUIZA', '#92400e',
         'SUCUA', '#3730a3',
         'PALORA', '#075985',
@@ -275,7 +280,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'TAISHA', '#047857',
         'SAN JUAN BOSCO', '#9a3412',
         'HUAMBOYA', '#155e75',
-        'LOGROÑO', '#86198f',
+        'LOGROÑO', '#6d28d9',
         'TIWINTZA', '#3f6212',
         'PABLO SEXTO', '#451a03',
         '#065f46'
@@ -285,6 +290,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'match',
         ['upcase', ['coalesce', ['get', 'canton'], ['get', 'CANTON'], '']],
         'MORONA', '#059669',
+        'SEVILLA DON BOSCO', '#d946ef',
         'GUALAQUIZA', '#d97706',
         'SUCUA', '#4f46e5',
         'PALORA', '#0284c7',
@@ -293,7 +299,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'TAISHA', '#10b981',
         'SAN JUAN BOSCO', '#ea580c',
         'HUAMBOYA', '#0891b2',
-        'LOGROÑO', '#c026d3',
+        'LOGROÑO', '#8b5cf6',
         'TIWINTZA', '#65a30d',
         'PABLO SEXTO', '#92400e',
         '#059669'
@@ -306,6 +312,7 @@ document.addEventListener('DOMContentLoaded', () => {
         'match',
         ['upcase', ['coalesce', ['get', 'canton'], ['get', 'CANTON'], '']],
         'MORONA', 'pin-morona',
+        'SEVILLA DON BOSCO', 'pin-sevilla-don-bosco',
         'GUALAQUIZA', 'pin-gualaquiza',
         'SUCUA', 'pin-sucua',
         'PALORA', 'pin-palora',
@@ -522,10 +529,19 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!valor) return '';
         const texto = normTexto(valor);
         const codigos = {
-            '1401': 'MORONA', '1402': 'GUALAQUIZA', '1403': 'LIMON INDANZA',
-            '1404': 'PALORA', '1405': 'SANTIAGO', '1406': 'SUCUA',
-            '1407': 'HUAMBOYA', '1408': 'SAN JUAN BOSCO', '1409': 'TAISHA',
-            '1410': 'LOGROÑO', '1411': 'PABLO SEXTO', '1412': 'TIWINTZA'
+            '1401': 'MORONA', '590': 'MORONA',
+            '1402': 'GUALAQUIZA', '595': 'GUALAQUIZA',
+            '1403': 'LIMON INDANZA', '600': 'LIMON INDANZA',
+            '1404': 'PALORA', '615': 'PALORA',
+            '1405': 'SANTIAGO', '605': 'SANTIAGO',
+            '1406': 'SUCUA', '610': 'SUCUA',
+            '1407': 'HUAMBOYA', '795': 'HUAMBOYA',
+            '1408': 'SAN JUAN BOSCO', '925': 'SAN JUAN BOSCO',
+            '1409': 'TAISHA', '926': 'TAISHA',
+            '1410': 'LOGROÑO', '611': 'LOGROÑO',
+            '1411': 'PABLO SEXTO', '796': 'PABLO SEXTO',
+            '1412': 'TIWINTZA', '797': 'TIWINTZA',
+            '1413': 'SEVILLA DON BOSCO'
         };
         if (codigos[texto]) return codigos[texto];
         const match = Object.keys(PARROQUIAS_POR_CANTON).find(c => normTexto(c) === texto);
@@ -1386,11 +1402,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!supKeys.includes(actualSup) && actualSup !== 'Todos') AppState.supervisorSeleccionado = 'Todos';
         }
 
-        // 1.1 Selector Cantón (12 Cantones de Morona Santiago)
+        // 1.1 Selector Cantón (13 Cantones de Morona Santiago)
         if (UI.cantonFilter) {
             const actualCan = AppState.cantonSeleccionado || 'Todos';
             const cantonesList = [
-                { id: 'Todos', label: 'Todos los cantones (12)', badge: '🗺️' },
+                { id: 'Todos', label: 'Todos los cantones (13)', badge: '🗺️' },
                 ...Object.keys(PARROQUIAS_POR_CANTON).map(can => {
                     const cInfo = COLORES_CANTON[can] || {};
                     return { id: can, label: cInfo.nombre || can, badge: cInfo.badge || '📍' };
@@ -2401,6 +2417,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Generar pin temático oficial para cada cantón según COLORES_CANTON
                 const SLUG_CANTONES = {
                     'MORONA': 'pin-morona',
+                    'SEVILLA DON BOSCO': 'pin-sevilla-don-bosco',
                     'GUALAQUIZA': 'pin-gualaquiza',
                     'SUCUA': 'pin-sucua',
                     'PALORA': 'pin-palora',
@@ -4351,7 +4368,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-        // Filtro Cantón (12 Cantones de Morona Santiago)
+        // Filtro Cantón (13 Cantones de Morona Santiago)
         if (UI.cantonFilter) {
             UI.cantonFilter.addEventListener('change', (e) => {
                 AppState.cantonSeleccionado = e.target.value;
