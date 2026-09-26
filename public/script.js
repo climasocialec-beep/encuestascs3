@@ -1859,10 +1859,10 @@ document.addEventListener('DOMContentLoaded', () => {
         let sectoresData = { type: 'FeatureCollection', features: [] };
 
         try {
-            const cacheBuster = '?t=' + Date.now();
+            const versionQuery = '?v=63.0.0';
             const [resPar, resSec] = await Promise.all([
-                fetch('assets/parroquias.geojson' + cacheBuster, { cache: 'no-cache' }),
-                fetch('assets/sectores_censales.geojson' + cacheBuster, { cache: 'no-cache' })
+                fetch('assets/parroquias.geojson' + versionQuery),
+                fetch('assets/sectores_censales.geojson' + versionQuery)
             ]);
             if (resPar.ok) parroquiasData = await resPar.json();
             if (resSec.ok) sectoresData = await resSec.json();
@@ -2015,11 +2015,11 @@ document.addEventListener('DOMContentLoaded', () => {
         };
         AppState.parroquiasCentroidesGeojson = parroquiasCentroidesData;
 
-        // Auto-calcular Bounding Box global desde las 62 parroquias a encuestar
+        // Auto-calcular Bounding Box global desde las 53 parroquias y 266 puntos a encuestar
         let globalMinX = Infinity, globalMinY = Infinity, globalMaxX = -Infinity, globalMaxY = -Infinity;
         if (parroquiasData.features && parroquiasData.features.length > 0) {
             parroquiasData.features.forEach(f => {
-                const b = f.properties.bbox;
+                const b = f.properties.bbox || (f.geometry ? calcularBBOX(f.geometry) : null);
                 if (b && Array.isArray(b)) {
                     const minX = Array.isArray(b[0]) ? b[0][0] : b[0];
                     const minY = Array.isArray(b[0]) ? b[0][1] : b[1];
@@ -2032,9 +2032,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
         }
+        if (sectoresData.features && sectoresData.features.length > 0) {
+            sectoresData.features.forEach(f => {
+                if (f.geometry && f.geometry.coordinates) {
+                    const [x, y] = f.geometry.coordinates;
+                    if (x < globalMinX) globalMinX = x;
+                    if (y < globalMinY) globalMinY = y;
+                    if (x > globalMaxX) globalMaxX = x;
+                    if (y > globalMaxY) globalMaxY = y;
+                }
+            });
+        }
 
-        const BBOX_PROVINCIA = [[-78.7, -3.7], [-76.9, -1.6]];
-        let mapCenter = [-78.1174, -2.3087]; // Morona Santiago (Macas)
+        const BBOX_PROVINCIA = [[-78.75, -3.55], [-76.90, -1.45]];
+        let mapCenter = [-78.1049, -2.5316]; // Morona Santiago Centro
         let initialBounds = BBOX_PROVINCIA;
 
         if (globalMinX !== Infinity && globalMaxX !== -Infinity) {
@@ -2226,10 +2237,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 ]
             },
             center: mapCenter,
-            zoom: (AppState.config && AppState.config.zoomInicial) ? AppState.config.zoomInicial : 9.0,
+            zoom: (AppState.config && AppState.config.zoomInicial) ? AppState.config.zoomInicial : 7.8,
             bounds: initialBounds || undefined,
-            fitBoundsOptions: initialBounds ? { padding: 35, maxZoom: 14 } : undefined,
-            minZoom: 8,
+            fitBoundsOptions: initialBounds ? { padding: 25, maxZoom: 14 } : undefined,
+            minZoom: 6.5,
             maxZoom: 20,
             interactive: true,
             dragPan: true,
@@ -2443,6 +2454,9 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             configurarCapasWebGL();
+            if (initialBounds) {
+                map.fitBounds(initialBounds, { padding: 25, maxZoom: 14, duration: 0 });
+            }
             renderizarVista(false, false);
             // Asegurar dimensiones óptimas
             setTimeout(() => { if (map) map.resize(); }, 150);
