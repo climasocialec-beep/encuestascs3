@@ -765,8 +765,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -78.697,
-          -3.4408
+          -78.6636,
+          -3.4586
         ]
       },
       "properties": {
@@ -779,20 +779,20 @@
         "etiqueta": "24 | D",
         "etiquetaSC": "24 | D",
         "identificador": "REF-MER-024",
-        "punto_referencial": "Casa Comunal 13 de Abril",
+        "punto_referencial": "Centro Poblado Nueva Tarqui",
         "casos": 10,
-        "latitud": -3.4408,
-        "longitud": -78.697,
-        "referencia_corta": "Casa Comunal 13 de Abril",
+        "latitud": -3.4586,
+        "longitud": -78.6636,
+        "referencia_corta": "Centro Poblado Nueva Tarqui",
         "CANTON": "GUALAQUIZA",
         "PARROQUIA": "NUEVA TARQUI",
         "TIPOLOGIA": "D",
         "CASOS": 10,
         "ETIQUETA": "24 | D",
-        "PUNTO REFERENCIAL": "Casa Comunal 13 de Abril",
-        "PUNTO_REFERENCIAL": "Casa Comunal 13 de Abril",
-        "LATITUD": -3.4408,
-        "LONGITUD": -78.697
+        "PUNTO REFERENCIAL": "Centro Poblado Nueva Tarqui",
+        "PUNTO_REFERENCIAL": "Centro Poblado Nueva Tarqui",
+        "LATITUD": -3.4586,
+        "LONGITUD": -78.6636
       }
     },
     {
@@ -800,8 +800,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -78.6501,
-          -3.2405
+          -78.6432,
+          -3.2846
         ]
       },
       "properties": {
@@ -814,20 +814,20 @@
         "etiqueta": "25 | B",
         "etiquetaSC": "25 | B",
         "identificador": "REF-GUA-025",
-        "punto_referencial": "GAD MIES Gualaquiza",
+        "punto_referencial": "Subcentro Salud El Aguacate",
         "casos": 10,
-        "latitud": -3.2405,
-        "longitud": -78.6501,
-        "referencia_corta": "GAD MIES Gualaquiza",
+        "latitud": -3.2846,
+        "longitud": -78.6432,
+        "referencia_corta": "Subcentro Salud El Aguacate",
         "CANTON": "GUALAQUIZA",
         "PARROQUIA": "ROSARIO",
         "TIPOLOGIA": "B",
         "CASOS": 10,
         "ETIQUETA": "25 | B",
-        "PUNTO REFERENCIAL": "GAD MIES Gualaquiza",
-        "PUNTO_REFERENCIAL": "GAD MIES Gualaquiza",
-        "LATITUD": -3.2405,
-        "LONGITUD": -78.6501
+        "PUNTO REFERENCIAL": "Subcentro Salud El Aguacate",
+        "PUNTO_REFERENCIAL": "Subcentro Salud El Aguacate",
+        "LATITUD": -3.2846,
+        "LONGITUD": -78.6432
       }
     },
     {
@@ -4201,8 +4201,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -78.0336,
-          -1.8328
+          -78.025,
+          -1.838
         ]
       },
       "properties": {
@@ -4217,8 +4217,8 @@
         "identificador": "REF-PAL-128",
         "punto_referencial": "Parque Central Arapicos",
         "casos": 10,
-        "latitud": -1.8328,
-        "longitud": -78.0336,
+        "latitud": -1.838,
+        "longitud": -78.025,
         "referencia_corta": "Parque Central Arapicos",
         "CANTON": "PALORA",
         "PARROQUIA": "ARAPICOS",
@@ -4227,8 +4227,8 @@
         "ETIQUETA": "128 | C",
         "PUNTO REFERENCIAL": "Parque Central Arapicos",
         "PUNTO_REFERENCIAL": "Parque Central Arapicos",
-        "LATITUD": -1.8328,
-        "LONGITUD": -78.0336
+        "LATITUD": -1.838,
+        "LONGITUD": -78.025
       }
     },
     {
@@ -4236,8 +4236,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -78.1951,
-          -1.5925
+          -78.1366,
+          -1.4595
         ]
       },
       "properties": {
@@ -4252,8 +4252,8 @@
         "identificador": "REF-PAL-129",
         "punto_referencial": "Plaza Central Cumandá",
         "casos": 10,
-        "latitud": -1.5925,
-        "longitud": -78.1951,
+        "latitud": -1.4595,
+        "longitud": -78.1366,
         "referencia_corta": "Plaza Central Cumandá",
         "CANTON": "PALORA",
         "PARROQUIA": "CUMANDA",
@@ -4262,8 +4262,8 @@
         "ETIQUETA": "129 | B",
         "PUNTO REFERENCIAL": "Plaza Central Cumandá",
         "PUNTO_REFERENCIAL": "Plaza Central Cumandá",
-        "LATITUD": -1.5925,
-        "LONGITUD": -78.1951
+        "LATITUD": -1.4595,
+        "LONGITUD": -78.1366
       }
     },
     {
@@ -4634,8 +4634,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -78.5794,
-          -3.0765
+          -78.538,
+          -3.078
         ]
       },
       "properties": {
@@ -4648,20 +4648,20 @@
         "etiqueta": "141 | C",
         "etiquetaSC": "141 | C",
         "identificador": "REF-SAN-141",
-        "punto_referencial": "Centro Acopio Pan de Azúcar",
+        "punto_referencial": "Centro Pan de Azúcar",
         "casos": 10,
-        "latitud": -3.0765,
-        "longitud": -78.5794,
-        "referencia_corta": "Centro Acopio Pan de Azúcar",
+        "latitud": -3.078,
+        "longitud": -78.538,
+        "referencia_corta": "Centro Pan de Azúcar",
         "CANTON": "SAN JUAN BOSCO",
         "PARROQUIA": "PAN DE AZUCAR",
         "TIPOLOGIA": "C",
         "CASOS": 10,
         "ETIQUETA": "141 | C",
-        "PUNTO REFERENCIAL": "Centro Acopio Pan de Azúcar",
-        "PUNTO_REFERENCIAL": "Centro Acopio Pan de Azúcar",
-        "LATITUD": -3.0765,
-        "LONGITUD": -78.5794
+        "PUNTO REFERENCIAL": "Centro Pan de Azúcar",
+        "PUNTO_REFERENCIAL": "Centro Pan de Azúcar",
+        "LATITUD": -3.078,
+        "LONGITUD": -78.538
       }
     },
     {
@@ -4772,8 +4772,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -78.51,
-          -3.2725
+          -78.5102,
+          -3.2731
         ]
       },
       "properties": {
@@ -4788,8 +4788,8 @@
         "identificador": "REF-SAN-145",
         "punto_referencial": "Plaza San Jacinto Wakambeis",
         "casos": 10,
-        "latitud": -3.2725,
-        "longitud": -78.51,
+        "latitud": -3.2731,
+        "longitud": -78.5102,
         "referencia_corta": "Plaza San Jacinto Wakambeis",
         "CANTON": "SAN JUAN BOSCO",
         "PARROQUIA": "SAN JACINTO DE WAKAMBEIS",
@@ -4798,8 +4798,8 @@
         "ETIQUETA": "145 | D",
         "PUNTO REFERENCIAL": "Plaza San Jacinto Wakambeis",
         "PUNTO_REFERENCIAL": "Plaza San Jacinto Wakambeis",
-        "LATITUD": -3.2725,
-        "LONGITUD": -78.51
+        "LATITUD": -3.2731,
+        "LONGITUD": -78.5102
       }
     },
     {
@@ -5137,8 +5137,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -78.3868,
-          -2.7791
+          -78.358,
+          -2.775
         ]
       },
       "properties": {
@@ -5153,8 +5153,8 @@
         "identificador": "REF-MEN-156",
         "punto_referencial": "Plaza Central Chupianza",
         "casos": 10,
-        "latitud": -2.7791,
-        "longitud": -78.3868,
+        "latitud": -2.775,
+        "longitud": -78.358,
         "referencia_corta": "Plaza Central Chupianza",
         "CANTON": "SANTIAGO",
         "PARROQUIA": "CHUPIANZA",
@@ -5163,8 +5163,8 @@
         "ETIQUETA": "156 | C",
         "PUNTO REFERENCIAL": "Plaza Central Chupianza",
         "PUNTO_REFERENCIAL": "Plaza Central Chupianza",
-        "LATITUD": -2.7791,
-        "LONGITUD": -78.3868
+        "LATITUD": -2.775,
+        "LONGITUD": -78.358
       }
     },
     {
@@ -5172,8 +5172,8 @@
       "geometry": {
         "type": "Point",
         "coordinates": [
-          -78.4913,
-          -2.7568
+          -78.442,
+          -2.755
         ]
       },
       "properties": {
@@ -5188,8 +5188,8 @@
         "identificador": "REF-MEN-157",
         "punto_referencial": "Plaza Central Copal",
         "casos": 10,
-        "latitud": -2.7568,
-        "longitud": -78.4913,
+        "latitud": -2.755,
+        "longitud": -78.442,
         "referencia_corta": "Plaza Central Copal",
         "CANTON": "SANTIAGO",
         "PARROQUIA": "COPAL",
@@ -5198,8 +5198,8 @@
         "ETIQUETA": "157 | D",
         "PUNTO REFERENCIAL": "Plaza Central Copal",
         "PUNTO_REFERENCIAL": "Plaza Central Copal",
-        "LATITUD": -2.7568,
-        "LONGITUD": -78.4913
+        "LATITUD": -2.755,
+        "LONGITUD": -78.442
       }
     },
     {
