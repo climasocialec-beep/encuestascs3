@@ -114,7 +114,6 @@ let cache = {
     enProceso: null
 };
 
-const diagnosticoCodigosFirmas = new Set();
 
 function extraerValor(obj, claves) {
     if (!obj || typeof obj !== "object") return "";
@@ -264,32 +263,8 @@ function normalizarEncuesta(raw) {
     const campoEnc = CAMPO_ENCUESTADOR;
     const campoSup = CAMPO_SUPERVISOR;
 
-    let encuestador = extraerValor(raw, [campoEnc, "cenc", "codencu", "cod_encu", "cod_enc", "C_digo_encuestador", "encuestador", "cod_encuestador"]);
+    let encuestador = extraerValor(raw, [campoEnc, "cenc", "codenc", "codencu", "cod_encu", "cod_enc", "C_digo_encuestador", "encuestador", "cod_encuestador"]);
     let supervisor = extraerValor(raw, [campoSup, "csup", "codsup", "cod_sup", "C_digo_Supervisor", "supervisor", "cod_supervisor"]);
-
-    if (!encuestador && diagnosticoCodigosFirmas.size < 4) {
-        const campos = [];
-        const recorrer = (objeto, prefijo = "") => {
-            if (!objeto || typeof objeto !== "object" || Array.isArray(objeto)) return;
-            for (const [clave, valor] of Object.entries(objeto)) {
-                const ruta = prefijo ? `${prefijo}/${clave}` : clave;
-                if (valor && typeof valor === "object") recorrer(valor, ruta);
-                else campos.push({ campo: ruta, valor });
-            }
-        };
-        recorrer(raw);
-        const candidatos = campos
-            .filter(({ campo }) => /encuest|encu|supervis|cod[_/]|cenc|csup/i.test(campo))
-            .map(({ campo, valor }) => ({ campo, valor: /^(?:[1-9]|1[0-7])$/.test(String(valor).trim()) ? String(valor).trim() : "[vacío/otro]" }));
-        const firma = JSON.stringify({ candidatos, supervisor });
-        if (!diagnosticoCodigosFirmas.has(firma)) {
-            diagnosticoCodigosFirmas.add(firma);
-        const camposNumericos = Object.entries(raw)
-            .filter(([, valor]) => typeof valor === "string" && /^(?:[1-9]|1[0-7])$/.test(valor.trim()))
-            .map(([clave]) => clave);
-        console.warn("[DIAGNOSTICO_CODIGOS]", JSON.stringify({ candidatos, camposNumericos, supervisorDetectado: supervisor, campoSupervisor: campoSup }));
-        }
-    }
 
     // Inversión involuntaria según la nómina vigente: supervisores 1..4, encuestadores 5..17.
     const numEnc = parseInt(encuestador, 10);

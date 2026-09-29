@@ -87,6 +87,15 @@ test('legacy and configured grouped field names remain compatible', () => {
     assert.equal(server.normalize({ C_digo_encuestador: '4', C_digo_Supervisor: '1' }).encuestador, '4');
 });
 
+test('current Kobo group_id codes assign only surveys with a recorded surveyor', () => {
+    const server = loadServer();
+    const assigned = server.normalize({ 'group_id/codenc': '9', 'group_id/codsup': '2' });
+    assert.equal(assigned.encuestador, '9');
+    assert.equal(assigned.supervisor, '2');
+    const incomplete = server.normalize({ 'group_id/codsup': '2' });
+    assert.equal(incomplete.encuestador, '');
+});
+
 test('blank candidate fields do not hide populated fallback fields', () => {
     const server = loadServer();
     assert.equal(server.extract({ codencu: '   ', encuestador: '4' }, ['codencu', 'encuestador']), '4');
