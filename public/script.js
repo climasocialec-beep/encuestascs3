@@ -979,7 +979,14 @@ document.addEventListener('DOMContentLoaded', () => {
         
         try {
             await cargarConfiguracion();
-            await inicializarMapa();
+            try {
+                await inicializarMapa();
+            } catch (errorMapa) {
+                // Un dispositivo sin WebGL debe poder consultar las encuestas y usar la tabla.
+                console.warn('[Mapa] No se pudo iniciar el mapa:', errorMapa);
+                map = null;
+                if (UI.mapStats) UI.mapStats.textContent = 'Mapa no disponible en este dispositivo';
+            }
             await cargarLimitesParroquiales();
             poblarFiltros();
             renderizarVista(false, false);
