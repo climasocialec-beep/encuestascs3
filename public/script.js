@@ -1376,6 +1376,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const encCod = String(e.encuestador || e.C_digo_encuestador || campo(e, AppState.config.campoEncuestador) || '');
 
             const matchSup = (selSup === 'Todos' || sup === selSup);
+            const matchSec = (selSec === 'Todos' || coincideSector(e, selSec));
             const matchCan = AppState.cantonSeleccionado === 'Todos' || normCanton(obtenerCantonEncuesta(e)) === normCanton(AppState.cantonSeleccionado);
             if (!matchCan) continue;
             let matchFec = true;
