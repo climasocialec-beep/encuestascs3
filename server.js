@@ -265,10 +265,10 @@ function normalizarEncuesta(raw) {
     let encuestador = extraerValor(raw, [campoEnc, "cenc", "codencu", "cod_encu", "cod_enc", "C_digo_encuestador", "encuestador", "cod_encuestador"]);
     let supervisor = extraerValor(raw, [campoSup, "csup", "codsup", "cod_sup", "C_digo_Supervisor", "supervisor", "cod_supervisor"]);
 
-    // Inversión involuntaria: si el encuestador puso 1..6 (código de supervisor) y el supervisor 7..50 (código de encuestador)
+    // Inversión involuntaria según la nómina vigente: supervisores 1..4, encuestadores 5..17.
     const numEnc = parseInt(encuestador, 10);
     const numSup = parseInt(supervisor, 10);
-    if (!isNaN(numEnc) && !isNaN(numSup) && numEnc >= 1 && numEnc <= 6 && numSup >= 7 && numSup <= 50) {
+    if (!isNaN(numEnc) && !isNaN(numSup) && numEnc >= 1 && numEnc <= 4 && numSup >= 5 && numSup <= 17) {
         encuestador = String(numSup);
         supervisor = String(numEnc);
     }

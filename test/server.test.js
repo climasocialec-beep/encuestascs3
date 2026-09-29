@@ -129,6 +129,15 @@ test('numeric field-worker and supervisor codes are preserved exactly', () => {
     assert.equal(normalized.supervisor, '6');
 });
 
+test('current roster codes keep surveyors 5 and 6 and correct reversed entries', () => {
+    const server = loadServer();
+    assert.equal(server.normalize({ cenc: '5', csup: '1' }).encuestador, '5');
+    assert.equal(server.normalize({ cenc: '6', csup: '1' }).supervisor, '1');
+    const reversed = server.normalize({ cenc: '4', csup: '17' });
+    assert.equal(reversed.encuestador, '17');
+    assert.equal(reversed.supervisor, '4');
+});
+
 test('Pichincha form field names normalize location and typology', () => {
     const normalized = loadServer().normalize({
         sectorcen: '22', tipol: '6', cant: '3', parr: 'CANGAHUA', barr: 'San Pedro'

@@ -42,7 +42,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Purga proactiva inmediata de cachés heredadas de otros cantones o versiones en el navegador (Brave/Chrome)
     if ('caches' in window) {
-        const CACHE_VALIDA = 'clima-social-morona-santiago-2026-v42';
+        const CACHE_VALIDA = 'clima-social-morona-santiago-2026-v66';
         caches.keys().then(keys => {
             keys.forEach(k => {
                 if (k !== CACHE_VALIDA) {
@@ -112,16 +112,40 @@ document.addEventListener('DOMContentLoaded', () => {
         'default': '#f26419'
     };
 
-    // Directorio oficial del Equipo de Campo (Encuesta Provincial Morona Santiago 2026)
-    // Se inicializa vacío hasta cargar la nómina oficial definitiva
-    const EQUIPO_CAMPO = {};
+    // Nómina vigente de Morona Santiago 2026. No incluir teléfonos en el cliente público.
+    const SUPERVISORES_CAMPO = {
+        '1': { nombre: 'Tatiana Pasquel', primerNombre: 'Tatiana' },
+        '2': { nombre: 'Cristhian Portilla', primerNombre: 'Cristhian' },
+        '3': { nombre: 'David Schwarz', primerNombre: 'David' },
+        '4': { nombre: 'David Vega', primerNombre: 'David' }
+    };
 
-    const SUPERVISORES_CAMPO = {};
+    const EQUIPO_CAMPO = {
+        '5': { nombre: 'María González', primerNombre: 'María' },
+        '6': { nombre: 'Jefferson Shakai', primerNombre: 'Jefferson' },
+        '7': { nombre: 'Alex Gil', primerNombre: 'Alex' },
+        '8': { nombre: 'Jessica Tupiza', primerNombre: 'Jessica' },
+        '9': { nombre: 'Jorge Alarcón', primerNombre: 'Jorge' },
+        '10': { nombre: 'Gilber Peas', primerNombre: 'Gilber' },
+        '11': { nombre: 'Doris Atsamp', primerNombre: 'Doris' },
+        '12': { nombre: 'Stalin Paredes', primerNombre: 'Stalin' },
+        '13': { nombre: 'Angélica Utiiai', primerNombre: 'Angélica' },
+        '14': { nombre: 'Yankur Ciro', primerNombre: 'Yankur' },
+        '15': { nombre: 'Nervo Flores', primerNombre: 'Nervo' },
+        '16': { nombre: 'Ginna Tuitisa', primerNombre: 'Ginna' },
+        '17': { nombre: 'Bayron Chiriap', primerNombre: 'Bayron' }
+    };
 
-    // Asignación de encuestadores por supervisor (Morona Santiago 2026)
-    const SUPERVISOR_ENCUESTADORES = {};
+    const SUPERVISOR_ENCUESTADORES = {
+        '1': ['5', '6', '7'],
+        '2': ['8', '9', '10', '11'],
+        '3': ['12', '13', '14'],
+        '4': ['15', '16', '17']
+    };
 
-    const ENCUESTADOR_A_SUPERVISOR = {};
+    const ENCUESTADOR_A_SUPERVISOR = Object.fromEntries(
+        Object.entries(SUPERVISOR_ENCUESTADORES).flatMap(([sup, codigos]) => codigos.map(codigo => [codigo, sup]))
+    );
 
     function obtenerEtiquetaEncuestador(id, formato = 'corto') {
         const raw = String(id || '').trim();
@@ -930,11 +954,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 'cs_encuestas_cuenca',
                 'cs_encuestas_pichincha_v1',
                 'cs_encuestas_quito_2026',
+                'cs_encuestas_morona_2026',
                 'cs_proyecto_version'
             ].forEach(k => {
                 if (localStorage.getItem(k)) localStorage.removeItem(k);
             });
-            const cached = localStorage.getItem('cs_encuestas_morona_2026');
+            const cached = localStorage.getItem('cs_encuestas_morona_2026_nomina_v1');
             if (cached) {
                 const parsed = JSON.parse(cached);
                 if (Array.isArray(parsed) && parsed.length > 0) {
@@ -1065,7 +1090,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Guardar último resultado; el mapa base sigue necesitando conexión.
             try {
-                localStorage.setItem('cs_encuestas_morona_2026', JSON.stringify(AppState.encuestas));
+                localStorage.setItem('cs_encuestas_morona_2026_nomina_v1', JSON.stringify(AppState.encuestas));
             } catch (e) {
                 console.warn('[Cache] Error al guardar caché:', e);
             }
