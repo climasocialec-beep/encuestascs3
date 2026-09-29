@@ -223,6 +223,7 @@
                 <option value="Todos">Todos los puntos (266)</option>
               </select>
             </div>
+            <small id="puntosSinCodigo" class="cs-field-warning" style="display:none"></small>
           </div>
 
           <!-- Fecha con Botones Rápidos -->
@@ -470,7 +471,7 @@
 
   <!-- ===== SCRIPTS ===== -->
   <script src="libs/maplibre-gl.js"></script>
-  <script src="script.js?v=68.0.0"></script>
+  <script src="script.js?v=69.0.0"></script>
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
@@ -484,7 +485,7 @@
             });
           });
         }
-        navigator.serviceWorker.register('/service-worker.js?v=68.0.0').then(reg => {
+        navigator.serviceWorker.register('/service-worker.js?v=69.0.0').then(reg => {
           if (reg && reg.update) reg.update();
         }).catch(error => {
           console.warn('No se pudo preparar el modo sin conexión:', error);

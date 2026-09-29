@@ -42,7 +42,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Purga proactiva inmediata de cachés heredadas de otros cantones o versiones en el navegador (Brave/Chrome)
     if ('caches' in window) {
-        const CACHE_VALIDA = 'clima-social-morona-santiago-2026-v66';
+        const CACHE_VALIDA = 'clima-social-morona-santiago-2026-v69';
         caches.keys().then(keys => {
             keys.forEach(k => {
                 if (k !== CACHE_VALIDA) {
@@ -399,6 +399,7 @@ document.addEventListener('DOMContentLoaded', () => {
         supervisorFilter: document.getElementById('supervisorFilter'),
         cantonFilter: document.getElementById('cantonFilter'),
         sectorFilter: document.getElementById('sectorFilter'),
+        puntosSinCodigo: document.getElementById('puntosSinCodigo'),
         parroquiaFilter: document.getElementById('parroquiaFilter'),
         fechaFilter: document.getElementById('fechaFilter'),
         datePills: document.querySelectorAll('#datePills .cs-date-pill'),
@@ -1348,6 +1349,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function poblarFiltros() {
         recalcularConteosSectores();
+        if (UI.puntosSinCodigo) {
+            const sinCodigo = (AppState.encuestas || []).filter(e => !String(e.sc || '').trim()).length;
+            UI.puntosSinCodigo.style.display = sinCodigo ? 'block' : 'none';
+            UI.puntosSinCodigo.textContent = `${sinCodigo} encuesta${sinCodigo === 1 ? '' : 's'} sin código de punto; no suma${sinCodigo === 1 ? '' : 'n'} a las cuotas.`;
+        }
         const selSup = AppState.supervisorSeleccionado;
         const selSec = AppState.sectorSeleccionado;
         const selPar = AppState.parroquiaSeleccionada;

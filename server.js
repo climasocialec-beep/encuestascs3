@@ -413,12 +413,6 @@ async function obtenerDatosKobo() {
             throw new Error("Respuesta de Kobo incompleta: el conteo no coincide con las boletas recibidas.");
         }
 
-        // Diagnóstico temporal de nombres de campos territoriales, sin respuestas personales.
-        const muestra = resultadosRaw[resultadosRaw.length - 1] || {};
-        console.warn("[ESQUEMA_TERRITORIO]", JSON.stringify(Object.entries(muestra)
-            .filter(([clave]) => /sector|punto|muestra|tipol|parr|canton|cod|sc|ubic|barr|group_id/i.test(clave))
-            .map(([clave, valor]) => ({ campo: clave, codigo: /^(?:\d{1,4}|[A-H])$/.test(String(valor).trim()) ? String(valor).trim() : "[otro]" }))));
-
         // Normalización ultra-ligera en memoria: reduce payload en un 95%
         // Se excluye código 98 (pruebas de campo) y encuestas sin consentimiento (consen == '2' o NO)
         const resultados = resultadosRaw

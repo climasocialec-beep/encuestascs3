@@ -1197,6 +1197,16 @@ body.modo-oscuro .cs-ribbon-title {
   text-overflow: ellipsis;
 }
 
+.cs-field-warning {
+  color: #a16207;
+  font-size: 0.68rem;
+  line-height: 1.25;
+}
+
+body.modo-oscuro .cs-field-warning {
+  color: #facc15;
+}
+
 .cs-date-filter-group {
   display: flex;
   align-items: center;
