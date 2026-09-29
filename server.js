@@ -279,7 +279,8 @@ function normalizarEncuesta(raw) {
     const noConsent = rawConsen === "2" || String(rawConsen).trim().toLowerCase() === "no" || String(rawConsen).trim().toLowerCase() === "rechaza";
     const consentimiento = noConsent ? "NO" : "SI";
 
-    const sc = extraerValor(raw, ["sc", "sectorcen", "p_ref", "codigo_sc", "sector_censal"]);
+    // En el XLSForm vigente el punto se guarda en group_localizacion/seccensal.
+    const sc = extraerValor(raw, ["seccensal", "sc", "sectorcen", "p_ref", "codigo_sc", "sector_censal"]);
     const rawTipol = String(extraerValor(raw, ["tipol", "tipologia", "TIPOLOGIA", "tipo_sc"]) || "").trim().toLowerCase();
     const tipologia = TIPOLOGIAS_FORMULARIO[rawTipol] || rawTipol.toUpperCase();
     const barrio = extraerValor(raw, ["barrio", "barr", "BARRIO_O_SECTOR", "sector", "barrio_sector"]);

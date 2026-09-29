@@ -96,6 +96,18 @@ test('current Kobo group_id codes assign only surveys with a recorded surveyor',
     assert.equal(incomplete.encuestador, '');
 });
 
+test('current Kobo census point code reaches the map counter', () => {
+    const server = loadServer();
+    const normalized = server.normalize({
+        'group_id/codenc': '8', 'group_id/codsup': '2',
+        'group_id/tipologia': 'B', 'group_localizacion/canton': '590',
+        'group_localizacion/seccensal': '93'
+    });
+    assert.equal(normalized.sc, '93');
+    assert.equal(normalized.tipologia, 'B');
+    assert.equal(normalized.canton, '590');
+});
+
 test('blank candidate fields do not hide populated fallback fields', () => {
     const server = loadServer();
     assert.equal(server.extract({ codencu: '   ', encuestador: '4' }, ['codencu', 'encuestador']), '4');
