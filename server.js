@@ -281,13 +281,13 @@ function normalizarEncuesta(raw) {
         const candidatos = campos
             .filter(({ campo }) => /encuest|encu|supervis|cod[_/]|cenc|csup/i.test(campo))
             .map(({ campo, valor }) => ({ campo, valor: /^(?:[1-9]|1[0-7])$/.test(String(valor).trim()) ? String(valor).trim() : "[vacío/otro]" }));
-        const firma = JSON.stringify(candidatos);
+        const firma = JSON.stringify({ candidatos, supervisor });
         if (!diagnosticoCodigosFirmas.has(firma)) {
             diagnosticoCodigosFirmas.add(firma);
         const camposNumericos = Object.entries(raw)
             .filter(([, valor]) => typeof valor === "string" && /^(?:[1-9]|1[0-7])$/.test(valor.trim()))
             .map(([clave]) => clave);
-        console.warn("[DIAGNOSTICO_CODIGOS]", JSON.stringify({ candidatos, camposNumericos }));
+        console.warn("[DIAGNOSTICO_CODIGOS]", JSON.stringify({ candidatos, camposNumericos, supervisorDetectado: supervisor, campoSupervisor: campoSup }));
         }
     }
 
