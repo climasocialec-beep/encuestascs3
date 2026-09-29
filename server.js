@@ -114,6 +114,8 @@ let cache = {
     enProceso: null
 };
 
+let diagnosticoCodigosRegistrado = false;
+
 function extraerValor(obj, claves) {
     if (!obj || typeof obj !== "object") return "";
     const valorTexto = value => value === undefined || value === null || typeof value === "object"
@@ -264,6 +266,17 @@ function normalizarEncuesta(raw) {
 
     let encuestador = extraerValor(raw, [campoEnc, "cenc", "codencu", "cod_encu", "cod_enc", "C_digo_encuestador", "encuestador", "cod_encuestador"]);
     let supervisor = extraerValor(raw, [campoSup, "csup", "codsup", "cod_sup", "C_digo_Supervisor", "supervisor", "cod_supervisor"]);
+
+    if (!encuestador && !diagnosticoCodigosRegistrado) {
+        diagnosticoCodigosRegistrado = true;
+        const candidatos = Object.entries(raw)
+            .filter(([clave]) => /encuest|encu|supervis|cod[_/]|cenc|csup/i.test(clave))
+            .map(([clave, valor]) => ({ campo: clave, valor: /^(?:[1-9]|1[0-7])$/.test(String(valor).trim()) ? String(valor).trim() : "[vacío/otro]" }));
+        const camposNumericos = Object.entries(raw)
+            .filter(([, valor]) => typeof valor === "string" && /^(?:[1-9]|1[0-7])$/.test(valor.trim()))
+            .map(([clave]) => clave);
+        console.warn("[DIAGNOSTICO_CODIGOS]", JSON.stringify({ candidatos, camposNumericos }));
+    }
 
     // Inversión involuntaria según la nómina vigente: supervisores 1..4, encuestadores 5..17.
     const numEnc = parseInt(encuestador, 10);
