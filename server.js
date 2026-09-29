@@ -269,9 +269,19 @@ function normalizarEncuesta(raw) {
 
     if (!encuestador && !diagnosticoCodigosRegistrado) {
         diagnosticoCodigosRegistrado = true;
-        const candidatos = Object.entries(raw)
-            .filter(([clave]) => /encuest|encu|supervis|cod[_/]|cenc|csup/i.test(clave))
-            .map(([clave, valor]) => ({ campo: clave, valor: /^(?:[1-9]|1[0-7])$/.test(String(valor).trim()) ? String(valor).trim() : "[vacío/otro]" }));
+        const campos = [];
+        const recorrer = (objeto, prefijo = "") => {
+            if (!objeto || typeof objeto !== "object" || Array.isArray(objeto)) return;
+            for (const [clave, valor] of Object.entries(objeto)) {
+                const ruta = prefijo ? `${prefijo}/${clave}` : clave;
+                if (valor && typeof valor === "object") recorrer(valor, ruta);
+                else campos.push({ campo: ruta, valor });
+            }
+        };
+        recorrer(raw);
+        const candidatos = campos
+            .filter(({ campo }) => /encuest|encu|supervis|cod[_/]|cenc|csup/i.test(campo))
+            .map(({ campo, valor }) => ({ campo, valor: /^(?:[1-9]|1[0-7])$/.test(String(valor).trim()) ? String(valor).trim() : "[vacío/otro]" }));
         const camposNumericos = Object.entries(raw)
             .filter(([, valor]) => typeof valor === "string" && /^(?:[1-9]|1[0-7])$/.test(valor.trim()))
             .map(([clave]) => clave);
