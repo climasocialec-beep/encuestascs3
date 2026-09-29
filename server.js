@@ -114,7 +114,7 @@ let cache = {
     enProceso: null
 };
 
-let diagnosticoCodigosRegistrado = false;
+const diagnosticoCodigosFirmas = new Set();
 
 function extraerValor(obj, claves) {
     if (!obj || typeof obj !== "object") return "";
@@ -267,8 +267,7 @@ function normalizarEncuesta(raw) {
     let encuestador = extraerValor(raw, [campoEnc, "cenc", "codencu", "cod_encu", "cod_enc", "C_digo_encuestador", "encuestador", "cod_encuestador"]);
     let supervisor = extraerValor(raw, [campoSup, "csup", "codsup", "cod_sup", "C_digo_Supervisor", "supervisor", "cod_supervisor"]);
 
-    if (!encuestador && !diagnosticoCodigosRegistrado) {
-        diagnosticoCodigosRegistrado = true;
+    if (!encuestador && diagnosticoCodigosFirmas.size < 4) {
         const campos = [];
         const recorrer = (objeto, prefijo = "") => {
             if (!objeto || typeof objeto !== "object" || Array.isArray(objeto)) return;
@@ -282,10 +281,14 @@ function normalizarEncuesta(raw) {
         const candidatos = campos
             .filter(({ campo }) => /encuest|encu|supervis|cod[_/]|cenc|csup/i.test(campo))
             .map(({ campo, valor }) => ({ campo, valor: /^(?:[1-9]|1[0-7])$/.test(String(valor).trim()) ? String(valor).trim() : "[vacío/otro]" }));
+        const firma = JSON.stringify(candidatos);
+        if (!diagnosticoCodigosFirmas.has(firma)) {
+            diagnosticoCodigosFirmas.add(firma);
         const camposNumericos = Object.entries(raw)
             .filter(([, valor]) => typeof valor === "string" && /^(?:[1-9]|1[0-7])$/.test(valor.trim()))
             .map(([clave]) => clave);
         console.warn("[DIAGNOSTICO_CODIGOS]", JSON.stringify({ candidatos, camposNumericos }));
+        }
     }
 
     // Inversión involuntaria según la nómina vigente: supervisores 1..4, encuestadores 5..17.
