@@ -962,7 +962,7 @@ body.modo-oscuro .maplibregl-map .maplibregl-canvas {
   height: 13px;
 }
 
-/* Leyenda Dinámica de Supervisores en Mapa */
+/* Conteos por supervisor y encuestador en el mapa */
 .cs-map-legend {
   position: absolute;
   bottom: 12px;
@@ -1011,8 +1011,21 @@ body.modo-oscuro .cs-map-legend__header {
   display: flex;
   flex-direction: column;
   gap: 0.22rem;
-  max-height: 110px;
+  max-height: 230px;
   overflow-y: auto;
+}
+
+.cs-map-legend__group-title {
+  color: var(--text-muted);
+  font-size: 0.62rem;
+  font-weight: 800;
+  margin-top: 0.25rem;
+}
+
+.cs-map-legend__name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .cs-map-legend__item {
@@ -1195,16 +1208,6 @@ body.modo-oscuro .cs-ribbon-title {
   letter-spacing: 0.03em;
   overflow: hidden;
   text-overflow: ellipsis;
-}
-
-.cs-field-warning {
-  color: #a16207;
-  font-size: 0.68rem;
-  line-height: 1.25;
-}
-
-body.modo-oscuro .cs-field-warning {
-  color: #facc15;
 }
 
 .cs-date-filter-group {

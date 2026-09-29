@@ -32,7 +32,7 @@
   <link rel="stylesheet" href="libs/maplibre-gl.css" />
 
   <!-- Estilos del Dashboard -->
-  <link rel="stylesheet" href="style.css?v=64.0.0">
+  <link rel="stylesheet" href="style.css?v=65.0.0">
 </head>
 <body>
 
@@ -223,7 +223,6 @@
                 <option value="Todos">Todos los puntos (266)</option>
               </select>
             </div>
-            <small id="puntosSinCodigo" class="cs-field-warning" style="display:none"></small>
           </div>
 
           <!-- Fecha con Botones Rápidos -->
@@ -316,10 +315,10 @@
             <button type="button" class="cs-sector-active-close" id="btnCerrarSectorActivo" title="Cerrar barra">✕</button>
           </div>
 
-          <!-- Leyenda Dinámica de Encuestadores -->
+          <!-- Conteos de encuestas visibles en el mapa -->
           <div class="cs-map-legend" id="mapLegend" style="display:none;">
             <div class="cs-map-legend__header">
-              <span class="cs-legend-title">Encuestadores</span>
+              <span class="cs-legend-title">Encuestas en el mapa</span>
             </div>
             <div class="cs-map-legend__items" id="mapLegendItems"></div>
           </div>
@@ -471,21 +470,21 @@
 
   <!-- ===== SCRIPTS ===== -->
   <script src="libs/maplibre-gl.js"></script>
-  <script src="script.js?v=69.0.0"></script>
+  <script src="script.js?v=70.0.0"></script>
   <script>
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
-        // Purgar cualquier caché anterior a v65.1
+        // Conservar únicamente la caché de esta versión
         if ('caches' in window) {
           caches.keys().then(names => {
             names.forEach(name => {
-              if (name !== 'clima-social-morona-santiago-2026-v65.1') {
+              if (name !== 'clima-social-morona-santiago-2026-v70') {
                 caches.delete(name);
               }
             });
           });
         }
-        navigator.serviceWorker.register('/service-worker.js?v=69.0.0').then(reg => {
+        navigator.serviceWorker.register('/service-worker.js?v=70.0.0').then(reg => {
           if (reg && reg.update) reg.update();
         }).catch(error => {
           console.warn('No se pudo preparar el modo sin conexión:', error);

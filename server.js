@@ -413,18 +413,6 @@ async function obtenerDatosKobo() {
             throw new Error("Respuesta de Kobo incompleta: el conteo no coincide con las boletas recibidas.");
         }
 
-        // Diagnóstico temporal: solo rutas de campos y códigos cortos de localización.
-        const rutasLocalizacion = new Map();
-        for (const fila of resultadosRaw) {
-            for (const [clave, valor] of Object.entries(fila)) {
-                if (!/group_localizacion|group_id|ref|sector|punto|muestra|^sc$/i.test(clave)) continue;
-                const texto = String(valor ?? "").trim();
-                const codigo = /^(?:\d{1,4}|[A-H])$/.test(texto) ? texto : "[otro]";
-                if (!rutasLocalizacion.has(clave) || rutasLocalizacion.get(clave) === "[otro]") rutasLocalizacion.set(clave, codigo);
-            }
-        }
-        console.warn("[CAMPOS_LOCALIZACION]", JSON.stringify(Object.fromEntries(rutasLocalizacion)));
-
         // Normalización ultra-ligera en memoria: reduce payload en un 95%
         // Se excluye código 98 (pruebas de campo) y encuestas sin consentimiento (consen == '2' o NO)
         const resultados = resultadosRaw

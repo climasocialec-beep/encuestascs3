@@ -42,7 +42,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Purga proactiva inmediata de cachés heredadas de otros cantones o versiones en el navegador (Brave/Chrome)
     if ('caches' in window) {
-        const CACHE_VALIDA = 'clima-social-morona-santiago-2026-v69';
+        const CACHE_VALIDA = 'clima-social-morona-santiago-2026-v70';
         caches.keys().then(keys => {
             keys.forEach(k => {
                 if (k !== CACHE_VALIDA) {
@@ -399,7 +399,6 @@ document.addEventListener('DOMContentLoaded', () => {
         supervisorFilter: document.getElementById('supervisorFilter'),
         cantonFilter: document.getElementById('cantonFilter'),
         sectorFilter: document.getElementById('sectorFilter'),
-        puntosSinCodigo: document.getElementById('puntosSinCodigo'),
         parroquiaFilter: document.getElementById('parroquiaFilter'),
         fechaFilter: document.getElementById('fechaFilter'),
         datePills: document.querySelectorAll('#datePills .cs-date-pill'),
@@ -1349,11 +1348,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function poblarFiltros() {
         recalcularConteosSectores();
-        if (UI.puntosSinCodigo) {
-            const sinCodigo = (AppState.encuestas || []).filter(e => !String(e.sc || '').trim()).length;
-            UI.puntosSinCodigo.style.display = sinCodigo ? 'block' : 'none';
-            UI.puntosSinCodigo.textContent = `${sinCodigo} encuesta${sinCodigo === 1 ? '' : 's'} sin código de punto; no suma${sinCodigo === 1 ? '' : 'n'} a las cuotas.`;
-        }
         const selSup = AppState.supervisorSeleccionado;
         const selSec = AppState.sectorSeleccionado;
         const selPar = AppState.parroquiaSeleccionada;
@@ -3640,7 +3634,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // =========================================================================
-    // LEYENDA DINÁMICA DE ENCUESTADORES EN EL MAPA
+    // CONTEO DE ENCUESTAS VISIBLES POR SUPERVISOR Y ENCUESTADOR
     // =========================================================================
     function actualizarLeyendaMapa(encuestas) {
         if (!UI.mapLegend || !UI.mapLegendItems) return;
@@ -3650,15 +3644,17 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
+        const conteoSupervisores = new Map();
         const conteoEncuestadores = new Map();
         encuestas.forEach(e => {
+            if (!extraerCoordenadas(e)) return;
             const enc = String(e.encuestador || e.C_digo_encuestador || campo(e, AppState.config.campoEncuestador) || '').trim();
-            if (enc && enc !== '98') {
-                conteoEncuestadores.set(enc, (conteoEncuestadores.get(enc) || 0) + 1);
-            }
+            const sup = String(e.supervisor || e.C_digo_Supervisor || campo(e, AppState.config.campoSupervisor) || '').trim();
+            if (sup && sup !== '98') conteoSupervisores.set(sup, (conteoSupervisores.get(sup) || 0) + 1);
+            if (enc && enc !== '98') conteoEncuestadores.set(enc, (conteoEncuestadores.get(enc) || 0) + 1);
         });
 
-        if (conteoEncuestadores.size === 0) {
+        if (conteoSupervisores.size === 0 && conteoEncuestadores.size === 0) {
             UI.mapLegend.style.display = 'none';
             return;
         }
@@ -3666,29 +3662,44 @@ document.addEventListener('DOMContentLoaded', () => {
         UI.mapLegend.style.display = 'block';
         UI.mapLegendItems.innerHTML = '';
 
-        const encIds = Array.from(conteoEncuestadores.keys()).sort((a, b) => {
+        const ordenarCodigos = (a, b) => {
             const numA = parseInt(a, 10);
             const numB = parseInt(b, 10);
             if (!isNaN(numA) && !isNaN(numB)) return numA - numB;
             return a.localeCompare(b, undefined, { numeric: true });
-        });
+        };
 
         const frag = document.createDocumentFragment();
-        encIds.forEach(encId => {
-            const color = obtenerColorEncuestador(encId);
-            const encTituloCorto = obtenerEtiquetaEncuestador(encId, 'corto');
-            const encTituloCompleto = obtenerEtiquetaEncuestador(encId, 'completo');
-            const total = conteoEncuestadores.get(encId);
-            const item = document.createElement('div');
-            item.className = 'cs-map-legend__item';
-            item.title = `${encTituloCompleto}: ${total} encuestas`;
-            item.innerHTML = `
-                <span class="cs-legend-color-dot" style="background-color:${color};"></span>
-                <span style="white-space:nowrap;overflow:hidden;text-overflow:ellipsis;" title="${encTituloCompleto}">${encTituloCorto}</span>
-                <span class="cs-legend-count">${total}</span>
-            `;
-            frag.appendChild(item);
-        });
+        const agregarGrupo = (titulo, conteos, etiqueta, color) => {
+            if (!conteos.size) return;
+            const encabezado = document.createElement('div');
+            encabezado.className = 'cs-map-legend__group-title';
+            encabezado.textContent = titulo;
+            frag.appendChild(encabezado);
+            Array.from(conteos.keys()).sort(ordenarCodigos).forEach(id => {
+                const nombreCompleto = etiqueta(id, 'completo');
+                const total = conteos.get(id);
+                const item = document.createElement('div');
+                item.className = 'cs-map-legend__item';
+                item.title = `${nombreCompleto}: ${total} encuestas mapeadas`;
+                const punto = document.createElement('span');
+                punto.className = 'cs-legend-color-dot';
+                punto.style.backgroundColor = color(id);
+                const nombre = document.createElement('span');
+                nombre.className = 'cs-map-legend__name';
+                nombre.title = nombreCompleto;
+                nombre.textContent = etiqueta(id, 'corto');
+                const cantidad = document.createElement('span');
+                cantidad.className = 'cs-legend-count';
+                cantidad.textContent = total;
+                item.append(punto, nombre, cantidad);
+                frag.appendChild(item);
+            });
+        };
+        agregarGrupo('Supervisores', conteoSupervisores, obtenerEtiquetaSupervisor,
+            id => PALETA_SUPERVISORES[id] || PALETA_SUPERVISORES.default);
+        agregarGrupo('Encuestadores', conteoEncuestadores, obtenerEtiquetaEncuestador,
+            obtenerColorEncuestador);
 
         UI.mapLegendItems.appendChild(frag);
     }
