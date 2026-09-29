@@ -49,16 +49,16 @@ function loadServer({ env = {}, get = async () => { throw new Error('Unexpected 
 }
 
 function plain(value) { return JSON.parse(JSON.stringify(value)); }
-const configured = { ASSET_ID_PICHINCHA: 'fixture-pichincha', API_TOKEN: 'test-token' };
-const dataUrl = 'https://kf.kobotoolbox.org/api/v2/assets/fixture-pichincha/data/?limit=500';
+const configured = { ASSET_ID: 'fixture-morona', API_TOKEN: 'test-token' };
+const dataUrl = 'https://kf.kobotoolbox.org/api/v2/assets/fixture-morona/data/?limit=3000';
 
-test('without the Pichincha asset, legacy credentials never contact Kobo', async () => {
-    const server = loadServer({ env: { ASSET_ID: 'legacy-project', API_TOKEN: 'test-token' } });
+test('without configured credentials, server returns waiting status without contacting Kobo', async () => {
+    const server = loadServer({ env: { ASSET_ID: '', API_TOKEN: '' } });
     const response = await server.request('GET', '/api/encuestas');
     assert.equal(response.statusCode, 200);
     assert.equal(response.body.total, 0);
     assert.deepEqual(response.body.resultados, []);
-    assert.match(response.body.mensaje, /Pichincha/);
+    assert.match(response.body.mensaje, /Esperando/);
     assert.equal((await server.request('POST', '/api/sync')).body.total, 0);
 });
 
@@ -105,7 +105,7 @@ test('current Kobo census point code reaches the map counter', () => {
     });
     assert.equal(normalized.sc, '93');
     assert.equal(normalized.tipologia, 'B');
-    assert.equal(normalized.canton, '590');
+    assert.equal(normalized.canton, 'Morona');
 });
 
 test('blank candidate fields do not hide populated fallback fields', () => {
@@ -159,23 +159,23 @@ test('current roster codes keep surveyors 5 and 6 and correct reversed entries',
     assert.equal(reversed.supervisor, '4');
 });
 
-test('Pichincha form field names normalize location and typology', () => {
+test('Morona Santiago form field names normalize location and typology', () => {
     const normalized = loadServer().normalize({
-        sectorcen: '22', tipol: '6', cant: '3', parr: 'CANGAHUA', barr: 'San Pedro'
+        seccensal: '93', tipol: '2', canton: '590', parroquia: '5615', barr: 'Barrio Central'
     });
-    assert.equal(normalized.sc, '22');
-    assert.equal(normalized.tipologia, 'F');
-    assert.equal(normalized.canton, 'Cayambe');
-    assert.equal(normalized.parroquia, 'CANGAHUA');
-    assert.equal(normalized.barrio, 'San Pedro');
+    assert.equal(normalized.sc, '93');
+    assert.equal(normalized.tipologia, 'B');
+    assert.equal(normalized.canton, 'Morona');
+    assert.equal(normalized.parroquia, 'MACAS');
+    assert.equal(normalized.barrio, 'Barrio Central');
 });
 
-test('current Pichincha canton codes resolve to the cartography names', () => {
+test('current Morona Santiago canton codes resolve to the cartography names', () => {
     const server = loadServer();
-    assert.equal(server.normalize({ canton: '60', sc: '1', tipol: 'a' }).canton, 'Quito');
-    assert.equal(server.normalize({ canton: '80', sc: '1', tipol: 'b' }).canton, 'Rumiñahui');
-    assert.equal(server.normalize({ canton: '90', sc: '1', tipol: 'c' }).canton, 'Cayambe');
-    assert.equal(server.normalize({ canton: '100', sc: '1', tipol: 'd' }).canton, 'Mejía');
+    assert.equal(server.normalize({ canton: '590', sc: '93', tipol: 'b' }).canton, 'Morona');
+    assert.equal(server.normalize({ canton: '595', sc: '1', tipol: 'e' }).canton, 'Gualaquiza');
+    assert.equal(server.normalize({ canton: '610', sc: '25', tipol: 'b' }).canton, 'Sucúa');
+    assert.equal(server.normalize({ canton: '1413', sc: '191', tipol: 'g' }).canton, 'Sevilla Don Bosco');
 });
 
 test('multi-page Kobo data is normalized once and then cached', async () => {
@@ -183,8 +183,8 @@ test('multi-page Kobo data is normalized once and then cached', async () => {
     const server = loadServer({ env: configured, get: async (url, options) => {
         calls++;
         assert.equal(options.headers.Authorization, 'Token test-token');
-        assert.equal(url, calls === 1 ? dataUrl : `${dataUrl}&offset=500`);
-        return { data: { count: 2, next: calls === 1 ? `${dataUrl}&offset=500` : null, results: [{ _id: calls, codencu: '4', codsup: '1' }] } };
+        assert.equal(url, calls === 1 ? dataUrl : `${dataUrl}&offset=3000`);
+        return { data: { count: 2, next: calls === 1 ? `${dataUrl}&offset=3000` : null, results: [{ _id: calls, codencu: '8', codsup: '2' }] } };
     } });
     assert.equal((await server.fetchData()).total, 2);
     assert.equal((await server.fetchData()).total, 2);
@@ -209,7 +209,7 @@ test('a failed second page must not replace results with a partial count', async
     let calls = 0;
     const server = loadServer({ env: configured, get: async () => {
         calls++;
-        if (calls === 1) return { data: { count: 2, results: [{ _id: 1 }], next: `${dataUrl}&offset=500` } };
+        if (calls === 1) return { data: { count: 2, results: [{ _id: 1 }], next: `${dataUrl}&offset=3000` } };
         const error = new Error('fixture unauthorized');
         error.response = { status: 401 };
         throw error;

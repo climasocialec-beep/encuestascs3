@@ -42,7 +42,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Purga proactiva inmediata de cachés heredadas de otros cantones o versiones en el navegador (Brave/Chrome)
     if ('caches' in window) {
-        const CACHE_VALIDA = 'clima-social-morona-santiago-2026-v70';
+        const CACHE_VALIDA = 'clima-social-morona-santiago-2026-v71';
         caches.keys().then(keys => {
             keys.forEach(k => {
                 if (k !== CACHE_VALIDA) {
@@ -592,37 +592,138 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function resolverSectorEncuesta(encuesta) {
-        if (!encuesta || !AppState.sectoresCandidatos) return null;
-        const raw = String(encuesta.sc_key || encuesta.sec_anm || campo(encuesta, 'sc') || '').trim();
+        if (!encuesta) return null;
+        if (encuesta._sectorResuelto !== undefined) return encuesta._sectorResuelto;
+
+        const raw = String(
+            encuesta.sc_key ||
+            encuesta.sc ||
+            campo(encuesta, 'seccensal') ||
+            campo(encuesta, 'sc') ||
+            campo(encuesta, 'p_ref') ||
+            encuesta.sec_anm ||
+            ''
+        ).trim();
+
+        if (!raw) {
+            encuesta._sectorResuelto = null;
+            return null;
+        }
+
+        // 1. Coincidencia directa en AppState.sectoresMap
+        if (AppState.sectoresMap) {
+            const secMeta = AppState.sectoresMap.get(raw);
+            if (secMeta) {
+                encuesta._sectorResuelto = secMeta;
+                return secMeta;
+            }
+        }
+
+        // 2. Extracción de número entero de muestra (1..266)
+        // En Morona Santiago los números de punto de muestra 1 a 266 son globalmente únicos en toda la provincia.
+        const numMatch = raw.match(/\d+/);
+        const numId = numMatch ? String(parseInt(numMatch[0], 10)) : '';
+
+        if (numId) {
+            if (AppState.sectoresCandidatos) {
+                const candNum = AppState.sectoresCandidatos.get(numId);
+                if (candNum && candNum.length === 1) {
+                    encuesta._sectorResuelto = candNum[0];
+                    return candNum[0];
+                }
+            }
+            if (AppState.sectoresMap) {
+                const secPorNum = AppState.sectoresMap.get(numId);
+                if (secPorNum) {
+                    encuesta._sectorResuelto = secPorNum;
+                    return secPorNum;
+                }
+            }
+        }
+
+        // 3. Búsqueda por alias normalizado
         const alias = normalizarAliasSector(raw);
-        const canton = cantonDeclarado(encuesta) || cantonPorParroquia(parroquiaDeclarada(encuesta));
-        const tipRaw = String(campo(encuesta, 'tipologia') || campo(encuesta, 'TIPOLOGIA') || '').trim().toUpperCase();
-        const tip = /^[1-8]$/.test(tipRaw) ? String.fromCharCode(64 + Number(tipRaw)) : tipRaw;
-        const candidatos = AppState.sectoresCandidatos.get(alias) || [];
-        const encontrados = candidatos.filter(s => (!canton || s.canton === canton) && (!tip || s.props.tipologia === tip));
-        // Los números 1..30 se repiten: una identidad ambigua queda sin asignar.
-        return encontrados.length === 1 ? encontrados[0] : null;
+        if (alias && AppState.sectoresCandidatos) {
+            const candidatos = AppState.sectoresCandidatos.get(alias) || [];
+            if (candidatos.length === 1) {
+                encuesta._sectorResuelto = candidatos[0];
+                return candidatos[0];
+            }
+            if (candidatos.length > 1) {
+                const canton = cantonDeclarado(encuesta) || cantonPorParroquia(parroquiaDeclarada(encuesta));
+                const tipRaw = String(campo(encuesta, 'tipologia') || campo(encuesta, 'TIPOLOGIA') || '').trim().toUpperCase();
+                const tip = /^[1-8]$/.test(tipRaw) ? String.fromCharCode(64 + Number(tipRaw)) : tipRaw;
+                const filtrados = candidatos.filter(s => {
+                    const matchCanton = !canton || normTexto(s.canton) === normTexto(canton);
+                    const matchTip = !tip || s.props.tipologia === tip;
+                    return matchCanton && matchTip;
+                });
+                if (filtrados.length >= 1) {
+                    encuesta._sectorResuelto = filtrados[0];
+                    return filtrados[0];
+                }
+                encuesta._sectorResuelto = candidatos[0];
+                return candidatos[0];
+            }
+        }
+
+        // 4. Búsqueda de rescate en la colección GeoJSON por num_muestra o sc
+        if (AppState.sectoresGeojson && Array.isArray(AppState.sectoresGeojson.features)) {
+            const numVal = parseInt(numId || raw, 10);
+            if (!isNaN(numVal)) {
+                const feat = AppState.sectoresGeojson.features.find(f => {
+                    const p = f.properties || {};
+                    return Number(p.num_muestra) === numVal || Number(p.sc) === numVal;
+                });
+                if (feat) {
+                    const res = {
+                        feature: feat,
+                        bbox: feat.properties.bbox,
+                        centroid: feat.properties.centroid,
+                        etiquetaSC: feat.properties.etiquetaSC,
+                        parroquia: feat.properties.parroquia,
+                        canton: feat.properties.canton,
+                        sec_anm: feat.properties.sec_anm,
+                        props: feat.properties
+                    };
+                    encuesta._sectorResuelto = res;
+                    return res;
+                }
+            }
+        }
+
+        encuesta._sectorResuelto = null;
+        return null;
     }
 
     function obtenerParroquiaEncuesta(encuesta) {
-        const declarada = parroquiaDeclarada(encuesta);
-        if (declarada) return declarada;
         const sector = resolverSectorEncuesta(encuesta);
-        return sector ? sector.parroquia : '';
+        if (sector && sector.parroquia) return sector.parroquia;
+        return parroquiaDeclarada(encuesta) || '';
     }
 
     function obtenerCantonEncuesta(encuesta) {
+        const sector = resolverSectorEncuesta(encuesta);
+        if (sector && sector.canton) return sector.canton;
         const declarado = cantonDeclarado(encuesta);
         if (declarado) return declarado;
         const porParroquia = cantonPorParroquia(parroquiaDeclarada(encuesta));
         if (porParroquia) return porParroquia;
-        const sector = resolverSectorEncuesta(encuesta);
-        return sector ? sector.canton : 'Sin asignar';
+        return 'Sin asignar';
     }
 
     function coincideSector(encuesta, clave) {
+        if (!clave || clave === 'Todos') return true;
         const sector = resolverSectorEncuesta(encuesta);
-        return Boolean(sector && sector.props.sc_key === clave);
+        if (!sector || !sector.props) return false;
+        const p = sector.props;
+        const claveNorm = normTexto(clave);
+        return p.sc_key === clave ||
+               String(p.sc) === clave ||
+               String(p.num_muestra) === clave ||
+               p.etiquetaSC === clave ||
+               normTexto(p.sc_key) === claveNorm ||
+               normTexto(p.etiquetaSC) === claveNorm;
     }
 
     function recalcularConteosSectores() {
@@ -630,8 +731,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const encuestas = AppState.encuestas || [];
         for (let i = 0; i < encuestas.length; i++) {
             const sec = resolverSectorEncuesta(encuestas[i]);
-            if (sec && sec.props && sec.props.sc_key) {
-                conteo.set(sec.props.sc_key, (conteo.get(sec.props.sc_key) || 0) + 1);
+            if (sec && sec.props) {
+                const k1 = sec.props.sc_key;
+                const k2 = String(sec.props.sc || '');
+                const k3 = String(sec.props.num_muestra || '');
+                const k4 = sec.props.etiquetaSC;
+                if (k1) conteo.set(k1, (conteo.get(k1) || 0) + 1);
+                if (k2 && k2 !== k1) conteo.set(k2, (conteo.get(k2) || 0) + 1);
+                if (k3 && k3 !== k1 && k3 !== k2) conteo.set(k3, (conteo.get(k3) || 0) + 1);
+                if (k4 && k4 !== k1) conteo.set(k4, (conteo.get(k4) || 0) + 1);
             }
         }
         AppState.conteoPorSector = conteo;
@@ -1399,7 +1507,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // 2. Puntos de Muestreo disponibles (Número + Tipología)
             if (matchSup && matchPar && matchFec && matchEnc) {
-                if (etiq) sectores.set(etiq, (sectores.get(etiq) || 0) + 1);
+                if (sector && sector.props) {
+                    const k1 = sector.props.sc_key;
+                    const k2 = String(sector.props.sc || '');
+                    const k3 = String(sector.props.num_muestra || '');
+                    const k4 = sector.props.etiquetaSC;
+                    if (k1) sectores.set(k1, (sectores.get(k1) || 0) + 1);
+                    if (k2 && k2 !== k1) sectores.set(k2, (sectores.get(k2) || 0) + 1);
+                    if (k3 && k3 !== k1 && k3 !== k2) sectores.set(k3, (sectores.get(k3) || 0) + 1);
+                    if (k4 && k4 !== k1) sectores.set(k4, (sectores.get(k4) || 0) + 1);
+                } else if (etiq) {
+                    sectores.set(etiq, (sectores.get(etiq) || 0) + 1);
+                }
             }
 
             // 3. Parroquias disponibles (filtrado por Supervisor, Sector, Fecha, Encuestador)
@@ -1515,16 +1634,19 @@ document.addEventListener('DOMContentLoaded', () => {
             // Conteo total y conteo de pendientes en el ámbito territorial seleccionado
             let countPendientesEnLista = 0;
             listaSectores.forEach(item => {
-                const count = sectores.get(item.scKey) || 0;
-                if (count < 10) countPendientesEnLista++;
+                const count = sectores.get(item.scKey) || sectores.get(item.sc) || 0;
+                const totalGlobal = (AppState.conteoPorSector && (AppState.conteoPorSector.get(item.scKey) || AppState.conteoPorSector.get(item.sc))) || count;
+                const esCompleto = totalGlobal >= 10 || count >= 10;
+                if (!esCompleto) countPendientesEnLista++;
             });
 
             // Si está activo el filtro de solo pendientes, se limita la lista a puntos incompletos
             let listaParaMostrar = listaSectores;
             if (AppState.filtroSoloPendientes) {
                 listaParaMostrar = listaSectores.filter(item => {
-                    const count = sectores.get(item.scKey) || 0;
-                    return count < 10;
+                    const count = sectores.get(item.scKey) || sectores.get(item.sc) || 0;
+                    const totalGlobal = (AppState.conteoPorSector && (AppState.conteoPorSector.get(item.scKey) || AppState.conteoPorSector.get(item.sc))) || count;
+                    return totalGlobal < 10 && count < 10;
                 });
             }
 
@@ -1552,7 +1674,10 @@ document.addEventListener('DOMContentLoaded', () => {
             const sectoresValidos = new Set();
 
             listaParaMostrar.forEach(item => {
-                const count = sectores.get(item.scKey) || 0;
+                const count = sectores.get(item.scKey) || sectores.get(item.sc) || 0;
+                const totalGlobal = (AppState.conteoPorSector && (AppState.conteoPorSector.get(item.scKey) || AppState.conteoPorSector.get(item.sc))) || count;
+                const displayCount = Math.max(count, totalGlobal);
+                const esCompleto = displayCount >= 10;
                 sectoresValidos.add(item.scKey);
 
                 const opt = document.createElement('option');
@@ -1563,12 +1688,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const cBadge = (COLORES_CANTON[item.canton] || {}).badge || '📍 ';
 
-                if (count >= 10) {
-                    opt.textContent = `🟢 ${cBadge} ${item.detalle} (${count}/10 COMPLETO)`;
+                if (esCompleto) {
+                    opt.textContent = `🟢 ${cBadge} ${item.detalle} (${displayCount}/10 COMPLETO)`;
                     opt.style.color = '#059669';
                     opt.style.fontWeight = '700';
-                } else if (count > 0) {
-                    opt.textContent = `🟡 ${cBadge} ${item.detalle} (${count}/10)`;
+                } else if (displayCount > 0) {
+                    opt.textContent = `🟡 ${cBadge} ${item.detalle} (${displayCount}/10)`;
                     opt.style.color = '#d97706';
                 } else {
                     opt.textContent = `⚪ ${cBadge} ${item.detalle} (0/10)`;
@@ -1948,13 +2073,25 @@ document.addEventListener('DOMContentLoaded', () => {
                 p.centroid = centroid;
 
                 const meta = { feature: f, bbox, centroid, etiquetaSC: etiq, parroquia: par, canton: can, sec_anm: secAnm, props: p };
-                [p.sc_key, secAnm, cod, etiq, cod && tip ? `${cod}${tip}` : ''].forEach(alias => {
+                const numSc = parseInt(cod, 10);
+                const numStr = !isNaN(numSc) ? String(numSc) : '';
+
+                [p.sc_key, secAnm, cod, numStr, etiq, cod && tip ? `${cod}${tip}` : '', numStr && tip ? `${numStr}${tip}` : ''].forEach(alias => {
                     const key = normalizarAliasSector(alias);
                     if (!key) return;
                     const candidatos = AppState.sectoresCandidatos.get(key) || [];
-                    candidatos.push(meta);
-                    AppState.sectoresCandidatos.set(key, candidatos);
+                    if (!candidatos.includes(meta)) {
+                        candidatos.push(meta);
+                        AppState.sectoresCandidatos.set(key, candidatos);
+                    }
                 });
+                if (numStr) {
+                    const candidatosNum = AppState.sectoresCandidatos.get(numStr) || [];
+                    if (!candidatosNum.includes(meta)) {
+                        candidatosNum.push(meta);
+                        AppState.sectoresCandidatos.set(numStr, candidatosNum);
+                    }
+                }
                 if (secAnm) AppState.sectoresMap.set(secAnm, meta);
                 if (p.sc_key) AppState.sectoresMap.set(p.sc_key, meta);
                 if (can && cod) {
@@ -1971,10 +2108,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (!AppState.sectoresMap.has(etiq)) AppState.sectoresMap.set(etiq, meta);
                     if (tip && !AppState.sectoresMap.has(`${cod}${tip}`)) AppState.sectoresMap.set(`${cod}${tip}`, meta);
                     if (tip && !AppState.sectoresMap.has(`${cod} | ${tip}`)) AppState.sectoresMap.set(`${cod} | ${tip}`, meta);
-                    const numSc = parseInt(cod, 10);
-                    if (!isNaN(numSc)) {
-                        if (!AppState.sectoresMap.has(String(numSc))) AppState.sectoresMap.set(String(numSc), meta);
-                    }
+                    if (numStr && !AppState.sectoresMap.has(numStr)) AppState.sectoresMap.set(numStr, meta);
                 }
             });
         }

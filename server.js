@@ -157,59 +157,71 @@ function normalizarCoordenadas(valores, validarEcuador = false) {
     return [lat, lng];
 }
 
-// Diccionarios oficiales de decodificación de choices de Kobo (Encuesta Quito Septiembre 2026 - XLSForm aKiQPHjXNTHgvsb5d8ur7n)
+// Diccionarios oficiales de decodificación de choices de Kobo (Encuesta Morona Santiago 2026 - XLSForm oficial)
 const PARROQUIAS_FORMULARIO = {
-    "1": "CARCELEN",
-    "2": "COCHAPAMBA",
-    "3": "COMITE DEL PUEBLO",
-    "4": "COTOCOLLAO",
-    "5": "EL CONDADO",
-    "6": "IÑAQUITO",
-    "7": "JIPIJAPA",
-    "8": "KENNEDY",
-    "9": "LA CONCEPCION",
-    "10": "PONCEANO",
-    "11": "RUMIPAMBA",
-    "12": "SAN ISIDRO DEL INCA",
-    "13": "BELISARIO QUEVEDO",
-    "14": "CENTRO HISTORICO",
-    "15": "CHILIBULO",
-    "16": "CHIMBACALLE",
-    "17": "ITCHIMBIA",
-    "18": "LA FERROVIARIA",
-    "19": "LA LIBERTAD",
-    "20": "LA MAGDALENA",
-    "21": "MARISCAL SUCRE",
-    "22": "PUENGASI",
-    "23": "SAN BARTOLO",
-    "24": "SAN JUAN",
-    "25": "CHILLOGALLO",
-    "26": "GUAMANI",
-    "27": "LA ARGELIA",
-    "28": "LA ECUATORIANA",
-    "29": "LA MENA",
-    "30": "QUITUMBE",
-    "31": "SOLANDA",
-    "32": "TURUBAMBA",
-    "33": "ALANGASI",
-    "34": "AMAGUAÑA",
-    "35": "CALDERON",
-    "36": "CONOCOTO",
-    "37": "CUMBAYA",
-    "38": "GUAYLLABAMBA",
-    "39": "LLANO CHICO",
-    "40": "NAYON",
-    "41": "PIFO",
-    "42": "PINTAG",
-    "43": "POMASQUI",
-    "44": "PUEMBO",
-    "45": "QUINCHE",
-    "46": "SAN ANTONIO",
-    "47": "TUMBACO",
-    "48": "YARUQUI"
+    "0180": "ASUNCION",
+    "0350": "BOMBOIZA",
+    "0525": "SHIMPIS",
+    "0595": "HUASAGA /WAMPUIK",
+    "0875": "CHIGUAZA",
+    "0880": "CHIGUINDA",
+    "1140": "SANTA MARIANITA DE JESUS",
+    "1205": "TUTINENTZA",
+    "1250": "CUCHAENTZA",
+    "1295": "SAN JOSE DE MORONA",
+    "1345": "GRAL. PROAÑO",
+    "1365": "SAN FCO. DE CHINIMBIMI",
+    "1635": "HUAMBI",
+    "1685": "16 DE AGOSTO",
+    "1720": "INDANZA",
+    "1730": "RIO BLANCO",
+    "1785": "SANTIAGO DE PANANZA",
+    "1910": "EL IDEAL",
+    "2285": "MACUMA",
+    "2795": "PATUCA",
+    "3320": "SAN ANTONIO",
+    "3420": "SANGAY",
+    "3440": "SAN ISIDRO",
+    "3565": "SAN LUIS DEL ACHO",
+    "3760": "SANTA SUSANA DE CHIVIAZA",
+    "3830": "SEVILLA DON BOSCO",
+    "3920": "SAN CARLOS DE LIMON",
+    "4115": "TAYUZA",
+    "4300": "YAUPI",
+    "4305": "YUNGANZA / EL ROSARIO",
+    "4485": "SINAI",
+    "4575": "PUMPUENTSA",
+    "5390": "GRAL. LEONIDAS PLAZA",
+    "5425": "GUALAQUIZA",
+    "5615": "MACAS",
+    "5645": "MENDEZ",
+    "5655": "MERCEDES MOLINA",
+    "5760": "PALORA",
+    "6110": "SUCUA",
+    "6390": "HUAMBOYA",
+    "6445": "SAN JUAN BOSCO",
+    "6700": "TAISHA",
+    "6735": "LOGROÑO",
+    "6870": "PABLO SEXTO",
+    "6890": "SANTIAGO"
 };
 
 const CANTONES_FORMULARIO = {
+    // Códigos oficiales de opciones en XLSForm vigente (op_canton)
+    "590": "Morona",
+    "595": "Gualaquiza",
+    "600": "Limón Indanza",
+    "605": "Santiago",
+    "610": "Sucúa",
+    "611": "Logroño",
+    "615": "Palora",
+    "795": "Huamboya",
+    "796": "Pablo Sexto",
+    "797": "Tiwintza",
+    "925": "San Juan Bosco",
+    "926": "Taisha",
+    "1413": "Sevilla Don Bosco",
+    // Códigos INEC
     "1401": "Morona",
     "1402": "Gualaquiza",
     "1403": "Limón Indanza",
@@ -280,18 +292,18 @@ function normalizarEncuesta(raw) {
     const consentimiento = noConsent ? "NO" : "SI";
 
     // En el XLSForm vigente el punto se guarda en group_localizacion/seccensal.
-    const sc = extraerValor(raw, ["seccensal", "sc", "sectorcen", "p_ref", "codigo_sc", "sector_censal"]);
+    const sc = extraerValor(raw, ["seccensal", "sc", "sectorcen", "p_ref", "codigo_sc", "sector_censal", "sector", "punto", "num_muestra"]);
     const rawTipol = String(extraerValor(raw, ["tipol", "tipologia", "TIPOLOGIA", "tipo_sc"]) || "").trim().toLowerCase();
     const tipologia = TIPOLOGIAS_FORMULARIO[rawTipol] || rawTipol.toUpperCase();
     const barrio = extraerValor(raw, ["barrio", "barr", "BARRIO_O_SECTOR", "sector", "barrio_sector"]);
     
-    // Parroquia: decodificación por choices del XLSForm Quito
+    // Parroquia: decodificación por choices del XLSForm oficial
     const rawParroquia = extraerValor(raw, ["parroquia", "PARROQUIA", "nom_parroquia", "parr"]) || "";
     const parroquia = PARROQUIAS_FORMULARIO[rawParroquia] || String(rawParroquia).trim().toUpperCase();
 
-    // Cantón: Extraer dinámicamente o decodificar
+    // Cantón: Extraer dinámicamente o decodificar (sin fallback forzado que contamine otros cantones)
     const rawCanton = extraerValor(raw, ["canton", "CANTON", "canton_nombre", "nom_can", "nom_canton"]) || "";
-    const canton = CANTONES_FORMULARIO[rawCanton] || String(rawCanton).trim() || "Morona";
+    const canton = CANTONES_FORMULARIO[rawCanton] || String(rawCanton).trim();
 
     // Circunscripción (No aplica en Morona Santiago)
     const circunscripcion = "";
@@ -452,13 +464,14 @@ app.get("/api/health", (req, res) => {
     });
 });
 
+const TITULO_OFICIAL = "Encuesta Provincial Morona Santiago 2026";
+
 app.get("/api/config", (req, res) => {
     res.set({
         "Cache-Control": "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0",
         "Pragma": "no-cache",
         "Expires": "0"
     });
-    const TITULO_OFICIAL = "Encuesta Provincial Morona Santiago 2026";
     let nombre = process.env.NOMBRE_PROYECTO || TITULO_OFICIAL;
 
     let centroLng = process.env.MAPA_CENTRO_LNG ? Number(process.env.MAPA_CENTRO_LNG) : -78.1174;
