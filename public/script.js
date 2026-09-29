@@ -1053,8 +1053,13 @@ document.addEventListener('DOMContentLoaded', () => {
         configurarNavegacionMovil();
         configurarEventos();
 
-        // 1. Limpieza de caché previa y Boot Instantáneo Quito 2026
+        // 1. Limpieza de caché previa y Boot Instantáneo Morona Santiago 2026
         try {
+            const VERSION_ACTUAL = 'v72.0.0';
+            if (localStorage.getItem('cs_version_app') !== VERSION_ACTUAL) {
+                localStorage.removeItem('cs_encuestas_morona_2026_nomina_v1');
+                localStorage.setItem('cs_version_app', VERSION_ACTUAL);
+            }
             [
                 'cs_encuestas_cache',
                 'cs_encuestas_machala_v1',
@@ -1099,7 +1104,7 @@ document.addEventListener('DOMContentLoaded', () => {
             poblarFiltros();
             renderizarVista(false, false);
 
-            await cargarDatos(AppState.encuestas.length === 0);
+            await cargarDatos(AppState.encuestas.length === 0, true);
             
             window.addEventListener('online', () => cargarDatos(false));
 
@@ -4824,7 +4829,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 13. Reintentar
         if (UI.botonReintentar) {
-            UI.botonReintentar.addEventListener('click', () => cargarDatos(true));
+            UI.botonReintentar.addEventListener('click', () => cargarDatos(true, true));
         }
 
         // 14. Toggle Pirámide Poblacional
