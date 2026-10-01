@@ -1055,7 +1055,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // 1. Limpieza de caché previa y Boot Instantáneo Morona Santiago 2026
         try {
-            const VERSION_ACTUAL = 'v72.0.0';
+            const VERSION_ACTUAL = 'v74.0.0';
             if (localStorage.getItem('cs_version_app') !== VERSION_ACTUAL) {
                 localStorage.removeItem('cs_encuestas_morona_2026_nomina_v1');
                 localStorage.setItem('cs_version_app', VERSION_ACTUAL);
