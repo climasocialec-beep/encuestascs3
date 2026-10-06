@@ -42,7 +42,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     // Purga proactiva inmediata de cachés heredadas de otros cantones o versiones en el navegador (Brave/Chrome)
     if ('caches' in window) {
-        const CACHE_VALIDA = 'clima-social-morona-santiago-2026-v71';
+        const CACHE_VALIDA = 'clima-social-ibarra-2026-v2';
         caches.keys().then(keys => {
             keys.forEach(k => {
                 if (k !== CACHE_VALIDA) {
@@ -61,8 +61,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // =========================================================================
     const AppState = {
         config: {
-            nombreProyecto: 'Encuesta Provincial Morona Santiago 2026',
-            metaEncuestas: 2000,
+            nombreProyecto: 'Encuesta Cantonal Ibarra 2026',
+            metaEncuestas: 500,
             campoEncuestador: 'encuestador',
             campoSupervisor: 'supervisor'
         },
@@ -92,7 +92,7 @@ document.addEventListener('DOMContentLoaded', () => {
         ubicacionSupervisor: null,
         markerSupervisor: null,
         mapLoaded: false,
-        cantonBbox: [[-78.68, -0.42], [-78.25, 0.08]],
+        cantonBbox: [[-78.36, 0.14], [-78.14, 0.29]],
         parroquiasGeojson: null,
         parroquiasMap: new Map(),
         sectoresGeojson: null,
@@ -112,40 +112,77 @@ document.addEventListener('DOMContentLoaded', () => {
         'default': '#f26419'
     };
 
-    // Nómina vigente de Morona Santiago 2026. No incluir teléfonos en el cliente público.
-    const SUPERVISORES_CAMPO = {
-        '1': { nombre: 'Tatiana Pasquel', primerNombre: 'Tatiana' },
-        '2': { nombre: 'Cristhian Portilla', primerNombre: 'Cristhian' },
-        '3': { nombre: 'David Schwarz', primerNombre: 'David' },
-        '4': { nombre: 'David Vega', primerNombre: 'David' }
+    // Nómina oficial del Equipo de Campo (Encuesta Cantonal Ibarra 2026)
+    let SUPERVISORES_CAMPO = {
+        '1': {
+            nombre: 'Gabriela Caranqui',
+            primerNombre: 'Gabriela'
+        },
+        '2': {
+            nombre: 'Melina Toaquiza',
+            primerNombre: 'Melina'
+        }
     };
 
-    const EQUIPO_CAMPO = {
-        '5': { nombre: 'María González', primerNombre: 'María' },
-        '6': { nombre: 'Jefferson Shakai', primerNombre: 'Jefferson' },
-        '7': { nombre: 'Alex Gil', primerNombre: 'Alex' },
-        '8': { nombre: 'Jessica Tupiza', primerNombre: 'Jessica' },
-        '9': { nombre: 'Jorge Alarcón', primerNombre: 'Jorge' },
-        '10': { nombre: 'Gilber Peas', primerNombre: 'Gilber' },
-        '11': { nombre: 'Doris Atsamp', primerNombre: 'Doris' },
-        '12': { nombre: 'Stalin Paredes', primerNombre: 'Stalin' },
-        '13': { nombre: 'Angélica Utiiai', primerNombre: 'Angélica' },
-        '14': { nombre: 'Yankur Ciro', primerNombre: 'Yankur' },
-        '15': { nombre: 'Nervo Flores', primerNombre: 'Nervo' },
-        '16': { nombre: 'Ginna Tuitisa', primerNombre: 'Ginna' },
-        '17': { nombre: 'Bayron Chiriap', primerNombre: 'Bayron' }
+    let EQUIPO_CAMPO = {
+        '3': {
+            nombre: 'Valeria Enriquez',
+            primerNombre: 'Valeria',
+            supervisor: '1'
+        },
+        '4': {
+            nombre: 'Patricia Aldas',
+            primerNombre: 'Patricia',
+            supervisor: '1'
+        },
+        '5': {
+            nombre: 'Benjamín González',
+            primerNombre: 'Benjamín',
+            supervisor: '1'
+        },
+        '6': {
+            nombre: 'Isabel Mantilla',
+            primerNombre: 'Isabel',
+            supervisor: '1'
+        },
+        '7': {
+            nombre: 'Anahí Vega de la Torre',
+            primerNombre: 'Anahí',
+            supervisor: '2'
+        },
+        '8': {
+            nombre: 'Lizeth Revelo',
+            primerNombre: 'Lizeth',
+            supervisor: '2'
+        },
+        '9': {
+            nombre: 'Alan Herrera',
+            primerNombre: 'Alan',
+            supervisor: '2'
+        },
+        '10': {
+            nombre: 'Sebastián Pardo',
+            primerNombre: 'Sebastián',
+            supervisor: '2'
+        }
     };
 
-    const SUPERVISOR_ENCUESTADORES = {
-        '1': ['5', '6', '7'],
-        '2': ['8', '9', '10', '11'],
-        '3': ['12', '13', '14'],
-        '4': ['15', '16', '17']
+    // Asignación estricta de 4 encuestadores por supervisor (Ibarra 2026)
+    let SUPERVISOR_ENCUESTADORES = {
+        '1': ['3', '4', '5', '6'],
+        '2': ['7', '8', '9', '10']
     };
 
-    const ENCUESTADOR_A_SUPERVISOR = Object.fromEntries(
-        Object.entries(SUPERVISOR_ENCUESTADORES).flatMap(([sup, codigos]) => codigos.map(codigo => [codigo, sup]))
-    );
+    let ENCUESTADOR_A_SUPERVISOR = {
+        '3': '1',
+        '4': '1',
+        '5': '1',
+        '6': '1',
+        '7': '2',
+        '8': '2',
+        '9': '2',
+        '10': '2'
+    };
 
     function obtenerEtiquetaEncuestador(id, formato = 'corto') {
         const raw = String(id || '').trim();
@@ -218,115 +255,63 @@ document.addEventListener('DOMContentLoaded', () => {
         '#047857'  // 28: Verde Esmeralda Oscuro
     ];
 
-    // Parroquias oficiales con levantamiento de muestra (53 parroquias activas en 13 cantones)
+    // Parroquias oficiales con levantamiento de muestra (10 parroquias activas de Ibarra)
     const PARROQUIAS_POR_CANTON = {
-        'GUALAQUIZA': ['BOMBOIZA', 'CHIGUINDA', 'EL IDEAL', 'GUALAQUIZA', 'MERCEDES MOLINA', 'NUEVA TARQUI', 'ROSARIO'],
-        'HUAMBOYA': ['CHIGUAZA', 'HUAMBOYA'],
-        'LIMON INDANZA': ['GRAL. LEONIDAS PLAZA', 'INDANZA', 'SAN ANTONIO', 'SANTA SUSANA DE CHIVIAZA', 'YUNGANZA /EL ROSARIO'],
-        'LOGROÑO': ['LOGROÑO', 'SHIMPIS', 'YAUPI'],
-        'MORONA': ['CUCHAENTZA', 'GRAL. PROAÑO', 'MACAS', 'RIO BLANCO', 'SAN ISIDRO', 'SINAI'],
-        'PABLO SEXTO': ['PABLO SEXTO'],
-        'PALORA': ['16 DE AGOSTO', 'ARAPICOS', 'CUMANDA', 'PALORA', 'SANGAY'],
-        'SAN JUAN BOSCO': ['PAN DE AZUCAR', 'SAN CARLOS DE LIMON', 'SAN JACINTO DE WAKAMBEIS', 'SAN JUAN BOSCO', 'SANTIAGO DE PANANZA'],
-        'SANTIAGO': ['CHUPIANZA', 'COPAL', 'MENDEZ', 'PATUCA', 'SAN FCO. DE CHINIMBIMI', 'SAN LUIS DEL ACHO', 'TAYUZA'],
-        'SEVILLA DON BOSCO': ['SEVILLA DON BOSCO'],
-        'SUCUA': ['ASUNCION', 'HUAMBI', 'SANTA MARIANITA DE JESUS', 'SUCUA'],
-        'TAISHA': ['HUASAGA /WAMPUIK', 'MACUMA', 'PUMPUENTSA', 'TAISHA', 'TUTINENTZA'],
-        'TIWINTZA': ['SAN JOSE DE MORONA', 'SANTIAGO']
+        'IBARRA': [
+            'AMBUQUI / CHOTA',
+            'ANGOCHAGUA',
+            'CARANQUI',
+            'GUAYAQUIL DE ALPACHACA',
+            'LA DOLOROSA DEL PRIORATO',
+            'LA ESPERANZA',
+            'SAGRARIO',
+            'SALINAS',
+            'SAN ANTONIO',
+            'SAN FRANCISCO'
+        ]
     };
 
-    // Paleta cromática oficial por Cantón (Encuesta Provincial Morona Santiago 2026 - 13 Cantones)
+    // Paleta cromática oficial por Cantón (Encuesta Cantonal Ibarra 2026)
     const COLORES_CANTON = {
-        'MORONA': { nombre: 'Morona (Macas)', hex: '#059669', linea: '#059669', fill: 'rgba(5, 150, 105, 0.22)', fillSector: 'rgba(5, 150, 105, 0.35)', lineaSector: '#047857', label: '#065f46', badge: '🟢' },
-        'SEVILLA DON BOSCO': { nombre: 'Sevilla Don Bosco', hex: '#d946ef', linea: '#c026d3', fill: 'rgba(217, 70, 239, 0.22)', fillSector: 'rgba(217, 70, 239, 0.35)', lineaSector: '#a21caf', label: '#86198f', badge: '🌸' },
-        'GUALAQUIZA': { nombre: 'Gualaquiza', hex: '#d97706', linea: '#d97706', fill: 'rgba(217, 119, 6, 0.22)', fillSector: 'rgba(217, 119, 6, 0.35)', lineaSector: '#b45309', label: '#92400e', badge: '🟡' },
-        'SUCUA': { nombre: 'Sucúa', hex: '#2563eb', linea: '#2563eb', fill: 'rgba(37, 99, 235, 0.20)', fillSector: 'rgba(37, 99, 235, 0.35)', lineaSector: '#1d4ed8', label: '#1e40af', badge: '🔵' },
-        'PALORA': { nombre: 'Palora', hex: '#0284c7', linea: '#0284c7', fill: 'rgba(2, 132, 199, 0.22)', fillSector: 'rgba(2, 132, 199, 0.35)', lineaSector: '#0369a1', label: '#075985', badge: '🔷' },
-        'SANTIAGO': { nombre: 'Santiago (Méndez)', hex: '#e11d48', linea: '#e11d48', fill: 'rgba(225, 29, 72, 0.22)', fillSector: 'rgba(225, 29, 72, 0.35)', lineaSector: '#be123c', label: '#9f1239', badge: '🔴' },
-        'LIMON INDANZA': { nombre: 'Limón Indanza', hex: '#7c3aed', linea: '#7c3aed', fill: 'rgba(124, 58, 237, 0.22)', fillSector: 'rgba(124, 58, 237, 0.35)', lineaSector: '#6d28d9', label: '#5b21b6', badge: '🟣' },
-        'TAISHA': { nombre: 'Taisha', hex: '#16a34a', linea: '#16a34a', fill: 'rgba(22, 163, 74, 0.20)', fillSector: 'rgba(22, 163, 74, 0.35)', lineaSector: '#15803d', label: '#166534', badge: '🟢' },
-        'SAN JUAN BOSCO': { nombre: 'San Juan Bosco', hex: '#ea580c', linea: '#ea580c', fill: 'rgba(234, 88, 12, 0.22)', fillSector: 'rgba(234, 88, 12, 0.35)', lineaSector: '#c2410c', label: '#9a3412', badge: '🟠' },
-        'HUAMBOYA': { nombre: 'Huamboya', hex: '#0891b2', linea: '#0891b2', fill: 'rgba(8, 145, 178, 0.22)', fillSector: 'rgba(8, 145, 178, 0.35)', lineaSector: '#0e7490', label: '#155e75', badge: '🔷' },
-        'LOGROÑO': { nombre: 'Logroño', hex: '#8b5cf6', linea: '#7c3aed', fill: 'rgba(139, 92, 246, 0.22)', fillSector: 'rgba(139, 92, 246, 0.35)', lineaSector: '#6d28d9', label: '#5b21b6', badge: '🟤' },
-        'TIWINTZA': { nombre: 'Tiwintza', hex: '#65a30d', linea: '#65a30d', fill: 'rgba(101, 163, 13, 0.22)', fillSector: 'rgba(101, 163, 13, 0.35)', lineaSector: '#4d7c0f', label: '#3f6212', badge: '🟢' },
-        'PABLO SEXTO': { nombre: 'Pablo Sexto', hex: '#92400e', linea: '#92400e', fill: 'rgba(146, 64, 14, 0.22)', fillSector: 'rgba(146, 64, 14, 0.35)', lineaSector: '#78350f', label: '#451a03', badge: '🟤' }
+        'IBARRA': { 
+            nombre: 'Ibarra', 
+            hex: '#028090', 
+            linea: '#028090', 
+            fill: 'rgba(2, 128, 144, 0.22)', 
+            fillSector: 'rgba(2, 128, 144, 0.35)', 
+            lineaSector: '#005f73', 
+            label: '#005f73', 
+            badge: '📍' 
+        }
     };
 
     // Expresiones MapLibre GL por Cantón
     const EXPR_PARROQUIAS_FILL = [
         'match',
-        ['upcase', ['coalesce', ['get', 'canton'], ['get', 'CANTON'], '']],
-        'MORONA', 'rgba(5, 150, 105, 0.22)',
-        'SEVILLA DON BOSCO', 'rgba(217, 70, 239, 0.22)',
-        'GUALAQUIZA', 'rgba(217, 119, 6, 0.22)',
-        'SUCUA', 'rgba(37, 99, 235, 0.20)',
-        'PALORA', 'rgba(2, 132, 199, 0.22)',
-        'SANTIAGO', 'rgba(225, 29, 72, 0.22)',
-        'LIMON INDANZA', 'rgba(124, 58, 237, 0.22)',
-        'TAISHA', 'rgba(22, 163, 74, 0.20)',
-        'SAN JUAN BOSCO', 'rgba(234, 88, 12, 0.22)',
-        'HUAMBOYA', 'rgba(8, 145, 178, 0.22)',
-        'LOGROÑO', 'rgba(139, 92, 246, 0.22)',
-        'TIWINTZA', 'rgba(101, 163, 13, 0.22)',
-        'PABLO SEXTO', 'rgba(146, 64, 14, 0.22)',
-        'rgba(5, 150, 105, 0.18)'
+        ['upcase', ['coalesce', ['get', 'canton'], ['get', 'CANTON'], 'IBARRA']],
+        'IBARRA', 'rgba(2, 128, 144, 0.20)',
+        'rgba(2, 128, 144, 0.20)'
     ];
 
     const EXPR_PARROQUIAS_LINE = [
         'match',
-        ['upcase', ['coalesce', ['get', 'canton'], ['get', 'CANTON'], '']],
-        'MORONA', '#059669',
-        'SEVILLA DON BOSCO', '#c026d3',
-        'GUALAQUIZA', '#d97706',
-        'SUCUA', '#4f46e5',
-        'PALORA', '#0284c7',
-        'SANTIAGO', '#e11d48',
-        'LIMON INDANZA', '#7c3aed',
-        'TAISHA', '#10b981',
-        'SAN JUAN BOSCO', '#ea580c',
-        'HUAMBOYA', '#0891b2',
-        'LOGROÑO', '#8b5cf6',
-        'TIWINTZA', '#65a30d',
-        'PABLO SEXTO', '#92400e',
-        '#059669'
+        ['upcase', ['coalesce', ['get', 'canton'], ['get', 'CANTON'], 'IBARRA']],
+        'IBARRA', '#028090',
+        '#028090'
     ];
 
     const EXPR_PARROQUIAS_LABEL = [
         'match',
-        ['upcase', ['coalesce', ['get', 'canton'], ['get', 'CANTON'], '']],
-        'MORONA', '#065f46',
-        'SEVILLA DON BOSCO', '#86198f',
-        'GUALAQUIZA', '#92400e',
-        'SUCUA', '#3730a3',
-        'PALORA', '#075985',
-        'SANTIAGO', '#9f1239',
-        'LIMON INDANZA', '#5b21b6',
-        'TAISHA', '#047857',
-        'SAN JUAN BOSCO', '#9a3412',
-        'HUAMBOYA', '#155e75',
-        'LOGROÑO', '#6d28d9',
-        'TIWINTZA', '#3f6212',
-        'PABLO SEXTO', '#451a03',
-        '#065f46'
+        ['upcase', ['coalesce', ['get', 'canton'], ['get', 'CANTON'], 'IBARRA']],
+        'IBARRA', '#005f73',
+        '#005f73'
     ];
 
     const EXPR_SECTORES_FILL = [
         'match',
-        ['upcase', ['coalesce', ['get', 'canton'], ['get', 'CANTON'], '']],
-        'MORONA', '#059669',
-        'SEVILLA DON BOSCO', '#d946ef',
-        'GUALAQUIZA', '#d97706',
-        'SUCUA', '#4f46e5',
-        'PALORA', '#0284c7',
-        'SANTIAGO', '#e11d48',
-        'LIMON INDANZA', '#7c3aed',
-        'TAISHA', '#10b981',
-        'SAN JUAN BOSCO', '#ea580c',
-        'HUAMBOYA', '#0891b2',
-        'LOGROÑO', '#8b5cf6',
-        'TIWINTZA', '#65a30d',
-        'PABLO SEXTO', '#92400e',
-        '#059669'
+        ['upcase', ['coalesce', ['get', 'canton'], ['get', 'CANTON'], 'IBARRA']],
+        'IBARRA', '#028090',
+        '#028090'
     ];
 
     const EXPR_SECTORES_LINE = EXPR_PARROQUIAS_LINE;
@@ -334,20 +319,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const EXPR_PIN_CANTON = [
         'match',
-        ['upcase', ['coalesce', ['get', 'canton'], ['get', 'CANTON'], '']],
-        'MORONA', 'pin-morona',
-        'SEVILLA DON BOSCO', 'pin-sevilla-don-bosco',
-        'GUALAQUIZA', 'pin-gualaquiza',
-        'SUCUA', 'pin-sucua',
-        'PALORA', 'pin-palora',
-        'SANTIAGO', 'pin-santiago',
-        'LIMON INDANZA', 'pin-limon-indanza',
-        'TAISHA', 'pin-taisha',
-        'SAN JUAN BOSCO', 'pin-san-juan-bosco',
-        'HUAMBOYA', 'pin-huamboya',
-        'LOGROÑO', 'pin-logrono',
-        'TIWINTZA', 'pin-tiwintza',
-        'PABLO SEXTO', 'pin-pablo-sexto',
+        ['upcase', ['coalesce', ['get', 'canton'], ['get', 'CANTON'], 'IBARRA']],
+        'IBARRA', 'pin-ibarra',
         'pin-referencia'
     ];
 
@@ -544,31 +517,16 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // =========================================================================
-    // EXTRACCIÓN Y NORMALIZACIÓN DE PARROQUIA (PICHINCHA)
-    // =========================================================================
-    // EXTRACCIÓN Y NORMALIZACIÓN DE PARROQUIA Y CANTÓN (MORONA SANTIAGO)
+    // EXTRACCIÓN Y NORMALIZACIÓN DE PARROQUIA Y CANTÓN (IBARRA)
     // =========================================================================
     function normalizarCanton(valor) {
-        if (!valor) return '';
+        if (!valor) return 'IBARRA';
         const texto = normTexto(valor);
         const codigos = {
-            '1401': 'MORONA', '590': 'MORONA',
-            '1402': 'GUALAQUIZA', '595': 'GUALAQUIZA',
-            '1403': 'LIMON INDANZA', '600': 'LIMON INDANZA',
-            '1404': 'PALORA', '615': 'PALORA',
-            '1405': 'SANTIAGO', '605': 'SANTIAGO',
-            '1406': 'SUCUA', '610': 'SUCUA',
-            '1407': 'HUAMBOYA', '795': 'HUAMBOYA',
-            '1408': 'SAN JUAN BOSCO', '925': 'SAN JUAN BOSCO',
-            '1409': 'TAISHA', '926': 'TAISHA',
-            '1410': 'LOGROÑO', '611': 'LOGROÑO',
-            '1411': 'PABLO SEXTO', '796': 'PABLO SEXTO',
-            '1412': 'TIWINTZA', '797': 'TIWINTZA',
-            '1413': 'SEVILLA DON BOSCO'
+            '1001': 'IBARRA', 'IBARRA': 'IBARRA', '100150': 'IBARRA', '30': 'IBARRA', '030': 'IBARRA'
         };
         if (codigos[texto]) return codigos[texto];
-        const match = Object.keys(PARROQUIAS_POR_CANTON).find(c => normTexto(c) === texto);
-        return match || texto;
+        return 'IBARRA';
     }
 
     function parroquiaDeclarada(encuesta) {
@@ -1053,10 +1011,12 @@ document.addEventListener('DOMContentLoaded', () => {
         configurarNavegacionMovil();
         configurarEventos();
 
-        // 1. Limpieza de caché previa y Boot Instantáneo Morona Santiago 2026
+        // 1. Limpieza de caché previa y Boot Instantáneo Ibarra 2026
         try {
-            const VERSION_ACTUAL = 'v76.0.0';
+            const VERSION_ACTUAL = 'v74.0.0';
             if (localStorage.getItem('cs_version_app') !== VERSION_ACTUAL) {
+                localStorage.removeItem('cs_encuestas_ibarra_2026_v1');
+                localStorage.removeItem('cs_encuestas_otavalo_2026_v1');
                 localStorage.removeItem('cs_encuestas_morona_2026_nomina_v1');
                 localStorage.setItem('cs_version_app', VERSION_ACTUAL);
             }
@@ -1068,11 +1028,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 'cs_encuestas_pichincha_v1',
                 'cs_encuestas_quito_2026',
                 'cs_encuestas_morona_2026',
+                'cs_encuestas_morona_2026_nomina_v1',
+                'cs_encuestas_otavalo_2026_v1',
                 'cs_proyecto_version'
             ].forEach(k => {
                 if (localStorage.getItem(k)) localStorage.removeItem(k);
             });
-            const cached = localStorage.getItem('cs_encuestas_morona_2026_nomina_v1');
+            const cached = localStorage.getItem('cs_encuestas_ibarra_2026_v1');
             if (cached) {
                 const parsed = JSON.parse(cached);
                 if (Array.isArray(parsed) && parsed.length > 0) {
@@ -1091,7 +1053,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 6000);
         
         try {
-            await cargarConfiguracion();
+            const esActivo = await cargarConfiguracion();
+            if (!esActivo) {
+                console.log('[App] Terminal en modo STANDBY (en espera).');
+                return;
+            }
             try {
                 await inicializarMapa();
             } catch (errorMapa) {
@@ -1135,7 +1101,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     async function cargarConfiguracion() {
-        const TITULO_OFICIAL = 'Encuesta Provincial Morona Santiago 2026';
         try {
             const res = await fetch('/api/config', { 
                 cache: 'no-store',
@@ -1149,23 +1114,59 @@ document.addEventListener('DOMContentLoaded', () => {
                 AppState.config = { ...AppState.config, ...configData };
             }
         } catch (e) {
-            console.warn('Usando configuración por defecto');
+            console.warn('[Config] Usando configuración local o por defecto');
         }
 
-        let nom = AppState.config.nombreProyecto || TITULO_OFICIAL;
-        if (!nom || nom.toLowerCase().includes('cuenca') || nom.toLowerCase().includes('quito') || nom.toLowerCase().includes('dmq')) {
-            nom = TITULO_OFICIAL;
-            AppState.config.nombreProyecto = TITULO_OFICIAL;
+        const estado = (AppState.config && AppState.config.estado || 'STANDBY').toUpperCase();
+        const standbyEl = document.getElementById('standbyOverlay');
+        if (estado === 'STANDBY') {
+            document.title = 'Clima Social · Terminal en Espera';
+            if (standbyEl) standbyEl.style.display = 'flex';
+            if (UI.cargaOverlay) UI.cargaOverlay.style.display = 'none';
+            if (UI.badgeTexto) UI.badgeTexto.textContent = 'En espera';
+            return false;
         }
 
+        if (standbyEl) standbyEl.style.display = 'none';
+
+        const nom = AppState.config.proyecto || AppState.config.nombreProyecto || 'Encuesta de Campo';
         if (UI.tituloProyecto) {
             UI.tituloProyecto.textContent = nom;
         }
         document.title = 'Clima Social · ' + nom;
 
+        const meta = AppState.config.meta || AppState.config.metaEncuestas || 500;
+        const canton = AppState.config.canton || '';
         if (UI.kpiMeta) {
-            UI.kpiMeta.textContent = `Meta: ${(AppState.config.metaEncuestas || 2660).toLocaleString()} (Morona Santiago)`;
+            UI.kpiMeta.textContent = `Meta: ${meta.toLocaleString()} ${canton ? '(' + canton + ')' : ''}`;
         }
+
+        if (AppState.config.bounds && Array.isArray(AppState.config.bounds)) {
+            AppState.cantonBbox = AppState.config.bounds;
+        }
+
+        if (AppState.config.equipo) {
+            if (AppState.config.equipo.supervisores && typeof AppState.config.equipo.supervisores === 'object') {
+                Object.assign(SUPERVISORES_CAMPO, AppState.config.equipo.supervisores);
+            }
+            if (AppState.config.equipo.encuestadores && typeof AppState.config.equipo.encuestadores === 'object') {
+                Object.assign(EQUIPO_CAMPO, AppState.config.equipo.encuestadores);
+            }
+            Object.keys(EQUIPO_CAMPO).forEach(encId => {
+                const enc = EQUIPO_CAMPO[encId];
+                const supId = enc.supervisor ? String(enc.supervisor) : null;
+                if (supId) {
+                    ENCUESTADOR_A_SUPERVISOR[encId] = supId;
+                    if (!SUPERVISOR_ENCUESTADORES[supId]) {
+                        SUPERVISOR_ENCUESTADORES[supId] = [];
+                    }
+                    if (!SUPERVISOR_ENCUESTADORES[supId].includes(encId)) {
+                        SUPERVISOR_ENCUESTADORES[supId].push(encId);
+                    }
+                }
+            });
+        }
+        return true;
     }
 
     let reintentoDatos = null;
@@ -1210,7 +1211,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Guardar último resultado; el mapa base sigue necesitando conexión.
             try {
-                localStorage.setItem('cs_encuestas_morona_2026_nomina_v1', JSON.stringify(AppState.encuestas));
+                localStorage.setItem('cs_encuestas_ibarra_2026_v1', JSON.stringify(AppState.encuestas));
             } catch (e) {
                 console.warn('[Cache] Error al guardar caché:', e);
             }
@@ -1558,16 +1559,31 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!supKeys.includes(actualSup) && actualSup !== 'Todos') AppState.supervisorSeleccionado = 'Todos';
         }
 
-        // 1.1 Selector Cantón (13 Cantones de Morona Santiago)
+        // 1.1 Selector Cantón (Ibarra)
         if (UI.cantonFilter) {
             const actualCan = AppState.cantonSeleccionado || 'Todos';
-            const cantonesList = [
-                { id: 'Todos', label: 'Todos los cantones (13)', badge: '🗺️' },
-                ...Object.keys(PARROQUIAS_POR_CANTON).map(can => {
-                    const cInfo = COLORES_CANTON[can] || {};
-                    return { id: can, label: cInfo.nombre || can, badge: cInfo.badge || '📍' };
-                })
-            ];
+            const keysCantones = Object.keys(PARROQUIAS_POR_CANTON);
+            let cantonesList = [];
+
+            if (keysCantones.length > 1) {
+                cantonesList = [
+                    { id: 'Todos', label: 'Todos los Cantones', badge: '🌐' },
+                    ...keysCantones.map(can => {
+                        const cInfo = COLORES_CANTON[can] || {};
+                        return { id: can, label: cInfo.nombre || can, badge: cInfo.badge || '📍' };
+                    })
+                ];
+            } else if (keysCantones.length === 1) {
+                const can = keysCantones[0];
+                const cInfo = COLORES_CANTON[can] || {};
+                cantonesList = [
+                    { id: 'Todos', label: cInfo.nombre || can, badge: cInfo.badge || '📍' }
+                ];
+            } else {
+                cantonesList = [
+                    { id: 'Todos', label: 'Todos los Cantones', badge: '🌐' }
+                ];
+            }
 
             let html = '';
             cantonesList.forEach(c => {
@@ -1587,7 +1603,7 @@ document.addEventListener('DOMContentLoaded', () => {
             UI.cantonFilter.value = validCantones.includes(actualCan) ? actualCan : 'Todos';
         }
 
-        // 2b. Selector Puntos de Muestreo / Sectores (266 puntos de Morona Santiago)
+        // 2b. Selector Sectores Censales (50 sectores de Ibarra)
         if (UI.sectorFilter) {
             const actualSec = AppState.sectorSeleccionado || 'Todos';
             const parActivaNorm = (AppState.parroquiaSeleccionada !== 'Todas') ? normTexto(AppState.parroquiaSeleccionada) : null;
@@ -1598,10 +1614,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     const p = f.properties || {};
                     const scNum = String(p.sc || p.codigo_muestra || p.num_muestra || '').trim();
                     const tipologia = String(p.tipologia || '').trim().toUpperCase();
-                    const etiqueta = p.etiquetaSC || p.etiqueta || `${scNum} | ${tipologia}`;
+                    const etiqueta = p.etiquetaSC || p.etiqueta || (scNum && tipologia ? `${scNum}|${tipologia}` : scNum);
                     const parroquia = String(p.parroquia || p.PARROQUIA || '').trim();
-                    const canton = String(p.canton || p.CANTON || '').trim();
-                    const puntoRef = String(p.punto_referencial || p.PUNTO_REFERENCIAL || '').trim();
+                    const canton = String(p.canton || p.CANTON || 'IBARRA').trim();
                     const scKey = p.sc_key || `${canton}_${scNum}`;
 
                     // Filtrar por Cantón si está activo (Cascada Cantón ➔ Puntos)
@@ -1624,9 +1639,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         canton: canton,
                         etiqueta: etiqueta,
                         etiquetaKey: `${scNum}${tipologia}`,
-                        detalle: `#${etiqueta} · ${parroquia}${puntoRef ? ` - ${puntoRef}` : ''}`,
-                        parroquia: parroquia,
-                        punto_referencial: puntoRef
+                        detalle: `${etiqueta} · ${parroquia}`,
+                        parroquia: parroquia
                     });
                 });
             }
@@ -1656,13 +1670,13 @@ document.addEventListener('DOMContentLoaded', () => {
             }
 
             const totalSectores = listaParaMostrar.length;
-            let labelTodos = (AppState.cantonSeleccionado !== 'Todos') 
-                ? `Todos los puntos de ${AppState.cantonSeleccionado} (${totalSectores})`
-                : `Todos los puntos de muestra (${totalSectores})`;
+            let labelTodos = (AppState.parroquiaSeleccionada !== 'Todas') 
+                ? `Todos los sectores de ${AppState.parroquiaSeleccionada} (${totalSectores})`
+                : `Todos los sectores (${totalSectores})`;
             if (AppState.filtroSoloPendientes) {
-                labelTodos = (AppState.cantonSeleccionado !== 'Todos')
-                    ? `Puntos pendientes en ${AppState.cantonSeleccionado} (${totalSectores})`
-                    : `Todos los puntos pendientes (${totalSectores})`;
+                labelTodos = (AppState.parroquiaSeleccionada !== 'Todas')
+                    ? `Sectores pendientes en ${AppState.parroquiaSeleccionada} (${totalSectores})`
+                    : `Todos los sectores pendientes (${totalSectores})`;
             }
             UI.sectorFilter.innerHTML = `<option value="Todos">${labelTodos}</option>`;
 
@@ -1937,7 +1951,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     return normTexto(props.canton || props.CANTON || '') === normTexto(AppState.cantonSeleccionado);
                 }).length;
             }
-            const metaCanton = numSectoresCanton > 0 ? numSectoresCanton * 10 : 200;
+            const metaCanton = numSectoresCanton > 0 ? numSectoresCanton * 10 : 500;
             return {
                 meta: metaCanton,
                 etiquetaMeta: `Meta: ${metaCanton.toLocaleString()} (${AppState.cantonSeleccionado})`,
@@ -1947,14 +1961,14 @@ document.addEventListener('DOMContentLoaded', () => {
             };
         }
 
-        // 4. Ámbito General (Morona Santiago)
-        const metaGeneral = AppState.config.metaEncuestas || 2660;
+        // 4. Ámbito General (Ibarra)
+        const metaGeneral = AppState.config.metaEncuestas || 500;
         return {
             meta: metaGeneral,
-            etiquetaMeta: `Meta: ${metaGeneral.toLocaleString()} (Morona Santiago)`,
-            subPendientes: `Faltan para la meta total`,
+            etiquetaMeta: `Meta: ${metaGeneral.toLocaleString()} (Ibarra)`,
+            subPendientes: `Faltan para la meta cantonal`,
             tituloAvance: `Avance General`,
-            subAvance: `Cumplimiento provincial (${metaGeneral.toLocaleString()})`
+            subAvance: `Cumplimiento cantonal (${metaGeneral.toLocaleString()})`
         };
     }
 
@@ -2023,7 +2037,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let sectoresData = { type: 'FeatureCollection', features: [] };
 
         try {
-            const versionQuery = '?v=65.1.0';
+            const versionQuery = '?v=73.0.0';
             const [resPar, resSec] = await Promise.all([
                 fetch('assets/parroquias.geojson' + versionQuery),
                 fetch('assets/sectores_censales.geojson' + versionQuery)
@@ -2054,12 +2068,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 let par = String(p.parroquia || p.PARROQUIA || '').trim().toUpperCase();
                 if (par.includes('YUNGANZA')) par = 'YUNGANZA /EL ROSARIO';
                 const secAnm = String(p.sec_anm || '').trim();
-                const etiq = p.etiquetaSC || (cod && tip ? `${cod} | ${tip}` : (cod || tip));
+                const etiq = p.etiqueta || p.etiquetaSC || (cod && tip ? `${cod}|${tip}` : (cod || tip));
                 p.sc = cod;
                 p.tipologia = tip;
                 p.canton = can;
                 p.parroquia = par;
                 p.sc_key = p.sc_key || (can && cod ? `${can}_${cod}` : '');
+                p.etiqueta = etiq;
                 p.etiquetaSC = etiq;
 
                 let bbox = null;
@@ -2077,7 +2092,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 p.bbox = bbox;
                 p.centroid = centroid;
 
-                const meta = { feature: f, bbox, centroid, etiquetaSC: etiq, parroquia: par, canton: can, sec_anm: secAnm, props: p };
+                const meta = { feature: f, bbox, centroid, etiquetaSC: etiq, etiqueta: etiq, parroquia: par, canton: can, sec_anm: secAnm, props: p };
                 const numSc = parseInt(cod, 10);
                 const numStr = !isNaN(numSc) ? String(numSc) : '';
 
@@ -2112,6 +2127,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     if (!AppState.sectoresMap.has(cod)) AppState.sectoresMap.set(cod, meta);
                     if (!AppState.sectoresMap.has(etiq)) AppState.sectoresMap.set(etiq, meta);
                     if (tip && !AppState.sectoresMap.has(`${cod}${tip}`)) AppState.sectoresMap.set(`${cod}${tip}`, meta);
+                    if (tip && !AppState.sectoresMap.has(`${cod}|${tip}`)) AppState.sectoresMap.set(`${cod}|${tip}`, meta);
                     if (tip && !AppState.sectoresMap.has(`${cod} | ${tip}`)) AppState.sectoresMap.set(`${cod} | ${tip}`, meta);
                     if (numStr && !AppState.sectoresMap.has(numStr)) AppState.sectoresMap.set(numStr, meta);
                 }
@@ -2125,7 +2141,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const p = f.properties || {};
                 const scNum = String(p.sc || p.codigo_muestra || p.num_muestra || '').trim();
                 const tip = String(p.tipologia || '').trim().toUpperCase();
-                const etiq = p.etiquetaSC || (scNum && tip ? `${scNum} | ${tip}` : (scNum || tip));
+                const etiq = p.etiqueta || p.etiquetaSC || (scNum && tip ? `${scNum}|${tip}` : (scNum || tip));
                 let coords = (f.geometry && f.geometry.type === 'Point') ? f.geometry.coordinates : p.centroid;
                 if (!coords || !Array.isArray(coords)) {
                     if (p.bbox && Array.isArray(p.bbox)) {
@@ -2138,7 +2154,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         const b = calcularBBOX(f.geometry);
                         coords = [(b[0][0] + b[1][0]) / 2, (b[0][1] + b[1][1]) / 2];
                     } else {
-                        coords = [-77.8230, -2.5181];
+                        coords = [-78.2625, 0.2285];
                     }
                 }
                 return {
@@ -2217,9 +2233,9 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
 
-        const BBOX_PROVINCIA = [[-78.75, -3.55], [-76.90, -1.45]];
-        let mapCenter = [-78.1049, -2.5316]; // Morona Santiago Centro
-        let initialBounds = BBOX_PROVINCIA;
+        const BBOX_CANTON = [[-78.20, 0.15], [-77.96, 0.59]];
+        let mapCenter = [-78.12, 0.35]; // Ibarra Centro
+        let initialBounds = BBOX_CANTON;
 
         if (globalMinX !== Infinity && globalMaxX !== -Infinity) {
             mapCenter = [(globalMinX + globalMaxX) / 2, (globalMinY + globalMaxY) / 2];
@@ -2334,11 +2350,12 @@ document.addEventListener('DOMContentLoaded', () => {
                             'text-halo-width': 3.2
                         }
                     },
-                    // 2. Sectores Censales Sorteados (200 polígonos de Quito PM 2026)
+                    // 2. Sectores Censales Poligonales (si la geometría es Polygon)
                     {
                         id: 'sectores-fill',
                         type: 'fill',
                         source: 'sectores-source',
+                        filter: ['==', ['geometry-type'], 'Polygon'],
                         paint: {
                             'fill-color': EXPR_SECTORES_FILL,
                             'fill-opacity': 0.20
@@ -2348,6 +2365,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         id: 'sectores-line',
                         type: 'line',
                         source: 'sectores-source',
+                        filter: ['==', ['geometry-type'], 'Polygon'],
                         paint: {
                             'line-color': EXPR_SECTORES_LINE,
                             'line-width': [
@@ -2359,28 +2377,27 @@ document.addEventListener('DOMContentLoaded', () => {
                             'line-opacity': 1.0
                         }
                     },
-                    // Puntos de Referencia Muestral (Marcador tipo PIN estilo Rumiñahui coloreado por Cantón)
+                    // 3. Puntos de Muestreo / Puntos Referenciales (si la geometría es Point)
                     {
-                        id: 'sectores-puntos-circle',
+                        id: 'sectores-point',
                         type: 'symbol',
                         source: 'sectores-source',
+                        filter: ['==', ['geometry-type'], 'Point'],
                         layout: {
-                            'icon-image': EXPR_PIN_CANTON,
+                            'icon-image': 'pin-referencia',
                             'icon-size': [
                                 'interpolate', ['linear'], ['zoom'],
-                                8, 0.45,
-                                11, 0.58,
-                                14, 0.75,
-                                17, 0.95
+                                10, 0.65,
+                                12, 0.82,
+                                14, 0.98,
+                                17, 1.18
                             ],
                             'icon-anchor': 'bottom',
                             'icon-allow-overlap': true,
                             'icon-ignore-placement': true
-                        },
-                        paint: {
-                            'icon-opacity': 0.92
                         }
                     },
+                    // Etiqueta del Sector Censal (Centrada en el centroide único del polígono)
                     {
                         id: 'sectores-label',
                         type: 'symbol',
@@ -2391,12 +2408,11 @@ document.addEventListener('DOMContentLoaded', () => {
                             'text-font': ['Open Sans Bold'],
                             'text-size': [
                                 'interpolate', ['linear'], ['zoom'],
-                                9, 9.5,
-                                12, 12,
-                                15, 14
+                                9, 10,
+                                12, 12.5,
+                                15, 14.5
                             ],
-                            'text-offset': [0, -1.2],
-                            'text-anchor': 'bottom',
+                            'text-anchor': 'center',
                             'text-allow-overlap': true,
                             'text-ignore-placement': true,
                             'visibility': 'visible'
@@ -2599,25 +2615,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Generar pin temático oficial para cada cantón según COLORES_CANTON
                 const SLUG_CANTONES = {
-                    'MORONA': 'pin-morona',
-                    'SEVILLA DON BOSCO': 'pin-sevilla-don-bosco',
-                    'GUALAQUIZA': 'pin-gualaquiza',
-                    'SUCUA': 'pin-sucua',
-                    'PALORA': 'pin-palora',
-                    'SANTIAGO': 'pin-santiago',
-                    'LIMON INDANZA': 'pin-limon-indanza',
-                    'TAISHA': 'pin-taisha',
-                    'SAN JUAN BOSCO': 'pin-san-juan-bosco',
-                    'HUAMBOYA': 'pin-huamboya',
-                    'LOGROÑO': 'pin-logrono',
-                    'TIWINTZA': 'pin-tiwintza',
-                    'PABLO SEXTO': 'pin-pablo-sexto'
+                    'IBARRA': 'pin-ibarra'
                 };
 
                 Object.keys(SLUG_CANTONES).forEach(cantonNombre => {
                     const idImg = SLUG_CANTONES[cantonNombre];
                     if (!map.hasImage(idImg)) {
-                        const cfg = COLORES_CANTON[cantonNombre] || { hex: '#475569', lineaSector: '#64748b' };
+                        const cfg = COLORES_CANTON[cantonNombre] || { hex: '#028090', lineaSector: '#005f73' };
                         const img = generarImagenPin(cfg.hex, cfg.lineaSector || cfg.linea || cfg.hex, false);
                         if (img) map.addImage(idImg, img, { pixelRatio: 2 });
                     }
@@ -2664,7 +2668,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Asegurar que las capas cartográficas estén explícitamente visibles
-        const capasBase = ['parroquias-fill', 'parroquias-line', 'parroquias-label', 'sectores-puntos-circle', 'sectores-fill', 'sectores-line', 'sectores-label'];
+        const capasBase = ['parroquias-fill', 'parroquias-line', 'parroquias-label', 'sectores-fill', 'sectores-line', 'sectores-label'];
         capasBase.forEach(ly => {
             if (map.getLayer(ly)) {
                 map.setLayoutProperty(ly, 'visibility', 'visible');
@@ -2813,10 +2817,8 @@ document.addEventListener('DOMContentLoaded', () => {
         map.on('mouseleave', 'puntos-layer', () => { map.getCanvas().style.cursor = ''; });
         map.on('mouseenter', 'sectores-fill', () => { map.getCanvas().style.cursor = 'pointer'; });
         map.on('mouseleave', 'sectores-fill', () => { map.getCanvas().style.cursor = ''; });
-        map.on('mouseenter', 'sectores-puntos-circle', () => { map.getCanvas().style.cursor = 'pointer'; });
-        map.on('mouseleave', 'sectores-puntos-circle', () => { map.getCanvas().style.cursor = ''; });
 
-        // Clic en Punto de Muestra / Sector
+        // Clic en Sector Censal
         const abrirPopupSector = (e) => {
             if (!e.features || !e.features.length) return;
             const p = e.features[0].properties || {};
@@ -2838,13 +2840,12 @@ document.addEventListener('DOMContentLoaded', () => {
             abrirPopupPuntoMuestra(sectorMeta, coords);
         };
 
-        map.on('click', 'sectores-puntos-circle', abrirPopupSector);
         map.on('click', 'sectores-fill', abrirPopupSector);
 
         // Conectar botones para Prender / Apagar capas en el mapa
         const togglesMap = [
             { btn: UI.toggleParroquias, key: 'parroquias', layers: ['parroquias-fill', 'parroquias-line', 'parroquias-label'] },
-            { btn: UI.toggleSectores, key: 'sectores', layers: ['sectores-puntos-circle', 'sectores-fill', 'sectores-line', 'sectores-label'] }
+            { btn: UI.toggleSectores, key: 'sectores', layers: ['sectores-fill', 'sectores-line', 'sectores-label'] }
         ];
 
         togglesMap.forEach(({ btn, key, layers }) => {
@@ -2915,7 +2916,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (AppState.parroquiasGeojson && AppState.parroquiasGeojson.features && AppState.parroquiasGeojson.features.length > 0) {
                 return; // Ya cargado en inicializarMapa
             }
-            const res = await fetch('assets/parroquias.geojson?v=45.0.0');
+            const res = await fetch('assets/parroquias.geojson?v=73.0.0');
             if (!res.ok) return;
             const geojsonData = await res.json();
 
@@ -3009,8 +3010,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
             if (cantonEncontrado) {
-                AppState.cantonSeleccionado = cantonEncontrado;
-                if (UI.cantonFilter) UI.cantonFilter.value = cantonEncontrado;
+                if (Object.keys(PARROQUIAS_POR_CANTON).length > 1) {
+                    AppState.cantonSeleccionado = cantonEncontrado;
+                    if (UI.cantonFilter) UI.cantonFilter.value = cantonEncontrado;
+                } else {
+                    AppState.cantonSeleccionado = 'Todos';
+                    if (UI.cantonFilter) UI.cantonFilter.value = 'Todos';
+                }
             }
         }
 
@@ -3331,20 +3337,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     return null;
                 })();
 
-                if (map.getLayer('sectores-puntos-circle')) {
-                    map.setFilter('sectores-puntos-circle', filterGeneral);
-                    map.setLayoutProperty('sectores-puntos-circle', 'icon-image', [
-                        'case', matchSC, 'pin-referencia-activo', EXPR_PIN_CANTON
-                    ]);
-                    map.setLayoutProperty('sectores-puntos-circle', 'icon-size', [
-                        'case',
-                        matchSC,
-                        ['interpolate', ['linear'], ['zoom'], 8, 0.65, 11, 0.85, 14, 1.10, 17, 1.30],
-                        ['interpolate', ['linear'], ['zoom'], 8, 0.45, 11, 0.58, 14, 0.75, 17, 0.95]
-                    ]);
-                    map.setPaintProperty('sectores-puntos-circle', 'icon-opacity', 1.0);
-                }
-
                 if (map.getLayer('sectores-fill')) {
                     map.setFilter('sectores-fill', filterGeneral);
                 }
@@ -3361,7 +3353,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     const etiq = sectorMeta.etiquetaSC || `Sector ${targetSC}`;
                     const parr = sectorMeta.parroquia ? sectorMeta.parroquia : '';
                     const puntoRef = p.punto_referencial || p.PUNTO_REFERENCIAL || '';
-                    titulo.textContent = `Punto #${etiq}${puntoRef ? ` · ${puntoRef}` : (parr ? ` (${parr})` : '')}`;
+                    titulo.textContent = `Sector ${etiq}${puntoRef ? ` · ${puntoRef}` : (parr ? ` (${parr})` : '')}`;
 
                     let lat = null, lng = null;
                     if (sectorMeta.centroid && Array.isArray(sectorMeta.centroid)) {
@@ -3386,19 +3378,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (popupSectorActivo) {
                     popupSectorActivo.remove();
                     popupSectorActivo = null;
-                }
-
-                if (map.getLayer('sectores-puntos-circle')) {
-                    map.setFilter('sectores-puntos-circle', filterGeneral);
-                    map.setLayoutProperty('sectores-puntos-circle', 'icon-image', EXPR_PIN_CANTON);
-                    map.setLayoutProperty('sectores-puntos-circle', 'icon-size', [
-                        'interpolate', ['linear'], ['zoom'],
-                        8, 0.45,
-                        11, 0.58,
-                        14, 0.75,
-                        17, 0.95
-                    ]);
-                    map.setPaintProperty('sectores-puntos-circle', 'icon-opacity', 0.92);
                 }
 
                 if (map.getLayer('sectores-fill')) {
@@ -3475,11 +3454,11 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
                 }
             } else {
-                // Nivel 4: Vista global de Morona Santiago
-                const globalBbox = AppState.cantonBbox || [[-78.9539, -3.5878], [-76.6921, -1.4484]];
+                // Nivel 4: Vista global de Ibarra
+                const globalBbox = AppState.cantonBbox || [[-78.20, 0.15], [-77.96, 0.59]];
                 map.fitBounds(globalBbox, {
                     padding: { top: 40, bottom: 40, left: 40, right: 40 },
-                    maxZoom: 11.5,
+                    maxZoom: 12.5,
                     duration: 850
                 });
             }
@@ -3930,6 +3909,27 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
+        // Asegurar que toda la nómina oficial esté representada en el panel de equipo
+        if (Object.keys(EQUIPO_CAMPO).length > 0) {
+            Object.keys(EQUIPO_CAMPO).forEach(codEnc => {
+                if (!grupos.has(codEnc)) {
+                    const supOficial = ENCUESTADOR_A_SUPERVISOR[codEnc] || 'Sin asignar';
+                    grupos.set(codEnc, {
+                        id: codEnc,
+                        encuestas: [],
+                        duraciones: [],
+                        totalMins: 0,
+                        numAlertas: 0,
+                        supervisor: String(supOficial).trim(),
+                        cantonesConteo: { 'Ibarra': 0 },
+                        promStr: '--',
+                        minStr: '--',
+                        maxStr: '--'
+                    });
+                }
+            });
+        }
+
         const resultado = [];
         for (const g of grupos.values()) {
             if (g.duraciones.length > 0) {
@@ -3943,7 +3943,7 @@ document.addEventListener('DOMContentLoaded', () => {
             g.numAlertas = g.encuestas.filter(e => e._tieneAlerta).length;
 
             // Cantón principal asignado según encuestas recolectadas
-            let topCan = 'Morona';
+            let topCan = 'Ibarra';
             let topCnt = -1;
             for (const [can, cnt] of Object.entries(g.cantonesConteo || {})) {
                 if (cnt > topCnt) {
@@ -4122,8 +4122,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const isExplicitlyExpanded = AppState.supervisoresExpandidos && AppState.supervisoresExpandidos.has(supId);
             const isFilteredSup = AppState.supervisorSeleccionado !== 'Todos' && AppState.supervisorSeleccionado === supId;
             const hasSearch = Boolean(AppState.filtroTabla);
-            // Comprimidas por defecto: solo se abren al hacer clic, al buscar o al filtrar ese supervisor
-            const isCollapsed = !isExplicitlyExpanded && !hasSearch && !isFilteredSup;
+            // Para supervisores en Ibarra, abiertos por defecto salvo que se colapsen explícitamente
+            const isExplicitlyCollapsed = AppState.supervisoresExpandidos && AppState.supervisoresExpandidos.has(supId) === false;
+            const isCollapsed = isExplicitlyCollapsed && !hasSearch && !isFilteredSup;
 
             // Fila de encabezado de grupo (Supervisor)
             const trHeader = document.createElement('tr');
@@ -4143,7 +4144,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         </span>
                         <span class="cs-group-color-dot" style="--sup-dot-color: ${colorSupervisor};"></span>
                         <span class="cs-group-name" title="${supTitle}">${supLabel}</span>
-                        <span class="cs-group-pill">${gSup.encuestadores.length} ${pluralEnc} · ${gSup.totalEncuestas} ${pluralEncuestas}</span>
+                        <span class="cs-group-pill" style="margin-left:auto;">${gSup.encuestadores.length} ${pluralEnc} · ${gSup.totalEncuestas} ${pluralEncuestas}</span>
                     </div>
                 </td>
             `;
