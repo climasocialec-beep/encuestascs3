@@ -1,16 +1,26 @@
 {
-  "estado": "STANDBY",
+  "estado": "ACTIVO",
   "version": "1.0.0",
-  "proyecto": "Terminal de Supervisión en Espera",
+  "proyecto": "Movilidad Movidelnor · Esmeraldas 2026",
   "canton": "",
-  "provincia": "",
+  "provincia": "Esmeraldas",
   "modalidad": "sectores",
-  "meta": 0,
-  "bounds": null,
+  "meta": 490,
+  "bounds": [
+    [
+      -79.51301,
+      0.30348
+    ],
+    [
+      -78.42639,
+      1.46958
+    ]
+  ],
   "kobo": {
     "asset_id": "",
     "campo_encuestador": "codenc",
-    "campo_supervisor": "codsup"
+    "campo_supervisor": "codsup",
+    "choices_parroquias": {}
   },
   "equipo": {
     "supervisores": {},
