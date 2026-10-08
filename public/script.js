@@ -401,9 +401,6 @@ document.addEventListener('DOMContentLoaded', () => {
         kpiSubAvance: document.getElementById('kpiSubAvance'),
         barraAvance: document.getElementById('barraAvance'),
         kpiMeta: document.getElementById('kpiMeta'),
-        kpiAtipicas: document.getElementById('kpiAtipicas'),
-        kpiSubAtipicas: document.getElementById('kpiSubAtipicas'),
-        cardKpiAtipicas: document.getElementById('cardKpiAtipicas'),
         
         // Filtros Cruzados
         supervisorFilter: document.getElementById('supervisorFilter'),
@@ -2124,12 +2121,6 @@ document.addEventListener('DOMContentLoaded', () => {
         animarNumero(UI.kpiTotal, total);
         animarNumero(UI.kpiHoy, hoy);
         animarNumero(UI.kpiPendientes, pendientes);
-        
-        const atipicas = encuestas.filter(e => e._esAtipica).length;
-        animarNumero(UI.kpiAtipicas, atipicas);
-        if (UI.kpiSubAtipicas) {
-            UI.kpiSubAtipicas.textContent = atipicas > 0 ? `${atipicas} encuestas < 10 min` : 'Duración < 10 min';
-        }
         
         if (UI.kpiMeta) UI.kpiMeta.textContent = infoMeta.etiquetaMeta;
         if (UI.kpiSubPendientes) UI.kpiSubPendientes.textContent = infoMeta.subPendientes;
@@ -4900,21 +4891,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 poblarFiltros();
                 renderizarVista(true, true);
                 mostrarToast('Filtros restablecidos', 'info');
-            });
-        }
-
-        // 5b. Conmutador de Filtro de Encuestas Atípicas desde la Tarjeta KPI
-        if (UI.cardKpiAtipicas) {
-            UI.cardKpiAtipicas.addEventListener('click', () => {
-                AppState.filtroSoloAtipicas = !AppState.filtroSoloAtipicas;
-                if (AppState.filtroSoloAtipicas) {
-                    UI.cardKpiAtipicas.classList.add('active');
-                    mostrarToast('Mostrando solo encuestas con duración atípica', 'info');
-                } else {
-                    UI.cardKpiAtipicas.classList.remove('active');
-                    mostrarToast('Filtro de encuestas atípicas desactivado', 'info');
-                }
-                renderizarVista(true, true);
             });
         }
 
