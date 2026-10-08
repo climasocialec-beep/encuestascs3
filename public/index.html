@@ -25,14 +25,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=JetBrains+Mono:wght@700&display=swap" rel="stylesheet">
 
   <!-- Preload Cartografía Clave (Caché optimizada para móviles) -->
-  <link rel="preload" href="assets/parroquias.geojson?v=89.0.0" as="fetch" crossorigin>
-  <link rel="preload" href="assets/sectores_censales.geojson?v=89.0.0" as="fetch" crossorigin>
+  <link rel="preload" href="assets/parroquias.geojson?v=90.0.0" as="fetch" crossorigin>
+  <link rel="preload" href="assets/sectores_censales.geojson?v=90.0.0" as="fetch" crossorigin>
 
   <!-- MapLibre GL CSS (Aceleración WebGL Nativa en GPU) -->
   <link rel="stylesheet" href="libs/maplibre-gl.css" />
 
   <!-- Estilos del Dashboard -->
-  <link rel="stylesheet" href="style.css?v=89.0.0">
+  <link rel="stylesheet" href="style.css?v=90.0.0">
 </head>
 <body>
 
@@ -189,6 +189,21 @@
         <div class="cs-kpi-bottom">
           <span class="cs-kpi-badge" id="kpiTituloAvance">Avance General</span>
           <span class="cs-kpi-sub" id="kpiSubAvance">Cumplimiento cantonal (500)</span>
+        </div>
+      </div>
+
+      <div class="cs-kpi-card cs-kpi-card--rose cs-kpi-card--clickable" id="cardKpiAtipicas" title="Clic para filtrar encuestas atípicas por duración corta">
+        <div class="cs-kpi-top">
+          <div class="cs-kpi-icon-wrap">
+            <svg class="cs-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="cs-kpi-figure">
+            <span class="cs-kpi-card__value" id="kpiAtipicas">0</span>
+          </div>
+        </div>
+        <div class="cs-kpi-bottom">
+          <span class="cs-kpi-badge">Atípicas</span>
+          <span class="cs-kpi-sub" id="kpiSubAtipicas">Duración &lt; 12 min</span>
         </div>
       </div>
 
@@ -507,7 +522,7 @@
 
   <!-- ===== SCRIPTS ===== -->
   <script src="libs/maplibre-gl.js"></script>
-  <script src="script.js?v=89.0.0"></script>
+  <script src="script.js?v=90.0.0"></script>
   <script>
     if ('serviceWorker' in navigator) {
       let refreshing = false;
@@ -529,7 +544,7 @@
             });
           });
         }
-        navigator.serviceWorker.register('/service-worker.js?v=89.0.0').then(reg => {
+        navigator.serviceWorker.register('/service-worker.js?v=90.0.0').then(reg => {
           if (!reg) return;
           if (reg.waiting) {
             reg.waiting.postMessage({ type: 'SKIP_WAITING' });

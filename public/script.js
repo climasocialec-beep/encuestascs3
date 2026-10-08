@@ -80,9 +80,11 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         filtroGPS: 'Todos',
         filtroSoloAlertas: false,
+        filtroSoloAtipicas: false,
         filtroSoloPendientes: false,
         conteoPorSector: new Map(),
         totalAlertas: 0,
+        totalAtipicas: 0,
         erroresColapsados: true,
         filtroTabla: '',
         modoVisualizacion: 'puntos',
@@ -399,6 +401,9 @@ document.addEventListener('DOMContentLoaded', () => {
         kpiSubAvance: document.getElementById('kpiSubAvance'),
         barraAvance: document.getElementById('barraAvance'),
         kpiMeta: document.getElementById('kpiMeta'),
+        kpiAtipicas: document.getElementById('kpiAtipicas'),
+        kpiSubAtipicas: document.getElementById('kpiSubAtipicas'),
+        cardKpiAtipicas: document.getElementById('cardKpiAtipicas'),
         
         // Filtros Cruzados
         supervisorFilter: document.getElementById('supervisorFilter'),
@@ -1009,9 +1014,48 @@ document.addEventListener('DOMContentLoaded', () => {
             enc._alertas = alertas;
             enc._alertaMensaje = alertas.map(a => a.mensaje).join(' · ');
             if (enc._tieneAlerta) totalAlertas++;
+
+            // AUDITORÍA DE TIEMPO DE APLICACIÓN (ENCUESTAS ATÍPICAS)
+            let duracionMin = null;
+            if (enc.start && enc.end) {
+                const tInicio = new Date(enc.start).getTime();
+                const tFin = new Date(enc.end).getTime();
+                if (!isNaN(tInicio) && !isNaN(tFin) && tFin > tInicio) {
+                    duracionMin = (tFin - tInicio) / 60000;
+                }
+            }
+
+            // Detector de módulos de movilidad respondidos
+            let numModulos = 0;
+            const tieneVA = Boolean(enc._30_CON_QU_FRECUEN_L_BUS_BUSETA_TAXI || enc._31_CU_NTO_TIEMPO_P_E_TRANSPORTE_P_BLICO || enc.p32);
+            const tieneVB = Boolean(enc._40_CON_QU_FRECUEN_CONDUCE_EL_VEH_CULO || enc._41_CU_LES_SON_LOS_AZAMIENTO_M_ltiple || enc._42_EN_UNA_ESCALA_DE_NORMALMENTE_CONDUCE || enc.p45);
+            const tieneVC = Boolean(enc._51_CON_QU_FRECUEN_CALLES_DE_SU_CANT_N || enc._52_EN_UNA_ESCALA_DE_ANT_N_DURANTE_EL_D_A || enc._53_EN_UNA_ESCALA_DE_T_N_DURANTE_LA_NOCHE);
+            const tieneVD = Boolean(enc._60_CON_QU_FRECUEN_ETA_PARA_MOVILIZARSE || enc._61_EN_UNA_ESCALA_DE_AS_V_AS_DE_SU_CANT_N || enc._62_EN_UNA_ESCALA_DE_AS_ESTACIONAMIENTOS);
+            const tieneVE = Boolean(enc._68_CU_LES_SON_LAS_puede_anotar_hasta_2 || enc._69_EN_UNA_ESCALA_DE_NAS_CON_SU_CONDICI_N || enc._70_EN_UNA_ESCALA_DE_Y_EL_ESPACIO_P_BLICO);
+
+            if (tieneVA) numModulos++;
+            if (tieneVB) numModulos++;
+            if (tieneVC) numModulos++;
+            if (tieneVD) numModulos++;
+            if (tieneVE) numModulos++;
+
+            // Umbral mínimo de aplicación según cantidad de módulos
+            // 1 módulo: < 10 min | 2 módulos: < 12 min | 3+ módulos: < 14 min | Umbral base: < 12 min
+            let umbralMin = 12.0;
+            if (numModulos <= 1) umbralMin = 10.0;
+            else if (numModulos === 2) umbralMin = 12.0;
+            else if (numModulos >= 3) umbralMin = 14.0;
+
+            const esAtipica = (duracionMin !== null && duracionMin > 0 && duracionMin < umbralMin);
+            enc._duracionMin = duracionMin;
+            enc._numModulos = numModulos;
+            enc._umbralMin = umbralMin;
+            enc._esAtipica = esAtipica;
+            if (esAtipica) totalAtipicas++;
         });
 
         AppState.totalAlertas = totalAlertas;
+        AppState.totalAtipicas = totalAtipicas;
     }
 
     // =========================================================================
@@ -1468,6 +1512,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 label: `⚠️ Errores (${AppState.totalAlertas})`,
                 onClear: () => {
                     AppState.filtroSoloAlertas = false;
+                    renderizarVista();
+                }
+            });
+        }
+        if (AppState.filtroSoloAtipicas) {
+            activeCount++;
+            chips.push({
+                tipo: 'alerta',
+                label: `⏱️ Atípicas (${AppState.totalAtipicas})`,
+                onClear: () => {
+                    AppState.filtroSoloAtipicas = false;
                     renderizarVista();
                 }
             });
@@ -1961,6 +2016,11 @@ document.addEventListener('DOMContentLoaded', () => {
             filtradas = filtradas.filter(e => e._tieneAlerta);
         }
 
+        // Filtro por Encuestas Atípicas (Duración sospechosamente corta)
+        if (AppState.filtroSoloAtipicas) {
+            filtradas = filtradas.filter(e => e._esAtipica);
+        }
+
         // Filtro por Solo Sectores Pendientes (< 10 encuestas)
         if (AppState.filtroSoloPendientes) {
             const conteos = AppState.conteoPorSector || recalcularConteosSectores();
@@ -2084,6 +2144,12 @@ document.addEventListener('DOMContentLoaded', () => {
         animarNumero(UI.kpiTotal, total);
         animarNumero(UI.kpiHoy, hoy);
         animarNumero(UI.kpiPendientes, pendientes);
+        
+        const atipicas = encuestas.filter(e => e._esAtipica).length;
+        animarNumero(UI.kpiAtipicas, atipicas);
+        if (UI.kpiSubAtipicas) {
+            UI.kpiSubAtipicas.textContent = atipicas > 0 ? `${atipicas} encuestas cortas` : 'Duración < 12 min';
+        }
         
         if (UI.kpiMeta) UI.kpiMeta.textContent = infoMeta.etiquetaMeta;
         if (UI.kpiSubPendientes) UI.kpiSubPendientes.textContent = infoMeta.subPendientes;
@@ -4818,11 +4884,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 AppState.fechaSeleccionada = 'Todas';
                 AppState.encuestadorSeleccionado = null;
                 AppState.filtroSoloAlertas = false;
+                AppState.filtroSoloAtipicas = false;
                 AppState.filtroSoloPendientes = false;
                 AppState.mostrarEtiquetas = false;
                 AppState.filtroTabla = '';
                 if (UI.cantonFilter) UI.cantonFilter.value = 'Todos';
                 if (UI.toggleSoloPendientes) UI.toggleSoloPendientes.classList.remove('active');
+                if (UI.cardKpiAtipicas) UI.cardKpiAtipicas.classList.remove('active');
                 if (UI.btnEtiquetasOn) UI.btnEtiquetasOn.classList.remove('active');
                 if (UI.btnEtiquetasOff) UI.btnEtiquetasOff.classList.add('active');
                 if (UI.searchInput) UI.searchInput.value = '';
@@ -4834,6 +4902,21 @@ document.addEventListener('DOMContentLoaded', () => {
                 poblarFiltros();
                 renderizarVista(true, true);
                 mostrarToast('Filtros restablecidos', 'info');
+            });
+        }
+
+        // 5b. Conmutador de Filtro de Encuestas Atípicas desde la Tarjeta KPI
+        if (UI.cardKpiAtipicas) {
+            UI.cardKpiAtipicas.addEventListener('click', () => {
+                AppState.filtroSoloAtipicas = !AppState.filtroSoloAtipicas;
+                if (AppState.filtroSoloAtipicas) {
+                    UI.cardKpiAtipicas.classList.add('active');
+                    mostrarToast('Mostrando solo encuestas con duración atípica', 'info');
+                } else {
+                    UI.cardKpiAtipicas.classList.remove('active');
+                    mostrarToast('Filtro de encuestas atípicas desactivado', 'info');
+                }
+                renderizarVista(true, true);
             });
         }
 
