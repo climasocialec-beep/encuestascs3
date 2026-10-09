@@ -2556,9 +2556,9 @@ document.addEventListener('DOMContentLoaded', () => {
                         id: 'sectores-label',
                         type: 'symbol',
                         source: 'sectores-centroides-source',
-                        minzoom: 9.0,
+                        minzoom: 7.0,
                         layout: {
-                            'text-field': ['coalesce', ['get', 'etiquetaSC'], ['get', 'etiqueta'], ''],
+                            'text-field': ['coalesce', ['get', 'etiquetaSC'], ['get', 'etiqueta'], ['get', 'ETIQUETA'], ['to-string', ['get', 'num_muestra']], ''],
                             'text-font': ['Open Sans Bold'],
                             'text-size': [
                                 'interpolate', ['linear'], ['zoom'],
