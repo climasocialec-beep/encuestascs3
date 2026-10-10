@@ -1,6 +1,6 @@
 /* Modo de contingencia Clima Social: conserva aplicación base y cartografía.
  * No almacena respuestas de Kobo ni coordenadas de encuestas en el teléfono. */
-const CACHE_NAME = 'clima-social-v105-imbabura';
+const CACHE_NAME = 'clima-social-v106-imbabura';
 const APP_SHELL = [
   '/',
   '/index.html',
